@@ -21,6 +21,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         GameManager.instance.AddPlayer(this);
+
+        if (GameManager.instance.activePlayers.Count == 1)
+        {       
+            this.GetComponentInChildren<Camera>().rect = new Rect(0, 0, 1, 1); ;
+        }
+        else if (GameManager.instance.activePlayers.Count == 2)
+        {
+            this.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0, 0.5f, 1); ;
+        }
     }
 
     void Update()

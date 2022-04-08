@@ -8,9 +8,16 @@ public class JoinPlayer2 : MonoBehaviour
     public GameObject playerToLoad;
     private bool isPlayerLoaded;
 
+    public Camera camera2;
+
+    private void Awake()
+    {
+       camera2 = FindObjectOfType<Camera>();
+    }
+
     void Start()
     {
-        
+
     }
 
     void Update()
