@@ -16,13 +16,38 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    public bool isKeyboard2;
+
     void Start()
     {
-        
+        GameManager.instance.AddPlayer(this);
     }
 
     void Update()
     {
+        if(isKeyboard2)
+        {
+            velocity = 0f;
+
+            if(Keyboard.current.lKey.isPressed)
+            {
+                velocity += 1f;
+            }
+            if (Keyboard.current.jKey.isPressed)
+            {
+                velocity -= 1f;
+            }
+
+            if(isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            }
+            if(!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            }
+        }
+
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
         playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
 
@@ -43,6 +68,10 @@ public class PlayerController : MonoBehaviour
             playerRB.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
+    public void Move(InputAction.CallbackContext context)
+    {
+        velocity = context.ReadValue<Vector2>().x;
+    }
 
     public void Jump(InputAction.CallbackContext context)
     {
@@ -55,10 +84,5 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
         }
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-        velocity = context.ReadValue<Vector2>().x;
     }
 }
