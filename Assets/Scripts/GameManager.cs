@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
             activePlayers.Add(newPlayer);
             Instantiate(playerSpawnEffect, newPlayer.transform.position, newPlayer.transform.rotation);
             var camera1 = activePlayers[0].GetComponentInChildren<Camera>();
-            camera1.rect = new Rect(0, 0, 0.5f, 1);
+            camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
         }
         else
         {

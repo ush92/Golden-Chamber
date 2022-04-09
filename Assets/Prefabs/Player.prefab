@@ -335,7 +335,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1282574170
 Transform:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ GameObject:
   - component: {fileID: 1591310450}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -588,7 +588,7 @@ Rigidbody2D:
   m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &4912927042408680108
@@ -767,12 +767,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 9
+  currentHP: 0
   hpDisplay:
   - {fileID: 686151915}
   - {fileID: 78250939}
   - {fileID: 654975005}
   fullHPIcon: {fileID: 7642980859614939925, guid: adcb5fae9aa0a804c860037bd1c6ff1c, type: 3}
   emptyHPIcon: {fileID: -174804484191063705, guid: adcb5fae9aa0a804c860037bd1c6ff1c, type: 3}
+  hpBar: {fileID: 1282574170}
+  player: {fileID: 4912927042408680108}
+  invincibilityTime: 3
+  hpBarFlashTime: 0.2
 --- !u!1 &4912927044335522436
 GameObject:
   m_ObjectHideFlags: 0
