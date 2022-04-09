@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
 
     public bool isKeyboard2;
 
+    public float attackCooldown = 0.25f;
+    private float attackCounter;
+
     void Start()
     {
         GameManager.instance.AddPlayer(this);
@@ -46,7 +49,6 @@ public class PlayerController : MonoBehaviour
             {
                 velocity -= 1f;
             }
-
             if(isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
@@ -55,10 +57,21 @@ public class PlayerController : MonoBehaviour
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
             }
+            if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
+            {
+                playerAnimator.SetTrigger("attack");
+                attackCounter = attackCooldown;
+            }
         }
 
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
         playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+
+        if(attackCounter > 0)
+        {
+            attackCounter -= Time.deltaTime;
+            //playerRB.velocity = new Vector2(0f, playerRB.velocity.y);
+        }
 
         Animate();
     }
@@ -92,6 +105,14 @@ public class PlayerController : MonoBehaviour
         if(!isGrounded && context.canceled && playerRB.velocity.y > 0)
         {
             playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+        }
+    }
+    public void Attack(InputAction.CallbackContext context)
+    {
+        if (context.started && attackCounter <= 0)
+        {
+            playerAnimator.SetTrigger("attack");
+            attackCounter = attackCooldown;
         }
     }
 }
