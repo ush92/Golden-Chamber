@@ -363,7 +363,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2110339811}
   - component: {fileID: 2110339813}
-  - component: {fileID: 2110339812}
+  - component: {fileID: 969914846}
+  - component: {fileID: 969914843}
   m_Layer: 0
   m_Name: Attack Wave
   m_TagString: Untagged
@@ -436,14 +437,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &2110339812
+--- !u!114 &969914846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110339810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1997df9d1e4db63488ad3716e6e79ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToDeal: 1
+--- !u!61 &969914843
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110339810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -618,7 +632,7 @@ MonoBehaviour:
   knockbackFromRight: 0
   knockbackCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
-  attackCooldown: 0.25
+  attackCooldown: 0.55
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
 --- !u!114 &4912927042408680109
@@ -887,5 +901,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7272c370631564c8c73e4e3871c9e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 1
+  damageToDeal: 2
   bounceOnEnemy: 10

@@ -160,6 +160,23 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
+        {
+            transform.parent = null;
+        }
+    }
+
     public void Attack(InputAction.CallbackContext context)
     {
         if (isAlive)
