@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool isAlive;
+    public bool isAlive;
     public bool isKeyboard2;
 
     public Rigidbody2D playerRB;
@@ -29,6 +29,9 @@ public class PlayerController : MonoBehaviour
 
     private string cameraSplitStyle;
 
+    public float deathTime = 3f;
+    private float deathTimeCounter;
+
     void Start()
     {
         GameManager.instance.AddPlayer(this);
@@ -40,8 +43,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (GameManager.instance.activePlayers.Count == 2)
         {
+            GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().rect = new Rect(0, 0.5f, 1f, 0.5f);
+            GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().orthographicSize = 4f;
+            GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 1f, 0.5f);
+            GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().orthographicSize = 4f;
+
             cameraSplitStyle = Consts.HORIZONTAL;
-            this.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 1f, 0.5f); ;
         }
     }
 
@@ -98,6 +105,18 @@ public class PlayerController : MonoBehaviour
             }
 
             Animate();
+        }
+        else
+        {
+            if (deathTimeCounter > 0)
+            {
+                deathTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                Respawn();
+                deathTimeCounter = deathTime;
+            }
         }
 
         SwitchCamera();
@@ -159,7 +178,27 @@ public class PlayerController : MonoBehaviour
 
         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         this.GetComponent<SpriteRenderer>().enabled = false;
-        this.GetComponent<CapsuleCollider2D>().enabled = false;        
+        this.GetComponent<CapsuleCollider2D>().enabled = false;
+
+        deathTimeCounter = deathTime;
+    }
+
+    public void Respawn()
+    {
+        isAlive = true;
+
+        this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        this.GetComponent<SpriteRenderer>().enabled = true;
+        this.GetComponent<CapsuleCollider2D>().enabled = true;
+
+        playerRB.velocity = new Vector3(0, 0, 0);
+
+        transform.position = GameManager.instance.currentCheckPoint.transform.position;
+
+        var hpController = this.GetComponentInChildren<PlayerHPController>();
+        hpController.currentHP = hpController.maxHP;
+        
+        GameManager.instance.PlayerRespawnEffect();
     }
 
     public void SwitchCamera()
@@ -169,13 +208,17 @@ public class PlayerController : MonoBehaviour
             if(cameraSplitStyle == Consts.HORIZONTAL)
             {
                 GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().rect = new Rect(0, 0f, 0.5f, 1f);
+                GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().orthographicSize = 8f;
                 GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 0.5f, 1f);
+                GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().orthographicSize = 8f;
                 cameraSplitStyle = Consts.VERTICAL;
             }
             else if(cameraSplitStyle == Consts.VERTICAL)
             {
                 GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().rect = new Rect(0, 0.5f, 1f, 0.5f);
+                GameManager.instance.activePlayers[0].GetComponentInChildren<Camera>().orthographicSize = 4f;
                 GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 1f, 0.5f);
+                GameManager.instance.activePlayers[1].GetComponentInChildren<Camera>().orthographicSize = 4f;
                 cameraSplitStyle = Consts.HORIZONTAL;
             }
         }

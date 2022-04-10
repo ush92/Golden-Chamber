@@ -568,8 +568,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.369197}
-  m_Size: {x: 0.79, y: 1.2}
+  m_Offset: {x: 0.006318271, y: -0.369197}
+  m_Size: {x: 0.80263656, y: 1.2}
   m_Direction: 0
 --- !u!50 &4912927042408680107
 Rigidbody2D:
@@ -782,6 +782,7 @@ MonoBehaviour:
   hpBar: {fileID: 1282574170}
   player: {fileID: 4912927042408680108}
   invincibilityTime: 1
+  invincibilityCounter: 0
   hpBarFlashTime: 0.2
 --- !u!1 &4912927044335522436
 GameObject:
@@ -858,7 +859,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.028701484, y: -0.9927192}
+  m_Offset: {x: 0.012905836, y: -0.9557775}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -869,7 +870,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6031952, y: 0.25109315}
+  m_Size: {x: 0.60074866, y: 0.21511936}
   m_EdgeRadius: 0
 --- !u!114 &6828580458153355503
 MonoBehaviour:
@@ -884,4 +885,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 1
-  bounceOnEnemy: 5
+  bounceOnEnemy: 10

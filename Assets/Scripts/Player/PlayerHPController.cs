@@ -16,7 +16,7 @@ public class PlayerHPController : MonoBehaviour
     public PlayerController player;
 
     public float invincibilityTime;
-    private float invincibilityCounter;
+    public float invincibilityCounter;
     public float hpBarFlashTime = 0.2f;
     private float hpBarFlashCounter;
 

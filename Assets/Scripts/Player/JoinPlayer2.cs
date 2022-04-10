@@ -27,7 +27,7 @@ public class JoinPlayer2 : MonoBehaviour
             if(Keyboard.current.jKey.wasPressedThisFrame || Keyboard.current.lKey.wasPressedThisFrame || Keyboard.current.rightShiftKey.wasPressedThisFrame
               || Keyboard.current.iKey.wasPressedThisFrame || Keyboard.current.kKey.wasPressedThisFrame)
             {
-                Instantiate(playerToLoad, transform.position, transform.rotation);
+                Instantiate(playerToLoad, GameManager.instance.currentCheckPoint.transform.position, transform.rotation);
                 isPlayerLoaded = true;
             }
         }

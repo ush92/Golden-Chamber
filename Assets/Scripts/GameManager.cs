@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerSpawnEffect;
 
+    public GameObject currentCheckPoint;
+
     private void Awake()
     {
         instance = this;
@@ -31,7 +33,7 @@ public class GameManager : MonoBehaviour
         if(activePlayers.Count < maxPlayers)
         {
             activePlayers.Add(newPlayer);
-            Instantiate(playerSpawnEffect, newPlayer.transform.position, newPlayer.transform.rotation);
+            PlayerRespawnEffect();
             var camera1 = activePlayers[0].GetComponentInChildren<Camera>();
             camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
         }
@@ -39,5 +41,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(newPlayer.gameObject);
         }
+    }
+
+    public void PlayerRespawnEffect()
+    {
+        Instantiate(playerSpawnEffect, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
     }
 }
