@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    #region variables
+
     public bool isAlive;
     public bool isKeyboard2;
 
@@ -32,6 +34,8 @@ public class PlayerController : MonoBehaviour
     public float deathTime = 3f;
     private float deathTimeCounter;
     public GameObject playerdeathEffect;
+
+    #endregion
 
     void Start()
     {
