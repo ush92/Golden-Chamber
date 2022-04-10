@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     public float deathTime = 3f;
     private float deathTimeCounter;
+    public GameObject playerdeathEffect;
 
     void Start()
     {
@@ -175,6 +176,8 @@ public class PlayerController : MonoBehaviour
     {
         isAlive = false;
         velocity = 0;
+
+        Instantiate(playerdeathEffect, transform.position, transform.rotation);
 
         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         this.GetComponent<SpriteRenderer>().enabled = false;

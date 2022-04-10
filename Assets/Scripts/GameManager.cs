@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerSpawnEffect;
 
-    public GameObject currentCheckPoint;
+    public Checkpoint currentCheckPoint;
 
     private void Awake()
     {
@@ -46,5 +46,13 @@ public class GameManager : MonoBehaviour
     public void PlayerRespawnEffect()
     {
         Instantiate(playerSpawnEffect, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
+    }
+
+    public void SetNewCheckpoint(Checkpoint newCheckPoint)
+    {
+        if (newCheckPoint != currentCheckPoint)
+        { 
+        currentCheckPoint = newCheckPoint;
+        }
     }
 }

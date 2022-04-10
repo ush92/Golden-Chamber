@@ -604,6 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f9fc0587d8e0446a4bc8af2cb46ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAlive: 0
   isKeyboard2: 0
   playerRB: {fileID: 4912927042408680107}
   moveSpeed: 10
@@ -618,6 +619,8 @@ MonoBehaviour:
   knockbackCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
   attackCooldown: 0.25
+  deathTime: 3
+  playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
 --- !u!114 &4912927042408680109
 MonoBehaviour:
   m_ObjectHideFlags: 0

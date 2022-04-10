@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    void Start()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        if (other.tag.Equals(Consts.PLAYER))
+        {
+            GameManager.instance.SetNewCheckpoint(this);
+        }
     }
 }
