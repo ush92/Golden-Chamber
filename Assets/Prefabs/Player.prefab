@@ -603,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f9fc0587d8e0446a4bc8af2cb46ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isKeyboard2: 0
   playerRB: {fileID: 4912927042408680107}
   moveSpeed: 10
   jumpForce: 21
@@ -610,8 +611,11 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  knockback: 10
+  knockbackLength: 0.2
+  knockbackFromRight: 0
+  knockbackCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
-  isKeyboard2: 0
   attackCooldown: 0.25
 --- !u!114 &4912927042408680109
 MonoBehaviour:
@@ -776,7 +780,7 @@ MonoBehaviour:
   emptyHPIcon: {fileID: -174804484191063705, guid: adcb5fae9aa0a804c860037bd1c6ff1c, type: 3}
   hpBar: {fileID: 1282574170}
   player: {fileID: 4912927042408680108}
-  invincibilityTime: 2
+  invincibilityTime: 1
   hpBarFlashTime: 0.2
 --- !u!1 &4912927044335522436
 GameObject:

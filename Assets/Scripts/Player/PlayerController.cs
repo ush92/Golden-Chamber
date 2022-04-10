@@ -5,25 +5,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    private bool isAlive;
+    public bool isKeyboard2;
+
     public Rigidbody2D playerRB;
     public float moveSpeed;
     public float jumpForce;
     private float velocity;
 
-    private bool isGrounded;
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
+    private bool isGrounded;
+
+    public float knockback;
+    public float knockbackLength;
+    public bool knockbackFromRight;
+    public float knockbackCounter;
 
     public Animator playerAnimator;
-
-    public bool isKeyboard2;
 
     public float attackCooldown = 0.25f;
     private float attackCounter;
 
     private string cameraSplitStyle;
-
-    private bool isAlive;
 
     void Start()
     {
@@ -73,7 +77,20 @@ public class PlayerController : MonoBehaviour
             }
 
             isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
-            playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+
+            if (knockbackCounter <= 0)
+            {
+                playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+            }
+            else
+            {
+                if(knockbackFromRight) {
+                    playerRB.velocity = new Vector2(-knockback, knockback);
+                } else {
+                    playerRB.velocity = new Vector2(knockback, knockback);
+                }
+                knockbackCounter -= Time.deltaTime;
+            }
 
             if (attackCounter > 0)
             {

@@ -21,6 +21,10 @@ public class DamagePlayer : MonoBehaviour
         if (other.tag.Equals(Consts.PLAYER))
         {
             other.GetComponent<PlayerHPController>().DamagePlayer(damageToDeal);
+
+            var player = other.GetComponent<PlayerController>();
+            player.knockbackCounter = player.knockbackLength;
+            player.knockbackFromRight = other.transform.position.x < transform.position.x ? true : false;         
         }
     }
 }
