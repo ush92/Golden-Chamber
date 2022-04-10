@@ -43,9 +43,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(isKeyboard2)
+        if (isAlive)
         {
-            if (isAlive)
+            if (isKeyboard2)
             {
                 velocity = 0f;
 
@@ -71,17 +71,18 @@ public class PlayerController : MonoBehaviour
                     attackCounter = attackCooldown;
                 }
             }
+
+            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+            playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+
+            if (attackCounter > 0)
+            {
+                attackCounter -= Time.deltaTime;
+            }
+
+            Animate();
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
-        playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
-
-        if(attackCounter > 0)
-        {
-            attackCounter -= Time.deltaTime;
-        }
-
-        Animate();
         SwitchCamera();
     }
 
@@ -136,9 +137,12 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        velocity = 0;
-        this.GetComponent<SpriteRenderer>().enabled = false;
         isAlive = false;
+        velocity = 0;
+
+        this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<CapsuleCollider2D>().enabled = false;        
     }
 
     public void SwitchCamera()
