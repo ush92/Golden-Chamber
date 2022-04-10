@@ -23,9 +23,12 @@ public class PlayerController : MonoBehaviour
 
     private string cameraSplitStyle;
 
+    private bool isAlive;
+
     void Start()
     {
         GameManager.instance.AddPlayer(this);
+        isAlive = true;
 
         if (GameManager.instance.activePlayers.Count == 1)
         {       
@@ -42,28 +45,31 @@ public class PlayerController : MonoBehaviour
     {
         if(isKeyboard2)
         {
-            velocity = 0f;
+            if (isAlive)
+            {
+                velocity = 0f;
 
-            if(Keyboard.current.lKey.isPressed)
-            {
-                velocity += 1f;
-            }
-            if (Keyboard.current.jKey.isPressed)
-            {
-                velocity -= 1f;
-            }
-            if(isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
-            {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-            }
-            if(!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
-            {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
-            }
-            if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
-            {
-                playerAnimator.SetTrigger(Consts.ATTACK);
-                attackCounter = attackCooldown;
+                if (Keyboard.current.lKey.isPressed)
+                {
+                    velocity += 1f;
+                }
+                if (Keyboard.current.jKey.isPressed)
+                {
+                    velocity -= 1f;
+                }
+                if (isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
+                {
+                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                }
+                if (!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
+                {
+                    playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+                }
+                if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
+                {
+                    playerAnimator.SetTrigger(Consts.ATTACK);
+                    attackCounter = attackCooldown;
+                }
             }
         }
 
@@ -95,33 +101,44 @@ public class PlayerController : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context)
     {
-        velocity = context.ReadValue<Vector2>().x;
+        if (isAlive)
+        {
+            velocity = context.ReadValue<Vector2>().x;
+        }
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.started && isGrounded)
+        if (isAlive)
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-        }
+            if (context.started && isGrounded)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            }
 
-        if(!isGrounded && context.canceled && playerRB.velocity.y > 0)
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            if (!isGrounded && context.canceled && playerRB.velocity.y > 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            }
         }
     }
     public void Attack(InputAction.CallbackContext context)
     {
-        if (context.started && attackCounter <= 0)
+        if (isAlive)
         {
-            playerAnimator.SetTrigger(Consts.ATTACK);
-            attackCounter = attackCooldown;
+            if (context.started && attackCounter <= 0)
+            {
+                playerAnimator.SetTrigger(Consts.ATTACK);
+                attackCounter = attackCooldown;
+            }
         }
     }
 
     public void Death()
     {
+        velocity = 0;
         this.GetComponent<SpriteRenderer>().enabled = false;
+        isAlive = false;
     }
 
     public void SwitchCamera()

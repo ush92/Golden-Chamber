@@ -766,7 +766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ab0edb8f6e9784685271abd036f249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 9
+  maxHP: 3
   currentHP: 0
   hpDisplay:
   - {fileID: 686151915}
@@ -776,7 +776,7 @@ MonoBehaviour:
   emptyHPIcon: {fileID: -174804484191063705, guid: adcb5fae9aa0a804c860037bd1c6ff1c, type: 3}
   hpBar: {fileID: 1282574170}
   player: {fileID: 4912927042408680108}
-  invincibilityTime: 3
+  invincibilityTime: 2
   hpBarFlashTime: 0.2
 --- !u!1 &4912927044335522436
 GameObject:

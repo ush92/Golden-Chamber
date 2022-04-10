@@ -50,19 +50,19 @@ public class PlayerHPController : MonoBehaviour
 
     public void UpdateHPDisplay()
     {
-        if(currentHP >= maxHP * 0.67f)
+        if(currentHP > ((float)maxHP * 2f) / 3f)
         {
             hpDisplay[0].sprite = fullHPIcon;
             hpDisplay[1].sprite = fullHPIcon;
             hpDisplay[2].sprite = fullHPIcon;
         }
-        else if(currentHP >= maxHP * 0.33f && currentHP < maxHP * 0.67f)
+        else if(currentHP > (float)maxHP / 3f && currentHP <= ((float)maxHP * 2f) / 3f)
         {
             hpDisplay[0].sprite = fullHPIcon;
             hpDisplay[1].sprite = fullHPIcon;
             hpDisplay[2].sprite = emptyHPIcon;
         }
-        else if(currentHP > 0 && currentHP < maxHP * 0.33f)
+        else if(currentHP > 0 && currentHP <= (float)maxHP / 3f)
         {
             hpDisplay[0].sprite = fullHPIcon;
             hpDisplay[1].sprite = emptyHPIcon;
@@ -89,12 +89,14 @@ public class PlayerHPController : MonoBehaviour
 
             UpdateHPDisplay();
 
+            invincibilityCounter = invincibilityTime;
+
             if (currentHP == 0)
             {
                 player.Death();
-            }
-
-            invincibilityCounter = invincibilityTime;
+                hpBar.gameObject.SetActive(false);
+                invincibilityCounter = 0;
+            }       
         }
     }
 }
