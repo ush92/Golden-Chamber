@@ -240,6 +240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
 --- !u!4 &449688174 stripped
@@ -3102,6 +3106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+      propertyPath: hitFlashTime
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067805, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Name
       value: mon2_0

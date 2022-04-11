@@ -29,7 +29,13 @@ public class DamagePlayer : MonoBehaviour
             {
                 player.knockbackCounter = player.knockbackLength;
                 player.knockbackFromRight = other.transform.position.x < transform.position.x ? true : false;
-            }            
+            }
+
+            if (tag.Equals(Consts.ENEMY))
+            {
+                var patrol = this.GetComponent<EnemyPatrol>();
+                patrol.moveRight = !patrol.moveRight;
+            }
         }
     }
 }

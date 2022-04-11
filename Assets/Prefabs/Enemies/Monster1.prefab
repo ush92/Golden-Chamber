@@ -280,3 +280,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 2
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 72deb3197631e3748b41dedb16649bbd, type: 3}
+  flashOnHit: {r: 0.85679054, g: 0, b: 1, a: 1}
+  hitFlashTime: 0.125

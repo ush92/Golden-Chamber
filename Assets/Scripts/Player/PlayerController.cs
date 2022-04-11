@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
     private bool isGrounded;
+    public GameObject stomper;
 
     public float knockback;
     public float knockbackLength;
@@ -203,6 +204,7 @@ public class PlayerController : MonoBehaviour
         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<CapsuleCollider2D>().enabled = false;
+        stomper.gameObject.SetActive(false);
 
         deathTimeCounter = deathTime;
     }
@@ -214,6 +216,7 @@ public class PlayerController : MonoBehaviour
         this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         this.GetComponent<SpriteRenderer>().enabled = true;
         this.GetComponent<CapsuleCollider2D>().enabled = true;
+        stomper.gameObject.SetActive(true);
 
         playerRB.velocity = new Vector3(0, 0, 0);
 
