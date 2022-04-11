@@ -6,6 +6,8 @@ public class EnemyHPController : MonoBehaviour
 {
     public int HP = 1;
 
+    public GameObject enemyDeathEffect;
+
     void Start()
     {
         
@@ -15,6 +17,7 @@ public class EnemyHPController : MonoBehaviour
     {
         if(HP <= 0)
         {
+            Instantiate(enemyDeathEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

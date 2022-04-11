@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 376706383, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 376706383, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -38,6 +38,10 @@ PrefabInstance:
     - target: {fileID: 376706384, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_Text
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 376706384, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 579280743, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_CullingMask.m_Bits
