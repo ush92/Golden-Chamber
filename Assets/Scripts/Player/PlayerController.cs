@@ -236,17 +236,17 @@ public class PlayerController : MonoBehaviour
             if(cameraSplitStyle == Consts.HORIZONTAL)
             {
                 GameManager.instance.camera1.rect = new Rect(0, 0f, 0.5f, 1f);
-                GameManager.instance.camera1.GetComponentInChildren<Camera>().orthographicSize = 8f;
-                GameManager.instance.camera2.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 0.5f, 1f);
-                GameManager.instance.camera2.GetComponentInChildren<Camera>().orthographicSize = 8f;
+                GameManager.instance.camera1.orthographicSize = 8f;
+                GameManager.instance.camera2.rect = new Rect(0.5f, 0f, 0.5f, 1f);
+                GameManager.instance.camera2.orthographicSize = 8f;
                 cameraSplitStyle = Consts.VERTICAL;
             }
             else if(cameraSplitStyle == Consts.VERTICAL)
             {
-                GameManager.instance.camera1.GetComponentInChildren<Camera>().rect = new Rect(0, 0.5f, 1f, 0.5f);
-                GameManager.instance.camera1.GetComponentInChildren<Camera>().orthographicSize = 4f;
-                GameManager.instance.camera2.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 1f, 0.5f);
-                GameManager.instance.camera2.GetComponentInChildren<Camera>().orthographicSize = 4f;
+                GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
+                GameManager.instance.camera1.orthographicSize = 4f;
+                GameManager.instance.camera2.rect = new Rect(0f, 0f, 1f, 0.5f);
+                GameManager.instance.camera2.orthographicSize = 4f;
                 cameraSplitStyle = Consts.HORIZONTAL;
             }
         }
