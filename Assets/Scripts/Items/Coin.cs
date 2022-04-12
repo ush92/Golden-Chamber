@@ -5,6 +5,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int pointsToAdd;
+    public GameObject pickupEffect;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,6 +13,7 @@ public class Coin : MonoBehaviour
         {
             other.GetComponentInChildren<ScoreManager>().AddScore(pointsToAdd);
 
+            Instantiate(pickupEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }
