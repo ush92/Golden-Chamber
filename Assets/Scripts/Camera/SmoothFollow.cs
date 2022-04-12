@@ -12,7 +12,7 @@ public class SmoothFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        //Vector3 movePos = target.position + offset;
-        transform.position = Vector3.SmoothDamp(transform.position, offset, ref velocity, damping);
+        Vector3 movePos = target.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, movePos, ref velocity, damping);
     }
 }

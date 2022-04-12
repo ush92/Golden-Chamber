@@ -10,8 +10,10 @@ public class GameManager : MonoBehaviour
     public List<PlayerController> activePlayers = new List<PlayerController>();
 
     public GameObject playerSpawnEffect;
-
     public Checkpoint currentCheckPoint;
+
+    public Camera camera1;
+    public Camera camera2;
 
     private void Awake()
     {
@@ -34,7 +36,6 @@ public class GameManager : MonoBehaviour
         {
             activePlayers.Add(newPlayer);
             PlayerRespawnEffect();
-            var camera1 = activePlayers[0].GetComponentInChildren<Camera>();
             camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
         }
         else
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         if (newCheckPoint != currentCheckPoint)
         { 
-        currentCheckPoint = newCheckPoint;
+            currentCheckPoint = newCheckPoint;
         }
     }
 }
