@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,8 +14,9 @@ public class PlayerHPController : MonoBehaviour
     public float invincibilityCounter;
     public float hpBarFlashTime = 0.2f;
     private float hpBarFlashCounter;
+    private float gamepadRumblePower;
 
-    private float diff; //fix hp bar scaling
+    private float diff; //to fix hp bar scaling
 
     void Start()
     {
@@ -37,12 +36,16 @@ public class PlayerHPController : MonoBehaviour
                 hpBarFlashCounter = hpBarFlashTime;
                 hpBar.gameObject.SetActive(!hpBar.gameObject.activeInHierarchy);
             }
+
+            //gamepadRumblePower = invincibilityCounter / 2;
+            //Gamepad.current.SetMotorSpeeds(gamepadRumblePower, gamepadRumblePower);
         }
         else
         {
             hpBar.gameObject.SetActive(false);
+            //Gamepad.current.SetMotorSpeeds(0f, 0f);
         }   
-        
+      
     }
 
     private void LateUpdate()
@@ -75,7 +78,7 @@ public class PlayerHPController : MonoBehaviour
                 player.Death();
                 hpBar.gameObject.SetActive(false);
                 invincibilityCounter = 0;
-            }       
+            }
         }
     }
 }

@@ -49,12 +49,14 @@ public class PlayerController : MonoBehaviour
         }
         else if (GameManager.instance.activePlayers.Count == 2)
         {
-            GameManager.instance.camera2.GetComponent<SmoothFollow>().target = GameManager.instance.activePlayers[1].transform;
+            
             GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
             GameManager.instance.camera1.orthographicSize = 4f;
+
             GameManager.instance.camera2.rect = new Rect(0f, 0f, 1f, 0.5f);
             GameManager.instance.camera2.orthographicSize = 4f;
 
+            GameManager.instance.camera2.GetComponent<SmoothFollow>().target = GameManager.instance.activePlayers[1].transform;
             cameraSplitStyle = Consts.HORIZONTAL;
         }
     }
