@@ -21,7 +21,6 @@ public class PlayerHPController : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
-
         diff = transform.localScale.x / hpBar.localScale.x;
     }
 
