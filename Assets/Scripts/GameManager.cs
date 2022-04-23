@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Camera camera1;
     public Camera camera2;
 
+    public static bool onePlayerMode = true;
+
     private void Awake()
     {
         instance = this;

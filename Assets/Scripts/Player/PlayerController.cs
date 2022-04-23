@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     private float deathTimeCounter;
     public GameObject playerdeathEffect;
 
+    public GameObject player2;
+
     #endregion
 
     void Start()
@@ -126,6 +128,12 @@ public class PlayerController : MonoBehaviour
                 Respawn();
                 deathTimeCounter = deathTime;
             }
+        }
+
+        if(GameManager.onePlayerMode == false && GameManager.instance.activePlayers.Count < 2)
+        {
+            player2.SetActive(true);
+            //Instantiate(player2, GameManager.instance.currentCheckPoint.transform.position, transform.rotation);           
         }
 
         SwitchCamera();
