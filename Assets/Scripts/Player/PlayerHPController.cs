@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
 public class PlayerHPController : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlayerHPController : MonoBehaviour
     public int currentHP;
 
     public Transform hpBar;
+    public Text hpText;
 
     public PlayerController player;
 
@@ -49,7 +51,8 @@ public class PlayerHPController : MonoBehaviour
 
     private void LateUpdate()
     {
-        hpBar.localScale = new Vector3(transform.localScale.x / diff, hpBar.localScale.y);     
+        hpBar.localScale = new Vector3(transform.localScale.x / diff, hpBar.localScale.y);
+        hpText.text = currentHP.ToString();
     }
 
     public void UpdateHPDisplay()

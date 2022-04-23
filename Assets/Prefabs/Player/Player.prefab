@@ -715,6 +715,7 @@ MonoBehaviour:
   maxHP: 11
   currentHP: 0
   hpBar: {fileID: 6773902815649849688}
+  hpText: {fileID: 686836979243874972}
   player: {fileID: 4912927042408680108}
   invincibilityTime: 1
   invincibilityCounter: 0
@@ -827,7 +828,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 000
 --- !u!1 &5157120615624747702
 GameObject:
   m_ObjectHideFlags: 0
