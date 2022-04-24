@@ -25,7 +25,7 @@ public class SmoothFollow : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(target.position.x, target.position.y + lookingUpCurrentOffset, transform.position.z);
+            transform.position = new Vector3(transform.position.x, target.position.y + lookingUpCurrentOffset, transform.position.z);
 
             if (lookingUpCurrentOffset >= lookingUpOffset)
             {
