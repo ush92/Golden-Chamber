@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -7,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     #region variables
+
+    private bool isLoaded = false;
 
     public bool isAlive;
     public bool isKeyboard2;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         isAlive = true;
 
         SetDefaultCamera();
-    }
+    }   
 
     private void SetDefaultCamera()
     {
@@ -104,6 +104,15 @@ public class PlayerController : MonoBehaviour
         }
 
         SwitchCamera();
+    }
+
+    private void LateUpdate() //Load
+    {
+        if (!isLoaded)
+        {
+            GameManager.LoadJsonData(GameManager.instance);
+            isLoaded = true;
+        }
     }
 
     private void Player2Control()
@@ -272,29 +281,37 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case Consts.LEVEL1:
-                if(GameManager.onePlayerMode)
-                {
-                    SceneManager.LoadScene(Consts.LEVEL1);
-                }
-                else 
-                {
-                    if(GameManager.instance.activePlayers[0].triggerObject == GameManager.instance.activePlayers[1].triggerObject)
-                    {
-                        SceneManager.LoadScene(Consts.LEVEL1);
-                    }
-                    else
-                    {
-                        Debug.Log("Obaj gracze musz¹ stac na drzwiach zeby sie przeteleportowac");
-                    }
-                }
+                LoadLevel(Consts.LEVEL1);
                 break;
 
-            case Consts.LEVEL2:
-                Debug.Log(this.name + " used level 2 door");
+            case Consts.LEVEL_MAP:
+                LoadLevel(Consts.LEVEL_MAP);
                 break;
 
             default:
+                Debug.Log("uzyto nieobslugiwany trigger");
                 break;
+        }
+    }
+
+    private static void LoadLevel(string levelName)
+    {
+        GameManager.SaveJsonData(GameManager.instance); //autosave
+        
+        if (GameManager.onePlayerMode)
+        {
+            SceneManager.LoadScene(levelName);
+        }
+        else
+        {
+            if (GameManager.instance.activePlayers[0].triggerObject == GameManager.instance.activePlayers[1].triggerObject)
+            {
+                SceneManager.LoadScene(levelName);
+            }
+            else
+            {
+                Debug.Log("Obaj gracze musz¹ stac na drzwiach zeby sie przeteleportowac");
+            }
         }
     }
 

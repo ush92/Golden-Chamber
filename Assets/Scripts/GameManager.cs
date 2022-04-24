@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
-    public int maxPlayers;
+    private int maxPlayers = 2;
     public List<PlayerController> activePlayers = new List<PlayerController>();
 
     public GameObject playerSpawnEffect;
@@ -24,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -58,4 +57,51 @@ public class GameManager : MonoBehaviour
             currentCheckPoint = newCheckPoint;
         }
     }
+
+    private void OnApplicationQuit()
+    {
+        SaveJsonData(this);
+    }
+
+    #region Save&Load
+
+    public static void SaveJsonData(GameManager _gameManager)
+    {
+        SaveData saveData = new SaveData();
+        _gameManager.PopulateSaveData(saveData);
+
+        if (FileManager.WriteToFile("SaveData01.dat", saveData.SaveToJson()))
+        {
+            Debug.Log("Save successful");
+        }
+    }
+
+    public void PopulateSaveData(SaveData saveData)
+    {
+        saveData.playerScore = activePlayers[0].GetComponentInChildren<ScoreManager>().score;
+
+        //foreach (Enemy enemy in _enemies)
+        //{
+        //    enemy.PopulateSaveData(saveData);
+        //}
+    }
+
+    public static void LoadJsonData(GameManager _gameManager)
+    {
+        if (FileManager.LoadFromFile("SaveData01.dat", out var json))
+        {
+            SaveData saveData = new SaveData();
+            saveData.LoadFromJson(json);
+
+            _gameManager.LoadFromSaveData(saveData);
+            Debug.Log("load complete");
+        }
+    }
+
+    public void LoadFromSaveData(SaveData saveData)
+    {
+        activePlayers[0].GetComponentInChildren<ScoreManager>().score = saveData.playerScore;
+    }
+    
+    #endregion
 }

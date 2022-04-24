@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Consts : MonoBehaviour
@@ -15,6 +13,7 @@ public class Consts : MonoBehaviour
     public const string SPEED = "speed";
     public const string YSPEED = "ySpeed";
 
+    public const string LEVEL_MAP = "LevelMap";
     public const string LEVEL1 = "Level1";
     public const string LEVEL2 = "Level2";
 }
