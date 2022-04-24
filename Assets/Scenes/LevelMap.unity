@@ -202,10 +202,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (Keyboard 2) Variant
       objectReference: {fileID: 0}
-    - target: {fileID: 288996051668077063, guid: 81bfad529eab94b488f6fd523b6b4bde, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 288996051668077177, guid: 81bfad529eab94b488f6fd523b6b4bde, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -250,10 +246,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 288996051668077180, guid: 81bfad529eab94b488f6fd523b6b4bde, type: 3}
-      propertyPath: player2
-      value: 
-      objectReference: {fileID: 1159591059}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81bfad529eab94b488f6fd523b6b4bde, type: 3}
 --- !u!1 &1159591059 stripped

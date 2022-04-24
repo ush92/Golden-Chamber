@@ -543,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 0
   isKeyboard2: 0
+  player2: {fileID: 0}
   playerRB: {fileID: 4912927042408680107}
   moveSpeed: 10
   jumpForce: 21
@@ -559,7 +560,6 @@ MonoBehaviour:
   attackCooldown: 0.55
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
-  player2: {fileID: 0}
 --- !u!114 &4912927042408680109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +602,19 @@ MonoBehaviour:
     m_ActionId: 04ff9b2c-da57-4b3e-a0d4-a75bd3ea5f6b
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4912927042408680108}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Look
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 0e6bcbe4-1e85-4e7f-a569-bd09eeb7ec8a
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:

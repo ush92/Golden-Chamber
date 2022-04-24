@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public bool isAlive;
     public bool isKeyboard2;
+    public GameObject player2;
 
     public Rigidbody2D playerRB;
     public float moveSpeed;
@@ -36,8 +37,6 @@ public class PlayerController : MonoBehaviour
     private float deathTimeCounter;
     public GameObject playerdeathEffect;
 
-    public GameObject player2;
-
     #endregion
 
     void Start()
@@ -45,13 +44,18 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.AddPlayer(this);
         isAlive = true;
 
+        SetDefaultCamera();
+    }
+
+    private void SetDefaultCamera()
+    {
         if (GameManager.instance.activePlayers.Count == 1)
         {
             GameManager.instance.camera1.rect = new Rect(0f, 0f, 1f, 1f); ;
         }
         else if (GameManager.instance.activePlayers.Count == 2)
         {
-            
+
             GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
             GameManager.instance.camera1.orthographicSize = 4f;
 
@@ -69,52 +73,12 @@ public class PlayerController : MonoBehaviour
         {
             if (isKeyboard2)
             {
-                velocity = 0f;
-
-                if (Keyboard.current.lKey.isPressed)
-                {
-                    velocity += 1f;
-                }
-                if (Keyboard.current.jKey.isPressed)
-                {
-                    velocity -= 1f;
-                }
-                if (isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
-                {
-                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-                }
-                if (!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
-                {
-                    playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
-                }
-                if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
-                {
-                    playerAnimator.SetTrigger(Consts.ATTACK);
-                    attackCounter = attackCooldown;
-                }
+                Player2Control();
             }
 
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
-
-            if (knockbackCounter <= 0)
-            {
-                playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
-            }
-            else
-            {
-                if(knockbackFromRight) {
-                    playerRB.velocity = new Vector2(-knockback, knockback);
-                } else {
-                    playerRB.velocity = new Vector2(knockback, knockback);
-                }
-                knockbackCounter -= Time.deltaTime;
-            }
-
-            if (attackCounter > 0)
-            {
-                attackCounter -= Time.deltaTime;
-            }
-
+            CheckGround();
+            Knockback();
+            AttackCooldown();
             Animate();
         }
         else
@@ -130,13 +94,81 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if(GameManager.onePlayerMode == false && GameManager.instance.activePlayers.Count < 2)
+        if (GameManager.onePlayerMode == false && GameManager.instance.activePlayers.Count < 2)
         {
             player2.SetActive(true);
             //Instantiate(player2, GameManager.instance.currentCheckPoint.transform.position, transform.rotation);           
         }
 
         SwitchCamera();
+    }
+
+    private void Player2Control()
+    {
+        velocity = 0f;
+
+        if (Keyboard.current.lKey.isPressed)
+        {
+            velocity += 1f;
+        }
+        if (Keyboard.current.jKey.isPressed)
+        {
+            velocity -= 1f;
+        }
+        if (isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        }
+        if (!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+        }
+        if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
+        {
+            playerAnimator.SetTrigger(Consts.ATTACK);
+            attackCounter = attackCooldown;
+        }
+        if (Keyboard.current.iKey.isPressed && isGrounded)
+        {
+            //todo
+        }
+        if (Keyboard.current.kKey.isPressed && isGrounded)
+        {
+            //todo
+        }
+    }
+
+    private void CheckGround()
+    {
+        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+    }
+
+    private void Knockback()
+    {
+        if (knockbackCounter <= 0)
+        {
+            playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+        }
+        else
+        {
+            if (knockbackFromRight)
+            {
+                playerRB.velocity = new Vector2(-knockback, knockback);
+            }
+            else
+            {
+                playerRB.velocity = new Vector2(knockback, knockback);
+            }
+            knockbackCounter -= Time.deltaTime;
+        }
+    }
+
+    private void AttackCooldown()
+    {
+        if (attackCounter > 0)
+        {
+            attackCounter -= Time.deltaTime;
+        }
     }
 
     private void Animate()
@@ -147,12 +179,13 @@ public class PlayerController : MonoBehaviour
         if (playerRB.velocity.x < 0)
         {
             playerRB.transform.localScale = new Vector3(-1f, 1f, 1f);
-        } 
+        }
         else if (playerRB.velocity.x > 0)
         {
             playerRB.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
+
     public void Move(InputAction.CallbackContext context)
     {
         if (isAlive)
@@ -177,19 +210,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    public void Look(InputAction.CallbackContext context)
     {
-        if(other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
+        if (isAlive)
         {
-            transform.parent = other.transform;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
-        {
-            transform.parent = null;
+            if (isGrounded)
+            {
+                GameManager.instance.camera1.transform.position = new Vector3(transform.position.x,
+                    (transform.position.y + context.ReadValue<Vector2>().y) * Mathf.Sign(context.ReadValue<Vector2>().y),
+                    transform.position.z);
+                //GameManager.instance.camera1.transform.position = new Vector3(transform.position.x, transform.position.y + context.ReadValue<Vector2>().y, transform.position.z);
+                //if (Mathf.Abs(currentYOffset - yOffset) < 2)
+                //{
+                //    currentYOffset += Time.deltaTime * 2 * Mathf.Sign(context.ReadValue<Vector2>().y);
+                //}
+                //else if (Mathf.Round(currentYOffset) == yOffset)
+                //{
+                //    currentYOffset = 2.0f;
+                //}
+                //else if (currentYOffset < yOffset)
+                //{
+                //    currentYOffset += 10 * Time.deltaTime;
+                //}
+                //else if (currentYOffset > yOffset)
+                //{
+                //    currentYOffset -= 10 * Time.deltaTime;
+                //}
+            }  
         }
     }
 
@@ -202,6 +249,22 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetTrigger(Consts.ATTACK);
                 attackCounter = attackCooldown;
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
+        {
+            transform.parent = other.transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
+        {
+            transform.parent = null;
         }
     }
 
@@ -235,7 +298,7 @@ public class PlayerController : MonoBehaviour
 
         var hpController = this.GetComponentInChildren<PlayerHPController>();
         hpController.currentHP = hpController.maxHP;
-        
+
         GameManager.instance.PlayerRespawnEffect();
     }
 
@@ -243,7 +306,7 @@ public class PlayerController : MonoBehaviour
     {
         if (GameManager.instance.activePlayers.Count == 2 && Keyboard.current.f2Key.wasPressedThisFrame)
         {
-            if(cameraSplitStyle == Consts.HORIZONTAL)
+            if (cameraSplitStyle == Consts.HORIZONTAL)
             {
                 GameManager.instance.camera1.rect = new Rect(0, 0f, 0.5f, 1f);
                 GameManager.instance.camera1.orthographicSize = 8f;
@@ -251,7 +314,7 @@ public class PlayerController : MonoBehaviour
                 GameManager.instance.camera2.orthographicSize = 8f;
                 cameraSplitStyle = Consts.VERTICAL;
             }
-            else if(cameraSplitStyle == Consts.VERTICAL)
+            else if (cameraSplitStyle == Consts.VERTICAL)
             {
                 GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
                 GameManager.instance.camera1.orthographicSize = 4f;
