@@ -560,6 +560,7 @@ MonoBehaviour:
   attackCooldown: 0.55
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
+  isOnLevelDoor: 0
 --- !u!114 &4912927042408680109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,6 +690,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 72736862-ebc6-4139-aa1b-acb08fc5b299
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4912927042408680108}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Use
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ed7a81cb-9000-4d03-b714-ab3481bd4f46
+    m_ActionName: Player/Use[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

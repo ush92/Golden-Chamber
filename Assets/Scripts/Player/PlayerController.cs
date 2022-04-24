@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public float deathTime = 3f;
     private float deathTimeCounter;
     public GameObject playerdeathEffect;
+
+    public string triggerObject;
 
     #endregion
 
@@ -136,6 +139,10 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.instance.camera2.GetComponent<SmoothFollow>().isLookingUp = false;
         }
+        if (Keyboard.current.kKey.wasPressedThisFrame)
+        {
+            UseTrigger();
+        }
     }
 
     private void CheckGround()
@@ -221,6 +228,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void Use(InputAction.CallbackContext context)
+    {
+        if (isAlive)
+        {
+            UseTrigger();
+        }
+    }
+
     public void Attack(InputAction.CallbackContext context)
     {
         if (isAlive)
@@ -246,6 +261,40 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
         {
             transform.parent = null;
+        }
+    }
+
+    private void UseTrigger()
+    {
+        switch (triggerObject)
+        {
+            case "":
+                break;
+
+            case Consts.LEVEL1:
+                if(GameManager.onePlayerMode)
+                {
+                    SceneManager.LoadScene(Consts.LEVEL1);
+                }
+                else 
+                {
+                    if(GameManager.instance.activePlayers[0].triggerObject == GameManager.instance.activePlayers[1].triggerObject)
+                    {
+                        SceneManager.LoadScene(Consts.LEVEL1);
+                    }
+                    else
+                    {
+                        Debug.Log("Obaj gracze musz¹ stac na drzwiach zeby sie przeteleportowac");
+                    }
+                }
+                break;
+
+            case Consts.LEVEL2:
+                Debug.Log(this.name + " used level 2 door");
+                break;
+
+            default:
+                break;
         }
     }
 
