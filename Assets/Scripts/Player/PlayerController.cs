@@ -130,11 +130,11 @@ public class PlayerController : MonoBehaviour
         }
         if (Keyboard.current.iKey.isPressed && isGrounded)
         {
-            //todo
+            GameManager.instance.camera2.GetComponent<SmoothFollow>().isLookingUp = true;
         }
-        if (Keyboard.current.kKey.isPressed && isGrounded)
+        if (Keyboard.current.iKey.wasReleasedThisFrame)
         {
-            //todo
+            GameManager.instance.camera2.GetComponent<SmoothFollow>().isLookingUp = false;
         }
     }
 
@@ -216,26 +216,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
-                GameManager.instance.camera1.transform.position = new Vector3(transform.position.x,
-                    (transform.position.y + context.ReadValue<Vector2>().y) * Mathf.Sign(context.ReadValue<Vector2>().y),
-                    transform.position.z);
-                //GameManager.instance.camera1.transform.position = new Vector3(transform.position.x, transform.position.y + context.ReadValue<Vector2>().y, transform.position.z);
-                //if (Mathf.Abs(currentYOffset - yOffset) < 2)
-                //{
-                //    currentYOffset += Time.deltaTime * 2 * Mathf.Sign(context.ReadValue<Vector2>().y);
-                //}
-                //else if (Mathf.Round(currentYOffset) == yOffset)
-                //{
-                //    currentYOffset = 2.0f;
-                //}
-                //else if (currentYOffset < yOffset)
-                //{
-                //    currentYOffset += 10 * Time.deltaTime;
-                //}
-                //else if (currentYOffset > yOffset)
-                //{
-                //    currentYOffset -= 10 * Time.deltaTime;
-                //}
+                GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
             }  
         }
     }

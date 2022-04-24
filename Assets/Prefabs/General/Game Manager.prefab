@@ -90,6 +90,8 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0.5, y: 0.5, z: -10}
   damping: 0.5
+  isLookingUp: 0
+  lookingUpOffset: 9
 --- !u!1 &7828830751223790924
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,3 +242,5 @@ MonoBehaviour:
   target: {fileID: 0}
   offset: {x: 0.5, y: 0.5, z: -10}
   damping: 0.5
+  isLookingUp: 0
+  lookingUpOffset: 9

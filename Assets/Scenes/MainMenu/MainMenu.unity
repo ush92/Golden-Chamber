@@ -1951,9 +1951,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7104180, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
+      propertyPath: lookingUpOffset
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1031012989, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1031012989, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
+      propertyPath: lookingUpOffset
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7828830751223790924, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
       propertyPath: m_Name
