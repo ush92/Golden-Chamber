@@ -17,7 +17,7 @@ public static class FileManager
         {
             Debug.Log($"failed to write to {fullPath} with exception {ex}");
         }
-
+        
         return false;
     }
 

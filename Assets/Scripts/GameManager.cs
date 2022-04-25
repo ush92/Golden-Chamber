@@ -60,7 +60,10 @@ public class GameManager : MonoBehaviour, ISaveable
 
     private void OnApplicationQuit()
     {
-        SaveJsonData(this);
+        if (activePlayers.Count > 0)
+        {
+            SaveJsonData(this);
+        }
     }
 
     #region Save&Load
@@ -78,7 +81,9 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {
-        saveData.playerScore = activePlayers[0].GetComponentInChildren<ScoreManager>().score;
+        saveData.playerData.playerScore  = activePlayers[0].GetComponentInChildren<ScoreManager>().score;
+        saveData.playerData.maxHP = activePlayers[0].GetComponentInChildren<PlayerHPController>().maxHP;
+        saveData.playerData.currentHP = activePlayers[0].GetComponentInChildren<PlayerHPController>().currentHP;
 
         //foreach (Enemy enemy in _enemies)
         //{
@@ -100,7 +105,9 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void LoadFromSaveData(SaveData saveData)
     {
-        activePlayers[0].GetComponentInChildren<ScoreManager>().score = saveData.playerScore;
+        activePlayers[0].GetComponentInChildren<ScoreManager>().score = saveData.playerData.playerScore;
+        activePlayers[0].GetComponentInChildren<PlayerHPController>().maxHP = saveData.playerData.maxHP;
+        activePlayers[0].GetComponentInChildren<PlayerHPController>().currentHP = saveData.playerData.currentHP;
     }
     
     #endregion

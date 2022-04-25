@@ -2,8 +2,16 @@ using UnityEngine;
 
 [System.Serializable]
 public class SaveData
-{
-    public int playerScore;
+{   
+    [System.Serializable]
+    public struct PlayerData
+    {
+        public int playerScore;
+        public int maxHP;
+        public int currentHP;
+    }
+    
+    public PlayerData playerData;
 
     public string SaveToJson()
     {
