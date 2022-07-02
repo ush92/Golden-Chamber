@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive)
         {
-            velocity = context.ReadValue<Vector2>().x;
+            velocity = context.ReadValue<Vector2>().x; 
         }
     }
 
