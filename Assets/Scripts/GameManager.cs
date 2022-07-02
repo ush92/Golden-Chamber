@@ -5,14 +5,13 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
-    private int maxPlayers = 2;
+    private int maxPlayers = 1;
     public List<PlayerController> activePlayers = new List<PlayerController>();
 
     public GameObject playerSpawnEffect;
     public Checkpoint currentCheckPoint;
 
     public Camera camera1;
-    public Camera camera2;
 
     public static bool onePlayerMode = true;
 
@@ -37,7 +36,6 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             activePlayers.Add(newPlayer);
             PlayerRespawnEffect();
-            camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
         }
         else
         {

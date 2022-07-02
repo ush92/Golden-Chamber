@@ -7,10 +7,7 @@ public class PlayerController : MonoBehaviour
     #region variables
 
     private bool isLoaded = false;
-
     public bool isAlive;
-    public bool isKeyboard2;
-    public GameObject player2;
 
     public Rigidbody2D playerRB;
     public float moveSpeed;
@@ -32,8 +29,6 @@ public class PlayerController : MonoBehaviour
     public float attackCooldown = 0.25f;
     private float attackCounter;
 
-    private string cameraSplitStyle;
-
     public float deathTime = 3f;
     private float deathTimeCounter;
     public GameObject playerdeathEffect;
@@ -46,39 +41,12 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.AddPlayer(this);
         isAlive = true;
-
-        SetDefaultCamera();
     }   
-
-    private void SetDefaultCamera()
-    {
-        if (GameManager.instance.activePlayers.Count == 1)
-        {
-            GameManager.instance.camera1.rect = new Rect(0f, 0f, 1f, 1f); ;
-        }
-        else if (GameManager.instance.activePlayers.Count == 2)
-        {
-
-            GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
-            GameManager.instance.camera1.orthographicSize = 4f;
-
-            GameManager.instance.camera2.rect = new Rect(0f, 0f, 1f, 0.5f);
-            GameManager.instance.camera2.orthographicSize = 4f;
-
-            GameManager.instance.camera2.GetComponent<SmoothFollow>().target = GameManager.instance.activePlayers[1].transform;
-            cameraSplitStyle = Consts.HORIZONTAL;
-        }
-    }
 
     void Update()
     {
         if (isAlive)
         {
-            if (isKeyboard2)
-            {
-                Player2Control();
-            }
-
             CheckGround();
             Knockback();
             AttackCooldown();
@@ -96,14 +64,6 @@ public class PlayerController : MonoBehaviour
                 deathTimeCounter = deathTime;
             }
         }
-
-        if (GameManager.onePlayerMode == false && GameManager.instance.activePlayers.Count < 2)
-        {
-            player2.SetActive(true);
-            //Instantiate(player2, GameManager.instance.currentCheckPoint.transform.position, transform.rotation);           
-        }
-
-        SwitchCamera();
     }
 
     private void LateUpdate() //Load
@@ -112,45 +72,6 @@ public class PlayerController : MonoBehaviour
         {
             GameManager.LoadJsonData(GameManager.instance);
             isLoaded = true;
-        }
-    }
-
-    private void Player2Control()
-    {
-        velocity = 0f;
-
-        if (Keyboard.current.lKey.isPressed)
-        {
-            velocity += 1f;
-        }
-        if (Keyboard.current.jKey.isPressed)
-        {
-            velocity -= 1f;
-        }
-        if (isGrounded && Keyboard.current.rightShiftKey.wasPressedThisFrame)
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-        }
-        if (!isGrounded && Keyboard.current.rightShiftKey.wasReleasedThisFrame && playerRB.velocity.y > 0)
-        {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
-        }
-        if (Keyboard.current.enterKey.wasPressedThisFrame && attackCounter <= 0)
-        {
-            playerAnimator.SetTrigger(Consts.ATTACK);
-            attackCounter = attackCooldown;
-        }
-        if (Keyboard.current.iKey.isPressed && isGrounded)
-        {
-            GameManager.instance.camera2.GetComponent<SmoothFollow>().isLookingUp = true;
-        }
-        if (Keyboard.current.iKey.wasReleasedThisFrame)
-        {
-            GameManager.instance.camera2.GetComponent<SmoothFollow>().isLookingUp = false;
-        }
-        if (Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            UseTrigger();
         }
     }
 
@@ -297,22 +218,8 @@ public class PlayerController : MonoBehaviour
     private static void LoadLevel(string levelName)
     {
         GameManager.SaveJsonData(GameManager.instance); //autosave
-        
-        if (GameManager.onePlayerMode)
-        {
-            SceneManager.LoadScene(levelName);
-        }
-        else
-        {
-            if (GameManager.instance.activePlayers[0].triggerObject == GameManager.instance.activePlayers[1].triggerObject)
-            {
-                SceneManager.LoadScene(levelName);
-            }
-            else
-            {
-                Debug.Log("Obaj gracze musz¹ stac na drzwiach zeby sie przeteleportowac");
-            }
-        }
+                                                        
+        SceneManager.LoadScene(levelName);
     }
 
     public void Death()
@@ -347,28 +254,5 @@ public class PlayerController : MonoBehaviour
         hpController.currentHP = hpController.maxHP;
 
         GameManager.instance.PlayerRespawnEffect();
-    }
-
-    public void SwitchCamera()
-    {
-        if (GameManager.instance.activePlayers.Count == 2 && Keyboard.current.f2Key.wasPressedThisFrame)
-        {
-            if (cameraSplitStyle == Consts.HORIZONTAL)
-            {
-                GameManager.instance.camera1.rect = new Rect(0, 0f, 0.5f, 1f);
-                GameManager.instance.camera1.orthographicSize = 8f;
-                GameManager.instance.camera2.rect = new Rect(0.5f, 0f, 0.5f, 1f);
-                GameManager.instance.camera2.orthographicSize = 8f;
-                cameraSplitStyle = Consts.VERTICAL;
-            }
-            else if (cameraSplitStyle == Consts.VERTICAL)
-            {
-                GameManager.instance.camera1.rect = new Rect(0, 0.5f, 1f, 0.5f);
-                GameManager.instance.camera1.orthographicSize = 4f;
-                GameManager.instance.camera2.rect = new Rect(0f, 0f, 1f, 0.5f);
-                GameManager.instance.camera2.orthographicSize = 4f;
-                cameraSplitStyle = Consts.HORIZONTAL;
-            }
-        }
     }
 }

@@ -27,13 +27,6 @@ public class MainMenu : MonoBehaviour
 
     public void NewGame_OnePlayer()
     {
-        GameManager.onePlayerMode = true;
-        SceneManager.LoadScene("LevelMap");
-    }
-
-    public void NewGame_TwoPlayers()
-    {
-        GameManager.onePlayerMode = false;
         SceneManager.LoadScene("LevelMap");
     }
 
