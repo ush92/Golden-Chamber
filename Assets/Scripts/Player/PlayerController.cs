@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.AddPlayer(this);
         isAlive = true;
-    }   
+    }
 
     void Update()
     {
@@ -127,7 +128,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isAlive)
         {
-            velocity = context.ReadValue<Vector2>().x; 
+            velocity = context.ReadValue<Vector2>().x;
         }
     }
 
@@ -147,6 +148,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     public void Look(InputAction.CallbackContext context)
     {
         if (isAlive)
@@ -154,7 +156,7 @@ public class PlayerController : MonoBehaviour
             if (isGrounded)
             {
                 GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
-            }  
+            }
         }
     }
 
@@ -218,7 +220,7 @@ public class PlayerController : MonoBehaviour
     private static void LoadLevel(string levelName)
     {
         GameManager.SaveJsonData(GameManager.instance); //autosave
-                                                        
+
         SceneManager.LoadScene(levelName);
     }
 
@@ -255,4 +257,59 @@ public class PlayerController : MonoBehaviour
 
         GameManager.instance.PlayerRespawnEffect();
     }
+
+    #region Touch control
+
+    public void JumpOnTouch()
+    {
+        if (isGrounded)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+        }
+    }
+    public void JumpStopOnTouch()
+    {
+        if (!isGrounded && playerRB.velocity.y > 0)
+        {
+            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+        }
+    }
+    public void FireOnTouch()
+    {
+        if (attackCounter <= 0)
+        {
+            playerAnimator.SetTrigger(Consts.ATTACK);
+            attackCounter = attackCooldown;
+        }
+    }
+    public void LeftOnTouch()
+    {
+        velocity -= 1f;
+    }
+    public void RightOnTouch()
+    {
+        velocity += 1f;
+    }
+    public void MoveStopTouch()
+    {
+        velocity = 0;
+    }
+    public void UseOnTouch()
+    {
+        UseTrigger();
+    }
+    public void LookOnTouch()
+    {
+        if (isGrounded)
+        {
+            GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = true;
+        }
+    }
+    public void LookStopOnTouch()
+    {
+        GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = false;
+    }
+
+    #endregion
+
 }
