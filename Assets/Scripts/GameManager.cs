@@ -62,7 +62,24 @@ public class GameManager : MonoBehaviour, ISaveable
 
     private void OnApplicationQuit()
     {
-        SaveJsonData(this);     
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+    }
+    private void OnApplicationPause()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+    }
+    private void OnApplicationFocus()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
     }
 
     #region Save&Load
@@ -80,6 +97,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {
+        
         saveData.playerData.playerScore  = activePlayer.GetComponentInChildren<ScoreManager>().score;
         saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
         saveData.playerData.currentHP = activePlayer.GetComponentInChildren<PlayerHPController>().currentHP;
