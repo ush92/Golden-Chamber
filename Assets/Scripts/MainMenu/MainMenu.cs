@@ -16,13 +16,13 @@ public class MainMenu : MonoBehaviour
     public void Main_Continue()
     {
         GameManager.SetNewGameFlag(false);
-        SceneManager.LoadScene("LevelMap");
+        SceneManager.LoadScene(Consts.LEVEL_MAP);
     }
 
     public void Main_NewGame()
     {
         GameManager.SetNewGameFlag(true);
-        SceneManager.LoadScene("LevelMap");
+        SceneManager.LoadScene(Consts.LEVEL_MAP);
     }
 
     public void Main_Quit()

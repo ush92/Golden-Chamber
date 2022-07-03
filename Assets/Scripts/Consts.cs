@@ -14,6 +14,6 @@ public class Consts : MonoBehaviour
     public const string YSPEED = "ySpeed";
 
     public const string LEVEL_MAP = "LevelMap";
-    public const string LEVEL1 = "Level1";
-    public const string LEVEL2 = "Level2";
+    public const string LEVEL1_1 = "Level1_1";
+    public const string LEVEL1_2 = "Level1_2";
 }

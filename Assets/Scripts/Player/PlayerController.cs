@@ -203,8 +203,8 @@ public class PlayerController : MonoBehaviour
             case "":
                 break;
 
-            case Consts.LEVEL1:
-                LoadLevel(Consts.LEVEL1);
+            case Consts.LEVEL1_1:
+                LoadLevel(Consts.LEVEL1_1);
                 break;
 
             case Consts.LEVEL_MAP:
