@@ -5,15 +5,14 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
-    private int maxPlayers = 1;
-    public List<PlayerController> activePlayers = new List<PlayerController>();
+    public PlayerController activePlayer;
 
     public GameObject playerSpawnEffect;
     public Checkpoint currentCheckPoint;
 
-    public Camera camera1;
+    public Camera playerCamera;
 
-    public static bool onePlayerMode = true;
+    private static bool isNewGame;
 
     private void Awake()
     {
@@ -30,11 +29,16 @@ public class GameManager : MonoBehaviour, ISaveable
         
     }
 
+    public static void SetNewGameFlag(bool _isNewGame)
+    {
+        isNewGame = _isNewGame;
+    }
+
     public void AddPlayer(PlayerController newPlayer)
     {
-        if(activePlayers.Count < maxPlayers)
+        if(!activePlayer)
         {
-            activePlayers.Add(newPlayer);
+            activePlayer = newPlayer;
             PlayerRespawnEffect();
         }
         else
@@ -58,10 +62,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     private void OnApplicationQuit()
     {
-        if (activePlayers.Count > 0)
-        {
-            SaveJsonData(this);
-        }
+        SaveJsonData(this);     
     }
 
     #region Save&Load
@@ -79,9 +80,9 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {
-        saveData.playerData.playerScore  = activePlayers[0].GetComponentInChildren<ScoreManager>().score;
-        saveData.playerData.maxHP = activePlayers[0].GetComponentInChildren<PlayerHPController>().maxHP;
-        saveData.playerData.currentHP = activePlayers[0].GetComponentInChildren<PlayerHPController>().currentHP;
+        saveData.playerData.playerScore  = activePlayer.GetComponentInChildren<ScoreManager>().score;
+        saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
+        saveData.playerData.currentHP = activePlayer.GetComponentInChildren<PlayerHPController>().currentHP;
 
         //foreach (Enemy enemy in _enemies)
         //{
@@ -103,9 +104,16 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void LoadFromSaveData(SaveData saveData)
     {
-        activePlayers[0].GetComponentInChildren<ScoreManager>().score = saveData.playerData.playerScore;
-        activePlayers[0].GetComponentInChildren<PlayerHPController>().maxHP = saveData.playerData.maxHP;
-        activePlayers[0].GetComponentInChildren<PlayerHPController>().currentHP = saveData.playerData.currentHP;
+        if (isNewGame)
+        {
+            isNewGame = false;
+        }
+        else
+        {
+            activePlayer.GetComponentInChildren<ScoreManager>().score = saveData.playerData.playerScore;
+            activePlayer.GetComponentInChildren<PlayerHPController>().maxHP = saveData.playerData.maxHP;
+            activePlayer.GetComponentInChildren<PlayerHPController>().currentHP = saveData.playerData.currentHP;
+        }
     }
     
     #endregion

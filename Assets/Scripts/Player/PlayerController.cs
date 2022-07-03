@@ -155,7 +155,7 @@ public class PlayerController : MonoBehaviour
         {
             if (isGrounded)
             {
-                GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
+                GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
             }
         }
     }
@@ -302,12 +302,12 @@ public class PlayerController : MonoBehaviour
     {
         if (isGrounded)
         {
-            GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = true;
+            GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = true;
         }
     }
     public void LookStopOnTouch()
     {
-        GameManager.instance.camera1.GetComponent<SmoothFollow>().isLookingUp = false;
+        GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = false;
     }
 
     #endregion

@@ -10,14 +10,19 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        defaultButtons[0].Select();
+        
+    }
+
+    public void Main_Continue()
+    {
+        GameManager.SetNewGameFlag(false);
+        SceneManager.LoadScene("LevelMap");
     }
 
     public void Main_NewGame()
     {
-        screens[0].gameObject.SetActive(false);
-        screens[1].gameObject.SetActive(true);
-        defaultButtons[1].Select();
+        GameManager.SetNewGameFlag(true);
+        SceneManager.LoadScene("LevelMap");
     }
 
     public void Main_Quit()
@@ -25,15 +30,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void NewGame_OnePlayer()
-    {
-        SceneManager.LoadScene("LevelMap");
-    }
-
-    public void NewGame_Back()
-    {
-        screens[1].gameObject.SetActive(false);
-        screens[0].gameObject.SetActive(true);
-        defaultButtons[0].Select();
-    }
+    //public void NewGame_Back()
+    //{
+    //    screens[1].gameObject.SetActive(false);
+    //    screens[0].gameObject.SetActive(true);
+    //    defaultButtons[0].Select();
+    //}
 }
