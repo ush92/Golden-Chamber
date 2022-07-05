@@ -209,6 +209,7 @@ public class PlayerController : MonoBehaviour
 
             case Consts.LEVEL_MAP:
                 LoadLevel(Consts.LEVEL_MAP);
+                //TODO: check current level and teleport to proper doors on map
                 break;
 
             default:
