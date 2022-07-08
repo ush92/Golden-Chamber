@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public Camera playerCamera;
 
     private static bool isNewGame;
+    private static string profileName;
 
     private void Awake()
     {
@@ -29,9 +30,10 @@ public class GameManager : MonoBehaviour, ISaveable
         
     }
 
-    public static void SetNewGameFlag(bool _isNewGame)
+    public static void CreateGame(bool _isNewGame, string _profileName)
     {
         isNewGame = _isNewGame;
+        profileName = _profileName;
     }
 
     public void AddPlayer(PlayerController newPlayer)
@@ -89,7 +91,7 @@ public class GameManager : MonoBehaviour, ISaveable
         SaveData saveData = new SaveData();
         _gameManager.PopulateSaveData(saveData);
 
-        if (FileManager.WriteToFile("SaveData01.dat", saveData.SaveToJson()))
+        if (FileManager.WriteToFile(profileName + ".dat", saveData.SaveToJson()))
         {
             Debug.Log("Save successful");
         }
@@ -110,7 +112,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public static void LoadJsonData(GameManager _gameManager)
     {
-        if (FileManager.LoadFromFile("SaveData01.dat", out var json))
+        if (FileManager.LoadFromFile(profileName + ".dat", out var json))
         {
             SaveData saveData = new SaveData();
             saveData.LoadFromJson(json);
