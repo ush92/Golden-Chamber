@@ -6,6 +6,8 @@ public class SaveData
     [System.Serializable]
     public struct PlayerData
     {
+        public string playerProfileName;
+
         public int playerScore;
         public int maxHP;
         public int currentHP;
