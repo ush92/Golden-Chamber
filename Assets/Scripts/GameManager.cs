@@ -62,28 +62,6 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
-    private void OnApplicationPause()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
-    private void OnApplicationFocus()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
-
     #region Save&Load
 
     public static void SaveJsonData(GameManager _gameManager)
@@ -135,6 +113,28 @@ public class GameManager : MonoBehaviour, ISaveable
             activePlayer.GetComponentInChildren<PlayerHPController>().currentHP = saveData.playerData.currentHP;
         }
     }
-    
+
+    private void OnApplicationQuit()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+    }
+    private void OnApplicationPause()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+    }
+    private void OnApplicationFocus()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+    }
+
     #endregion
 }
