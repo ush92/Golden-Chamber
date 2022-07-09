@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -6,12 +7,15 @@ public class SaveData
     [System.Serializable]
     public struct PlayerData
     {
-        public int playerScore;
-        public int maxHP;
-        public int currentHP;
+        public List<bool> levelList;
     }
     
     public PlayerData playerData;
+
+    public SaveData()
+    {
+        playerData.levelList = new List<bool>(new bool[15]);
+    }
 
     public string SaveToJson()
     {

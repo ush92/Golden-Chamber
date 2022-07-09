@@ -35,9 +35,6 @@ public class MainMenu : MonoBehaviour
 
     public void Main_Continue()
     {
-        //GameManager.SetNewGameFlag(false);
-        //SceneManager.LoadScene(Consts.LEVEL_MAP);
-
         screens[2].gameObject.SetActive(true);
         screens[0].gameObject.SetActive(false);
     }
@@ -57,11 +54,11 @@ public class MainMenu : MonoBehaviour
     {
         if (newProfileInput.text.Trim().Equals(""))
         {
-            newProfileErrorLabel.text = "Podaj nazwê profilu";  
+            newProfileErrorLabel.text = Consts.NEW_PROFILE_ERROR_EMPTY_NAME;
         }
         else if (FileManager.IsFileExist(newProfileInput.text + ".dat"))
         {
-            newProfileErrorLabel.text = "Profil o podanej nazwie ju¿ istnieje";
+            newProfileErrorLabel.text = Consts.NEW_PROFILE_ERROR_ALREADY_USED;
         }
         else
         {
@@ -70,20 +67,22 @@ public class MainMenu : MonoBehaviour
                 Debug.Log("Profile created successfully");
             }
 
-            GameManager.CreateGame(true, newProfileInput.text);
+            GameManager.CreateGame(_isNewGame: true, newProfileInput.text);
             SceneManager.LoadScene(Consts.LEVEL_MAP);
         }
     }
 
     public void NewGame_Back()
     {
+        newProfileInput.text = "";
+
         screens[1].gameObject.SetActive(false);
         screens[0].gameObject.SetActive(true);
     }
 
     public void Continue_OpenProfile(string profileName)
     {
-        GameManager.CreateGame(false, profileName);
+        GameManager.CreateGame(_isNewGame: false, profileName);
         SceneManager.LoadScene(Consts.LEVEL_MAP);
 
         Debug.Log($"Game {profileName} loaded");

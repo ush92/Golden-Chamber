@@ -1,40 +1,43 @@
 fileFormatVersion: 2
-guid: a2e29b27ad4ee5f40b2e5980ed48e73f
+guid: 2139fd76163e5614a80c038f2ee494b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6367560908665664636
-    second: Idle (32x32)_0
+      213: -111482460367439567
+    second: Player_King BAD_0
   - first:
-      213: -6056987297122131021
-    second: Idle (32x32)_1
+      213: -5466158090709565689
+    second: Player_King BAD_1
   - first:
-      213: 8416797952724722639
-    second: Idle (32x32)_2
+      213: 7005714413807732397
+    second: Player_King BAD_2
   - first:
-      213: 4883129791460916795
-    second: Idle (32x32)_3
+      213: 4264101458784482444
+    second: Player_King BAD_3
   - first:
-      213: 4278371960119211202
-    second: Idle (32x32)_4
+      213: 5586476473734002187
+    second: Player_King BAD_4
   - first:
-      213: 8644832591467991550
-    second: Idle (32x32)_5
+      213: -2326068306932136786
+    second: Player_King BAD_5
   - first:
-      213: -7152759390613953277
-    second: Idle (32x32)_6
+      213: 5535044733525206616
+    second: Player_King BAD_6
   - first:
-      213: 6456874251884481089
-    second: Idle (32x32)_7
+      213: 6043679582507286442
+    second: Player_King BAD_7
   - first:
-      213: -2526832996998184344
-    second: Idle (32x32)_8
+      213: -560340585930827148
+    second: Player_King BAD_8
   - first:
-      213: 4392827059107796345
-    second: Idle (32x32)_9
+      213: 89570541706568559
+    second: Player_King BAD_9
   - first:
-      213: -1363835404106015672
-    second: Idle (32x32)_10
+      213: 5088116612925060768
+    second: Player_King BAD_10
+  - first:
+      213: -3068503123094588598
+    second: Player_King BAD_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -79,7 +82,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -148,13 +151,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle (32x32)_0
+      name: Player_King BAD_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 0
-        width: 24
-        height: 28
+        x: 9
+        y: 32
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +165,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48bc1512711e1a7a0800000000000000
-      internalID: -6367560908665664636
+      spriteID: 139bc1ffa4fe37ef0800000000000000
+      internalID: -111482460367439567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_1
+      name: Player_King BAD_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
-        width: 24
-        height: 28
+        x: 41
+        y: 32
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b36bf1052241fba0800000000000000
-      internalID: -6056987297122131021
+      spriteID: 70ff02d6d2e4424b0800000000000000
+      internalID: -5466158090709565689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_2
+      name: Player_King BAD_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 24
-        height: 28
+        x: 73
+        y: 33
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc36466d4297ec470800000000000000
-      internalID: 8416797952724722639
+      spriteID: da608d8342c493160800000000000000
+      internalID: 7005714413807732397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_3
+      name: Player_King BAD_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 24
-        height: 29
+        x: 105
+        y: 32
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +228,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3eb7246cac54c340800000000000000
-      internalID: 4883129791460916795
+      spriteID: c84f2114fa12d2b30800000000000000
+      internalID: 4264101458784482444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_4
+      name: Player_King BAD_4
       rect:
         serializedVersion: 2
-        x: 134
-        y: 0
-        width: 24
-        height: 29
+        x: 136
+        y: 33
+        width: 17
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +249,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c4b5e341a4df5b30800000000000000
-      internalID: 4278371960119211202
+      spriteID: b06fdf221c6278d40800000000000000
+      internalID: 5586476473734002187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_5
+      name: Player_King BAD_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 0
-        width: 24
-        height: 30
+        x: 168
+        y: 32
+        width: 16
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +270,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef15b2d807d98f770800000000000000
-      internalID: 8644832591467991550
+      spriteID: ea4040ae23528bfd0800000000000000
+      internalID: -2326068306932136786
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_6
+      name: Player_King BAD_6
       rect:
         serializedVersion: 2
-        x: 198
-        y: 0
-        width: 24
-        height: 30
+        x: 8
+        y: 1
+        width: 16
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,20 +291,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 305ad9e2b3b4cbc90800000000000000
-      internalID: -7152759390613953277
+      spriteID: 856aaa5fbdd60dc40800000000000000
+      internalID: 5535044733525206616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_7
+      name: Player_King BAD_7
       rect:
         serializedVersion: 2
-        x: 230
-        y: 0
-        width: 24
-        height: 30
+        x: 41
+        y: 1
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,20 +312,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14ac0fe0cec6b9950800000000000000
-      internalID: 6456874251884481089
+      spriteID: aafb0ab3f867fd350800000000000000
+      internalID: 6043679582507286442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_8
+      name: Player_King BAD_8
       rect:
         serializedVersion: 2
-        x: 262
+        x: 73
         y: 0
-        width: 24
-        height: 30
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,20 +333,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8620037e6c2eeecd0800000000000000
-      internalID: -2526832996998184344
+      spriteID: 47adb56b4354938f0800000000000000
+      internalID: -560340585930827148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_9
+      name: Player_King BAD_9
       rect:
         serializedVersion: 2
-        x: 294
+        x: 105
         y: 0
-        width: 24
-        height: 29
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,20 +354,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97518d1afe476fc30800000000000000
-      internalID: 4392827059107796345
+      spriteID: f6362c0eee73e3100800000000000000
+      internalID: 89570541706568559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle (32x32)_10
+      name: Player_King BAD_10
       rect:
         serializedVersion: 2
-        x: 326
+        x: 137
         y: 0
-        width: 24
-        height: 29
+        width: 15
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,8 +375,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84cd8260deea21de0800000000000000
-      internalID: -1363835404106015672
+      spriteID: 0a67929f91f9c9640800000000000000
+      internalID: 5088116612925060768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_King BAD_11
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4335cbcaac7a65d0800000000000000
+      internalID: -3068503123094588598
       vertices: []
       indices: 
       edges: []

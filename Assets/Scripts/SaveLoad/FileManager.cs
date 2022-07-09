@@ -18,7 +18,8 @@ public static class FileManager
         catch (Exception ex)
         {
             Debug.Log($"failed to write to {fullPath} with exception {ex}");
-        }    
+        }
+
         return false;
     }
 
@@ -54,6 +55,7 @@ public static class FileManager
         {
             Debug.Log($"failed to check path {fullPath} with exception {ex}");
         }
+
         return false;
     }
 
@@ -77,6 +79,7 @@ public static class FileManager
         {
             Debug.Log($"failed to check path {Path.Combine(Application.persistentDataPath)} with exception {ex}");
         }
+
         return null;
     }
 }

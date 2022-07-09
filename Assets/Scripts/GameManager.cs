@@ -1,19 +1,22 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
     public PlayerController activePlayer;
-
+    public Camera playerCamera;
+    public static Vector3 levelMapLastPosition;
     public GameObject playerSpawnEffect;
     public Checkpoint currentCheckPoint;
 
-    public Camera playerCamera;
-
     private static bool isNewGame;
     private static string profileName;
+    public string currentLevel;
+
+    public static List<bool> levelList = new List<bool>(new bool[15]);
 
     private void Awake()
     {
@@ -62,30 +65,40 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
+    public void BackToMainMenu()
+    {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+
+        levelMapLastPosition = Vector3.zero;
+        SceneManager.LoadScene(Consts.MAIN_MENU);
+    }
+
     #region Save&Load
 
     public static void SaveJsonData(GameManager _gameManager)
-    {
+    {     
         SaveData saveData = new SaveData();
         _gameManager.PopulateSaveData(saveData);
 
         if (FileManager.WriteToFile(profileName + ".dat", saveData.SaveToJson()))
         {
-            Debug.Log("Save successful");
+            //Debug.Log("Save successful");
         }
     }
 
     public void PopulateSaveData(SaveData saveData)
-    {
-        
-        saveData.playerData.playerScore  = activePlayer.GetComponentInChildren<ScoreManager>().score;
-        saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
-        saveData.playerData.currentHP = activePlayer.GetComponentInChildren<PlayerHPController>().currentHP;
+    {     
+        //saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
 
-        //foreach (Enemy enemy in _enemies)
-        //{
-        //    enemy.PopulateSaveData(saveData);
-        //}
+        //0 level1_1; 1 level1_2; 2 level1_3; 3 level1_4; 4 level2_1; 5 level2_2; 6 level2_3; 7 level3_1;
+        //8 level3_2; 9 level3_3; 10 level3_4; 11 level4_1; 12 level4_2; 13 level4_3; 14 level5_1;
+        for (int i = 0; i <= 14; i++)
+        {
+            saveData.playerData.levelList[i] = levelList[i];
+        }
     }
 
     public static void LoadJsonData(GameManager _gameManager)
@@ -105,12 +118,22 @@ public class GameManager : MonoBehaviour, ISaveable
         if (isNewGame)
         {
             isNewGame = false;
+
+            //0 level1_1; 1 level1_2; 2 level1_3; 3 level1_4; 4 level2_1; 5 level2_2; 6 level2_3; 7 level3_1;
+            //8 level3_2; 9 level3_3; 10 level3_4; 11 level4_1; 12 level4_2; 13 level4_3; 14 level5_1;
+            for (int i = 0; i <= 14; i++)
+            {
+                levelList[i] = false;
+            }
         }
         else
         {
-            activePlayer.GetComponentInChildren<ScoreManager>().score = saveData.playerData.playerScore;
-            activePlayer.GetComponentInChildren<PlayerHPController>().maxHP = saveData.playerData.maxHP;
-            activePlayer.GetComponentInChildren<PlayerHPController>().currentHP = saveData.playerData.currentHP;
+            //saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
+
+            for (int i = 0; i <= 14; i++)
+            {
+                levelList[i] = saveData.playerData.levelList[i];
+            }
         }
     }
 

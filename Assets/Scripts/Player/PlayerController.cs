@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
     public GameObject playerdeathEffect;
 
     public string triggerObject;
+    private bool lockTriggerUsing = false;
 
     #endregion
 
@@ -42,6 +44,11 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.instance.AddPlayer(this);
         isAlive = true;
+
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP) && !GameManager.levelMapLastPosition.Equals(float3.zero))
+        {
+            playerRB.transform.position = GameManager.levelMapLastPosition;
+        }
     }
 
     void Update()
@@ -148,7 +155,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-
     public void Look(InputAction.CallbackContext context)
     {
         if (isAlive)
@@ -198,30 +204,55 @@ public class PlayerController : MonoBehaviour
 
     private void UseTrigger()
     {
-        switch (triggerObject)
+        if(triggerObject.Equals("LevelMap"))
         {
-            case "":
-                break;
+            if (!lockTriggerUsing)
+            {
+                LoadLevel("LevelMap");
+                lockTriggerUsing = true;
+            }
+        }
+        else if (triggerObject.StartsWith("Complete_"))
+        {
+            if (!lockTriggerUsing)
+            {
+                try
+                {
+                    int levelNum = Int32.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
+                    GameManager.levelList[levelNum] = true;
+                }
+                catch
+                {
+                    Debug.Log($"Drzwi ukonczenia rundy zawieraja z³a nazwe: {triggerObject}. Powinna konczyc siê odpowiednim indexem listy leveli");
+                }
 
-            case Consts.LEVEL1_1:
-                LoadLevel(Consts.LEVEL1_1);
-                break;
-
-            case Consts.LEVEL_MAP:
-                LoadLevel(Consts.LEVEL_MAP);
-                //TODO: check current level and teleport to proper doors on map
-                break;
-
-            default:
-                Debug.Log("uzyto nieobslugiwany trigger");
-                break;
+                LoadLevel("LevelMap");
+                lockTriggerUsing = true;
+            }
+        }
+        else if (triggerObject.StartsWith("Level"))
+        {
+            if (!lockTriggerUsing)
+            {
+                GameManager.levelMapLastPosition = playerRB.transform.position;
+                LoadLevel(triggerObject);
+                lockTriggerUsing = true;
+            }
+        }
+        else
+        {
+            switch (triggerObject)
+            {
+                default:
+                    Debug.Log("Uzyto nieobslugiwany trigger");
+                    break;
+            }
         }
     }
 
     private static void LoadLevel(string levelName)
     {
         GameManager.SaveJsonData(GameManager.instance); //autosave
-
         SceneManager.LoadScene(levelName);
     }
 
@@ -232,9 +263,9 @@ public class PlayerController : MonoBehaviour
 
         Instantiate(playerdeathEffect, transform.position, transform.rotation);
 
-        this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        this.GetComponent<SpriteRenderer>().enabled = false;
-        this.GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<CapsuleCollider2D>().enabled = false;
         stomper.gameObject.SetActive(false);
 
         deathTimeCounter = deathTime;
@@ -244,9 +275,9 @@ public class PlayerController : MonoBehaviour
     {
         isAlive = true;
 
-        this.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        this.GetComponent<SpriteRenderer>().enabled = true;
-        this.GetComponent<CapsuleCollider2D>().enabled = true;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<SpriteRenderer>().enabled = true;
+        GetComponent<CapsuleCollider2D>().enabled = true;
         stomper.gameObject.SetActive(true);
 
         playerRB.velocity = new Vector3(0, 0, 0);
