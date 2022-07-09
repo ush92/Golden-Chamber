@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5879208601855317516, guid: ec1de3c65b75a624cbfc997020ab6170, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5879208601855317519, guid: ec1de3c65b75a624cbfc997020ab6170, type: 3}
       propertyPath: m_Name
       value: JumpPad Down
