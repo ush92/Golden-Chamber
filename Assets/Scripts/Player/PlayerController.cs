@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
             {
                 try
                 {
-                    int levelNum = Int32.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
+                    int levelNum = int.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
                     GameManager.levelList[levelNum] = true;
                 }
                 catch
