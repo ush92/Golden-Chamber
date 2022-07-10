@@ -65,11 +65,14 @@ public class EnemyHPController : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        currentHP -= damage;
+        if (hitFlashCounter <= 0)
+        {
+            currentHP -= damage;
 
-        hitFlashCounter = hitFlashTime;
-        hpBarFlashCounter = hpBarFlashTime;
+            hitFlashCounter = hitFlashTime;
+            hpBarFlashCounter = hpBarFlashTime;
 
-        UpdateHPDisplay();
+            UpdateHPDisplay();
+        }
     }
 }
