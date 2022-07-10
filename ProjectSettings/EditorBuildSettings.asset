@@ -6,16 +6,58 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: f2cae7255ad851443b8b328c14f00e83
   - enabled: 1
     path: Assets/Scenes/LevelMap.unity
     guid: 5ada3ef34d161784a8591f28f3ca7264
   - enabled: 1
-    path: Assets/Scenes/Level1_1.unity
+    path: Assets/Scenes/Levels/Level1_1.unity
     guid: 364b10192a92f0e45a9c622ecc7e9752
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1_2.unity
+    guid: 34dd101b090ceab42988c7ec425716d5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1_3.unity
+    guid: 0997e376d6f372d4baaf50a979b047bb
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level1_4.unity
+    guid: 83f59b01c16fe2541a7559f5707baf92
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2_1.unity
+    guid: 930574dfcd42e854f8864758e7706b19
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2_2.unity
+    guid: 8e01cbf0722f32441a95c529c6d9a239
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level2_3.unity
+    guid: 8d264af90f590244fa6288c360a9c76e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3_1.unity
+    guid: e09e5698a6a318f4d87a8b1672e38710
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3_2.unity
+    guid: eb85db81fafe9cf4489ff794bf9bb1e1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3_3.unity
+    guid: 9ae0f2cc2e208ac44914855b263f7acc
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level3_4.unity
+    guid: 01f7e971721f9a54eb514ff82a7045d7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4_1.unity
+    guid: f369831bae7a20f419f38da770a303a5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4_2.unity
+    guid: 36fdf5a92f3cf1d46bded2e06e493646
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level4_3.unity
+    guid: d21ad0a73d974c74f9f79d4b76981a6c
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level5_1.unity
+    guid: d328383dcc1815945a79635c8621243f
   - enabled: 0
-    path: Assets/Scenes/TEST.unity
+    path: 
     guid: ef634d10d73d96541ae44c5534786f0e
   - enabled: 0
     path: 
