@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 43b3013d328fd864fad7a55ba32d94ee
+guid: 1915fe26bb7b1da4386c82773b0f2c7a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4612172629948362417
-    second: Start (Moving) (64x64)_0
+      213: -4570538037665054336
+    second: Cherries_0
   - first:
-      213: 5719465518792859888
-    second: Start (Moving) (64x64)_1
+      213: 1192583394799640888
+    second: Cherries_1
   - first:
-      213: 8098369405238339434
-    second: Start (Moving) (64x64)_2
+      213: -711454075617216784
+    second: Cherries_2
   - first:
-      213: -2185004221920062792
-    second: Start (Moving) (64x64)_3
+      213: 5421872390997284277
+    second: Cherries_3
   - first:
-      213: 1959960051128207467
-    second: Start (Moving) (64x64)_4
+      213: 5363950216444597340
+    second: Cherries_4
   - first:
-      213: 3185903466064448317
-    second: Start (Moving) (64x64)_5
+      213: -8821299780031482609
+    second: Cherries_5
   - first:
-      213: -556790594751862936
-    second: Start (Moving) (64x64)_6
+      213: 1075779407821988168
+    second: Cherries_6
   - first:
-      213: -979405774348968759
-    second: Start (Moving) (64x64)_7
+      213: 8792570861257488375
+    second: Cherries_7
   - first:
-      213: -1941286421690932728
-    second: Start (Moving) (64x64)_8
+      213: 3052119051097735194
+    second: Cherries_8
   - first:
-      213: -3085381186346249065
-    second: Start (Moving) (64x64)_9
+      213: 7538113517902980163
+    second: Cherries_9
   - first:
-      213: 4273622735083888487
-    second: Start (Moving) (64x64)_10
+      213: 3848886781296226410
+    second: Cherries_10
   - first:
-      213: -2053020197276343620
-    second: Start (Moving) (64x64)_11
+      213: 7849828697117728527
+    second: Cherries_11
   - first:
-      213: 2059557743127933064
-    second: Start (Moving) (64x64)_12
+      213: -9198102554489520265
+    second: Cherries_12
   - first:
-      213: 6584106804986760886
-    second: Start (Moving) (64x64)_13
+      213: 3941576138836150160
+    second: Cherries_13
   - first:
-      213: -8264053262935308319
-    second: Start (Moving) (64x64)_14
+      213: 5159470138463433966
+    second: Cherries_14
   - first:
-      213: 6183351285161404023
-    second: Start (Moving) (64x64)_15
+      213: -447626866981707952
+    second: Cherries_15
   - first:
-      213: 7763743175354702852
-    second: Start (Moving) (64x64)_16
+      213: -7347827468922994342
+    second: Cherries_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_0
+      name: Cherries_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 9
+        y: 9
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bee9d2129ab10040800000000000000
-      internalID: 4612172629948362417
+      spriteID: 0814098dedf2290c0800000000000000
+      internalID: -4570538037665054336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_1
+      name: Cherries_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 41
+        y: 9
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f06eb8169f9f5f40800000000000000
-      internalID: 5719465518792859888
+      spriteID: 831ef0c6748ec8010800000000000000
+      internalID: 1192583394799640888
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_2
+      name: Cherries_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 73
+        y: 9
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a676f1b2110336070800000000000000
-      internalID: 8098369405238339434
+      spriteID: 0f6f4d4a9486026f0800000000000000
+      internalID: -711454075617216784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_3
+      name: Cherries_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 105
+        y: 9
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b2d9bf9c3e4da1e0800000000000000
-      internalID: -2185004221920062792
+      spriteID: 5b514ea963c5e3b40800000000000000
+      internalID: 5421872390997284277
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_4
+      name: Cherries_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 137
+        y: 9
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68047d384d233b10800000000000000
-      internalID: 1959960051128207467
+      spriteID: c545f0c6d44907a40800000000000000
+      internalID: 5363950216444597340
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_5
+      name: Cherries_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 169
+        y: 8
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b057f925a963c20800000000000000
-      internalID: 3185903466064448317
+      spriteID: f05fdf95692749580800000000000000
+      internalID: -8821299780031482609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_6
+      name: Cherries_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 202
+        y: 7
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 867698177e1e548f0800000000000000
-      internalID: -556790594751862936
+      spriteID: 841e8e3fbafedee00800000000000000
+      internalID: 1075779407821988168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_7
+      name: Cherries_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 234
+        y: 7
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc96f823a37862f0800000000000000
-      internalID: -979405774348968759
+      spriteID: 7f7f3bffc9c750a70800000000000000
+      internalID: 8792570861257488375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_8
+      name: Cherries_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 266
+        y: 7
+        width: 12
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802a2dbe84a2f05e0800000000000000
-      internalID: -1941286421690932728
+      spriteID: a1002ec2b1e4b5a20800000000000000
+      internalID: 3052119051097735194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_9
+      name: Cherries_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 297
+        y: 8
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +369,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794982778268e25d0800000000000000
-      internalID: -3085381186346249065
+      spriteID: 3446d2f4e42cc9860800000000000000
+      internalID: 7538113517902980163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_10
+      name: Cherries_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 329
+        y: 8
+        width: 14
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,20 +390,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f55b42c35fe4b30800000000000000
-      internalID: 4273622735083888487
+      spriteID: a60bbd3a22ef96530800000000000000
+      internalID: 3848886781296226410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_11
+      name: Cherries_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 360
+        y: 9
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +411,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb224a802053283e0800000000000000
-      internalID: -2053020197276343620
+      spriteID: f0f9e5f1c9130fc60800000000000000
+      internalID: 7849828697117728527
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_12
+      name: Cherries_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 391
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,20 +432,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880bb89fad4059c10800000000000000
-      internalID: 2059557743127933064
+      spriteID: 77ff908d576c95080800000000000000
+      internalID: -9198102554489520265
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_13
+      name: Cherries_13
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 423
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,20 +453,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bec77a41427f5b50800000000000000
-      internalID: 6584106804986760886
+      spriteID: 0970c7a6d9a43b630800000000000000
+      internalID: 3941576138836150160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_14
+      name: Cherries_14
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 455
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +474,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e745d9975f205d80800000000000000
-      internalID: -8264053262935308319
+      spriteID: ee4395041ce1a9740800000000000000
+      internalID: 5159470138463433966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_15
+      name: Cherries_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 488
+        y: 9
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,20 +495,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7762089ab3dafc550800000000000000
-      internalID: 6183351285161404023
+      spriteID: 05f52a17cb5b9c9f0800000000000000
+      internalID: -447626866981707952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_16
+      name: Cherries_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 520
+        y: 9
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,8 +516,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c516ea84b5ebb60800000000000000
-      internalID: 7763743175354702852
+      spriteID: a51ccf3f8d5470a90800000000000000
+      internalID: -7347827468922994342
       vertices: []
       indices: 
       edges: []

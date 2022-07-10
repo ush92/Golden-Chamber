@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 43b3013d328fd864fad7a55ba32d94ee
+guid: 110655dcb40249e4bade6dd877b7b3ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4612172629948362417
-    second: Start (Moving) (64x64)_0
+      213: 3776312371561069292
+    second: Melon_0
   - first:
-      213: 5719465518792859888
-    second: Start (Moving) (64x64)_1
+      213: 2611220147007439301
+    second: Melon_1
   - first:
-      213: 8098369405238339434
-    second: Start (Moving) (64x64)_2
+      213: 2353208620542727372
+    second: Melon_2
   - first:
-      213: -2185004221920062792
-    second: Start (Moving) (64x64)_3
+      213: 8821371696964291164
+    second: Melon_3
   - first:
-      213: 1959960051128207467
-    second: Start (Moving) (64x64)_4
+      213: 8382193064667267037
+    second: Melon_4
   - first:
-      213: 3185903466064448317
-    second: Start (Moving) (64x64)_5
+      213: -3288833518496767930
+    second: Melon_5
   - first:
-      213: -556790594751862936
-    second: Start (Moving) (64x64)_6
+      213: 4593711905992766363
+    second: Melon_6
   - first:
-      213: -979405774348968759
-    second: Start (Moving) (64x64)_7
+      213: -2703723749527953725
+    second: Melon_7
   - first:
-      213: -1941286421690932728
-    second: Start (Moving) (64x64)_8
+      213: 4404175151357073704
+    second: Melon_8
   - first:
-      213: -3085381186346249065
-    second: Start (Moving) (64x64)_9
+      213: -4406734128596351014
+    second: Melon_9
   - first:
-      213: 4273622735083888487
-    second: Start (Moving) (64x64)_10
+      213: -8731991674958125425
+    second: Melon_10
   - first:
-      213: -2053020197276343620
-    second: Start (Moving) (64x64)_11
+      213: -7029448349843301362
+    second: Melon_11
   - first:
-      213: 2059557743127933064
-    second: Start (Moving) (64x64)_12
+      213: -909351362157965132
+    second: Melon_12
   - first:
-      213: 6584106804986760886
-    second: Start (Moving) (64x64)_13
+      213: 2938550379556323724
+    second: Melon_13
   - first:
-      213: -8264053262935308319
-    second: Start (Moving) (64x64)_14
+      213: -1316238954007984859
+    second: Melon_14
   - first:
-      213: 6183351285161404023
-    second: Start (Moving) (64x64)_15
+      213: 2641464298146962395
+    second: Melon_15
   - first:
-      213: 7763743175354702852
-    second: Start (Moving) (64x64)_16
+      213: 4074361457694701065
+    second: Melon_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_0
+      name: Melon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 7
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bee9d2129ab10040800000000000000
-      internalID: 4612172629948362417
+      spriteID: cea7fcb1818286430800000000000000
+      internalID: 3776312371561069292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_1
+      name: Melon_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 39
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f06eb8169f9f5f40800000000000000
-      internalID: 5719465518792859888
+      spriteID: 5c1c8bc83eaec3420800000000000000
+      internalID: 2611220147007439301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_2
+      name: Melon_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 71
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a676f1b2110336070800000000000000
-      internalID: 8098369405238339434
+      spriteID: cc416d5c5c648a020800000000000000
+      internalID: 2353208620542727372
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_3
+      name: Melon_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 103
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b2d9bf9c3e4da1e0800000000000000
-      internalID: -2185004221920062792
+      spriteID: c5acd3d12decb6a70800000000000000
+      internalID: 8821371696964291164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_4
+      name: Melon_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 135
+        y: 10
+        width: 18
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68047d384d233b10800000000000000
-      internalID: 1959960051128207467
+      spriteID: ddf3c3a7e28835470800000000000000
+      internalID: 8382193064667267037
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_5
+      name: Melon_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 167
+        y: 9
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b057f925a963c20800000000000000
-      internalID: 3185903466064448317
+      spriteID: 6402a940757bb52d0800000000000000
+      internalID: -3288833518496767930
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_6
+      name: Melon_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 200
+        y: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 867698177e1e548f0800000000000000
-      internalID: -556790594751862936
+      spriteID: b937e25d3a420cf30800000000000000
+      internalID: 4593711905992766363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_7
+      name: Melon_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 232
+        y: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc96f823a37862f0800000000000000
-      internalID: -979405774348968759
+      spriteID: 3ce599223917a7ad0800000000000000
+      internalID: -2703723749527953725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_8
+      name: Melon_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 264
+        y: 8
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802a2dbe84a2f05e0800000000000000
-      internalID: -1941286421690932728
+      spriteID: 8299d3147f5ce1d30800000000000000
+      internalID: 4404175151357073704
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_9
+      name: Melon_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 295
+        y: 9
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +369,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794982778268e25d0800000000000000
-      internalID: -3085381186346249065
+      spriteID: ad78c6d68a228d2c0800000000000000
+      internalID: -4406734128596351014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_10
+      name: Melon_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 327
+        y: 9
+        width: 18
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,20 +390,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f55b42c35fe4b30800000000000000
-      internalID: 4273622735083888487
+      spriteID: f86e370f5dbb1d680800000000000000
+      internalID: -8731991674958125425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_11
+      name: Melon_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 358
+        y: 10
+        width: 20
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +411,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb224a802053283e0800000000000000
-      internalID: -2053020197276343620
+      spriteID: e0c52ac28f1627e90800000000000000
+      internalID: -7029448349843301362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_12
+      name: Melon_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 389
+        y: 11
+        width: 22
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,20 +432,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880bb89fad4059c10800000000000000
-      internalID: 2059557743127933064
+      spriteID: 4b09e8a01c55163f0800000000000000
+      internalID: -909351362157965132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_13
+      name: Melon_13
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 421
+        y: 11
+        width: 22
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,20 +453,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bec77a41427f5b50800000000000000
-      internalID: 6584106804986760886
+      spriteID: c814b084004d7c820800000000000000
+      internalID: 2938550379556323724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_14
+      name: Melon_14
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 453
+        y: 11
+        width: 22
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +474,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e745d9975f205d80800000000000000
-      internalID: -8264053262935308319
+      spriteID: 52582d225a7cbbde0800000000000000
+      internalID: -1316238954007984859
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_15
+      name: Melon_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 486
+        y: 10
+        width: 20
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,20 +495,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7762089ab3dafc550800000000000000
-      internalID: 6183351285161404023
+      spriteID: bdb1de9b8cd58a420800000000000000
+      internalID: 2641464298146962395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_16
+      name: Melon_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 518
+        y: 10
+        width: 20
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,8 +516,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c516ea84b5ebb60800000000000000
-      internalID: 7763743175354702852
+      spriteID: 9067f6ca82a0b8830800000000000000
+      internalID: 4074361457694701065
       vertices: []
       indices: 
       edges: []

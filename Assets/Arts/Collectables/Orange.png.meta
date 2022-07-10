@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 43b3013d328fd864fad7a55ba32d94ee
+guid: 61f7126f47510c440a8093b45f24a946
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4612172629948362417
-    second: Start (Moving) (64x64)_0
+      213: 4121880872312635667
+    second: Orange_0
   - first:
-      213: 5719465518792859888
-    second: Start (Moving) (64x64)_1
+      213: 2344270669467322306
+    second: Orange_1
   - first:
-      213: 8098369405238339434
-    second: Start (Moving) (64x64)_2
+      213: 4308106298786891140
+    second: Orange_2
   - first:
-      213: -2185004221920062792
-    second: Start (Moving) (64x64)_3
+      213: 7874291611447793305
+    second: Orange_3
   - first:
-      213: 1959960051128207467
-    second: Start (Moving) (64x64)_4
+      213: 3285381865569172166
+    second: Orange_4
   - first:
-      213: 3185903466064448317
-    second: Start (Moving) (64x64)_5
+      213: 7043855894265817204
+    second: Orange_5
   - first:
-      213: -556790594751862936
-    second: Start (Moving) (64x64)_6
+      213: 3988426822137034836
+    second: Orange_6
   - first:
-      213: -979405774348968759
-    second: Start (Moving) (64x64)_7
+      213: -2229105888306426895
+    second: Orange_7
   - first:
-      213: -1941286421690932728
-    second: Start (Moving) (64x64)_8
+      213: 6008893271325792001
+    second: Orange_8
   - first:
-      213: -3085381186346249065
-    second: Start (Moving) (64x64)_9
+      213: -7876212812653781381
+    second: Orange_9
   - first:
-      213: 4273622735083888487
-    second: Start (Moving) (64x64)_10
+      213: 3515071814446350068
+    second: Orange_10
   - first:
-      213: -2053020197276343620
-    second: Start (Moving) (64x64)_11
+      213: -7989559414504384385
+    second: Orange_11
   - first:
-      213: 2059557743127933064
-    second: Start (Moving) (64x64)_12
+      213: -5807639670500276790
+    second: Orange_12
   - first:
-      213: 6584106804986760886
-    second: Start (Moving) (64x64)_13
+      213: 6847284126642719973
+    second: Orange_13
   - first:
-      213: -8264053262935308319
-    second: Start (Moving) (64x64)_14
+      213: -7248848098583867319
+    second: Orange_14
   - first:
-      213: 6183351285161404023
-    second: Start (Moving) (64x64)_15
+      213: 4913402539735777752
+    second: Orange_15
   - first:
-      213: 7763743175354702852
-    second: Start (Moving) (64x64)_16
+      213: -3526668604636205124
+    second: Orange_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_0
+      name: Orange_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 9
+        y: 9
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bee9d2129ab10040800000000000000
-      internalID: 4612172629948362417
+      spriteID: 3110ca090dcd33930800000000000000
+      internalID: 4121880872312635667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_1
+      name: Orange_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 41
+        y: 9
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f06eb8169f9f5f40800000000000000
-      internalID: 5719465518792859888
+      spriteID: 2c787fed0c5888020800000000000000
+      internalID: 2344270669467322306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_2
+      name: Orange_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 73
+        y: 9
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a676f1b2110336070800000000000000
-      internalID: 8098369405238339434
+      spriteID: 485c0d97ad779cb30800000000000000
+      internalID: 4308106298786891140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_3
+      name: Orange_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 105
+        y: 9
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b2d9bf9c3e4da1e0800000000000000
-      internalID: -2185004221920062792
+      spriteID: 9961f26308a174d60800000000000000
+      internalID: 7874291611447793305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_4
+      name: Orange_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 137
+        y: 9
+        width: 17
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68047d384d233b10800000000000000
-      internalID: 1959960051128207467
+      spriteID: 6cab2c86665089d20800000000000000
+      internalID: 3285381865569172166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_5
+      name: Orange_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 170
+        y: 9
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b057f925a963c20800000000000000
-      internalID: 3185903466064448317
+      spriteID: 47861caad9dc0c160800000000000000
+      internalID: 7043855894265817204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_6
+      name: Orange_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 203
+        y: 8
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 867698177e1e548f0800000000000000
-      internalID: -556790594751862936
+      spriteID: 4583e1a201db95730800000000000000
+      internalID: 3988426822137034836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_7
+      name: Orange_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 235
+        y: 8
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc96f823a37862f0800000000000000
-      internalID: -979405774348968759
+      spriteID: 1fb83c04100a011e0800000000000000
+      internalID: -2229105888306426895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_8
+      name: Orange_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 267
+        y: 8
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802a2dbe84a2f05e0800000000000000
-      internalID: -1941286421690932728
+      spriteID: 107db920890e36350800000000000000
+      internalID: 6008893271325792001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_9
+      name: Orange_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 298
+        y: 9
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +369,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794982778268e25d0800000000000000
-      internalID: -3085381186346249065
+      spriteID: b7e14664d2212b290800000000000000
+      internalID: -7876212812653781381
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_10
+      name: Orange_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 330
+        y: 9
+        width: 15
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,20 +390,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f55b42c35fe4b30800000000000000
-      internalID: 4273622735083888487
+      spriteID: 4feff0c013b08c030800000000000000
+      internalID: 3515071814446350068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_11
+      name: Orange_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 361
+        y: 10
+        width: 17
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +411,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb224a802053283e0800000000000000
-      internalID: -2053020197276343620
+      spriteID: f7896920b026f1190800000000000000
+      internalID: -7989559414504384385
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_12
+      name: Orange_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 392
+        y: 11
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,20 +432,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880bb89fad4059c10800000000000000
-      internalID: 2059557743127933064
+      spriteID: ac54d586d7e176fa0800000000000000
+      internalID: -5807639670500276790
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_13
+      name: Orange_13
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 424
+        y: 11
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,20 +453,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bec77a41427f5b50800000000000000
-      internalID: 6584106804986760886
+      spriteID: 5ecc5bc72a0760f50800000000000000
+      internalID: 6847284126642719973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_14
+      name: Orange_14
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 456
+        y: 11
+        width: 20
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +474,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e745d9975f205d80800000000000000
-      internalID: -8264053262935308319
+      spriteID: 94094257f0be66b90800000000000000
+      internalID: -7248848098583867319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_15
+      name: Orange_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 489
+        y: 10
+        width: 17
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,20 +495,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7762089ab3dafc550800000000000000
-      internalID: 6183351285161404023
+      spriteID: 8d1047bd399ef2440800000000000000
+      internalID: 4913402539735777752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_16
+      name: Orange_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 521
+        y: 10
+        width: 17
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,8 +516,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c516ea84b5ebb60800000000000000
-      internalID: 7763743175354702852
+      spriteID: cbfe224d691ce0fc0800000000000000
+      internalID: -3526668604636205124
       vertices: []
       indices: 
       edges: []

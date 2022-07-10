@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 43b3013d328fd864fad7a55ba32d94ee
+guid: 76b11f24861749c46a301fcc5f333b03
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4612172629948362417
-    second: Start (Moving) (64x64)_0
+      213: 1775669009216684005
+    second: Strawberry_0
   - first:
-      213: 5719465518792859888
-    second: Start (Moving) (64x64)_1
+      213: -32040429760078815
+    second: Strawberry_1
   - first:
-      213: 8098369405238339434
-    second: Start (Moving) (64x64)_2
+      213: -7106730570939000684
+    second: Strawberry_2
   - first:
-      213: -2185004221920062792
-    second: Start (Moving) (64x64)_3
+      213: 4518513080991243510
+    second: Strawberry_3
   - first:
-      213: 1959960051128207467
-    second: Start (Moving) (64x64)_4
+      213: 901954246582174200
+    second: Strawberry_4
   - first:
-      213: 3185903466064448317
-    second: Start (Moving) (64x64)_5
+      213: 825325050284003712
+    second: Strawberry_5
   - first:
-      213: -556790594751862936
-    second: Start (Moving) (64x64)_6
+      213: -5158240598457465908
+    second: Strawberry_6
   - first:
-      213: -979405774348968759
-    second: Start (Moving) (64x64)_7
+      213: 2009151386410624793
+    second: Strawberry_7
   - first:
-      213: -1941286421690932728
-    second: Start (Moving) (64x64)_8
+      213: -8828998067812341462
+    second: Strawberry_8
   - first:
-      213: -3085381186346249065
-    second: Start (Moving) (64x64)_9
+      213: 7853139244501102106
+    second: Strawberry_9
   - first:
-      213: 4273622735083888487
-    second: Start (Moving) (64x64)_10
+      213: 7386868840556686860
+    second: Strawberry_10
   - first:
-      213: -2053020197276343620
-    second: Start (Moving) (64x64)_11
+      213: 9150055279739663228
+    second: Strawberry_11
   - first:
-      213: 2059557743127933064
-    second: Start (Moving) (64x64)_12
+      213: 8026213463552293463
+    second: Strawberry_12
   - first:
-      213: 6584106804986760886
-    second: Start (Moving) (64x64)_13
+      213: 6850229642150134582
+    second: Strawberry_13
   - first:
-      213: -8264053262935308319
-    second: Start (Moving) (64x64)_14
+      213: -7542899124980697566
+    second: Strawberry_14
   - first:
-      213: 6183351285161404023
-    second: Start (Moving) (64x64)_15
+      213: -8532893379546982827
+    second: Strawberry_15
   - first:
-      213: 7763743175354702852
-    second: Start (Moving) (64x64)_16
+      213: 1433410794814771726
+    second: Strawberry_16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -166,13 +166,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_0
+      name: Strawberry_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 64
-        height: 64
+        x: 11
+        y: 9
+        width: 11
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bee9d2129ab10040800000000000000
-      internalID: 4612172629948362417
+      spriteID: 5efb7055e8174a810800000000000000
+      internalID: 1775669009216684005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_1
+      name: Strawberry_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
+        x: 43
+        y: 9
+        width: 11
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +201,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f06eb8169f9f5f40800000000000000
-      internalID: 5719465518792859888
+      spriteID: 12c13bd166b2e8ff0800000000000000
+      internalID: -32040429760078815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_2
+      name: Strawberry_2
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
+        x: 75
+        y: 9
+        width: 11
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,20 +222,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a676f1b2110336070800000000000000
-      internalID: 8098369405238339434
+      spriteID: 49895c4e232df5d90800000000000000
+      internalID: -7106730570939000684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_3
+      name: Strawberry_3
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
+        x: 107
+        y: 9
+        width: 11
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b2d9bf9c3e4da1e0800000000000000
-      internalID: -2185004221920062792
+      spriteID: 6fc507105bbf4be30800000000000000
+      internalID: 4518513080991243510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_4
+      name: Strawberry_4
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
+        x: 139
+        y: 9
+        width: 11
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +264,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b68047d384d233b10800000000000000
-      internalID: 1959960051128207467
+      spriteID: 8f18f27cb92648c00800000000000000
+      internalID: 901954246582174200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_5
+      name: Strawberry_5
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
+        x: 172
+        y: 9
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +285,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3b057f925a963c20800000000000000
-      internalID: 3185903466064448317
+      spriteID: 081d86ea2c4247b00800000000000000
+      internalID: 825325050284003712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_6
+      name: Strawberry_6
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
+        x: 204
+        y: 8
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 867698177e1e548f0800000000000000
-      internalID: -556790594751862936
+      spriteID: cc3c1f6518f3a68b0800000000000000
+      internalID: -5158240598457465908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_7
+      name: Strawberry_7
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
+        x: 236
+        y: 8
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,20 +327,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc96f823a37862f0800000000000000
-      internalID: -979405774348968759
+      spriteID: 9172dfe7a80f1eb10800000000000000
+      internalID: 2009151386410624793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_8
+      name: Strawberry_8
       rect:
         serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
+        x: 268
+        y: 8
+        width: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,20 +348,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 802a2dbe84a2f05e0800000000000000
-      internalID: -1941286421690932728
+      spriteID: a296f6d0909197580800000000000000
+      internalID: -8828998067812341462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_9
+      name: Strawberry_9
       rect:
         serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
+        x: 300
+        y: 9
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,20 +369,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 794982778268e25d0800000000000000
-      internalID: -3085381186346249065
+      spriteID: a1eea200984fbfc60800000000000000
+      internalID: 7853139244501102106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_10
+      name: Strawberry_10
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 64
-        height: 64
+        x: 332
+        y: 9
+        width: 9
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,20 +390,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76f55b42c35fe4b30800000000000000
-      internalID: 4273622735083888487
+      spriteID: c0e68cbb21e638660800000000000000
+      internalID: 7386868840556686860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_11
+      name: Strawberry_11
       rect:
         serializedVersion: 2
-        x: 704
-        y: 0
-        width: 64
-        height: 64
+        x: 363
+        y: 10
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -411,20 +411,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb224a802053283e0800000000000000
-      internalID: -2053020197276343620
+      spriteID: c73f1104cc68bfe70800000000000000
+      internalID: 9150055279739663228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_12
+      name: Strawberry_12
       rect:
         serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
+        x: 394
+        y: 10
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -432,20 +432,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 880bb89fad4059c10800000000000000
-      internalID: 2059557743127933064
+      spriteID: 75afd72de96d26f60800000000000000
+      internalID: 8026213463552293463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_13
+      name: Strawberry_13
       rect:
         serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
+        x: 426
+        y: 10
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -453,20 +453,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bec77a41427f5b50800000000000000
-      internalID: 6584106804986760886
+      spriteID: 633c532c097e01f50800000000000000
+      internalID: 6850229642150134582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_14
+      name: Strawberry_14
       rect:
         serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
+        x: 458
+        y: 10
+        width: 13
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -474,20 +474,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e745d9975f205d80800000000000000
-      internalID: -8264053262935308319
+      spriteID: 226bbe6b53d325790800000000000000
+      internalID: -7542899124980697566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_15
+      name: Strawberry_15
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
+        x: 491
+        y: 10
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -495,20 +495,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7762089ab3dafc550800000000000000
-      internalID: 6183351285161404023
+      spriteID: 556d1d53ea2159980800000000000000
+      internalID: -8532893379546982827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start (Moving) (64x64)_16
+      name: Strawberry_16
       rect:
         serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
+        x: 523
+        y: 10
+        width: 11
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -516,8 +516,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40c516ea84b5ebb60800000000000000
-      internalID: 7763743175354702852
+      spriteID: e02152af58f74e310800000000000000
+      internalID: 1433410794814771726
       vertices: []
       indices: 
       edges: []
