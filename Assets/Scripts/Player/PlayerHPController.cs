@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
+using UnityEngine.UIElements;
 
 public class PlayerHPController : MonoBehaviour
 {
@@ -10,13 +12,17 @@ public class PlayerHPController : MonoBehaviour
     public Transform hpBar;
     public Text hpText;
 
+    public Text damagePopup;
+    private float damagePopupBasePosition;
+    public float damagePopupTime;
+    public float damagePopupCounter;
+
     public PlayerController player;
 
     public float invincibilityTime;
     public float invincibilityCounter;
     public float hpBarFlashTime = 0.2f;
     private float hpBarFlashCounter;
-    private float gamepadRumblePower;
 
     private float diff; //to fix hp bar scaling
 
@@ -24,6 +30,8 @@ public class PlayerHPController : MonoBehaviour
     {
         currentHP = maxHP;
         diff = transform.localScale.x / hpBar.localScale.x;
+
+        damagePopupBasePosition = damagePopup.transform.localPosition.y;
     }
 
     void Update()
@@ -32,21 +40,30 @@ public class PlayerHPController : MonoBehaviour
         {
             invincibilityCounter -= Time.deltaTime;
             hpBarFlashCounter -= Time.deltaTime;
-            if(hpBarFlashCounter < 0)
+
+            if (hpBarFlashCounter < 0)
             {
                 hpBarFlashCounter = hpBarFlashTime;
                 hpBar.gameObject.SetActive(!hpBar.gameObject.activeInHierarchy);
             }
-
-            //gamepadRumblePower = invincibilityCounter / 2;
-            //Gamepad.current.SetMotorSpeeds(gamepadRumblePower, gamepadRumblePower);
         }
         else
         {
-            hpBar.gameObject.SetActive(false);
-            //Gamepad.current.SetMotorSpeeds(0f, 0f);
-        }   
-      
+            hpBar.gameObject.SetActive(false);   
+        }
+
+        if (damagePopupCounter > 0)
+        {
+            damagePopupCounter -= Time.deltaTime;
+
+            damagePopup.transform.localScale = new Vector3(transform.localScale.x, damagePopup.transform.localScale.y);
+            damagePopup.transform.localPosition = new Vector3(damagePopup.transform.localPosition.x, damagePopup.transform.localPosition.y + 1.0f * Time.deltaTime);
+        }
+        else
+        {
+            damagePopup.transform.localPosition = new Vector3(damagePopup.transform.localPosition.x, damagePopupBasePosition);
+            damagePopup.gameObject.SetActive(false);
+        }
     }
 
     private void LateUpdate()
@@ -65,6 +82,9 @@ public class PlayerHPController : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHP -= damage;
+            damagePopup.text = "-" + damage.ToString();
+            damagePopup.gameObject.SetActive(true);
+            damagePopupCounter = damagePopupTime;
 
             if (currentHP < 0)
             {
