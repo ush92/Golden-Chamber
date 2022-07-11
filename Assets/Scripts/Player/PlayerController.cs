@@ -1,8 +1,10 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
     private bool isGrounded;
-    public GameObject stomper;
+    //public GameObject stomper;
 
     public float knockback;
     public float knockbackLength;
@@ -38,8 +40,10 @@ public class PlayerController : MonoBehaviour
     public string triggerObject;
     private bool lockTriggerUsing = false;
 
-    private bool isLevelCompleted;
+    public Button buttonBackToMap;
     public GameObject levelCompleteScreen;
+    private bool isLevelCompleted;
+    public float timeInLevel;
 
     #endregion
 
@@ -48,9 +52,19 @@ public class PlayerController : MonoBehaviour
         GameManager.instance.AddPlayer(this);
         isAlive = true;
 
-        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP) && !GameManager.levelMapLastPosition.Equals(float3.zero))
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
         {
-            playerRB.transform.position = GameManager.levelMapLastPosition;
+            buttonBackToMap.GetComponent<EventTrigger>().enabled = false;
+            buttonBackToMap.interactable = false;
+
+            if (!GameManager.levelMapLastPosition.Equals(float3.zero))
+            {
+                playerRB.transform.position = GameManager.levelMapLastPosition;
+            }
+        }
+        else
+        {
+            buttonBackToMap.interactable = true;
         }
     }
 
@@ -74,6 +88,11 @@ public class PlayerController : MonoBehaviour
                 Respawn();
                 deathTimeCounter = deathTime;
             }
+        }
+
+        if (!isLevelCompleted)
+        {
+            timeInLevel += Time.deltaTime;
         }
     }
 
@@ -223,10 +242,9 @@ public class PlayerController : MonoBehaviour
                 {
                     int levelNum = int.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
                     GameManager.levelList[levelNum] = true;
-
-                    isLevelCompleted = true;
-                    levelCompleteScreen.gameObject.SetActive(true);
                     lockTriggerUsing = true;
+
+                    ShowCompleteLevelScreen();
                 }
                 catch
                 {
@@ -254,13 +272,25 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private static void LoadLevel(string levelName)
+    public void LoadLevel(string levelName)
     {
-        GameManager.SaveJsonData(GameManager.instance); //autosave
+        if (levelName.Equals(Consts.LEVEL_MAP))
+        {
+            buttonBackToMap.interactable = false;
+            buttonBackToMap.GetComponent<EventTrigger>().enabled = false;
+        }
+
+        GameManager.SaveJsonData(GameManager.instance);
         SceneManager.LoadScene(levelName);
     }
 
-    public void FinishLevelAndLoadMap()
+    private void ShowCompleteLevelScreen()
+    {
+        isLevelCompleted = true;      
+        levelCompleteScreen.gameObject.SetActive(true);
+    }
+
+    private void FinishLevelAndLoadMap()
     {
         levelCompleteScreen.gameObject.SetActive(false);
         LoadLevel("LevelMap");
@@ -276,7 +306,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        stomper.gameObject.SetActive(false);
+        //stomper.gameObject.SetActive(false);
 
         deathTimeCounter = deathTime;
     }
@@ -288,7 +318,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<CapsuleCollider2D>().enabled = true;
-        stomper.gameObject.SetActive(true);
+        //stomper.gameObject.SetActive(true);
 
         playerRB.velocity = new Vector3(0, 0, 0);
 

@@ -91,8 +91,6 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {     
-        //saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
-
         //0 level1_1; 1 level1_2; 2 level1_3; 3 level1_4; 4 level2_1; 5 level2_2; 6 level2_3; 7 level3_1;
         //8 level3_2; 9 level3_3; 10 level3_4; 11 level4_1; 12 level4_2; 13 level4_3; 14 level5_1;
         for (int i = 0; i <= 14; i++)
@@ -128,8 +126,6 @@ public class GameManager : MonoBehaviour, ISaveable
         }
         else
         {
-            //saveData.playerData.maxHP = activePlayer.GetComponentInChildren<PlayerHPController>().maxHP;
-
             for (int i = 0; i <= 14; i++)
             {
                 levelList[i] = saveData.playerData.levelList[i];

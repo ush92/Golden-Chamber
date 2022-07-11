@@ -579,7 +579,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Wie\u017Ca Pociupa\u0142y\ncz. II"
+      value: "Tartak\n\"Pociupa\u0142a i Synowie\" cz. II"
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -588,6 +588,10 @@ PrefabInstance:
     - target: {fileID: 2635378241708901920, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Name
       value: Signpost_level1_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175794730163415304, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 7663159934085287113, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_text
@@ -31253,11 +31257,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 24, y: -52, z: 0}
+  - first: {x: 23, y: -52, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 80
       m_TileSpriteIndex: 81
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 24, y: -52, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 79
+      m_TileSpriteIndex: 79
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -32713,11 +32727,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 24, y: -51, z: 0}
+  - first: {x: 23, y: -51, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 40
       m_TileSpriteIndex: 63
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 24, y: -51, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 39
+      m_TileSpriteIndex: 39
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -130913,7 +130937,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 1462aba7a8561e541ae4d612dd05272b, type: 2}
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: bd346f72a37282d498fb486e9856f775, type: 2}
-  - m_RefCount: 71
+  - m_RefCount: 72
     m_Data: {fileID: 11400000, guid: 43596ccc5b9762e4da14f1448aacf2e6, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 71e12a64001be3842a8216bb6c561283, type: 2}
@@ -130993,7 +131017,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3170b656574c86d4daecf2e51d5ca582, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: 66f35a25c8e165c46b70af66c7b1f195, type: 2}
-  - m_RefCount: 9
+  - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: d1a5e07b393852344a914a987b53f553, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: d9717d6692ee94147a621e12a0f9ef89, type: 2}
@@ -131098,7 +131122,7 @@ Tilemap:
     m_Data: {fileID: 772467259971446145, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 510484679990689147, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
-  - m_RefCount: 71
+  - m_RefCount: 72
     m_Data: {fileID: 3702685922149842701, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 2870588770018888475, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
@@ -131178,7 +131202,7 @@ Tilemap:
     m_Data: {fileID: -6530495296205248430, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 1034891850837087948, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
-  - m_RefCount: 9
+  - m_RefCount: 10
     m_Data: {fileID: -223391217462372170, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 5344191953466923600, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
@@ -131205,7 +131229,7 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 3220740477721170248, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 12875
+  - m_RefCount: 12877
     m_Data:
       e00: 1
       e01: 0
@@ -131224,7 +131248,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 12875
+  - m_RefCount: 12877
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
     m_Data: {r: 2.6653e-41, g: 2.6653e-41, b: 2.6653e-41, a: 2.6653e-41}
@@ -135734,7 +135758,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Tartak\n\u201EPociupa\u0142a i Synowie\u201D"
+      value: "Dziwne Nadle\u015Bnictwo"
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -135743,6 +135767,10 @@ PrefabInstance:
     - target: {fileID: 2635378241708901920, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Name
       value: Signpost_level1_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175794730163415304, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7663159934085287113, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_text
@@ -138396,7 +138424,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Wie\u017Ca Pociupa\u0142y\ncz. I"
+      value: "Tartak\n\"Pociupa\u0142a i Synowie\" cz. I"
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -138405,6 +138433,10 @@ PrefabInstance:
     - target: {fileID: 2635378241708901920, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Name
       value: Signpost_level1_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175794730163415304, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 4175794730163415304, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -139868,6 +139900,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5001923083795124041, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1095
+      objectReference: {fileID: 0}
     - target: {fileID: 5001923085183966694, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
       propertyPath: m_Pivot.x
       value: 0

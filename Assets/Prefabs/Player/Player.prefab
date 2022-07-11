@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5215758}
   - component: {fileID: 5215757}
   m_Layer: 11
-  m_Name: Cherry
+  m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4570538037665054336, guid: 1915fe26bb7b1da4386c82773b0f2c7a, type: 3}
+  m_Sprite: {fileID: -7706788487438311687, guid: 53189c247b1865c4bb23f3f7573a0b7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 12863252}
   - component: {fileID: 12863251}
   m_Layer: 11
-  m_Name: Ananas
+  m_Name: Banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 837517196756356485, guid: d08df3c6fbaad364793dfdb4e02ed6ea, type: 3}
+  m_Sprite: {fileID: -5728686177044832811, guid: c1b767e37e8ef464f85be4cfd9c6b776, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 73589241}
   - component: {fileID: 73589240}
   m_Layer: 11
-  m_Name: Kiwi
+  m_Name: Melon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4138223980208024357, guid: b7668f2e9a556ff43abc38508b8630d3, type: 3}
+  m_Sprite: {fileID: 4593711905992766363, guid: 110655dcb40249e4bade6dd877b7b3ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -398,7 +398,7 @@ GameObject:
   - component: {fileID: 105057520}
   - component: {fileID: 105057519}
   m_Layer: 11
-  m_Name: Banana
+  m_Name: Ananas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5728686177044832811, guid: c1b767e37e8ef464f85be4cfd9c6b776, type: 3}
+  m_Sprite: {fileID: 9146190884484061983, guid: d08df3c6fbaad364793dfdb4e02ed6ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 370042262}
   - component: {fileID: 370042261}
   m_Layer: 11
-  m_Name: Melon
+  m_Name: Strawberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1086,7 +1086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4404175151357073704, guid: 110655dcb40249e4bade6dd877b7b3ab, type: 3}
+  m_Sprite: {fileID: 901954246582174200, guid: 76b11f24861749c46a301fcc5f333b03, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1531,7 +1531,7 @@ GameObject:
   - component: {fileID: 524815138}
   - component: {fileID: 524815137}
   m_Layer: 11
-  m_Name: Cherry
+  m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1585,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -4570538037665054336, guid: 1915fe26bb7b1da4386c82773b0f2c7a, type: 3}
+  m_Sprite: {fileID: -7706788487438311687, guid: 53189c247b1865c4bb23f3f7573a0b7e, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1873,7 +1873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 802.2, y: 384}
+  m_AnchoredPosition: {x: 674.7, y: 384}
   m_SizeDelta: {x: 125, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &632472192
@@ -1985,6 +1985,156 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!1 &641269619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 641269620}
+  - component: {fileID: 641269624}
+  - component: {fileID: 641269623}
+  - component: {fileID: 641269622}
+  - component: {fileID: 641269621}
+  m_Layer: 11
+  m_Name: ButtonMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &641269620
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641269619}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7292044620038846617}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 802.2, y: 384}
+  m_SizeDelta: {x: 125, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &641269624
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641269619}
+  m_CullTransparentMesh: 1
+--- !u!114 &641269623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641269619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.8602032, b: 0.7311321, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4bc7d9fc0b94de14d92e2c4666b6dcd1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &641269622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641269619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 641269623}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &641269621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641269619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4912927042408680108}
+          m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+          m_MethodName: LoadLevel
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: LevelMap
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &641655301
@@ -2556,6 +2706,7 @@ RectTransform:
   - {fileID: 7292044620038846617}
   - {fileID: 154421771}
   - {fileID: 1580284474}
+  - {fileID: 3640462828727831370}
   m_Father: {fileID: 4912927042408680105}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2637,7 +2788,7 @@ GameObject:
   - component: {fileID: 819281348}
   - component: {fileID: 819281347}
   m_Layer: 11
-  m_Name: Kiwi
+  m_Name: Melon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2691,7 +2842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4138223980208024357, guid: b7668f2e9a556ff43abc38508b8630d3, type: 3}
+  m_Sprite: {fileID: 4593711905992766363, guid: 110655dcb40249e4bade6dd877b7b3ab, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2793,7 +2944,7 @@ GameObject:
   - component: {fileID: 1025144198}
   - component: {fileID: 1025144197}
   m_Layer: 11
-  m_Name: Fruits
+  m_Name: CurrentFruits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2901,7 +3052,7 @@ GameObject:
   - component: {fileID: 1027302670}
   - component: {fileID: 1027302669}
   m_Layer: 11
-  m_Name: Ananas
+  m_Name: Banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,7 +3106,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 837517196756356485, guid: d08df3c6fbaad364793dfdb4e02ed6ea, type: 3}
+  m_Sprite: {fileID: -5728686177044832811, guid: c1b767e37e8ef464f85be4cfd9c6b776, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2977,7 +3128,7 @@ GameObject:
   - component: {fileID: 1121019944}
   - component: {fileID: 1121019943}
   m_Layer: 11
-  m_Name: Time
+  m_Name: CurrentTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3056,7 +3207,7 @@ GameObject:
   - component: {fileID: 1170968229}
   - component: {fileID: 1170968228}
   m_Layer: 11
-  m_Name: Time
+  m_Name: RecordTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3430,7 +3581,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Uko\u0144czono poziom: Tartak \"Pociupa\u0142a i Synowie\""
+  m_Text: "Uko\u0144czono poziom: {level name}"
 --- !u!1 &1272539256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,7 +3998,7 @@ GameObject:
   - component: {fileID: 1468031101}
   - component: {fileID: 1468031100}
   m_Layer: 11
-  m_Name: Fruits
+  m_Name: RecordFruits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4105,7 +4256,7 @@ GameObject:
   - component: {fileID: 1487699161}
   - component: {fileID: 1487699160}
   m_Layer: 11
-  m_Name: Strawberry
+  m_Name: Kiwi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4159,7 +4310,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1775669009216684005, guid: 76b11f24861749c46a301fcc5f333b03, type: 3}
+  m_Sprite: {fileID: 433390274577684119, guid: b7668f2e9a556ff43abc38508b8630d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4656,7 +4807,7 @@ GameObject:
   - component: {fileID: 1668078210}
   - component: {fileID: 1668078209}
   m_Layer: 11
-  m_Name: Banana
+  m_Name: Ananas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4710,7 +4861,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5728686177044832811, guid: c1b767e37e8ef464f85be4cfd9c6b776, type: 3}
+  m_Sprite: {fileID: 9146190884484061983, guid: d08df3c6fbaad364793dfdb4e02ed6ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -4811,7 +4962,7 @@ GameObject:
   - component: {fileID: 1824585001}
   - component: {fileID: 1824585000}
   m_Layer: 11
-  m_Name: Apple
+  m_Name: Cherry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4865,7 +5016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7293598183456022363, guid: 53189c247b1865c4bb23f3f7573a0b7e, type: 3}
+  m_Sprite: {fileID: -4570538037665054336, guid: 1915fe26bb7b1da4386c82773b0f2c7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5004,7 +5155,7 @@ GameObject:
   - component: {fileID: 1986257297}
   - component: {fileID: 1986257296}
   m_Layer: 11
-  m_Name: Strawberry
+  m_Name: Kiwi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5058,7 +5209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1775669009216684005, guid: 76b11f24861749c46a301fcc5f333b03, type: 3}
+  m_Sprite: {fileID: 433390274577684119, guid: b7668f2e9a556ff43abc38508b8630d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5159,7 +5310,7 @@ GameObject:
   - component: {fileID: 2079988423}
   - component: {fileID: 2079988422}
   m_Layer: 11
-  m_Name: Apple
+  m_Name: Cherry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5213,7 +5364,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7293598183456022363, guid: 53189c247b1865c4bb23f3f7573a0b7e, type: 3}
+  m_Sprite: {fileID: -4570538037665054336, guid: 1915fe26bb7b1da4386c82773b0f2c7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5409,10 +5560,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.102166176}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5423,7 +5574,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 2, y: 1.7956676}
   m_EdgeRadius: 0
 --- !u!1 &2111021956
 GameObject:
@@ -5437,7 +5588,7 @@ GameObject:
   - component: {fileID: 2111021959}
   - component: {fileID: 2111021958}
   m_Layer: 11
-  m_Name: Melon
+  m_Name: Strawberry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5491,7 +5642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4404175151357073704, guid: 110655dcb40249e4bade6dd877b7b3ab, type: 3}
+  m_Sprite: {fileID: 901954246582174200, guid: 76b11f24861749c46a301fcc5f333b03, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -5537,6 +5688,7 @@ RectTransform:
   - {fileID: 1483889836}
   - {fileID: 1188310683}
   - {fileID: 632472188}
+  - {fileID: 641269620}
   m_Father: {fileID: 812916481}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5783,13 +5935,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAlive: 0
   playerRB: {fileID: 4912927042408680107}
-  moveSpeed: 10
+  moveSpeed: 8
   jumpForce: 21
   groundCheckPoint: {fileID: 4912927044335522437}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  stomper: {fileID: 8720083867162605111}
   knockback: 10
   knockbackLength: 0.2
   knockbackFromRight: 0
@@ -5799,7 +5950,9 @@ MonoBehaviour:
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
+  buttonBackToMap: {fileID: 641269622}
   levelCompleteScreen: {fileID: 1580284473}
+  timeInLevel: 0
 --- !u!114 &4912927042408680109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6226,6 +6379,81 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Points: '
+--- !u!1 &6383464677597093094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3640462828727831370}
+  - component: {fileID: 8130830740436855594}
+  - component: {fileID: 2460840762037168887}
+  m_Layer: 11
+  m_Name: ActiveWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3640462828727831370
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383464677597093094}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 812916481}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 200, y: -68.9}
+  m_SizeDelta: {x: 90, y: 75}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8130830740436855594
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383464677597093094}
+  m_CullTransparentMesh: 1
+--- !u!114 &2460840762037168887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6383464677597093094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -6461697735168408586, guid: 416835bd8608d8c4d86e314b568f159c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8720083867162605111
 GameObject:
   m_ObjectHideFlags: 0
@@ -6243,7 +6471,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7318245226151800668
 Transform:
   m_ObjectHideFlags: 0

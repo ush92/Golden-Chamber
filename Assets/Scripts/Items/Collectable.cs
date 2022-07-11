@@ -8,8 +8,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag.Equals(Consts.PLAYER))
         {
-            //other.GetComponentInChildren<ScoreManager>().AddScore(pointsToAdd);
-            //TODO: ADD COLLECTABLE LOGIC
+            FindObjectOfType<CollectablesController>().Collect(gameObject.name);
 
             Instantiate(pickupEffect, transform.position, transform.rotation);
             Destroy(gameObject);
