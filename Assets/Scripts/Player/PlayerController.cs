@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
     public string triggerObject;
     private bool lockTriggerUsing = false;
 
+    private bool isLevelCompleted;
+    public GameObject levelCompleteScreen;
+
     #endregion
 
     void Start()
@@ -133,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (isAlive)
+        if (isAlive && !isLevelCompleted)
         {
             velocity = context.ReadValue<Vector2>().x;
         }
@@ -141,7 +144,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (isAlive)
+        if (isAlive && !isLevelCompleted)
         {
             if (context.started && isGrounded)
             {
@@ -157,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
     public void Look(InputAction.CallbackContext context)
     {
-        if (isAlive)
+        if (isAlive && !isLevelCompleted)
         {
             if (isGrounded)
             {
@@ -168,7 +171,7 @@ public class PlayerController : MonoBehaviour
 
     public void Use(InputAction.CallbackContext context)
     {
-        if (isAlive)
+        if (isAlive && !isLevelCompleted)
         {
             UseTrigger();
         }
@@ -176,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
     public void Attack(InputAction.CallbackContext context)
     {
-        if (isAlive)
+        if (isAlive && !isLevelCompleted)
         {
             if (context.started && attackCounter <= 0)
             {
@@ -220,14 +223,15 @@ public class PlayerController : MonoBehaviour
                 {
                     int levelNum = int.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
                     GameManager.levelList[levelNum] = true;
+
+                    isLevelCompleted = true;
+                    levelCompleteScreen.gameObject.SetActive(true);
+                    lockTriggerUsing = true;
                 }
                 catch
                 {
                     Debug.Log($"Drzwi ukonczenia rundy zawieraja z³a nazwe: {triggerObject}. Powinna konczyc siê odpowiednim indexem listy leveli");
                 }
-
-                LoadLevel("LevelMap");
-                lockTriggerUsing = true;
             }
         }
         else if (triggerObject.StartsWith("Level"))
@@ -254,6 +258,12 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.SaveJsonData(GameManager.instance); //autosave
         SceneManager.LoadScene(levelName);
+    }
+
+    public void FinishLevelAndLoadMap()
+    {
+        levelCompleteScreen.gameObject.SetActive(false);
+        LoadLevel("LevelMap");
     }
 
     public void Death()
@@ -294,33 +304,48 @@ public class PlayerController : MonoBehaviour
 
     public void JumpOnTouch()
     {
-        if (isGrounded)
+        if (isAlive && !isLevelCompleted)
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            if (isGrounded)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            }
         }
     }
     public void JumpStopOnTouch()
     {
-        if (!isGrounded && playerRB.velocity.y > 0)
+        if (isAlive && !isLevelCompleted)
         {
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            if (!isGrounded && playerRB.velocity.y > 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            }
         }
     }
     public void FireOnTouch()
     {
-        if (attackCounter <= 0)
+        if (isAlive && !isLevelCompleted)
         {
-            playerAnimator.SetTrigger(Consts.ATTACK);
-            attackCounter = attackCooldown;
+            if (attackCounter <= 0)
+            {
+                playerAnimator.SetTrigger(Consts.ATTACK);
+                attackCounter = attackCooldown;
+            }
         }
     }
     public void LeftOnTouch()
     {
-        velocity -= 1f;
+        if (isAlive && !isLevelCompleted)
+        {
+            velocity -= 1f;
+        }
     }
     public void RightOnTouch()
     {
-        velocity += 1f;
+        if (isAlive && !isLevelCompleted)
+        {
+            velocity += 1f;
+        }
     }
     public void MoveStopTouch()
     {
@@ -328,18 +353,24 @@ public class PlayerController : MonoBehaviour
     }
     public void UseOnTouch()
     {
-        UseTrigger();
+        if (isAlive && !isLevelCompleted)
+        {
+            UseTrigger();
+        }
     }
     public void LookOnTouch()
     {
-        if (isGrounded)
+        if (isAlive && !isLevelCompleted && isGrounded)
         {
             GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = true;
         }
     }
     public void LookStopOnTouch()
     {
-        GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = false;
+        if (isAlive && !isLevelCompleted && isGrounded)
+        {
+            GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = false;
+        }
     }
 
     #endregion

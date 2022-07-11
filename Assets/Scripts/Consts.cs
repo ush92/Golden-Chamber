@@ -10,6 +10,7 @@ public class Consts : MonoBehaviour
     public const string YSPEED = "ySpeed";
 
     public const string PLAYER = "Player";
+    public const string PLAYER_PROJECTILE = "PlayerProjectile";
     public const string ENEMY = "Enemy";
     public const string MOVING_PLATFORM = "MovingPlatform";
     public const string SIGNPOST = "Signpost";
