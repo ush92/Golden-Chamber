@@ -82,7 +82,7 @@ public class PlayerHPController : MonoBehaviour
         if (invincibilityCounter <= 0)
         {
             currentHP -= damage;
-            damagePopup.text = "-" + damage.ToString();
+            damagePopup.text = damage.ToString();
             damagePopup.gameObject.SetActive(true);
             damagePopupCounter = damagePopupTime;
 
