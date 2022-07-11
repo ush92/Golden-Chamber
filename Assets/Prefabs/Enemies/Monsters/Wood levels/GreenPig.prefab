@@ -27,6 +27,26 @@ PrefabInstance:
       propertyPath: enemyDeathEffect
       value: 
       objectReference: {fileID: 7237833594374723011, guid: 8e6725be8244801418bfa0af95c5779b, type: 3}
+    - target: {fileID: 8119971175887249117, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Size.x
+      value: 0.80041623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Size.y
+      value: 0.80041623
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.018169522
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.03826821
+      objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -73,19 +93,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.x
-      value: 0.7503953
+      value: 0.90169907
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.y
-      value: 0.6204791
+      value: 0.76074076
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Offset.x
-      value: 0.033071756
+      value: -0.01119709
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Offset.y
-      value: 0.0020382404
+      value: -0.068092585
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -97,7 +117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138062, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Name
-      value: GreenPig
+      value: GreenPig (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Sprite

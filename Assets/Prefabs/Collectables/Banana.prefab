@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 996067653654550316}
   - component: {fileID: 996067653654550317}
   - component: {fileID: 996067653654550314}
-  - component: {fileID: 996067653654550318}
   - component: {fileID: 996067653654550319}
+  - component: {fileID: 5077600066991789376}
   m_Layer: 0
   m_Name: Banana
   m_TagString: Untagged
@@ -104,22 +104,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &996067653654550318
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996067653654550315}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00428319, y: 0.0033375025}
-  serializedVersion: 2
-  m_Radius: 0.33592927
 --- !u!114 &996067653654550319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +117,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 4639924823971810983, guid: db4ccbfadf1b2aa41904301a9c062000, type: 3}
+--- !u!61 &5077600066991789376
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996067653654550315}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0059890747, y: -0.051900387}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5833333, y: 0.5833333}
+    newSize: {x: 0.5833333, y: 0.5833333}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5314293, y: 0.3757305}
+  m_EdgeRadius: 0
