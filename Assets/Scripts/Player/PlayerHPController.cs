@@ -103,4 +103,14 @@ public class PlayerHPController : MonoBehaviour
             }
         }
     }
+
+    public void HealPlayer(int hp)
+    {
+        currentHP += hp;
+
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
+    }
 }

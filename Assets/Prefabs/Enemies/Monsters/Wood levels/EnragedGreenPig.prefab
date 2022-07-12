@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &443383186006795860
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2245357661089458190, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: enemyDeathEffect
+      value: 
+      objectReference: {fileID: 4639924823971810983, guid: 72deb3197631e3748b41dedb16649bbd, type: 3}
+    - target: {fileID: 7745633648132771041, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: moveSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771050, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_Name
+      value: EnragedGreenPig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_Color.b
+      value: 0.500016
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2971698
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.423233
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 413.49527
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}

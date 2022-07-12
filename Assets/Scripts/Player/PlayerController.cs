@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
     private bool isLevelCompleted;
     public float timeInLevel;
 
+    public int keysCount;
+
     #endregion
 
     void Start()
@@ -214,6 +216,21 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = other.transform;
         }
+        else if (other.gameObject.name.Equals(Consts.LOCKED_DOOR_P))
+        {
+            if (keysCount > 0)
+            {
+                keysCount--;
+
+                foreach (var c in other.gameObject.GetComponents<BoxCollider2D>())
+                {
+                    c.enabled = false;
+                }
+
+                other.transform.Find(Consts.LOCKED_DOOR).gameObject.SetActive(false);
+                other.transform.Find(Consts.OPENED_DOOR).gameObject.SetActive(true);
+            }
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -330,6 +347,11 @@ public class PlayerController : MonoBehaviour
         //GameManager.instance.PlayerRespawnEffect();
 
         LoadLevel(SceneManager.GetActiveScene().name); //reload
+    }
+
+    public void CollectKey()
+    {
+        keysCount++;
     }
 
     #region Touch control

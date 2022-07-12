@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4639924823971810981}
   - component: {fileID: 4639924823971810982}
   m_Layer: 0
-  m_Name: Monster1 Jelly Death
+  m_Name: Water Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,7 +169,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 2
-      minScalar: 1
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -225,10 +225,10 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.990751, g: 0.8820755, b: 1, a: 1}
-        key1: {r: 1, g: 0.36320752, b: 0.74028856, a: 1}
-        key2: {r: 0.8951764, g: 0, b: 1, a: 1}
-        key3: {r: 0, g: 0.66833663, b: 1, a: 1}
+        key0: {r: 0.9292453, g: 1, b: 0.9969823, a: 1}
+        key1: {r: 0.5613208, g: 0.77795243, b: 1, a: 1}
+        key2: {r: 0.0990566, g: 0.30397737, b: 1, a: 1}
+        key3: {r: 0.8951764, g: 0, b: 1, a: 1}
         key4: {r: 1, g: 0, b: 0.15056896, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -606,7 +606,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 3
       minScalar: 0
       maxCurve:
         serializedVersion: 2

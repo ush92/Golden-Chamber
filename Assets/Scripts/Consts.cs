@@ -32,6 +32,13 @@ public class Consts : MonoBehaviour
     public const string ANANAS = "Ananas";
     public const string COIN = "Coin";
 
+    public const string HP_ITEM_SMALL = "HpItemSmall";
+    public const string KEY = "Key";
+
+    public const string LOCKED_DOOR_P = "LockedDoorParent";
+    public const string LOCKED_DOOR = "LockedDoor";
+    public const string OPENED_DOOR = "OpenedDoor";
+
     public const string NEW_PROFILE_ERROR_ALREADY_USED = "Profil o podanej nazwie ju¿ istnieje";
     public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Nazwa profilu nie mo¿e byæ pusta";
 }
