@@ -8,6 +8,8 @@ public class SaveData
     public struct PlayerData
     {
         public List<bool> levelList;
+
+        //todo: add save fruits and time
     }
     
     public PlayerData playerData;

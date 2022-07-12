@@ -1101,11 +1101,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b514de02473ae4f9735dba40680894, type: 3}
---- !u!1 &383988334 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 383988334, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-  m_PrefabInstance: {fileID: 1238740290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &402700764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3662,6 +3657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d80da1af8b7e9449bd10e90f061669, type: 3}
+--- !u!224 &1374145870 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1468031099, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
+  m_PrefabInstance: {fileID: 1238740290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1377091621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129928,6 +129928,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9b514de02473ae4f9735dba40680894, type: 3}
+--- !u!224 &1529664386 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1025144196, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
+  m_PrefabInstance: {fileID: 1238740290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1531541203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131260,11 +131265,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
   m_PrefabInstance: {fileID: 1238740290}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1962321146 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1962321146, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-  m_PrefabInstance: {fileID: 1238740290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1969698353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131914,11 +131914,11 @@ PrefabInstance:
     - target: {fileID: 7294049756352100604, guid: 046b1ff948fdc244cbac2ece7e47f803, type: 3}
       propertyPath: CompleteLevelRecord
       value: 
-      objectReference: {fileID: 383988334}
+      objectReference: {fileID: 1374145870}
     - target: {fileID: 7294049756352100604, guid: 046b1ff948fdc244cbac2ece7e47f803, type: 3}
       propertyPath: CompleteLevelCurrent
       value: 
-      objectReference: {fileID: 1962321146}
+      objectReference: {fileID: 1529664386}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 046b1ff948fdc244cbac2ece7e47f803, type: 3}
 --- !u!1001 &7828830750406433361

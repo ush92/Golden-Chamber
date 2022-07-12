@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.HID;
+using UnityEngine.UI;
 
 public class CollectablesController : MonoBehaviour
 {
@@ -24,8 +25,8 @@ public class CollectablesController : MonoBehaviour
     public int coinsCount;
     public int coinsCollected;
 
-    public GameObject CompleteLevelRecord;
-    public GameObject CompleteLevelCurrent;
+    public Transform CompleteLevelRecord;
+    public Transform CompleteLevelCurrent;
 
     void Start()
     {
@@ -109,11 +110,79 @@ public class CollectablesController : MonoBehaviour
 
     private void UpdateCompleteLevelRecordScreen()
     {
-
+        foreach (Transform child in CompleteLevelRecord)
+        {
+            switch (child.GetComponentInChildren<Image>().name)
+            {
+                case Consts.APPLE:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + applesCount;
+                    break;
+                case Consts.BANANA:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + bananasCount;
+                    break;
+                case Consts.STRAWBERRY:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + strawberriesCount;
+                    break;
+                case Consts.CHERRY:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + cherriesCount;
+                    break;
+                case Consts.ORANGE:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + orangesCount;
+                    break;
+                case Consts.KIWI:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + kiwisCount;
+                    break;
+                case Consts.MELON:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + melonsCount;
+                    break;
+                case Consts.ANANAS:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + ananasCount;
+                    break;
+                case Consts.COIN:
+                    child.GetComponentInChildren<Text>().text = "99" + "/" + coinsCount;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     private void UpdateCompleteLevelCurrentScreen()
     {
-
+        foreach (Transform child in CompleteLevelCurrent)
+        {
+            switch (child.GetComponentInChildren<Image>().name)
+            {
+                case Consts.APPLE:
+                    child.GetComponentInChildren<Text>().text = applesCollected + "/" + applesCount;
+                    break;
+                case Consts.BANANA:
+                    child.GetComponentInChildren<Text>().text = bananasCollected + "/" + bananasCount;
+                    break;
+                case Consts.STRAWBERRY:
+                    child.GetComponentInChildren<Text>().text = strawberriesCollected + "/" + strawberriesCount;
+                    break;
+                case Consts.CHERRY:
+                    child.GetComponentInChildren<Text>().text = cherriesCollected + "/" + cherriesCount;
+                    break;
+                case Consts.ORANGE:
+                    child.GetComponentInChildren<Text>().text = orangesCollected + "/" + orangesCount;
+                    break;
+                case Consts.KIWI:
+                    child.GetComponentInChildren<Text>().text = kiwisCollected + "/" + kiwisCount;
+                    break;
+                case Consts.MELON:
+                    child.GetComponentInChildren<Text>().text = melonsCollected + "/" + melonsCount;
+                    break;
+                case Consts.ANANAS:
+                    child.GetComponentInChildren<Text>().text = ananasCollected + "/" + ananasCount;
+                    break;
+                case Consts.COIN:
+                    child.GetComponentInChildren<Text>().text = coinsCollected + "/" + coinsCount;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
