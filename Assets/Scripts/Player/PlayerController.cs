@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
 {
     #region variables
 
-    private bool isLoaded = false;
     public bool isAlive;
 
     public Rigidbody2D playerRB;
@@ -46,6 +45,9 @@ public class PlayerController : MonoBehaviour
     public float timeInLevel;
 
     public int keysCount;
+
+    private bool isDataLoaded = false;
+    private bool isLevelLoaded = false;
 
     #endregion
 
@@ -100,10 +102,10 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate() //Load
     {
-        if (!isLoaded)
+        if (!isDataLoaded)
         {
             GameManager.LoadJsonData(GameManager.instance);
-            isLoaded = true;
+            isDataLoaded = true;
         }
     }
 
@@ -257,8 +259,7 @@ public class PlayerController : MonoBehaviour
             {
                 try
                 {
-                    int levelNum = int.Parse(triggerObject.Substring(triggerObject.LastIndexOf('_') + 1));
-                    GameManager.levelList[levelNum] = true;
+                    GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
                     lockTriggerUsing = true;
 
                     ShowCompleteLevelScreen();
@@ -291,14 +292,19 @@ public class PlayerController : MonoBehaviour
 
     public void LoadLevel(string levelName)
     {
-        if (levelName.Equals(Consts.LEVEL_MAP))
+        if (!isLevelLoaded)
         {
-            buttonBackToMap.interactable = false;
-            buttonBackToMap.GetComponent<EventTrigger>().enabled = false;
-        }
+            isLevelLoaded = true;
 
-        GameManager.SaveJsonData(GameManager.instance);
-        SceneManager.LoadScene(levelName);
+            if (levelName.Equals(Consts.LEVEL_MAP))
+            {
+                buttonBackToMap.interactable = false;
+                buttonBackToMap.GetComponent<EventTrigger>().enabled = false;
+            }
+
+            GameManager.SaveJsonData(GameManager.instance);
+            SceneManager.LoadScene(levelName);
+        }
     }
 
     private void ShowCompleteLevelScreen()
@@ -310,6 +316,7 @@ public class PlayerController : MonoBehaviour
     private void FinishLevelAndLoadMap()
     {
         levelCompleteScreen.gameObject.SetActive(false);
+
         LoadLevel("LevelMap");
     }
 

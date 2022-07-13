@@ -17,10 +17,20 @@ public class GameManager : MonoBehaviour, ISaveable
     public string currentLevel;
 
     public static List<bool> levelList = new List<bool>(new bool[15]);
+    public static List<List<int>> fruitRecords = new List<List<int>>();
 
     private void Awake()
     {
         instance = this;
+
+        for (int i = 0; i <= 14; i++)
+        {
+            fruitRecords.Add(new List<int>());
+            for (int j = 0; j <= 8; j++)
+            {
+                fruitRecords[i].Add(0);
+            }
+        }
     }
 
     void Start()
@@ -85,18 +95,24 @@ public class GameManager : MonoBehaviour, ISaveable
 
         if (FileManager.WriteToFile(profileName + ".dat", saveData.SaveToJson()))
         {
-            //Debug.Log("Save successful");
+            Debug.Log("Save successful");
         }
     }
 
     public void PopulateSaveData(SaveData saveData)
     {     
-        //0 level1_1; 1 level1_2; 2 level1_3; 3 level1_4; 4 level2_1; 5 level2_2; 6 level2_3; 7 level3_1;
-        //8 level3_2; 9 level3_3; 10 level3_4; 11 level4_1; 12 level4_2; 13 level4_3; 14 level5_1;
         for (int i = 0; i <= 14; i++)
         {
             saveData.playerData.levelList[i] = levelList[i];
         }
+
+        //for (int i = 0; i <= 14; i++)
+        //{
+        //    for (int j = 0; j <= 8; j++)
+        //    {
+        //        saveData.playerData.fruitRecords[i][j] = fruitRecords[i][j];
+        //    }
+        //}
     }
 
     public static void LoadJsonData(GameManager _gameManager)
@@ -117,11 +133,17 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             isNewGame = false;
 
-            //0 level1_1; 1 level1_2; 2 level1_3; 3 level1_4; 4 level2_1; 5 level2_2; 6 level2_3; 7 level3_1;
-            //8 level3_2; 9 level3_3; 10 level3_4; 11 level4_1; 12 level4_2; 13 level4_3; 14 level5_1;
             for (int i = 0; i <= 14; i++)
             {
                 levelList[i] = false;
+            }
+
+            for (int i = 0; i <= 14; i++)
+            {
+                for (int j = 0; j <= 8; j++)
+                {
+                    fruitRecords[i][j] = 0;
+                }
             }
         }
         else
@@ -130,6 +152,14 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 levelList[i] = saveData.playerData.levelList[i];
             }
+
+            //for (int i = 0; i <= 14; i++)
+            //{
+            //    for (int j = 0; j <= 8; j++)
+            //    {
+            //        fruitRecords[i][j] = saveData.playerData.fruitRecords[i][j];
+            //    }
+            //}
         }
     }
 
