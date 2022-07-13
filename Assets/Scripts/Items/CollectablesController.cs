@@ -18,18 +18,18 @@ public class CollectablesController : MonoBehaviour
             fruitsCount[Consts.GetFruitIndex(child.GetComponent<Collectable>().name)]++;
         }
 
-        UpdateCompleteLevelRecordScreen();
-        UpdateCompleteLevelCurrentScreen();
+        LoadCompleteLevelRecord();
+        UpdateCompleteLevelCurrent();
     }
 
     public void Collect(string name)
     {
         fruitsCollected[Consts.GetFruitIndex(name)]++;
              
-        UpdateCompleteLevelCurrentScreen();
+        UpdateCompleteLevelCurrent();
     }
 
-    private void UpdateCompleteLevelRecordScreen()
+    private void LoadCompleteLevelRecord()
     {
         foreach (Transform child in CompleteLevelRecord)
         {
@@ -37,12 +37,12 @@ public class CollectablesController : MonoBehaviour
             if (fruitsCount[fruitIndex] > 0)
             {
                 child.GetComponentInChildren<Text>().text
-                    = GameManager.fruitRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][fruitIndex] + "/" + fruitsCount[fruitIndex];
+                    = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][fruitIndex] + "/" + fruitsCount[fruitIndex];
             }
         }    
     }
 
-    private void UpdateCompleteLevelCurrentScreen()
+    private void UpdateCompleteLevelCurrent()
     {
         foreach (Transform child in CompleteLevelCurrent)
         {
@@ -50,6 +50,32 @@ public class CollectablesController : MonoBehaviour
             if (fruitsCount[fruitIndex] > 0)
             {
                 child.GetComponentInChildren<Text>().text = fruitsCollected[fruitIndex] + "/" + fruitsCount[fruitIndex];
+
+                int record = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][fruitIndex];
+                if (fruitsCollected[fruitIndex] < record)
+                {
+                    child.GetComponentInChildren<Text>().color = new Color32(220, 20, 60, 255);
+                }
+                else if(fruitsCollected[fruitIndex] == record)
+                {
+                    child.GetComponentInChildren<Text>().color = new Color32(182, 182, 182, 255);
+                }
+                else
+                {
+                    child.GetComponentInChildren<Text>().color = new Color32(60, 179, 113, 255);
+                }
+            }
+        }
+    }
+
+    public void UpdateLevelRecord(int levelIndex)
+    {
+        foreach (Transform child in CompleteLevelCurrent)
+        {
+            int fruitIndex = Consts.GetFruitIndex(child.GetComponent<Image>().name);
+            if (fruitsCollected[fruitIndex] > GameManager.levelRecords[levelIndex][fruitIndex])
+            {
+                GameManager.levelRecords[levelIndex][fruitIndex] = fruitsCollected[fruitIndex];
             }
         }
     }

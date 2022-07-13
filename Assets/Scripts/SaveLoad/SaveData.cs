@@ -7,8 +7,23 @@ public class SaveData
     [System.Serializable]
     public struct PlayerData
     {
-        public List<bool> levelList;
-        //public List<Fruits> fruitRecords;      
+        public List<bool> levelList; //completed or not
+
+        public List<int> level0Records; //fruits and time
+        public List<int> level1Records;
+        public List<int> level2Records;
+        public List<int> level3Records;
+        public List<int> level4Records;
+        public List<int> level5Records;
+        public List<int> level6Records;
+        public List<int> level7Records;
+        public List<int> level8Records;
+        public List<int> level9Records;
+        public List<int> level10Records;
+        public List<int> level11Records;
+        public List<int> level12Records;
+        public List<int> level13Records;
+        public List<int> level14Records;
     }
 
     public PlayerData playerData;
@@ -16,16 +31,22 @@ public class SaveData
     public SaveData()
     {
         playerData.levelList = new List<bool>(new bool[15]);
-        //playerData.fruitRecords = new List<Fruits>();
 
-        //for(int i = 0; i <= 14; i++)
-        //{
-        //    playerData.fruitRecords.Add(new Fruits(0,0));
-        //    for (int j = 0; j <= 8; j++)
-        //    {
-        //        playerData.fruitRecords[i].Add(0);
-        //    }
-        //}    
+        playerData.level0Records = new List<int>(new int[10]);
+        playerData.level1Records = new List<int>(new int[10]);
+        playerData.level2Records = new List<int>(new int[10]);
+        playerData.level3Records = new List<int>(new int[10]);
+        playerData.level4Records = new List<int>(new int[10]);
+        playerData.level5Records = new List<int>(new int[10]);
+        playerData.level6Records = new List<int>(new int[10]);
+        playerData.level7Records = new List<int>(new int[10]);
+        playerData.level8Records = new List<int>(new int[10]);
+        playerData.level9Records = new List<int>(new int[10]);
+        playerData.level10Records = new List<int>(new int[10]);
+        playerData.level11Records = new List<int>(new int[10]);
+        playerData.level12Records = new List<int>(new int[10]);
+        playerData.level13Records = new List<int>(new int[10]);
+        playerData.level14Records = new List<int>(new int[10]);
     }
 
     public string SaveToJson()

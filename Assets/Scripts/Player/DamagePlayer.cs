@@ -23,7 +23,7 @@ public class DamagePlayer : MonoBehaviour
 
             playerHPController.DamagePlayer(damageToDeal);
             
-            if (player.isAlive)
+            if (player.isActive)
             {
                 player.knockbackCounter = player.knockbackLength;
                 player.knockbackFromRight = other.transform.position.x < transform.position.x ? true : false;

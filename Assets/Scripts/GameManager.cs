@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public string currentLevel;
 
     public static List<bool> levelList = new List<bool>(new bool[15]);
-    public static List<List<int>> fruitRecords = new List<List<int>>();
+    public static List<List<int>> levelRecords = new List<List<int>>();
 
     private void Awake()
     {
@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour, ISaveable
 
         for (int i = 0; i <= 14; i++)
         {
-            fruitRecords.Add(new List<int>());
-            for (int j = 0; j <= 8; j++)
+            levelRecords.Add(new List<int>());
+            for (int j = 0; j <= 9; j++) //0-8 - fruits, 9 - time
             {
-                fruitRecords[i].Add(0);
+                levelRecords[i].Add(0);
             }
         }
     }
@@ -106,13 +106,25 @@ public class GameManager : MonoBehaviour, ISaveable
             saveData.playerData.levelList[i] = levelList[i];
         }
 
-        //for (int i = 0; i <= 14; i++)
-        //{
-        //    for (int j = 0; j <= 8; j++)
-        //    {
-        //        saveData.playerData.fruitRecords[i][j] = fruitRecords[i][j];
-        //    }
-        //}
+        #region levelRecords
+
+        saveData.playerData.level0Records = levelRecords[0];
+        saveData.playerData.level1Records = levelRecords[1];
+        saveData.playerData.level2Records = levelRecords[2];
+        saveData.playerData.level3Records = levelRecords[3];
+        saveData.playerData.level4Records = levelRecords[4];
+        saveData.playerData.level5Records = levelRecords[5];
+        saveData.playerData.level6Records = levelRecords[6];
+        saveData.playerData.level7Records = levelRecords[7];
+        saveData.playerData.level8Records = levelRecords[8];
+        saveData.playerData.level9Records = levelRecords[9];
+        saveData.playerData.level10Records = levelRecords[10];
+        saveData.playerData.level11Records = levelRecords[11];
+        saveData.playerData.level12Records = levelRecords[12];
+        saveData.playerData.level13Records = levelRecords[13];
+        saveData.playerData.level14Records = levelRecords[14];
+
+        #endregion
     }
 
     public static void LoadJsonData(GameManager _gameManager)
@@ -142,7 +154,7 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 for (int j = 0; j <= 8; j++)
                 {
-                    fruitRecords[i][j] = 0;
+                    levelRecords[i][j] = 0;
                 }
             }
         }
@@ -153,37 +165,49 @@ public class GameManager : MonoBehaviour, ISaveable
                 levelList[i] = saveData.playerData.levelList[i];
             }
 
-            //for (int i = 0; i <= 14; i++)
-            //{
-            //    for (int j = 0; j <= 8; j++)
-            //    {
-            //        fruitRecords[i][j] = saveData.playerData.fruitRecords[i][j];
-            //    }
-            //}
+            #region levelRecords
+
+            levelRecords[0] = saveData.playerData.level0Records;
+            levelRecords[1] = saveData.playerData.level1Records;
+            levelRecords[2] = saveData.playerData.level2Records;
+            levelRecords[3] = saveData.playerData.level3Records;
+            levelRecords[4] = saveData.playerData.level4Records;
+            levelRecords[5] = saveData.playerData.level5Records;
+            levelRecords[6] = saveData.playerData.level6Records;
+            levelRecords[7] = saveData.playerData.level7Records;
+            levelRecords[8] = saveData.playerData.level8Records;
+            levelRecords[9] = saveData.playerData.level9Records;
+            levelRecords[10] =saveData.playerData.level10Records;
+            levelRecords[11] =saveData.playerData.level11Records;
+            levelRecords[12] =saveData.playerData.level12Records;
+            levelRecords[13] =saveData.playerData.level13Records;
+            levelRecords[14] = saveData.playerData.level14Records;
+
+            #endregion
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
-    private void OnApplicationPause()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
-    private void OnApplicationFocus()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
-    }
+    //private void OnApplicationQuit()
+    //{
+    //    if (activePlayer)
+    //    {
+    //        SaveJsonData(this);
+    //    }
+    //}
+    //private void OnApplicationPause()
+    //{
+    //    if (activePlayer)
+    //    {
+    //        SaveJsonData(this);
+    //    }
+    //}
+    //private void OnApplicationFocus()
+    //{
+    //    if (activePlayer)
+    //    {
+    //        SaveJsonData(this);
+    //    }
+    //}
 
     #endregion
 }
