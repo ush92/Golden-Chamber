@@ -18,6 +18,7 @@ public static class Consts
     public const string MAIN_MENU = "MainMenu";
     public const string LEVEL_MAP = "LevelMap";
 
+    public const string FINISH = "Ukoñczono poziom: ";
     public const string LEVEL1_1 = "Level1_1";
     public const string LEVEL1_1_NAME = "Dziwne Nadleœnictwo";
     public const string LEVEL1_2 = "Level1_2";
@@ -25,7 +26,7 @@ public static class Consts
     public const string LEVEL1_3 = "Level1_3";
     public const string LEVEL1_3_NAME = "Tartak \"Pociupa³a i Synowie\" cz. II";
     public const string LEVEL1_4 = "Level1_4";
-
+    public const string LEVEL1_4_NAME = "test name";
     public const string LEVEL2_1 = "Level2_1";
 
     public const string LEVEL2_2 = "Level2_3";
@@ -69,6 +70,45 @@ public static class Consts
     public const string NEW_PROFILE_ERROR_ALREADY_USED = "Profil o podanej nazwie ju¿ istnieje";
     public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Nazwa profilu nie mo¿e byæ pusta";
 
+    public static string GetLevelName(string levelName)
+    {
+        switch (levelName)
+        {
+            case LEVEL1_1:
+                return LEVEL1_1_NAME;
+            case LEVEL1_2:
+                return LEVEL1_2_NAME;
+            case LEVEL1_3:
+                return LEVEL1_3_NAME;
+            case LEVEL1_4:
+                return LEVEL1_4_NAME;
+            case LEVEL2_1:
+                return LEVEL1_4_NAME;
+            case LEVEL2_2:
+                return LEVEL1_4_NAME;
+            case LEVEL2_3:
+                return LEVEL1_4_NAME;
+            case LEVEL3_1:
+                return LEVEL1_4_NAME;
+            case LEVEL3_2:
+                return LEVEL1_4_NAME;
+            case LEVEL3_3:
+                return LEVEL1_4_NAME;
+            case LEVEL3_4:
+                return LEVEL1_4_NAME;
+            case LEVEL4_1:
+                return LEVEL1_4_NAME;
+            case LEVEL4_2:
+                return LEVEL1_4_NAME;
+            case LEVEL4_3:
+                return LEVEL1_4_NAME;
+            case LEVEL5_1:
+                return LEVEL1_4_NAME;
+            default:
+                Debug.Log("Nieznana nazwa levelu w Consts.GetLevelIndex");
+                return "{UNKNOWN NAME}";
+        }
+    }
     public static int GetLevelIndex(string levelName)
     {
         switch(levelName)

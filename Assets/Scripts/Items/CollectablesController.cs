@@ -18,6 +18,8 @@ public class CollectablesController : MonoBehaviour
             fruitsCount[Consts.GetFruitIndex(child.GetComponent<Collectable>().name)]++;
         }
 
+
+
         LoadCompleteLevelRecord();
         UpdateCompleteLevelCurrent();
     }
@@ -68,7 +70,7 @@ public class CollectablesController : MonoBehaviour
         }
     }
 
-    public void UpdateLevelRecord(int levelIndex)
+    public void UpdateLevelFruitRecord(int levelIndex)
     {
         foreach (Transform child in CompleteLevelCurrent)
         {

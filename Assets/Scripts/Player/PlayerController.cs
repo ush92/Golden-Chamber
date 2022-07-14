@@ -37,17 +37,17 @@ public class PlayerController : MonoBehaviour
 
     public string triggerObject;
     private bool lockTriggerUsing = false;
+    public int keysCount;
 
     public CollectablesController collectableController;
+    public CompleteLevelScreen completeLevelScreen;
     public Button buttonBackToMap;
-    public GameObject levelCompleteScreen;
-    private bool isLevelCompleted;
-    public float timeInLevel;
-
-    public int keysCount;
+    private float timeInLevel;
+    public Text currentTime;
 
     private bool isDataLoaded = false;
     private bool isLevelLoaded = false;
+    private bool isLevelCompleted = false;
 
     #endregion
 
@@ -97,6 +97,23 @@ public class PlayerController : MonoBehaviour
         if (!isLevelCompleted)
         {
             timeInLevel += Time.deltaTime;
+
+            var timeInMinutes = (int)timeInLevel / 60;
+            var timeInSeconds = (int)timeInLevel % 60;
+            currentTime.text = timeInMinutes.ToString() + " min " + timeInSeconds.ToString() + "s";
+
+            if ((int)timeInLevel > GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9])
+            {
+                currentTime.color = new Color32(220, 20, 60, 255);
+            }
+            else if ((int)timeInLevel == GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9])
+            {
+                currentTime.color = new Color32(182, 182, 182, 255);
+            }
+            else
+            {
+                currentTime.color = new Color32(60, 179, 113, 255);
+            }
         }
     }
 
@@ -297,15 +314,17 @@ public class PlayerController : MonoBehaviour
         GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
 
         isLevelCompleted = true;
-        levelCompleteScreen.gameObject.SetActive(true);
-        collectableController.UpdateLevelRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name));
+        completeLevelScreen.gameObject.SetActive(true);
+
+        collectableController.UpdateLevelFruitRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name));
+        completeLevelScreen.UpdateLevelTimeRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name), (int)timeInLevel);
 
         GameManager.SaveJsonData(GameManager.instance);       
     }
 
     private void FinishLevelAndLoadMap()
     {
-        levelCompleteScreen.gameObject.SetActive(false);
+        completeLevelScreen.gameObject.SetActive(false);
         LoadLevel("LevelMap");
     }
 
