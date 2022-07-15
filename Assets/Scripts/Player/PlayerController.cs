@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.AddPlayer(this);
         isActive = true;
+        GameManager.instance.AddPlayer(this);
 
         if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
         {

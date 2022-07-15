@@ -55,6 +55,15 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             activePlayer = newPlayer;
             PlayerRespawnEffect();
+
+            if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
+            {
+                transform.localPosition = levelMapLastPosition;
+            }
+            else
+            {
+                transform.localPosition = newPlayer.transform.localPosition;
+            }           
         }
         else
         {
