@@ -13,15 +13,16 @@ public class CollectablesController : MonoBehaviour
 
     void Start()
     {
-        foreach (Transform child in transform)
+        if (!SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
         {
-            fruitsCount[Consts.GetFruitIndex(child.GetComponent<Collectable>().name)]++;
+            foreach (Transform child in transform)
+            {
+                fruitsCount[Consts.GetFruitIndex(child.GetComponent<Collectable>().name)]++;
+            }
+
+            LoadCompleteLevelRecord();
+            UpdateCompleteLevelCurrent();
         }
-
-
-
-        LoadCompleteLevelRecord();
-        UpdateCompleteLevelCurrent();
     }
 
     public void Collect(string name)

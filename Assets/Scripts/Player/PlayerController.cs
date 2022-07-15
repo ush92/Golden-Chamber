@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    private bool attackPressed;
     public float attackCooldown = 0.25f;
     private float attackCounter;
 
@@ -80,6 +81,16 @@ public class PlayerController : MonoBehaviour
             Knockback();
             AttackCooldown();
             Animate();
+            UpdateCompleteLevelScreenTimer();
+
+            if (attackPressed && !isLevelCompleted)
+            {
+                if (attackCounter <= 0)
+                {
+                    playerAnimator.SetTrigger(Consts.ATTACK);
+                    attackCounter = attackCooldown;
+                }
+            }
         }
         else
         {
@@ -93,8 +104,11 @@ public class PlayerController : MonoBehaviour
                 deathTimeCounter = deathTime;
             }
         }
+    }
 
-        if (!isLevelCompleted)
+    private void UpdateCompleteLevelScreenTimer()
+    {
+        if (!isLevelCompleted && !SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
         {
             timeInLevel += Time.deltaTime;
 
@@ -102,11 +116,13 @@ public class PlayerController : MonoBehaviour
             var timeInSeconds = (int)timeInLevel % 60;
             currentTime.text = timeInMinutes.ToString() + " min " + timeInSeconds.ToString() + "s";
 
-            if ((int)timeInLevel > GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9])
+            int record = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9];
+
+            if ((int)timeInLevel > record && record != 0)
             {
                 currentTime.color = new Color32(220, 20, 60, 255);
             }
-            else if ((int)timeInLevel == GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9])
+            else if ((int)timeInLevel == record)
             {
                 currentTime.color = new Color32(182, 182, 182, 255);
             }
@@ -391,17 +407,15 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    public void FireOnTouch()
+    public void AttackButtonDownOnTouch()
     {
-        if (isActive && !isLevelCompleted)
-        {
-            if (attackCounter <= 0)
-            {
-                playerAnimator.SetTrigger(Consts.ATTACK);
-                attackCounter = attackCooldown;
-            }
-        }
+        attackPressed = true;
     }
+    public void AttackButtonUpOnTouch()
+    {
+        attackPressed = false;
+    }
+
     public void LeftOnTouch()
     {
         if (isActive && !isLevelCompleted)
