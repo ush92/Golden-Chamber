@@ -196,27 +196,5 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
-    //private void OnApplicationQuit()
-    //{
-    //    if (activePlayer)
-    //    {
-    //        SaveJsonData(this);
-    //    }
-    //}
-    //private void OnApplicationPause()
-    //{
-    //    if (activePlayer)
-    //    {
-    //        SaveJsonData(this);
-    //    }
-    //}
-    //private void OnApplicationFocus()
-    //{
-    //    if (activePlayer)
-    //    {
-    //        SaveJsonData(this);
-    //    }
-    //}
-
     #endregion
 }
