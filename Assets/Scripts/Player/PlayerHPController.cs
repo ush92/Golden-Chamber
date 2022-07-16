@@ -49,7 +49,7 @@ public class PlayerHPController : MonoBehaviour
         }
         else
         {
-            hpBar.gameObject.SetActive(false);   
+            hpBar.gameObject.SetActive(false);
         }
 
         if (damagePopupCounter > 0)

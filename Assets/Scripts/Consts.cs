@@ -12,7 +12,9 @@ public static class Consts
     public const string PLAYER = "Player";
     public const string PLAYER_PROJECTILE = "PlayerProjectile";
     public const string ENEMY = "Enemy";
+    public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string MOVING_PLATFORM = "MovingPlatform";
+    public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";
 
     public const string MAIN_MENU = "MainMenu";

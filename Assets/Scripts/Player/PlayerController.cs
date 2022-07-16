@@ -22,9 +22,11 @@ public class PlayerController : MonoBehaviour
     //public GameObject stomper;
 
     public float knockback;
-    public float knockbackLength;
     public bool knockbackFromRight;
+    public float knockbackLength;
     public float knockbackCounter;
+    public float knockbackCooldownLength;
+    public float knockbackCooldownCounter;
 
     public Animator playerAnimator;
 
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
         if (isActive)
         {
             CheckGround();
-            Knockback();
+            MoveAndKnockback();
             AttackCooldown();
             Animate();
             UpdateCompleteLevelScreenTimer();
@@ -147,25 +149,27 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
     }
 
-    private void Knockback()
+    private void MoveAndKnockback()
     {
         if (knockbackCounter <= 0)
         {
             playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
         }
         else
-        {
+        {    
             if (knockbackFromRight)
             {
-                playerRB.velocity = new Vector2(-knockback, knockback);
+                playerRB.velocity = new Vector2(-knockback, knockback / 2);
             }
             else
             {
-                playerRB.velocity = new Vector2(knockback, knockback);
+                playerRB.velocity = new Vector2(knockback, knockback / 2);
             }
-
+            
             knockbackCounter -= Time.deltaTime;
         }
+
+        knockbackCooldownCounter -= Time.deltaTime;
     }
 
     private void AttackCooldown()

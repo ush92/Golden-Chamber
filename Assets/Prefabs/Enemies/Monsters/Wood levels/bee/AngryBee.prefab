@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6454657732420686184
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 160450066161059539, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_Name
+      value: AngryBee
+      objectReference: {fileID: 0}
+    - target: {fileID: 160450066161059562, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 160450067146376309, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 76.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 160450067146376309, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 160450067146376309, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 470
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 79.77652
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.048512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 413.49527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089522, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4721599317216089524, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+      propertyPath: m_Name
+      value: AngryBee
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+--- !u!1 &6604957105971402683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 160450066161059539, guid: 9b4d50e714295d049b580f858aa4abed, type: 3}
+  m_PrefabInstance: {fileID: 6454657732420686184}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1063349748
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604957105971402683}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &1063349747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6604957105971402683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306c7f65d5e5d3b4a8564c0afc7e5e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedMin: 0.1
+  moveSpeedMax: 3
+  timeOfSpeedChange: 0
+  flyingArea: {fileID: 0}
