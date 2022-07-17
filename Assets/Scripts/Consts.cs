@@ -16,6 +16,7 @@ public static class Consts
     public const string MOVING_PLATFORM = "MovingPlatform";
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";
+    public const string COLLECTABLE = "Collectable";
 
     public const string MAIN_MENU = "MainMenu";
     public const string LEVEL_MAP = "LevelMap";

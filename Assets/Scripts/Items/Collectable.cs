@@ -11,6 +11,12 @@ public class Collectable : MonoBehaviour
             if(gameObject.name.Equals(Consts.HP_ITEM_SMALL))
             {
                 var playerHPController = other.GetComponent<PlayerHPController>();
+
+                if (playerHPController.currentHP == playerHPController.maxHP)
+                {
+                    return;
+                }
+
                 playerHPController.HealPlayer(1);
             }
             else if (gameObject.name.Equals(Consts.KEY))
@@ -22,9 +28,14 @@ public class Collectable : MonoBehaviour
             {
                 FindObjectOfType<CollectablesController>().Collect(gameObject.name);
             }
-            
-            Instantiate(pickupEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+
+            AudioSource audio = GetComponent<AudioSource>();
+            audio.Play();
+
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+
+            Destroy(gameObject, 2.0f);
         }
     }
 }

@@ -5955,7 +5955,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.29442596, y: -0.062318802}
+  m_Offset: {x: 0.29442596, y: -0.04190898}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5966,7 +5966,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.746994, y: 1.2126484}
+  m_Size: {x: 0.746994, y: 1.1718287}
   m_EdgeRadius: 0
 --- !u!1 &2111021956
 GameObject:
@@ -6336,9 +6336,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   knockback: 9
-  knockbackLength: 0
   knockbackFromRight: 0
-  knockbackCounter: 1.3
+  knockbackLength: 0.1
+  knockbackCounter: 0
+  knockbackCooldownLength: 1
+  knockbackCooldownCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
   attackCooldown: 0.55
   deathTime: 3
@@ -6538,6 +6540,7 @@ MonoBehaviour:
   damagePopupTime: 1.5
   damagePopupCounter: 0
   player: {fileID: 4912927042408680108}
+  playerDamageEffect: {fileID: 4639924823971810983, guid: 6737c82c51c45aa4c90ebf02f6f38e2f, type: 3}
   invincibilityTime: 1
   invincibilityCounter: 0
   hpBarFlashTime: 0.2

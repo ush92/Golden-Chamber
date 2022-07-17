@@ -18,6 +18,7 @@ public class PlayerHPController : MonoBehaviour
     public float damagePopupCounter;
 
     public PlayerController player;
+    public GameObject playerDamageEffect;
 
     public float invincibilityTime;
     public float invincibilityCounter;
@@ -85,6 +86,8 @@ public class PlayerHPController : MonoBehaviour
             damagePopup.text = damage.ToString();
             damagePopup.gameObject.SetActive(true);
             damagePopupCounter = damagePopupTime;
+
+            Instantiate(playerDamageEffect, player.transform.position, player.transform.rotation);
 
             if (currentHP < 0)
             {
