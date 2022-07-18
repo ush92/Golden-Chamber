@@ -18,6 +18,8 @@ public static class Consts
     public const string SIGNPOST = "Signpost";
     public const string COLLECTABLE = "Collectable";
 
+    public const string BOSS1 = "Pociupala";
+
     public const string MAIN_MENU = "MainMenu";
     public const string LEVEL_MAP = "LevelMap";
 

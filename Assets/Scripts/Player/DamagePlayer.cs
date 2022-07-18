@@ -27,9 +27,12 @@ public class DamagePlayer : MonoBehaviour
 
             if (tag.Equals(Consts.ENEMY))
             {
-                if (TryGetComponent<EnemyPatrol>(out var patrol))
+                if (!name.Equals(Consts.BOSS1))
                 {
-                    patrol.moveRight = !patrol.moveRight;
+                    if (TryGetComponent<EnemyPatrol>(out var patrol))
+                    {
+                        patrol.moveRight = !patrol.moveRight;
+                    }
                 }
             }
         }

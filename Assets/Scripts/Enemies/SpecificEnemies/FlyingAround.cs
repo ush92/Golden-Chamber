@@ -32,8 +32,6 @@ public class FlyingAround : MonoBehaviour
         {
             ReturnStartPoint();
         }
-
-
     }
 
     private void ReturnStartPoint()
@@ -55,10 +53,8 @@ public class FlyingAround : MonoBehaviour
         else
         {
             enemyAnimator.SetBool("nearPlayer", false);
-            Debug.Log(Vector2.Distance(transform.position, player.transform.position));
         }
-        
-        
+             
         if(transform.position.x > player.transform.position.x)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
