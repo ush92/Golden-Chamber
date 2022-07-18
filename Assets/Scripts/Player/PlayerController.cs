@@ -52,6 +52,8 @@ public class PlayerController : MonoBehaviour
     private bool isLevelLoaded = false;
     private bool isLevelCompleted = false;
 
+    public bool isBossEncounter = false;
+
     #endregion
 
     void Start()
@@ -365,23 +367,29 @@ public class PlayerController : MonoBehaviour
 
     public void Respawn()
     {
-        //isAlive = true;
+        if (!isBossEncounter)
+        {
+            LoadLevel(SceneManager.GetActiveScene().name);
+        }
+        else
+        {
+            isActive = true;
+            isBossEncounter = false;
 
-        //GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        //GetComponent<SpriteRenderer>().enabled = true;
-        //GetComponent<CapsuleCollider2D>().enabled = true;
-        ////stomper.gameObject.SetActive(true);
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<CapsuleCollider2D>().enabled = true;
+            //stomper.gameObject.SetActive(true);
 
-        //playerRB.velocity = new Vector3(0, 0, 0);
+            playerRB.velocity = new Vector3(0, 0, 0);
 
-        //transform.position = GameManager.instance.currentCheckPoint.transform.position;
+            transform.position = GameManager.instance.currentCheckPoint.transform.position;
 
-        //var hpController = this.GetComponentInChildren<PlayerHPController>();
-        //hpController.currentHP = hpController.maxHP;
+            var hpController = GetComponentInChildren<PlayerHPController>();
+            hpController.currentHP = hpController.maxHP;
 
-        //GameManager.instance.PlayerRespawnEffect();
-
-        LoadLevel(SceneManager.GetActiveScene().name); //reload level
+            GameManager.instance.PlayerRespawnEffect();
+        }
     }
 
     public void CollectKey()

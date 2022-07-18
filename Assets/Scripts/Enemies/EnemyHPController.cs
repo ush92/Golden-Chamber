@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemyHPController : MonoBehaviour
 {
     public int maxHP;
-    private int currentHP;
+    public int currentHP;
 
     public GameObject enemyDeathEffect;
 
@@ -74,5 +74,10 @@ public class EnemyHPController : MonoBehaviour
 
             UpdateHPDisplay();
         }
+    }
+
+    public void ResetHP()
+    {
+        currentHP = maxHP;
     }
 }

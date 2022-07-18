@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class PociupalaBehaviour : MonoBehaviour
 {
-    private float moveSpeed = 1;
+    private Vector3 basePosition;
+
+    private float moveSpeed = 0.5f;
     public float moveSpeedAcceleration;
-
-    public Transform wallCheck;
-    public float wallCheckRadius;
-    public LayerMask whatIsWall;
-
-    public Transform edgeCheck;
 
     public float attackDistance;
     private bool isAttacking = false;
@@ -23,15 +19,28 @@ public class PociupalaBehaviour : MonoBehaviour
     public GameObject[] saws;
     private int sawIndex = -1;
     private bool isSawJump = false;
-    private Vector3 sawBasePoistion;
+    private Vector3 sawBasePosition;
     public float sawMoveSpeed;
 
     void Start()
     {
+
+    }
+
+    private void OnEnable()
+    {
+        player.isBossEncounter = true;
+        basePosition = transform.position;      
+
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isPlayerAlive", true);
+
         InvokeRepeating("SawJumping", 5.0f, 7.0f);
         InvokeRepeating("SawReturn", 10.0f, 5.0f);
 
         Invoke("SetNormalMoveSpeed", 3.0f);
+
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     private void SetNormalMoveSpeed()
@@ -51,8 +60,6 @@ public class PociupalaBehaviour : MonoBehaviour
                 new Vector2(player.gameObject.transform.position.x, transform.position.y), moveSpeed * Time.deltaTime);
         }
 
-        moveSpeed += Time.deltaTime * moveSpeedAcceleration;
-
         if (sawIndex != -1)
         {
             if (isSawJump)
@@ -63,7 +70,7 @@ public class PociupalaBehaviour : MonoBehaviour
             else
             {
                 saws[sawIndex].gameObject.transform.position = Vector2.MoveTowards(saws[sawIndex].gameObject.transform.position,
-                    sawBasePoistion, sawMoveSpeed * Time.deltaTime * 6);
+                    sawBasePosition, sawMoveSpeed * Time.deltaTime * 6);
             }
         }
 
@@ -77,7 +84,6 @@ public class PociupalaBehaviour : MonoBehaviour
         }
         else
         {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
             moveSpeed = 0;
         }
 
@@ -94,7 +100,27 @@ public class PociupalaBehaviour : MonoBehaviour
             isAttacking = false;
         }
 
+        moveSpeed += Time.deltaTime * moveSpeedAcceleration;
+
         Animate();
+
+        CheckEncounterActivity();
+    }
+
+    private void CheckEncounterActivity()
+    {
+        if (enabled && !player.isBossEncounter)
+        {
+            CancelInvoke();
+            
+            isSawJump = false;
+            saws[sawIndex].gameObject.transform.position = sawBasePosition;
+            
+            transform.position = basePosition;
+            GetComponentInChildren<EnemyHPController>().ResetHP();
+            GetComponent<SpriteRenderer>().color = Color.white;      
+            gameObject.SetActive(false);
+        }
     }
 
     private void Animate()
@@ -115,7 +141,7 @@ public class PociupalaBehaviour : MonoBehaviour
     private void SawJumping()
     {
         sawIndex = Random.Range(0, 11);
-        sawBasePoistion = saws[sawIndex].gameObject.transform.position;
+        sawBasePosition = saws[sawIndex].gameObject.transform.position;
         isSawJump = true;
     }
 
@@ -126,6 +152,6 @@ public class PociupalaBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        saws[sawIndex].gameObject.transform.position = sawBasePoistion;
+        saws[sawIndex].gameObject.transform.position = sawBasePosition;
     }
 }

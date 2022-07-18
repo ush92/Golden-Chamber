@@ -8,21 +8,24 @@ public class Collectable : MonoBehaviour
     {
         if (other.tag.Equals(Consts.PLAYER))
         {
-            if(gameObject.name.Equals(Consts.HP_ITEM_SMALL))
-            {
-                var playerHPController = other.GetComponent<PlayerHPController>();
+            var playerHPController = other.GetComponent<PlayerHPController>();
+            var playerController = other.GetComponent<PlayerController>();
 
+            if (gameObject.name.Equals(Consts.HP_ITEM_SMALL))
+            {
                 if (playerHPController.currentHP == playerHPController.maxHP)
                 {
                     return;
                 }
-
                 playerHPController.HealPlayer(1);
             }
             else if (gameObject.name.Equals(Consts.KEY))
             {
-                var playerController = other.GetComponent<PlayerController>();
                 playerController.CollectKey();
+            }
+            else if (gameObject.name.Equals(Consts.AXE_WEAPON_COLLECTABLE))
+            {
+                //todo
             }
             else
             {
