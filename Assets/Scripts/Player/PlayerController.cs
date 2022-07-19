@@ -291,7 +291,7 @@ public class PlayerController : MonoBehaviour
 
             if (triggerObject.Equals("LevelMap"))
             {
-                LoadLevel("LevelMap");
+                GotoLevel("LevelMap");
             }
             else if (triggerObject.StartsWith("Complete_"))
             {
@@ -300,7 +300,7 @@ public class PlayerController : MonoBehaviour
             else if (triggerObject.StartsWith("Level"))
             {
                 GameManager.levelMapLastPosition = playerRB.transform.position;
-                LoadLevel(triggerObject);          
+                GotoLevel(triggerObject);          
             }
             else
             {
@@ -314,7 +314,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void LoadLevel(string levelName)
+    public void GotoLevel(string levelName)
     {
         if (!isLevelLoaded)
         {
@@ -327,7 +327,7 @@ public class PlayerController : MonoBehaviour
             }
 
             GameManager.SaveJsonData(GameManager.instance);
-            SceneManager.LoadScene(levelName);
+            StartCoroutine(GameManager.instance.LoadLevel(levelName));
         }
     }
 
@@ -347,7 +347,7 @@ public class PlayerController : MonoBehaviour
     private void FinishLevelAndLoadMap()
     {
         completeLevelScreen.gameObject.SetActive(false);
-        LoadLevel("LevelMap");
+        GotoLevel("LevelMap");
     }
 
     public void Death()
@@ -369,7 +369,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isBossEncounter)
         {
-            LoadLevel(SceneManager.GetActiveScene().name);
+            GotoLevel(SceneManager.GetActiveScene().name);
         }
         else
         {

@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
+
+    public Animator levelTransition;
+    public float transitionTime = 1.0f;
 
     public PlayerController activePlayer;
     public Camera playerCamera;
@@ -90,9 +94,15 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             SaveJsonData(this);
         }
-
         levelMapLastPosition = Vector3.zero;
-        SceneManager.LoadScene(Consts.MAIN_MENU);
+        StartCoroutine(LoadLevel(Consts.MAIN_MENU));
+    }
+
+    public IEnumerator LoadLevel(string levelName)
+    {
+        levelTransition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(levelName);
     }
 
     #region Save&Load

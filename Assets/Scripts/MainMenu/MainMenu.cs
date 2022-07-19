@@ -83,8 +83,7 @@ public class MainMenu : MonoBehaviour
     public void Continue_OpenProfile(string profileName)
     {
         GameManager.CreateGame(_isNewGame: false, profileName);
-        SceneManager.LoadScene(Consts.LEVEL_MAP);
-
+        StartCoroutine(GameManager.instance.LoadLevel(Consts.LEVEL_MAP));
         Debug.Log($"Game {profileName} loaded");
     }
 
