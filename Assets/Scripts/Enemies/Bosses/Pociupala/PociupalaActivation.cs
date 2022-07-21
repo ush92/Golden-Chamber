@@ -8,7 +8,10 @@ public class PociupalaActivation : MonoBehaviour
     {
         if (other.tag.Equals(Consts.PLAYER))
         {
-            pociupala.gameObject.SetActive(true);
+            if (pociupala != null)
+            {
+                pociupala.gameObject.SetActive(true);
+            }
         }
     }
 }

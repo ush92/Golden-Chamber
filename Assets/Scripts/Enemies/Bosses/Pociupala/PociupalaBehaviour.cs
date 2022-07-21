@@ -22,6 +22,8 @@ public class PociupalaBehaviour : MonoBehaviour
     private Vector3 sawBasePosition;
     public float sawMoveSpeed;
 
+    public Collectable axeWeaponLoot;
+
     void Start()
     {
 
@@ -153,5 +155,7 @@ public class PociupalaBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         saws[sawIndex].gameObject.transform.position = sawBasePosition;
+
+        Instantiate(axeWeaponLoot, transform.position, transform.rotation);
     }
 }

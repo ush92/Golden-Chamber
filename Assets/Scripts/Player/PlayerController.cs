@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -41,6 +42,8 @@ public class PlayerController : MonoBehaviour
     public string triggerObject;
     private bool lockTriggerUsing = false;
     public int keysCount;
+
+    public EquipmentManager equipmentManager;
 
     public CollectablesController collectableController;
     public CompleteLevelScreen completeLevelScreen;
@@ -293,7 +296,7 @@ public class PlayerController : MonoBehaviour
             {
                 GotoLevel("LevelMap");
             }
-            else if (triggerObject.StartsWith("Complete_"))
+            else if (triggerObject.Equals("CompleteLevel"))
             {
                 ShowCompleteLevelScreen();          
             }
@@ -397,6 +400,26 @@ public class PlayerController : MonoBehaviour
         keysCount++;
     }
 
+    public void CollectWeapon(string weapon)
+    {
+        Debug.Log($"znalezles now¹ broñ {weapon}");
+
+        var objectsAfterBoss = GameObject.Find("ObjectsAfterBoss");
+
+        if (objectsAfterBoss != null)
+        {
+            if (weapon.Equals(Consts.AXE_WEAPON_COLLECTABLE))
+            {
+                objectsAfterBoss.gameObject.transform.position = new Vector3(-6.85f, 25.0f, 0f);
+            }
+        }
+
+        GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
+        GameManager.SaveJsonData(GameManager.instance);
+
+        equipmentManager.UpdateEquipment();
+    }
+
     #region Touch control
 
     public void JumpOnTouch()
@@ -469,5 +492,4 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-
 }

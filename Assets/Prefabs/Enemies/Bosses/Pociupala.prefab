@@ -49,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067797, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Size.y
-      value: 2.205881
+      value: 1.9458027
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067797, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Offset.x
@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067797, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Offset.y
-      value: -0.08386707
+      value: -0.21390629
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067801, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: moveSpeed
@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: maxHP
-      value: 12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: flashOnHit.b
@@ -79,9 +79,17 @@ PrefabInstance:
       propertyPath: flashOnHit.r
       value: 0.8773585
       objectReference: {fileID: 0}
+    - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+      propertyPath: enemyDeathEffect
+      value: 
+      objectReference: {fileID: 4639924823971810983, guid: 4acf0166c6e19c94cab015235e9bb70b, type: 3}
     - target: {fileID: 2188517101105067805, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Name
       value: Pociupala
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188517101105067805, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067806, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_Sprite
@@ -89,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 5813978275613618827, guid: 3dea688e02d33684ea722ae2b16cd784, type: 3}
     - target: {fileID: 2188517101105067806, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_RootOrder
@@ -97,15 +105,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.81
+      value: 11.1
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 24.258
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 59.753296
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalRotation.w
@@ -113,15 +121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -151,14 +159,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2188517101105067805, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
   m_PrefabInstance: {fileID: 6246059782892080620}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5256082238150476887 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2188517100196317627, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
-  m_PrefabInstance: {fileID: 6246059782892080620}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5256082238841200004 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2188517101058936936, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+--- !u!95 &5256082238786697972 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2188517101105067800, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
   m_PrefabInstance: {fileID: 6246059782892080620}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &6458696345281527477
@@ -173,11 +176,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42615d32b4de99b439de08fd063105ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  moveRight: 0
-  wallCheck: {fileID: 5256082238150476887}
-  wallCheckRadius: 0.1
-  whatIsWall:
-    serializedVersion: 2
-    m_Bits: 4352
-  edgeCheck: {fileID: 5256082238841200004}
+  moveSpeedAcceleration: 5
+  attackDistance: 1.8
+  attackingTimeLength: 0.6
+  animator: {fileID: 5256082238786697972}
+  player: {fileID: 0}
+  saws:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sawMoveSpeed: 2
+  axeWeaponLoot: {fileID: 7161866308255433094, guid: e4d0f1ca364e15948bd6f35035ad7016, type: 3}

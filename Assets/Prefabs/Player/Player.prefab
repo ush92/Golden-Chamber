@@ -6199,6 +6199,7 @@ GameObject:
   - component: {fileID: 4912927042408680109}
   - component: {fileID: 4912927042408680110}
   - component: {fileID: 1591310450}
+  - component: {fileID: 47972737985703606}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -6347,10 +6348,12 @@ MonoBehaviour:
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
   keysCount: 0
+  equipmentManager: {fileID: 47972737985703606}
   collectableController: {fileID: 0}
   completeLevelScreen: {fileID: 1024904443}
   buttonBackToMap: {fileID: 641269622}
   currentTime: {fileID: 1121019943}
+  isBossEncounter: 0
 --- !u!114 &4912927042408680109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6544,6 +6547,21 @@ MonoBehaviour:
   invincibilityTime: 1
   invincibilityCounter: 0
   hpBarFlashTime: 0.2
+--- !u!114 &47972737985703606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4912927042408680151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be753a4aeaad5674e88790a0126abd59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: 
+  currentItem: 0
+  currentItemIcon: {fileID: 2460840762037168887}
 --- !u!1 &4912927044335522436
 GameObject:
   m_ObjectHideFlags: 0
@@ -6696,12 +6714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be753a4aeaad5674e88790a0126abd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons: 
-  utlities: 
-  collectables: 
-  questItems: 
-  currentWeapon: 0
-  currentUtility: 0
+  items: 
+  currentItem: 0
+  currentItemIcon: {fileID: 0}
 --- !u!1 &5877387351367193344
 GameObject:
   m_ObjectHideFlags: 0

@@ -65,10 +65,10 @@ public class MainMenu : MonoBehaviour
             if (FileManager.WriteToFile(newProfileInput.text + ".dat", ""))
             {
                 Debug.Log("Profile created successfully");
-            }
 
-            GameManager.CreateGame(_isNewGame: true, newProfileInput.text);
-            SceneManager.LoadScene(Consts.LEVEL_MAP);
+                GameManager.CreateGame(_isNewGame: true, newProfileInput.text);
+                SceneManager.LoadScene(Consts.LEVEL_MAP);
+            }
         }
     }
 

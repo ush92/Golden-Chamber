@@ -23,9 +23,9 @@ public class Collectable : MonoBehaviour
             {
                 playerController.CollectKey();
             }
-            else if (gameObject.name.Equals(Consts.AXE_WEAPON_COLLECTABLE))
+            else if (gameObject.name.Contains(Consts.AXE_WEAPON_COLLECTABLE))
             {
-                //todo
+                playerController.CollectWeapon(Consts.AXE_WEAPON_COLLECTABLE);
             }
             else
             {
@@ -34,6 +34,8 @@ public class Collectable : MonoBehaviour
 
             AudioSource audio = GetComponent<AudioSource>();
             audio.Play();
+
+            Instantiate(pickupEffect, transform.position, Quaternion.Euler(0,0,0));
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;

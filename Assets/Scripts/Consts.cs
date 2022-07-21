@@ -67,6 +67,7 @@ public static class Consts
 
     public const string HP_ITEM_SMALL = "HpItemSmall";
     public const string KEY = "Key";
+
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
 
     public const string LOCKED_DOOR_P = "LockedDoorParent";
