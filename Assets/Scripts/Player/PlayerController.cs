@@ -313,6 +313,7 @@ public class PlayerController : MonoBehaviour
                 switch (triggerObject)
                 {
                     default:
+                        lockTriggerUsing = false;
                         Debug.Log("Uzyto nieobslugiwany trigger");
                         break;
                 }
