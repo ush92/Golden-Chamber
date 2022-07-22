@@ -16,11 +16,12 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     private float velocity;
+    public float jumpHangTime;
+    private float currentJumpHangTime;
 
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
     private bool isGrounded;
-    //public GameObject stomper;
 
     public float knockback;
     public bool knockbackFromRight;
@@ -31,8 +32,11 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    public Transform attackPoint;
+    public GameObject axeProjectile;
     private bool attackPressed;
-    public float attackCooldown = 0.25f;
+    public float swooshAttackCooldown;
+    public float axeAttackCooldown;
     private float attackCounter;
 
     public float deathTime = 3f;
@@ -57,6 +61,11 @@ public class PlayerController : MonoBehaviour
 
     public bool isBossEncounter = false;
 
+    public ParticleSystem footDust;
+    private ParticleSystem.EmissionModule footDustEmission;
+    public ParticleSystem jumpDust;
+    private bool wasGrounded;
+
     #endregion
 
     void Start()
@@ -78,6 +87,19 @@ public class PlayerController : MonoBehaviour
         {
             buttonBackToMap.interactable = true;
         }
+
+        footDustEmission = footDust.emission;
+        jumpDust.gameObject.SetActive(false);
+    }
+
+    private void LateUpdate() //Load
+    {
+        if (!isDataLoaded)
+        {
+            GameManager.LoadJsonData(GameManager.instance);
+            equipmentManager.UpdateEquipment();
+            isDataLoaded = true;
+        }
     }
 
     void Update()
@@ -90,12 +112,20 @@ public class PlayerController : MonoBehaviour
             Animate();
             UpdateCompleteLevelScreenTimer();
 
+            if(isGrounded)
+            {
+                currentJumpHangTime = jumpHangTime;
+            }
+            else
+            {
+                currentJumpHangTime -= Time.deltaTime;
+            }
+
             if (attackPressed && !isLevelCompleted)
             {
                 if (attackCounter <= 0)
                 {
-                    playerAnimator.SetTrigger(Consts.ATTACK);
-                    attackCounter = attackCooldown;
+                    Attack();
                 }
             }
         }
@@ -140,15 +170,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void LateUpdate() //Load
-    {
-        if (!isDataLoaded)
-        {
-            GameManager.LoadJsonData(GameManager.instance);
-            isDataLoaded = true;
-        }
-    }
-
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
@@ -177,81 +198,62 @@ public class PlayerController : MonoBehaviour
         knockbackCooldownCounter -= Time.deltaTime;
     }
 
-    private void AttackCooldown()
-    {
-        if (attackCounter > 0)
-        {
-            attackCounter -= Time.deltaTime;
-        }
-    }
-
     private void Animate()
     {
         playerAnimator.SetBool(Consts.IS_GROUNDED, isGrounded);
         playerAnimator.SetFloat(Consts.SPEED, Mathf.Abs(playerRB.velocity.x));
         playerAnimator.SetFloat(Consts.YSPEED, playerRB.velocity.y);
-        if (playerRB.velocity.x < 0)
+        if (playerRB.velocity.x < 0f)
         {
             playerRB.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (playerRB.velocity.x > 0)
+        else if (playerRB.velocity.x > 0f)
         {
             playerRB.transform.localScale = new Vector3(1f, 1f, 1f);
         }
-    }
 
-    public void Move(InputAction.CallbackContext context)
-    {
-        if (isActive && !isLevelCompleted)
+        if(playerRB.velocity.x != 0f && isGrounded)
         {
-            velocity = context.ReadValue<Vector2>().x;
+            footDustEmission.rateOverTime = 35f;
         }
-    }
-
-    public void Jump(InputAction.CallbackContext context)
-    {
-        if (isActive && !isLevelCompleted)
+        else
         {
-            if (context.started && isGrounded)
-            {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-            }
-
-            if (!isGrounded && context.canceled && playerRB.velocity.y > 0)
-            {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
-            }
+            footDustEmission.rateOverTime = 0f;
         }
-    }
 
-    public void Look(InputAction.CallbackContext context)
-    {
-        if (isActive && !isLevelCompleted)
+        if (!wasGrounded && isGrounded)
         {
-            if (isGrounded)
-            {
-                GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
-            }
+            jumpDust.gameObject.SetActive(true);
+            jumpDust.Stop();
+            jumpDust.transform.position = footDust.transform.position;
+            jumpDust.Play();
         }
+
+        wasGrounded = isGrounded;
     }
 
-    public void Use(InputAction.CallbackContext context)
+    private void Attack()
     {
-        if (isActive && !isLevelCompleted)
+        switch (equipmentManager.currentItem)
         {
-            UseTrigger();
-        }
-    }
-
-    public void Attack(InputAction.CallbackContext context)
-    {
-        if (isActive && !isLevelCompleted)
-        {
-            if (context.started && attackCounter <= 0)
-            {
+            case (int)EquipmentManager.Items.Swoosh:
                 playerAnimator.SetTrigger(Consts.ATTACK);
-                attackCounter = attackCooldown;
-            }
+                attackCounter = swooshAttackCooldown;
+                break;
+            case (int)EquipmentManager.Items.Axe:
+                Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation);
+                attackCounter = axeAttackCooldown;
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void AttackCooldown()
+    {
+        if (attackCounter > 0)
+        {
+            attackCounter -= Time.deltaTime;
         }
     }
 
@@ -363,7 +365,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
-        //stomper.gameObject.SetActive(false);
 
         deathTimeCounter = deathTime;
     }
@@ -382,7 +383,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<CapsuleCollider2D>().enabled = true;
-            //stomper.gameObject.SetActive(true);
 
             playerRB.velocity = new Vector3(0, 0, 0);
 
@@ -426,29 +426,40 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted)
         {
-            if (isGrounded)
+            if (currentJumpHangTime > 0f)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
             }
         }
     }
+
     public void JumpStopOnTouch()
     {
         if (isActive && !isLevelCompleted)
         {
-            if (!isGrounded && playerRB.velocity.y > 0)
+            if (!isGrounded && playerRB.velocity.y > 0f)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
             }
         }
     }
+
     public void AttackButtonDownOnTouch()
     {
         attackPressed = true;
     }
+
     public void AttackButtonUpOnTouch()
     {
         attackPressed = false;
+    }
+
+    public void ChangeItemOnTouch()
+    {
+        if (isActive)
+        {
+            equipmentManager.ChangeItem();
+        }
     }
 
     public void LeftOnTouch()
@@ -458,6 +469,7 @@ public class PlayerController : MonoBehaviour
             velocity -= 1f;
         }
     }
+
     public void RightOnTouch()
     {
         if (isActive && !isLevelCompleted)
@@ -465,10 +477,12 @@ public class PlayerController : MonoBehaviour
             velocity += 1f;
         }
     }
+
     public void MoveStopTouch()
     {
         velocity = 0;
     }
+
     public void UseOnTouch()
     {
         if (isActive && !isLevelCompleted)
@@ -476,6 +490,7 @@ public class PlayerController : MonoBehaviour
             UseTrigger();
         }
     }
+
     public void LookOnTouch()
     {
         if (isActive && !isLevelCompleted && isGrounded)
@@ -488,6 +503,64 @@ public class PlayerController : MonoBehaviour
         if (isActive && !isLevelCompleted && isGrounded)
         {
             GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = false;
+        }
+    }
+
+    #endregion
+
+    #region Keyboard control
+
+    public void Move(InputAction.CallbackContext context)
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            velocity = context.ReadValue<Vector2>().x;
+        }
+    }
+
+    public void Jump(InputAction.CallbackContext context)
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            if (context.started && currentJumpHangTime > 0f)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            }
+
+            if (!isGrounded && context.canceled && playerRB.velocity.y > 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+            }
+        }
+    }
+
+    public void Look(InputAction.CallbackContext context)
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            if (isGrounded)
+            {
+                GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = !context.canceled;
+            }
+        }
+    }
+
+    public void Use(InputAction.CallbackContext context)
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            UseTrigger();
+        }
+    }
+
+    public void AttackKeyboard(InputAction.CallbackContext context)
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            if (context.started && attackCounter <= 0)
+            {
+                Attack();
+            }
         }
     }
 
