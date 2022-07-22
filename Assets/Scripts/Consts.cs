@@ -5,12 +5,14 @@ public static class Consts
     public const string HORIZONTAL = "horizontal";
     public const string VERTICAL = "vertical";
     public const string ATTACK = "attack";
+    public const string RANGED_ATTACK = "rangedAttack";
     public const string IS_GROUNDED = "isGrounded";
     public const string SPEED = "speed";
     public const string YSPEED = "ySpeed";
-
+    public const string GROUND = "Ground";
     public const string PLAYER = "Player";
     public const string PLAYER_PROJECTILE = "PlayerProjectile";
+    public const string PLAYER_ATTACK_WAVE = "Attack Wave";
     public const string ENEMY = "Enemy";
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string MOVING_PLATFORM = "MovingPlatform";

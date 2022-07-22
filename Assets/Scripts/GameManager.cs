@@ -116,6 +116,10 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             Debug.Log("Save successful");
         }
+        else
+        {
+            Debug.Log("Error with saving data. GameManager.SaveJsonData");
+        }
     }
 
     public void PopulateSaveData(SaveData saveData)
@@ -154,7 +158,6 @@ public class GameManager : MonoBehaviour, ISaveable
             saveData.LoadFromJson(json);
 
             _gameManager.LoadFromSaveData(saveData);
-            Debug.Log("load complete");
         }
     }
 

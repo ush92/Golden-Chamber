@@ -13,9 +13,16 @@ public class Destructable : MonoBehaviour
         }
         else if (other.tag.Equals(Consts.PLAYER_PROJECTILE))
         {
-            Instantiate(destructEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
-            other.gameObject.SetActive(false);
+            if (other.name.Equals(Consts.PLAYER_ATTACK_WAVE))
+            {
+                Instantiate(destructEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+                other.gameObject.SetActive(false);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 

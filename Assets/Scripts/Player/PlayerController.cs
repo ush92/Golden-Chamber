@@ -241,6 +241,7 @@ public class PlayerController : MonoBehaviour
                 attackCounter = swooshAttackCooldown;
                 break;
             case (int)EquipmentManager.Items.Axe:
+                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation);
                 attackCounter = axeAttackCooldown;
                 break;
@@ -337,16 +338,23 @@ public class PlayerController : MonoBehaviour
     }
 
     private void ShowCompleteLevelScreen()
-    {      
-        GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
+    {
+        try
+        {
+            GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
 
-        isLevelCompleted = true;
-        completeLevelScreen.gameObject.SetActive(true);
+            isLevelCompleted = true;
+            completeLevelScreen.gameObject.SetActive(true);
 
-        collectableController.UpdateLevelFruitRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name));
-        completeLevelScreen.UpdateLevelTimeRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name), (int)timeInLevel);
+            collectableController.UpdateLevelFruitRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name));
+            completeLevelScreen.UpdateLevelTimeRecord(Consts.GetLevelIndex(SceneManager.GetActiveScene().name), (int)timeInLevel);
 
-        GameManager.SaveJsonData(GameManager.instance);       
+            GameManager.SaveJsonData(GameManager.instance);
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"ShowCompleteLevelScreen error with exception {e.Message}");
+        }
     }
 
     private void FinishLevelAndLoadMap()
@@ -402,7 +410,7 @@ public class PlayerController : MonoBehaviour
 
     public void CollectWeapon(string weapon)
     {
-        Debug.Log($"znalezles now¹ broñ {weapon}");
+        Debug.Log($"znalazles now¹ broñ {weapon}");
 
         var objectsAfterBoss = GameObject.Find("ObjectsAfterBoss");
 

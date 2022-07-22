@@ -2377,7 +2377,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 4912927042408680108}
           m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-          m_MethodName: LoadLevel
+          m_MethodName: GotoLevel
           m_Mode: 5
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -6411,7 +6411,7 @@ MonoBehaviour:
   attackPoint: {fileID: 4221524390402923604}
   axeProjectile: {fileID: 1641028499805509508, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
   swooshAttackCooldown: 0.5
-  axeAttackCooldown: 0.75
+  axeAttackCooldown: 0.5
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
