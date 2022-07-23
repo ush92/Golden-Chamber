@@ -137,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.4
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -156,7 +156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1641028499805509515}
-  speed: 13
+  speed: 12
+  heigthPower: 8
   damageToDeal: 1
   collisionEffect: {fileID: 4639924823971810983, guid: 9851a22d008bec245a8416aade17b88d, type: 3}
 --- !u!82 &1363364799

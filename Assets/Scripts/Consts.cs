@@ -24,8 +24,10 @@ public static class Consts
 
     public const string MAIN_MENU = "MainMenu";
     public const string LEVEL_MAP = "LevelMap";
-
+    public const string LEVEL = "Level";
+    public const string COMPLETE_LEVEL = "CompleteLevel";
     public const string FINISH = "Ukoñczono poziom: ";
+
     public const string LEVEL1_1 = "Level1_1";
     public const string LEVEL1_1_NAME = "Nadleœnictwo Zielony Dzik"; 
     public const string LEVEL1_2 = "Level1_2";
@@ -55,7 +57,6 @@ public static class Consts
     public const string LEVEL4_3 = "Level4_3";
 
     public const string LEVEL5_1 = "Level5_1";
-
 
     public const string CHERRY = "Cherry";
     public const string ANANAS = "Ananas";

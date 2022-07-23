@@ -295,15 +295,15 @@ public class PlayerController : MonoBehaviour
         {
             lockTriggerUsing = true;
 
-            if (triggerObject.Equals("LevelMap"))
+            if (triggerObject.Equals(Consts.LEVEL_MAP))
             {
-                GotoLevel("LevelMap");
+                GotoLevel(Consts.LEVEL_MAP);
             }
-            else if (triggerObject.Equals("CompleteLevel"))
+            else if (triggerObject.Equals(Consts.COMPLETE_LEVEL))
             {
                 ShowCompleteLevelScreen();          
             }
-            else if (triggerObject.StartsWith("Level"))
+            else if (triggerObject.StartsWith(Consts.LEVEL))
             {
                 GameManager.levelMapLastPosition = playerRB.transform.position;
                 GotoLevel(triggerObject);          

@@ -6,7 +6,9 @@ public class PlayerAxeProjectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
+    public float heigthPower;
     private PlayerController player;
+    private float playerVelocityX;
 
     public int damageToDeal;
     private bool isDamageDone = false;
@@ -16,16 +18,20 @@ public class PlayerAxeProjectile : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-        if(player.transform.localScale.x < 0)
+        playerVelocityX = player.playerRB.velocity.x;
+
+        if (player.transform.localScale.x < 0)
         {
             speed = -speed;
             transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * -1f);
         }
+
+        rb.velocity = new Vector2(speed, heigthPower);
     }
 
     void Update()
     {
-       rb.velocity = new Vector2 (speed, rb.velocity.y);
+       rb.velocity = new Vector2 (speed + playerVelocityX, rb.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
