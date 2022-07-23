@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
         if (!isDataLoaded)
         {
             GameManager.LoadJsonData(GameManager.instance);
+            equipmentManager.currentItem = PlayerPrefs.GetInt(Consts.PLAYER_CURRENT_ITEM);
             equipmentManager.UpdateEquipment();
             isDataLoaded = true;
         }
@@ -182,7 +183,7 @@ public class PlayerController : MonoBehaviour
             playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
         }
         else
-        {    
+        {
             if (knockbackFromRight)
             {
                 playerRB.velocity = new Vector2(-knockback, knockback / 2);
@@ -191,11 +192,17 @@ public class PlayerController : MonoBehaviour
             {
                 playerRB.velocity = new Vector2(knockback, knockback / 2);
             }
-            
-            knockbackCounter -= Time.deltaTime;
+
+            if (knockbackCounter > 0)
+            {
+                knockbackCounter -= Time.deltaTime;
+            }
         }
 
-        knockbackCooldownCounter -= Time.deltaTime;
+        if (knockbackCooldownCounter > 0)
+        {
+            knockbackCooldownCounter -= Time.deltaTime;
+        }
     }
 
     private void Animate()
@@ -203,6 +210,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool(Consts.IS_GROUNDED, isGrounded);
         playerAnimator.SetFloat(Consts.SPEED, Mathf.Abs(playerRB.velocity.x));
         playerAnimator.SetFloat(Consts.YSPEED, playerRB.velocity.y);
+
         if (playerRB.velocity.x < 0f)
         {
             playerRB.transform.localScale = new Vector3(-1f, 1f, 1f);
@@ -325,6 +333,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isLevelLoaded)
         {
+            PlayerPrefs.SetInt(Consts.PLAYER_CURRENT_ITEM, equipmentManager.currentItem);
+
             isLevelLoaded = true;
 
             if (levelName.Equals(Consts.LEVEL_MAP))
@@ -374,6 +384,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
+        footDustEmission.rateOverTime = 0f;
 
         deathTimeCounter = deathTime;
     }

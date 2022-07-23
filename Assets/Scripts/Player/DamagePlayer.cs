@@ -6,7 +6,7 @@ public class DamagePlayer : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag.Equals(Consts.PLAYER))
+        if (other.tag.Equals(Consts.PLAYER) && damageToDeal > 0)
         {
             var playerHPController = other.GetComponent<PlayerHPController>();
             var player = other.GetComponent<PlayerController>();

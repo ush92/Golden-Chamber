@@ -19,6 +19,8 @@ public static class Consts
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";
     public const string COLLECTABLE = "Collectable";
+    public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
+    public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
 
     public const string BOSS1 = "Pociupala";
 
@@ -70,8 +72,6 @@ public static class Consts
 
     public const string HP_ITEM_SMALL = "HpItemSmall";
     public const string KEY = "Key";
-
-    public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
 
     public const string LOCKED_DOOR_P = "LockedDoorParent";
     public const string LOCKED_DOOR = "LockedDoor";

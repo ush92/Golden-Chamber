@@ -5955,7 +5955,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.29442596, y: -0.04190898}
+  m_Offset: {x: -0.14292717, y: -0.12047529}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5966,7 +5966,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.746994, y: 1.1718287}
+  m_Size: {x: 0.32273483, y: 0.32331085}
   m_EdgeRadius: 0
 --- !u!1 &2111021956
 GameObject:
@@ -6239,7 +6239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169112760694907601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.67, y: -0.34, z: 0}
+  m_LocalPosition: {x: 0.447, y: -0.34, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4912927042408680105}
@@ -6396,7 +6396,7 @@ MonoBehaviour:
   playerRB: {fileID: 4912927042408680107}
   moveSpeed: 8
   jumpForce: 21
-  jumpHangTime: 0.1
+  jumpHangTime: 0.15
   groundCheckPoint: {fileID: 4912927044335522437}
   whatIsGround:
     serializedVersion: 2
@@ -7010,7 +7010,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8720083867162605111}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1f7272c370631564c8c73e4e3871c9e2, type: 3}
   m_Name: 
