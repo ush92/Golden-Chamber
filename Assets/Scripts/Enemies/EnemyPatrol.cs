@@ -4,6 +4,7 @@ public class EnemyPatrol : MonoBehaviour
 {
     public float moveSpeed;
     public bool moveRight;
+    public bool changeSideOnDamagePlayer = true;
 
     public Transform wallCheck;
     public float wallCheckRadius;

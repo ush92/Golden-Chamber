@@ -27,13 +27,13 @@ public class DamagePlayer : MonoBehaviour
 
             if (tag.Equals(Consts.ENEMY))
             {
-                if (!name.Equals(Consts.BOSS1))
+                if (TryGetComponent<EnemyPatrol>(out var patrol))
                 {
-                    if (TryGetComponent<EnemyPatrol>(out var patrol))
+                    if (patrol.changeSideOnDamagePlayer)
                     {
                         patrol.moveRight = !patrol.moveRight;
                     }
-                }
+                }               
             }
         }
     }
