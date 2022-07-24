@@ -15,6 +15,8 @@ public class PlayerAxeProjectile : MonoBehaviour
 
     public GameObject collisionEffect;
 
+    private float lifetime = 3.0f;
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -31,7 +33,13 @@ public class PlayerAxeProjectile : MonoBehaviour
 
     void Update()
     {
-       rb.velocity = new Vector2 (speed + playerVelocityX, rb.velocity.y);
+        rb.velocity = new Vector2 (speed + playerVelocityX, rb.velocity.y);
+
+        lifetime -= Time.deltaTime;
+        if (lifetime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)

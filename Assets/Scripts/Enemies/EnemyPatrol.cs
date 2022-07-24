@@ -13,9 +13,14 @@ public class EnemyPatrol : MonoBehaviour
     private bool isOnGround;
     public Transform edgeCheck;
 
+    public bool isJumpMode = false;
+    public float jumpForce;
+    public float jumpCooldownTime;
+    private float jumpCooldownCounter;
+
     void Start()
     {
-        
+        jumpCooldownCounter = jumpCooldownTime;
     }
 
     void Update()
@@ -23,7 +28,7 @@ public class EnemyPatrol : MonoBehaviour
         isWallHit = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
         isOnGround = Physics2D.OverlapCircle(edgeCheck.position, wallCheckRadius, whatIsWall);
 
-        if (isWallHit || !isOnGround)
+        if (isWallHit || (!isOnGround && !isJumpMode))
         {
             moveRight = !moveRight;
         }
@@ -37,6 +42,16 @@ public class EnemyPatrol : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
             GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+        }
+
+        if (jumpCooldownCounter > 0)
+        {
+            jumpCooldownCounter -= Time.deltaTime;
+        }
+        if (isJumpMode && jumpCooldownCounter <=0)
+        {
+            jumpCooldownCounter = jumpCooldownTime;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpForce);
         }
     }
 }
