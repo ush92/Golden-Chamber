@@ -224,7 +224,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!70 &6248150459348946255
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 3
   moveRight: 0
+  changeSideOnDamagePlayer: 1
   wallCheck: {fileID: 6248150459916303506}
   wallCheckRadius: 0.1
   whatIsWall:
@@ -303,6 +304,7 @@ MonoBehaviour:
   isJumpMode: 1
   jumpForce: 11
   jumpCooldownTime: 1
+  player: {fileID: 0}
 --- !u!95 &6248150459348946227
 Animator:
   serializedVersion: 3

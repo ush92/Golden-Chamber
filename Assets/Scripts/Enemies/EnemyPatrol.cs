@@ -19,6 +19,8 @@ public class EnemyPatrol : MonoBehaviour
     public float jumpCooldownTime;
     private float jumpCooldownCounter;
 
+    public PlayerController player;
+
     void Start()
     {
         jumpCooldownCounter = jumpCooldownTime;
@@ -32,6 +34,18 @@ public class EnemyPatrol : MonoBehaviour
         if (isWallHit || (!isOnGround && !isJumpMode))
         {
             moveRight = !moveRight;
+        }
+
+        if(moveSpeed == 0) 
+        {
+            if (transform.position.x > player.transform.position.x)
+            {
+                moveRight = false;
+            }
+            else if (transform.position.x < player.transform.position.x)
+            {
+                moveRight = true;
+            }
         }
 
         if (moveRight)

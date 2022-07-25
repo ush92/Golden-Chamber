@@ -306,9 +306,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if (other.gameObject.name.Equals("Slider"))
+        if (other.gameObject.name.Equals("SliderR"))
         {
             playerRB.AddForce(Vector2.right * 300, ForceMode2D.Force);
+        }
+        else if (other.gameObject.name.Equals("SliderL"))
+        {
+            playerRB.AddForce(Vector2.left * 300, ForceMode2D.Force);
         }
     }
 
