@@ -192,7 +192,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (currentSlideTime > 0)
                 {
-                    playerRB.velocity = new Vector2(slideVelocity * moveSpeed / 5, playerRB.velocity.y);
+                    playerRB.velocity = new Vector2(slideVelocity * moveSpeed * currentSlideTime, playerRB.velocity.y);
                     currentSlideTime -= Time.deltaTime;
                 }
             }

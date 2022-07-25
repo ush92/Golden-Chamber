@@ -967,7 +967,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -4506956802181919417, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6997,7 +6997,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -4506956802181919417, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7766,10 +7766,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 150659104}
-    - target: {fileID: 4221524390402923604, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.382
-      objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -7813,10 +7809,6 @@ PrefabInstance:
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912927042408680108, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-      propertyPath: slidingTime
-      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680108, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: collectableController
@@ -120276,7 +120268,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1399022013}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 783305e79f3d6fb4b80234a4742c2838, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -120535,17 +120527,13 @@ CompositeCollider2D:
         Y: 30000000
       - X: 400000000
         Y: 70000000
-      - X: 439999900
+      - X: 440000000
         Y: 70000000
-      - X: 439999900
-        Y: 59999959
-      - X: 439999959
-        Y: 59999900
-      - X: 460000041
-        Y: 59999900
-      - X: 460000100
-        Y: 59999959
-      - X: 460000100
+      - X: 440000000
+        Y: 60000000
+      - X: 460000000
+        Y: 60000000
+      - X: 460000000
         Y: 70000000
       - X: 500000000
         Y: 70000000
@@ -120806,10 +120794,10 @@ CompositeCollider2D:
       - {x: 40.374977, y: 3}
       - {x: 40, y: 3.0000293}
       - {x: 40.00003, y: 7}
-      - {x: 43.999992, y: 6.9999704}
-      - {x: 44.000027, y: 5.99999}
-      - {x: 46.00001, y: 6.0000253}
-      - {x: 46.00004, y: 7}
+      - {x: 44, y: 6.9999704}
+      - {x: 44.00003, y: 6}
+      - {x: 46, y: 6.000029}
+      - {x: 46.00003, y: 7}
       - {x: 50, y: 7.0000296}
       - {x: 50.00003, y: 11}
       - {x: 56, y: 11.00003}
