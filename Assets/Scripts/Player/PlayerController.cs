@@ -14,8 +14,14 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody2D playerRB;
     public float moveSpeed;
-    public float jumpForce;
     private float velocity;
+
+    public bool isSliding;
+    private float slideVelocity;
+    public float slideTime;
+    private float currentSlideTime;
+
+    public float jumpForce;
     public float jumpHangTime;
     private float currentJumpHangTime;
 
@@ -181,6 +187,15 @@ public class PlayerController : MonoBehaviour
         if (knockbackCounter <= 0)
         {
             playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+
+            if(isSliding)
+            {
+                if (currentSlideTime > 0)
+                {
+                    playerRB.velocity = new Vector2(slideVelocity * moveSpeed / 5, playerRB.velocity.y);
+                    currentSlideTime -= Time.deltaTime;
+                }
+            }
         }
         else
         {
@@ -286,6 +301,14 @@ public class PlayerController : MonoBehaviour
                 other.transform.Find(Consts.LOCKED_DOOR).gameObject.SetActive(false);
                 other.transform.Find(Consts.OPENED_DOOR).gameObject.SetActive(true);
             }
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D other) 
+    {
+        if (other.gameObject.name.Equals("Slider"))
+        {
+            playerRB.AddForce(Vector2.right * 300, ForceMode2D.Force);
         }
     }
 
@@ -535,6 +558,16 @@ public class PlayerController : MonoBehaviour
         if (isActive && !isLevelCompleted)
         {
             velocity = context.ReadValue<Vector2>().x;
+
+            if (velocity != 0 )
+            {
+                slideVelocity = velocity;
+            }
+
+            if (context.canceled)
+            {
+                currentSlideTime = slideTime;
+            }
         }
     }
 

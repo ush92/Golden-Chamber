@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAxeProjectile : MonoBehaviour
@@ -14,6 +12,7 @@ public class PlayerAxeProjectile : MonoBehaviour
     private bool isDamageDone = false;
 
     public GameObject collisionEffect;
+    private bool isCollided;
 
     private float lifetime = 3.0f;
 
@@ -33,7 +32,10 @@ public class PlayerAxeProjectile : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = new Vector2 (speed + playerVelocityX, rb.velocity.y);
+        if (!isCollided)
+        {
+            rb.velocity = new Vector2(speed + playerVelocityX / 2.0f, rb.velocity.y);
+        }
 
         lifetime -= Time.deltaTime;
         if (lifetime <= 0)
@@ -44,6 +46,8 @@ public class PlayerAxeProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        isCollided = true;
+
         if (other.tag.Equals(Consts.ENEMY) && !isDamageDone)
         {
             other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
@@ -52,13 +56,16 @@ public class PlayerAxeProjectile : MonoBehaviour
             Destroy(gameObject);
         }
         else if(other.tag.Equals(Consts.GROUND))
-        {
+        {       
+            rb.velocity = new Vector2(0, 0);
             Destroy(gameObject);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        isCollided = true;
+
         if (isDamageDone)
         {
             isDamageDone = false;
