@@ -15,6 +15,7 @@ public static class Consts
     public const string PLAYER_ATTACK_WAVE = "Attack Wave";
     public const string ENEMY = "Enemy";
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
+    public const string ENEMY_PROJECTILE = "EnemyProjectile";
     public const string MOVING_PLATFORM = "MovingPlatform";
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";

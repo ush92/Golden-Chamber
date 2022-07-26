@@ -11,6 +11,7 @@ TagManager:
   - EnemyEffectArea
   - Collectable
   - Ground
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -24,9 +25,9 @@ TagManager:
   - Player
   - Enemy
   - Player1UI
-  - Player2UI
   - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
