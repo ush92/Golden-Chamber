@@ -246,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3349627476597675286, guid: 5ab62b491eccf7e4aa209467a24b4c53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.53
+      value: 7.18
       objectReference: {fileID: 0}
     - target: {fileID: 4397338961042235412, guid: 5ab62b491eccf7e4aa209467a24b4c53, type: 3}
       propertyPath: m_Name
@@ -1916,10 +1916,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6248150459348946254, guid: 2221d012aab906847ac341edcb723c3b, type: 3}
-      propertyPath: m_Constraints
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2221d012aab906847ac341edcb723c3b, type: 3}
 --- !u!1 &508993310
@@ -2085,7 +2081,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Zniszcz cztery ska\u017Cone portale"
+      value: "UWAGA!\nCztery portale zosta\u0142y ska\u017Cone!"
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -2094,6 +2090,10 @@ PrefabInstance:
     - target: {fileID: 2635378241708901920, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Name
       value: Signpost_
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175794730163415304, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 410
       objectReference: {fileID: 0}
     - target: {fileID: 7448994386546905056, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Color.b
@@ -9394,21 +9394,17 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 150659104}
-    - target: {fileID: 2110339810, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.1
+      value: 83.52
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.9
+      value: 21.62
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41538,6 +41534,16 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 69, y: 5, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: 82, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -123153,7 +123159,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 10989
+  - m_RefCount: 10990
     m_Data: {fileID: 11400000, guid: 63161afe3c489f04f93e4d23848ac289, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -123186,7 +123192,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 10989
+  - m_RefCount: 10990
     m_Data: {fileID: -4506956802181919417, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -123215,7 +123221,7 @@ Tilemap:
   - m_RefCount: 40
     m_Data: {fileID: -7876864015116417812, guid: 9cf7b863822ef2a4393c5d18e0c081e6, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 11298
+  - m_RefCount: 11299
     m_Data:
       e00: 1
       e01: 0
@@ -123270,7 +123276,7 @@ Tilemap:
       e32: 1.35e-43
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 11298
+  - m_RefCount: 11299
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -123928,9 +123934,25 @@ CompositeCollider2D:
         Y: 30000000
       - X: 850000000
         Y: 60000000
-      - X: 830000000
+      - X: 830000100
         Y: 60000000
-      - X: 830000000
+      - X: 830000100
+        Y: 60000041
+      - X: 830000041
+        Y: 60000100
+      - X: 819999959
+        Y: 60000100
+      - X: 819999900
+        Y: 60000041
+      - X: 819999900
+        Y: 49999959
+      - X: 819999959
+        Y: 49999900
+      - X: 830000041
+        Y: 49999900
+      - X: 830000100
+        Y: 49999959
+      - X: 830000100
         Y: 50000000
       - X: 840000000
         Y: 50000000
@@ -124191,8 +124213,8 @@ CompositeCollider2D:
     - - {x: 85.375, y: 3.0000257}
       - {x: 85, y: 3.0000293}
       - {x: 84.99997, y: 6}
-      - {x: 83, y: 5.999971}
-      - {x: 83.00003, y: 5}
+      - {x: 81.999985, y: 5.9999747}
+      - {x: 82.00002, y: 4.99999}
       - {x: 84, y: 4.9999704}
       - {x: 83.99997, y: 3.5625}
       - {x: 68, y: 3.5625296}

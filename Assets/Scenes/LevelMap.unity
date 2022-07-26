@@ -1281,7 +1281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4096122422042309835, guid: fda6e7e693f0d9647afe181b50ddef0f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4096122422042309835, guid: fda6e7e693f0d9647afe181b50ddef0f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139259,7 +139259,7 @@ Transform:
   m_Children:
   - {fileID: 351839866}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2028103100
 PrefabInstance:
@@ -140122,7 +140122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001923085183966694, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5001923085183966694, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -140207,6 +140207,10 @@ PrefabInstance:
     - target: {fileID: 5001923085183966698, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
       propertyPath: m_Name
       value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001923085183966698, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c59e2625da7d0684fb2903cd22c4a97e, type: 3}
@@ -140407,17 +140411,13 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1942191668}
-    - target: {fileID: 2973939865889463124, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 7828830751223790924, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7828830751223790926, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7828830751223790926, guid: ee038cf495414544ca59540f3d5f2744, type: 3}
       propertyPath: m_LocalPosition.x
