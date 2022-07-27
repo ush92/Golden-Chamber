@@ -161,8 +161,8 @@ public class PlayerController : MonoBehaviour
             timeInLevel += Time.deltaTime;
 
             var timeInMinutes = (int)timeInLevel / 60;
-            var timeInSeconds = (int)timeInLevel % 60;
-            currentTime.text = timeInMinutes.ToString() + " min " + timeInSeconds.ToString() + "s";
+            var timeRestInSeconds = (int)timeInLevel % 60;
+            currentTime.text = timeInMinutes.ToString() + " min " + timeRestInSeconds.ToString() + "s";
 
             int record = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9];
 
@@ -311,11 +311,11 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D other) 
     {
-        if (other.gameObject.name.Equals("SliderR"))
+        if (other.gameObject.name.Equals(Consts.SLIDER_RIGHT))
         {
             playerRB.AddForce(Vector2.right * 300, ForceMode2D.Force);
         }
-        else if (other.gameObject.name.Equals("SliderL"))
+        else if (other.gameObject.name.Equals(Consts.SLIDER_LEFT))
         {
             playerRB.AddForce(Vector2.left * 300, ForceMode2D.Force);
         }
@@ -331,8 +331,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name.StartsWith("waterTop") ||
-            other.gameObject.name.StartsWith("waterBottom"))
+        if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
+            other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
             moveSpeed = waterMoveSpeed;
         }
@@ -340,8 +340,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name.StartsWith("waterTop") ||
-            other.gameObject.name.StartsWith("waterBottom"))
+        if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
+            other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
             moveSpeed = waterMoveSpeed;
         }
@@ -349,8 +349,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.name.Contains("waterTop") ||
-            other.gameObject.name.Contains("waterBottom"))
+        if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
+            other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
             moveSpeed = baseMoveSpeed;
         }
@@ -430,7 +430,7 @@ public class PlayerController : MonoBehaviour
     private void FinishLevelAndLoadMap()
     {
         completeLevelScreen.gameObject.SetActive(false);
-        GotoLevel("LevelMap");
+        GotoLevel(Consts.LEVEL_MAP);
     }
 
     public void Death()
@@ -483,7 +483,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log($"znalazles now¹ broñ {weapon}");
 
-        var objectsAfterBoss = GameObject.Find("ObjectsAfterBoss");
+        var objectsAfterBoss = GameObject.Find(Consts.OBJECTS_AFTER_BOSS);
 
         if (objectsAfterBoss != null)
         {
@@ -577,6 +577,7 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp = true;
         }
     }
+
     public void LookStopOnTouch()
     {
         if (isActive && !isLevelCompleted && isGrounded)

@@ -17,9 +17,14 @@ public static class Consts
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string ENEMY_PROJECTILE = "EnemyProjectile";
     public const string MOVING_PLATFORM = "MovingPlatform";
+    public const string SLIDER_LEFT = "SliderL";
+    public const string SLIDER_RIGHT = "SliderR";
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";
+    public const string WATER_TOP = "waterTop";
+    public const string WATER_BOT = "waterBottom";
     public const string COLLECTABLE = "Collectable";
+    public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
     public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
 
@@ -30,36 +35,6 @@ public static class Consts
     public const string LEVEL = "Level";
     public const string COMPLETE_LEVEL = "CompleteLevel";
     public const string FINISH = "Ukoñczono poziom: ";
-
-    public const string LEVEL1_1 = "Level1_1";
-    public const string LEVEL1_1_NAME = "Nadleœnictwo Zielony Dzik"; 
-    public const string LEVEL1_2 = "Level1_2";
-    public const string LEVEL1_2_NAME = "Park Linowy Po³amaniec";
-    public const string LEVEL1_3 = "Level1_3";
-    public const string LEVEL1_3_NAME = "Tartak Pociupa³a i Synowie";
-    public const string LEVEL1_4 = "Level1_4";
-    public const string LEVEL1_4_NAME = "Generator Portali";
-    public const string LEVEL2_1 = "Level2_1";
-
-    public const string LEVEL2_2 = "Level2_3";
-
-    public const string LEVEL2_3 = "Level2_4";
-
-    public const string LEVEL3_1 = "Level3_1";
-
-    public const string LEVEL3_2 = "Level3_2";
-
-    public const string LEVEL3_3 = "Level3_3";
-
-    public const string LEVEL3_4 = "Level3_4";
-
-    public const string LEVEL4_1 = "Level4_1";
-
-    public const string LEVEL4_2 = "Level4_2";
-
-    public const string LEVEL4_3 = "Level4_3";
-
-    public const string LEVEL5_1 = "Level5_1";
 
     public const string CHERRY = "Cherry";
     public const string ANANAS = "Ananas";
@@ -80,6 +55,37 @@ public static class Consts
 
     public const string NEW_PROFILE_ERROR_ALREADY_USED = "Profil o podanej nazwie ju¿ istnieje";
     public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Nazwa profilu nie mo¿e byæ pusta";
+
+    public const string LEVEL1_1 = "Level1_1";
+    public const string LEVEL1_1_NAME = "Nadleœnictwo Zielony Dzik";
+    public const string LEVEL1_2 = "Level1_2";
+    public const string LEVEL1_2_NAME = "Park Linowy Po³amaniec";
+    public const string LEVEL1_3 = "Level1_3";
+    public const string LEVEL1_3_NAME = "Tartak Pociupa³a i Synowie";
+    public const string LEVEL1_4 = "Level1_4";
+    public const string LEVEL1_4_NAME = "Generator Portali";
+    public const string LEVEL2_1 = "Level2_1";
+    public const string LEVEL2_1_NAME = "Kopalnia Ostrog³az";
+    public const string LEVEL2_2 = "Level2_2";
+    public const string LEVEL2_2_NAME = "Ha³da Kolcozbyt";
+    public const string LEVEL2_3 = "Level2_3";
+    public const string LEVEL2_3_NAME = "Jaskinia Rozpaczy";
+    public const string LEVEL3_1 = "Level3_1";
+    public const string LEVEL3_1_NAME = "Piramida S³onecznego ¯aru";
+    public const string LEVEL3_2 = "Level3_2";
+    public const string LEVEL3_2_NAME = "Piramida Lodowatej Udrêki";
+    public const string LEVEL3_3 = "Level3_3";
+    public const string LEVEL3_3_NAME = "Piramida Mrocznego Ob³êdu";
+    public const string LEVEL3_4 = "Level3_4";
+    public const string LEVEL3_4_NAME = "Piramida Jadowitej Grozy";
+    public const string LEVEL4_1 = "Level4_1";
+    public const string LEVEL4_1_NAME = "Grzybowa Pieczara";
+    public const string LEVEL4_2 = "Level4_2";
+    public const string LEVEL4_2_NAME = "G³êbinowy Bagnostaw";
+    public const string LEVEL4_3 = "Level4_3";
+    public const string LEVEL4_3_NAME = "Czaszkogrota";
+    public const string LEVEL5_1 = "Level5_1";
+    public const string LEVEL5_1_NAME = "Szczeroz³ota Komnata";
 
     public static string GetLevelName(string levelName)
     {

@@ -15,8 +15,8 @@ public class CompleteLevelScreen : MonoBehaviour
             levelName.text = Consts.FINISH + Consts.GetLevelName(SceneManager.GetActiveScene().name);
 
             var timeInMinutes = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9] / 60;
-            var timeInSeconds = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9] % 60;
-            recordTime.text = timeInMinutes.ToString() + " min " + timeInSeconds.ToString() + "s";
+            var timeRestInSeconds = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9] % 60;
+            recordTime.text = timeInMinutes.ToString() + " min " + timeRestInSeconds.ToString() + "s";
         }
     }
 
