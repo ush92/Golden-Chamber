@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 15
+  maxHP: 12
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 7929d491ee7a84e45a1005bdcc79f867, type: 3}
   flashOnHit: {r: 0.41229087, g: 0.8018868, b: 0.50527847, a: 1}
@@ -207,8 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5460634110978666221, guid: 0db9ee93865a1fe4aae633842a070056, type: 3}
   attackPoint: {fileID: 1925325399}
-  firstShootTime: 5
-  repeatingTime: 1
+  firstShootTime: 3
+  repeatingTime: 1.5
 --- !u!1001 &2175623096754390369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660724809171286718, guid: ef29850d338c1e84480d8871386d11ed, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.44
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 7660724809171286718, guid: ef29850d338c1e84480d8871386d11ed, type: 3}
       propertyPath: m_LocalPosition.z
