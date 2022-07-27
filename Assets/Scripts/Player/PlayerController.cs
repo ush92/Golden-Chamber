@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     public bool isActive;
 
     public Rigidbody2D playerRB;
-    public float moveSpeed;
+    public float baseMoveSpeed;
+    private float moveSpeed;
+    public float waterMoveSpeed;
     private float velocity;
 
     public bool isSliding;
@@ -93,6 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             buttonBackToMap.interactable = true;
         }
+
+        moveSpeed = baseMoveSpeed;
 
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
@@ -287,7 +291,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = other.transform;
         }
-        else if (other.gameObject.name.Equals(Consts.LOCKED_DOOR_P))
+        
+        if (other.gameObject.name.Equals(Consts.LOCKED_DOOR_P))
         {
             if (keysCount > 0)
             {
@@ -324,7 +329,34 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void UseTrigger()
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name.StartsWith("waterTop") ||
+            other.gameObject.name.StartsWith("waterBottom"))
+        {
+            moveSpeed = waterMoveSpeed;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.name.StartsWith("waterTop") ||
+            other.gameObject.name.StartsWith("waterBottom"))
+        {
+            moveSpeed = waterMoveSpeed;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.name.Contains("waterTop") ||
+            other.gameObject.name.Contains("waterBottom"))
+        {
+            moveSpeed = baseMoveSpeed;
+        }
+    }
+
+    private void UseLevelDoor()
     {
         if (!lockTriggerUsing)
         {
@@ -534,7 +566,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted)
         {
-            UseTrigger();
+            UseLevelDoor();
         }
     }
 
@@ -606,7 +638,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted)
         {
-            UseTrigger();
+            UseLevelDoor();
         }
     }
 

@@ -6728,7 +6728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isActive: 0
   playerRB: {fileID: 4912927042408680107}
-  moveSpeed: 8
+  baseMoveSpeed: 8
+  waterMoveSpeed: 5
   isSliding: 0
   slideTime: 0.75
   jumpForce: 21
