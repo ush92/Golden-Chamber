@@ -133090,8 +133090,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731993394}
   m_LocalRotation: {x: -0, y: -0, z: 0.70611775, w: 0.7080945}
-  m_LocalPosition: {x: 23.785, y: -13.1507, z: 92.97341}
-  m_LocalScale: {x: 51.94179, y: 77.69252, z: 1}
+  m_LocalPosition: {x: 28.3223, y: -13.1633, z: 92.97341}
+  m_LocalScale: {x: 51.94179, y: 86.76186, z: 1}
   m_Children: []
   m_Father: {fileID: 1526190603}
   m_RootOrder: 1
@@ -135704,8 +135704,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240663527}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -61.8069, y: -42.3275, z: 92.97341}
-  m_LocalScale: {x: 102.58933, y: 74.12487, z: 1}
+  m_LocalPosition: {x: -25.2669, y: -42.3275, z: 92.97341}
+  m_LocalScale: {x: 175.67397, y: 74.12487, z: 1}
   m_Children: []
   m_Father: {fileID: 1526190603}
   m_RootOrder: 0
@@ -137106,9 +137106,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -48458597
   m_SortingLayer: 2
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 6c5fb27e891e047448aaf82869ed6559, type: 3}
-  m_Color: {r: 1, g: 0.92235124, b: 0.495283, a: 0.49803922}
+  m_Color: {r: 1, g: 0.92235124, b: 0.495283, a: 0.2784314}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137125,13 +137125,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506283718}
-  m_LocalRotation: {x: -0, y: -0, z: 0.68842244, w: 0.72531}
-  m_LocalPosition: {x: 29.4918, y: -59.8202, z: 92.97341}
-  m_LocalScale: {x: 23.217161, y: 79.25221, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 8.0763, y: -57.20697, z: 92.97341}
+  m_LocalScale: {x: 36.213657, y: 61.062683, z: 1}
   m_Children: []
   m_Father: {fileID: 1526190603}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 87.011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &1520210466 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9188878973072574798, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
