@@ -100,27 +100,27 @@ public static class Consts
             case LEVEL1_4:
                 return LEVEL1_4_NAME;
             case LEVEL2_1:
-                return LEVEL1_4_NAME;
+                return LEVEL2_1_NAME;
             case LEVEL2_2:
-                return LEVEL1_4_NAME;
+                return LEVEL2_2_NAME;
             case LEVEL2_3:
-                return LEVEL1_4_NAME;
+                return LEVEL2_3_NAME;
             case LEVEL3_1:
-                return LEVEL1_4_NAME;
+                return LEVEL3_1_NAME;
             case LEVEL3_2:
-                return LEVEL1_4_NAME;
+                return LEVEL3_2_NAME;
             case LEVEL3_3:
-                return LEVEL1_4_NAME;
+                return LEVEL3_3_NAME;
             case LEVEL3_4:
-                return LEVEL1_4_NAME;
+                return LEVEL3_4_NAME;
             case LEVEL4_1:
-                return LEVEL1_4_NAME;
+                return LEVEL4_1_NAME;
             case LEVEL4_2:
-                return LEVEL1_4_NAME;
+                return LEVEL4_2_NAME;
             case LEVEL4_3:
-                return LEVEL1_4_NAME;
+                return LEVEL4_3_NAME;
             case LEVEL5_1:
-                return LEVEL1_4_NAME;
+                return LEVEL5_1_NAME;
             case LEVEL_MAP:
                 return LEVEL_MAP;
             default:
