@@ -37,16 +37,6 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        
-    }
-
     public static void CreateGame(bool _isNewGame, string _profileName)
     {
         isNewGame = _isNewGame;
