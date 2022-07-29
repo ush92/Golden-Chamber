@@ -71,7 +71,7 @@ public static class Consts
     public const string LEVEL2_3 = "Level2_3";
     public const string LEVEL2_3_NAME = "Jaskinia Rozpaczy";
     public const string LEVEL3_1 = "Level3_1";
-    public const string LEVEL3_1_NAME = "Piramida S³onecznego ¯aru";
+    public const string LEVEL3_1_NAME = "Piramida Solarnego Chaosu";
     public const string LEVEL3_2 = "Level3_2";
     public const string LEVEL3_2_NAME = "Piramida Lodowatej Udrêki";
     public const string LEVEL3_3 = "Level3_3";
