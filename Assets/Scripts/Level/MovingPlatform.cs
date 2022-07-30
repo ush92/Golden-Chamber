@@ -11,6 +11,8 @@ public class MovingPlatform : MonoBehaviour
 
     public int pointSelection;
 
+    public bool isTurnedOn = true;
+
     void Start()
     {
         currentPoint = points[pointSelection];
@@ -18,17 +20,20 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
-        platform.transform.position = Vector3.MoveTowards(platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
-
-        if(platform.transform.position == currentPoint.position)
+        if(isTurnedOn)
         {
-            pointSelection++;
-            if(pointSelection >= points.Length)
-            {
-                pointSelection = 0;
-            }
+            platform.transform.position = Vector3.MoveTowards(platform.transform.position, currentPoint.position, Time.deltaTime * moveSpeed);
 
-            currentPoint = points[pointSelection];
+            if (platform.transform.position == currentPoint.position)
+            {
+                pointSelection++;
+                if (pointSelection >= points.Length)
+                {
+                    pointSelection = 0;
+                }
+
+                currentPoint = points[pointSelection];
+            }
         }
     }
 }
