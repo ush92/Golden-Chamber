@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public float jumpHangTime;
     private float currentJumpHangTime;
 
+    private float oneWayTileCooldown = 0.2f;
+    public float oneWayTileCounter;
+
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
     private bool isGrounded;
@@ -222,6 +225,11 @@ public class PlayerController : MonoBehaviour
         {
             knockbackCooldownCounter -= Time.deltaTime;
         }
+
+        if(oneWayTileCounter > 0)
+        {
+            oneWayTileCounter -= Time.deltaTime;
+        }
     }
 
     private void Animate()
@@ -291,7 +299,12 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = other.transform;
         }
-        
+
+        if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))
+        {
+            triggerObject = Consts.ONE_WAY_TILE;
+        }
+
         if (other.gameObject.name.Equals(Consts.LOCKED_DOOR_P))
         {
             if (keysCount > 0)
@@ -327,6 +340,11 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent = null;
         }
+
+        if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))
+        {
+            triggerObject = "";
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -356,7 +374,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void UseLevelDoor()
+    private void UseTriggeredObject()
     {
         if (!lockTriggerUsing)
         {
@@ -375,6 +393,15 @@ public class PlayerController : MonoBehaviour
                 GameManager.levelMapLastPosition = playerRB.transform.position;
                 GotoLevel(triggerObject);          
             }
+            else if(triggerObject.Equals(Consts.ONE_WAY_TILE))
+            {
+                if(oneWayTileCounter <= 0)
+                {
+                    oneWayTileCounter = oneWayTileCooldown;
+                }
+
+                lockTriggerUsing = false;
+            }
             else
             {
                 switch (triggerObject)
@@ -387,6 +414,8 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 
     public void GotoLevel(string levelName)
     {
@@ -566,7 +595,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted)
         {
-            UseLevelDoor();
+            UseTriggeredObject();
         }
     }
 
@@ -639,7 +668,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted)
         {
-            UseLevelDoor();
+            UseTriggeredObject();
         }
     }
 

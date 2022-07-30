@@ -17,6 +17,7 @@ public static class Consts
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string ENEMY_PROJECTILE = "EnemyProjectile";
     public const string MOVING_PLATFORM = "MovingPlatform";
+    public const string ONE_WAY_TILE = "OneWayTile";
     public const string SLIDER_LEFT = "SliderL";
     public const string SLIDER_RIGHT = "SliderR";
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
@@ -124,7 +125,7 @@ public static class Consts
             case LEVEL_MAP:
                 return LEVEL_MAP;
             default:
-                Debug.Log("Nieznana nazwa levelu w Consts.GetLevelIndex");
+                Debug.Log($"Nieznana nazwa levelu w Consts.GetLevelIndex {levelName}");
                 return "{UNKNOWN NAME}";
         }
     }
@@ -165,7 +166,7 @@ public static class Consts
             case LEVEL5_1:
                 return 14;
             default:
-                Debug.Log("Nieznana nazwa levelu w Consts.GetLevelIndex");
+                Debug.Log($"Nieznana nazwa levelu w Consts.GetLevelIndex {levelName}");
                 return 0;
         }
     }
@@ -192,7 +193,7 @@ public static class Consts
             case COIN:
                 return 8;
             default:
-                Debug.Log("Nieznana nazwa owocu w Consts.GetFruitIndex");
+                Debug.Log($"Nieznana nazwa owocu w Consts.GetFruitIndex {fruitName}");
                 return 0;
         }
     }
