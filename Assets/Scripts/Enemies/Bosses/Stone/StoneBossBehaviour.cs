@@ -11,9 +11,24 @@ public class StoneBossBehaviour : MonoBehaviour
     private enum Side { Top, Right, Bottom, Left };
     private Side currentSide = Side.Top;
 
+    public PlayerController player;
+
     void Start()
     {
+       
+    }
+
+    private void OnEnable()
+    {
+        player.isBossEncounter = true;
+        //basePosition = transform.position;
+        //animator.SetBool("isAttacking", false);
+        //animator.SetBool("isPlayerAlive", true);
+
         InvokeRepeating("SwitchForms", 0f, shiftTime);
+
+        stoneForm1.GetComponent<SpriteRenderer>().color = Color.white;
+        stoneForm2.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void Update()
