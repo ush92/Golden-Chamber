@@ -32,8 +32,11 @@ public class Collectable : MonoBehaviour
                 FindObjectOfType<CollectablesController>().Collect(gameObject.name);
             }
 
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
+            if (GameManager.isSoundsOn)
+            {
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
+            }
 
             Instantiate(pickupEffect, transform.position, Quaternion.Euler(0,0,0));
 

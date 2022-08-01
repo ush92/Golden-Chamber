@@ -9,14 +9,14 @@ public class Destructable : MonoBehaviour
         if (other.tag.Equals(Consts.PLAYER))
         {
             Instantiate(destructEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+            Destroy(gameObject, 0.05f);
         }
         else if (other.tag.Equals(Consts.PLAYER_PROJECTILE))
         {
             if (other.name.Equals(Consts.PLAYER_ATTACK_WAVE))
             {
                 Instantiate(destructEffect, transform.position, transform.rotation);
-                Destroy(gameObject);
+                Destroy(gameObject, 0.05f);
                 other.gameObject.SetActive(false);
             }
             else

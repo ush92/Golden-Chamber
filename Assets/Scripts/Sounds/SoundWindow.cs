@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +6,26 @@ public class SoundWindow : MonoBehaviour
     public Image buttonMusicImage;
     public Image buttonSoundsImage;
 
-    void Update()
+    private void Start()
     {
-        if(GameManager.isMusicOn)
+        RefreshSoundButtonImages();
+    }
+
+    public void ButtonMusicClick()
+    {
+        GameManager.isMusicOn = !GameManager.isMusicOn;
+        RefreshSoundButtonImages();
+    }
+
+    public void ButtonSoundsClick()
+    {
+        GameManager.isSoundsOn = !GameManager.isSoundsOn;
+        RefreshSoundButtonImages();
+    }
+
+    private void RefreshSoundButtonImages()
+    {
+        if (GameManager.isMusicOn)
         {
             buttonMusicImage.color = new Color32(225, 255, 255, 255);
         }
@@ -27,15 +42,5 @@ public class SoundWindow : MonoBehaviour
         {
             buttonSoundsImage.color = new Color32(255, 255, 255, 100);
         }
-    }
-
-    public void ButtonMusicClick()
-    {
-        GameManager.isMusicOn = !GameManager.isMusicOn;
-    }
-
-    public void ButtonSoundsClick()
-    {
-        GameManager.isSoundsOn = !GameManager.isSoundsOn;
     }
 }

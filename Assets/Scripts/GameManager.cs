@@ -1,13 +1,14 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
     public Animator levelTransition;
+    public Animator musicTransition;
     public float transitionTime = 1.0f;
 
     public PlayerController activePlayer;
@@ -23,12 +24,15 @@ public class GameManager : MonoBehaviour, ISaveable
     public static List<bool> levelList = new List<bool>(new bool[15]);
     public static List<List<int>> levelRecords = new List<List<int>>();
 
+    private MusicManager musicManager;
     public static bool isMusicOn;
     public static bool isSoundsOn;
 
     private void Awake()
     {
         instance = this;
+
+        musicManager = FindObjectOfType<MusicManager>();
 
         for (int i = 0; i <= 14; i++)
         {
@@ -40,11 +44,15 @@ public class GameManager : MonoBehaviour, ISaveable
         }
     }
 
+    private void Update()
+    {
+        musicManager.ManageMusic();
+    }
+
     public static void CreateGame(bool _isNewGame, string _profileName)
     {
         isNewGame = _isNewGame;
         profileName = _profileName;
-
     }
 
     public void AddPlayer(PlayerController newPlayer)
@@ -99,7 +107,9 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public IEnumerator LoadLevel(string levelName)
     {
+        musicTransition.SetTrigger("FadeOut");
         levelTransition.SetTrigger("Start");
+
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelName);
     }
