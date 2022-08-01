@@ -7,6 +7,10 @@ public class SaveData
     [System.Serializable]
     public struct PlayerData
     {
+        //config
+        public bool isMusicOn;
+        public bool isSoundsOn;
+        
         public List<bool> levelList; //completed or not
 
         public List<int> level0Records; //fruits and time
@@ -30,6 +34,9 @@ public class SaveData
 
     public SaveData()
     {
+        playerData.isMusicOn = true;
+        playerData.isSoundsOn = true;
+
         playerData.levelList = new List<bool>(new bool[15]);
 
         playerData.level0Records = new List<int>(new int[10]);

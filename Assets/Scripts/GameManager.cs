@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour, ISaveable
     public static List<bool> levelList = new List<bool>(new bool[15]);
     public static List<List<int>> levelRecords = new List<List<int>>();
 
+    public static bool isMusicOn;
+    public static bool isSoundsOn;
+
     private void Awake()
     {
         instance = this;
@@ -41,6 +44,7 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         isNewGame = _isNewGame;
         profileName = _profileName;
+
     }
 
     public void AddPlayer(PlayerController newPlayer)
@@ -57,7 +61,7 @@ public class GameManager : MonoBehaviour, ISaveable
             else
             {
                 transform.localPosition = newPlayer.transform.localPosition;
-            }           
+            }
         }
         else
         {
@@ -86,6 +90,11 @@ public class GameManager : MonoBehaviour, ISaveable
         }
         levelMapLastPosition = Vector3.zero;
         StartCoroutine(LoadLevel(Consts.MAIN_MENU));
+    }
+
+    public void ToggleSoundOptions()
+    {
+        activePlayer.soundOptionsWindow.gameObject.SetActive(!activePlayer.soundOptionsWindow.activeSelf);
     }
 
     public IEnumerator LoadLevel(string levelName)
@@ -118,6 +127,9 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             saveData.playerData.levelList[i] = levelList[i];
         }
+
+        saveData.playerData.isMusicOn = isMusicOn;
+        saveData.playerData.isSoundsOn = isSoundsOn;
 
         #region levelRecords
 
@@ -162,6 +174,9 @@ public class GameManager : MonoBehaviour, ISaveable
                 levelList[i] = false;
             }
 
+            isMusicOn = true;
+            isSoundsOn = true;
+
             for (int i = 0; i <= 14; i++)
             {
                 for (int j = 0; j <= 8; j++)
@@ -176,6 +191,9 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 levelList[i] = saveData.playerData.levelList[i];
             }
+
+            isMusicOn = saveData.playerData.isMusicOn;
+            isSoundsOn = saveData.playerData.isSoundsOn;
 
             #region levelRecords
 

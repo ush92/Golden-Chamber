@@ -58,11 +58,7 @@ public class PlayerController : MonoBehaviour
     private bool lockTriggerUsing = false;
     public int keysCount;
 
-    public EquipmentManager equipmentManager;
-
     public CollectablesController collectableController;
-    public CompleteLevelScreen completeLevelScreen;
-    public Button buttonBackToMap;
     private float timeInLevel;
     public Text currentTime;
 
@@ -76,6 +72,12 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem.EmissionModule footDustEmission;
     public ParticleSystem jumpDust;
     private bool wasGrounded;
+
+    //UI
+    public EquipmentManager equipmentManager;
+    public GameObject soundOptionsWindow;
+    public CompleteLevelScreen completeLevelScreen;
+    public Button buttonBackToMap;
 
     #endregion
 
@@ -103,6 +105,8 @@ public class PlayerController : MonoBehaviour
 
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
+
+        DisablePlayerUI();
     }
 
     private void LateUpdate() //Load
@@ -382,14 +386,17 @@ public class PlayerController : MonoBehaviour
 
             if (triggerObject.Equals(Consts.LEVEL_MAP))
             {
+                DisablePlayerUI();
                 GotoLevel(Consts.LEVEL_MAP);
             }
             else if (triggerObject.Equals(Consts.COMPLETE_LEVEL))
             {
+                DisablePlayerUI();
                 ShowCompleteLevelScreen();          
             }
             else if (triggerObject.StartsWith(Consts.LEVEL))
             {
+                DisablePlayerUI();
                 GameManager.levelMapLastPosition = playerRB.transform.position;
                 GotoLevel(triggerObject);          
             }
@@ -415,7 +422,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void DisablePlayerUI()
+    {
+        soundOptionsWindow.gameObject.SetActive(false);
 
+        //disable summaryWindow as well
+    }
 
     public void GotoLevel(string levelName)
     {
