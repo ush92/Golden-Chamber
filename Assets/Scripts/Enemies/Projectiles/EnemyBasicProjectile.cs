@@ -8,7 +8,7 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     public GameObject collisionEffect;
 
-    private float lifetime = 3.0f;
+    public float lifetime = 3.0f;
 
     public int damageToDeal = 1;
     private bool damageDone = false;
@@ -26,7 +26,14 @@ public class EnemyBasicProjectile : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(speed, heigthPower);
+            if (transform.position.x > player.transform.position.x)
+            {
+                rb.velocity = new Vector2(-speed, heigthPower);
+            }
+            else if (transform.position.x < player.transform.position.x)
+            {
+                rb.velocity = new Vector2(speed, heigthPower);
+            }          
         }
     }
 

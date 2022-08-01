@@ -7,6 +7,9 @@ public class EnemyBasicShoot : MonoBehaviour
     public float firstShootTime;
     public float repeatingTime;
 
+    public bool onlyIfFacedToPlayer = false;
+    public PlayerController player;
+
     private void Start()
     {
         InvokeRepeating("Shoot", firstShootTime, repeatingTime);
@@ -14,6 +17,17 @@ public class EnemyBasicShoot : MonoBehaviour
 
     private void Shoot()
     {
-        Instantiate(projectile, attackPoint.position, attackPoint.rotation);
+        if(onlyIfFacedToPlayer)
+        {
+            if (transform.position.x > player.transform.position.x && !GetComponent<EnemyPatrol>().moveRight ||
+                transform.position.x < player.transform.position.x && GetComponent<EnemyPatrol>().moveRight)
+            {
+                Instantiate(projectile, attackPoint.position, attackPoint.rotation);
+            }
+        }
+        else
+        {
+            Instantiate(projectile, attackPoint.position, attackPoint.rotation);
+        }     
     }
 }
