@@ -15,6 +15,11 @@ public class FlyingAround : MonoBehaviour
         player = GameObject.FindGameObjectWithTag(Consts.PLAYER);
     }
 
+    private void OnDisable()
+    {
+        transform.position = startingPoint.transform.position;
+    }
+
     void Update()
     {
         if (!player)

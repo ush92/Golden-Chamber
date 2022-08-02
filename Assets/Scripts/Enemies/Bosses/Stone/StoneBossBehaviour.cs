@@ -7,11 +7,13 @@ public class StoneBossBehaviour : MonoBehaviour
     private bool isStoneForm1 = false;
     private bool isStoneForm2 = true;
     public float shiftTime;
+    public Transform enablePoint;
 
     private enum Side { Top, Right, Bottom, Left };
     private Side currentSide = Side.Top;
 
     public PlayerController player;
+
 
     void Start()
     {
@@ -21,9 +23,6 @@ public class StoneBossBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
-        //basePosition = transform.position;
-        //animator.SetBool("isAttacking", false);
-        //animator.SetBool("isPlayerAlive", true);
 
         InvokeRepeating("SwitchForms", 0f, shiftTime);
 
@@ -86,11 +85,16 @@ public class StoneBossBehaviour : MonoBehaviour
     {
         if(isStoneForm1)
         {
+            stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+
             stoneForm1.gameObject.SetActive(false);
             stoneForm2.gameObject.SetActive(true);
+
         }
         else
         {
+            stoneForm1.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+
             stoneForm1.gameObject.SetActive(true);
             stoneForm2.gameObject.SetActive(false);
         }
