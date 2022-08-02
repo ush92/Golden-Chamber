@@ -2,104 +2,211 @@ using UnityEngine;
 
 public class StoneBossBehaviour : MonoBehaviour
 {
-    public GameObject stoneForm1;
-    public GameObject stoneForm2;
-    private bool isStoneForm1 = false;
-    private bool isStoneForm2 = true;
     public float shiftTime;
+    public float fallDelay;
+    private float fallTimer;
+    public float gravity = 3;
     public Transform enablePoint;
+    public GameObject collisionEffect;
 
-    private enum Side { Top, Right, Bottom, Left };
-    private Side currentSide = Side.Top;
+    public StoneBoss stoneForm1;
+    public StoneBoss bossForm1;
+    public GameObject stoneForm1FixedBorder; //to avoid move player out of room on heavy hit collision
+    private bool isStoneForm1 = false;
+    public float stone1AttackDelay;
+    private float stone1AttackTimer;
+    private bool wasStone1Attacked;
+    public float stone1MoveSpeed;
+
+    public StoneBoss stoneForm2;
+    public StoneBoss bossForm2;
+    private bool isStoneForm2 = true;
 
     public PlayerController player;
-
-
-    void Start()
-    {
-       
-    }
+    private int playerSide;
 
     private void OnEnable()
     {
         player.isBossEncounter = true;
-
         InvokeRepeating("SwitchForms", 0f, shiftTime);
-
-        stoneForm1.GetComponent<SpriteRenderer>().color = Color.white;
-        stoneForm2.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void Update()
     {
-        if (isStoneForm1)
+        CheckPlayer();
+
+        if((!stoneForm1 && !stoneForm2) || player.isBossEncounter == false)
         {
-            Form1Behaviour();
-        }
-        else
-        {
-            Form2Behaviour();
+            return;
         }
 
-        CheckActivity();
+        if (isStoneForm1 && stoneForm1)
+        { 
+            if (fallTimer > 0)
+            {
+                stoneForm1.GetComponent<Rigidbody2D>().gravityScale = 0;
+                stoneForm1FixedBorder.gameObject.SetActive(false);
+                fallTimer -= Time.deltaTime;
+            }
+            else
+            {
+                stoneForm1.GetComponent<Rigidbody2D>().gravityScale = gravity;
+                stoneForm1FixedBorder.gameObject.SetActive(true);
+                fallTimer = 0;
+
+                if (!wasStone1Attacked)
+                {
+                    stone1AttackTimer -= Time.deltaTime;
+                }
+
+                if (stone1AttackTimer < 0)
+                {
+                    Form1Behaviour();
+                    stone1AttackTimer = 0;
+                    wasStone1Attacked = true;
+                }
+            }
+        }
+
+        if (isStoneForm2 && stoneForm2)
+        {
+            if (fallTimer > 0)
+            {
+                stoneForm2.GetComponent<Rigidbody2D>().gravityScale = 0;
+                fallTimer -= Time.deltaTime;
+            }
+            else
+            {
+                stoneForm2.GetComponent<Rigidbody2D>().gravityScale = gravity;
+                fallTimer = 0;
+            }
+        }
+    }
+
+    private void CheckPlayer()
+    {
+        if (player.isActive == false)
+        {
+            player.isBossEncounter = false;
+
+            if(stoneForm1 == null)
+            {
+                stoneForm1 = Instantiate(bossForm1, enablePoint.transform.position, enablePoint.transform.rotation);
+            }
+
+            if (stoneForm2 == null)
+            {
+                stoneForm2 = Instantiate(bossForm2, enablePoint.transform.position, enablePoint.transform.rotation);
+            }
+
+
+            stoneForm1.GetComponentInChildren<EnemyHPController>().ResetHP();
+            stoneForm2.GetComponentInChildren<EnemyHPController>().ResetHP();
+
+            stoneForm1FixedBorder.gameObject.SetActive(false);
+            stone1AttackTimer = stone1AttackDelay;
+            wasStone1Attacked = false;
+            stoneForm1.areRocksFallen = false;
+
+            stoneForm1.gameObject.SetActive(false);
+            stoneForm2.gameObject.SetActive(false);
+        }
     }
 
     private void Form1Behaviour()
     {
-
-    }
-
-    private void Form2Behaviour()
-    {
-
-    }
-
-    private void CheckActivity()
-    {
-        if (stoneForm1 == null || stoneForm2 == null)
+        if (stoneForm1.transform.position.x > player.transform.position.x)
         {
-            CancelInvoke("SwitchForms");
+            playerSide = -1;
+        }
+        else if (transform.position.x < player.transform.position.x)
+        {
+            playerSide = 1;
         }
 
+        stoneForm1.GetComponent<Rigidbody2D>().velocity = new Vector2(playerSide * stone1MoveSpeed, stoneForm1.GetComponent<Rigidbody2D>().velocity.y);
+    }
+
+    private void CheckBossActivity()
+    {
         if (stoneForm1 == null && stoneForm2 == null)
         {
             isStoneForm1 = false;
             isStoneForm2 = false;
+            player.isBossEncounter = false;
         }
         else if (stoneForm1 == null && stoneForm2)
         {
+            fallTimer = fallDelay;
             stoneForm2.gameObject.SetActive(true);
+
             isStoneForm1 = false;
             isStoneForm2 = true;
         }
         else if (stoneForm1 && stoneForm2 == null)
         {
+            fallTimer = fallDelay;
             stoneForm1.gameObject.SetActive(true);
+
+            stoneForm1FixedBorder.gameObject.SetActive(true);
             isStoneForm1 = true;
             isStoneForm2 = false;
+            stoneForm1.areRocksFallen = false;
         }
-
     }
 
     private void SwitchForms()
     {
-        if(isStoneForm1)
+        CheckBossActivity();
+
+        fallTimer = fallDelay;
+
+        if (stoneForm1 == null || stoneForm2 == null)
         {
-            stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+            if (stoneForm1)
+            {
+                stoneForm1.transform.position = new Vector3(enablePoint.transform.position.x + 15, enablePoint.transform.position.y, transform.position.z);
+                stone1AttackTimer = stone1AttackDelay;
+                wasStone1Attacked = false;
+                stoneForm1.areRocksFallen = false;
+            }
 
-            stoneForm1.gameObject.SetActive(false);
-            stoneForm2.gameObject.SetActive(true);
-
+            if (stoneForm2)
+            {
+                stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+            }
         }
         else
         {
-            stoneForm1.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+            stoneForm1FixedBorder.gameObject.SetActive(false);
 
-            stoneForm1.gameObject.SetActive(true);
-            stoneForm2.gameObject.SetActive(false);
+            if (isStoneForm1)
+            {
+                if (stoneForm2)
+                {
+                    stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+
+                    stoneForm1.gameObject.SetActive(false);
+                    stoneForm2.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                if (stoneForm1)
+                {
+                    stoneForm1.transform.position = new Vector3(enablePoint.transform.position.x + 15, enablePoint.transform.position.y, transform.position.z);
+
+                    stoneForm1.gameObject.SetActive(true);
+                    stoneForm2.gameObject.SetActive(false);
+
+                    stone1AttackTimer = stone1AttackDelay;
+                    wasStone1Attacked = false;
+                    stoneForm1.areRocksFallen = false;
+                }
+            }
+
+            isStoneForm1 = !isStoneForm1;
+            isStoneForm2 = !isStoneForm2;
         }
-
-        isStoneForm1 = !isStoneForm1;
-        isStoneForm2 = !isStoneForm2;
     }
 }

@@ -10,18 +10,19 @@ GameObject:
   m_Component:
   - component: {fileID: 5860679135789896864}
   - component: {fileID: 5860679135789896865}
-  - component: {fileID: 5860679135789896877}
   - component: {fileID: 5860679135789896866}
-  - component: {fileID: 5860679135789896867}
   - component: {fileID: 5860679135789896879}
   - component: {fileID: 5860679135789896876}
+  - component: {fileID: 2017278902}
+  - component: {fileID: 2017278904}
+  - component: {fileID: 2017278907}
   m_Layer: 10
   m_Name: StoneBoss1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5860679135789896864
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5860679135789896870}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -103.15, y: -35.63, z: 19.188103}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -88,32 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5860679135789896877
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5860679135789896870}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0070147514, y: -0.0032992363}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.625, y: 2.625}
-    newSize: {x: 1.3125, y: 1.3125}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.7496767, y: 1.7422438}
-  m_EdgeRadius: 0
 --- !u!61 &5860679135789896866
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -127,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00057935715, y: -0.006579876}
+  m_Offset: {x: -0.005346298, y: -0.008266449}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -138,20 +113,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8982058, y: 1.8986483}
+  m_Size: {x: 1.9030685, y: 1.968195}
   m_EdgeRadius: 0
---- !u!114 &5860679135789896867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5860679135789896870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72deb57f9dcbf0f4394bec9c9824056a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5860679135789896879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,13 +140,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHP: 5
   currentHP: 0
-  enemyDeathEffect: {fileID: 4639924823971810983, guid: b70077eadb285e64ab1ac15bb068b466, type: 3}
+  enemyDeathEffect: {fileID: 4639924823971810983, guid: 94b3cf0969a82ac488a1a1ae28aaee77, type: 3}
   flashOnHit: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
   hitFlashTime: 0.125
   hpBar: {fileID: 4252818888136419082}
   hpBarFlashTime: 1
+--- !u!50 &2017278902
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860679135789896870}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1000
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 3
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!58 &2017278904
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860679135789896870}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000011324883, y: -0.013655663}
+  serializedVersion: 2
+  m_Radius: 0.91502094
+--- !u!114 &2017278907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5860679135789896870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8659a16a3410e6449af3d0ab43d90ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionEffect: {fileID: 4639924823971810983, guid: 3a6d711a744597746a6a73896fe663b6, type: 3}
+  enablePoint: {fileID: 0}
+  fallingStone: {fileID: 1469108805278414802, guid: e116f076d1c2809439aa8cbf3d1cc91a, type: 3}
+  areRocksFallen: 0
 --- !u!1001 &5860679134960442804
 PrefabInstance:
   m_ObjectHideFlags: 0
