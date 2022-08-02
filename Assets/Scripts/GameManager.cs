@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour, ISaveable
     public Checkpoint currentCheckPoint;
 
     private static bool isNewGame;
-    private static string profileName;
+    public static string profileName = "";
     public string currentLevel;
 
     public static List<bool> levelList = new List<bool>(new bool[15]);
@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour, ISaveable
     }
 
     public static void LoadJsonData(GameManager _gameManager)
-    {
+    { 
         if (FileManager.LoadFromFile(profileName + ".dat", out var json))
         {
             SaveData saveData = new SaveData();
