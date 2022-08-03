@@ -20,6 +20,8 @@ public class StoneBoss : MonoBehaviour
         //check room dimensions for falling rocks area
         leftRoom = -27f;
         rightRoom = 3f;
+
+        transform.name = transform.name.Replace("(Clone)", "").Trim();
     }
 
     private void OnEnable()

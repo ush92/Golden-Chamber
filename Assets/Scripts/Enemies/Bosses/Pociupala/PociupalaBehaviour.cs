@@ -24,6 +24,8 @@ public class PociupalaBehaviour : MonoBehaviour
 
     public Collectable axeWeaponLoot;
 
+    public MusicManager musicManager;
+
     private void OnEnable()
     {
         player.isBossEncounter = true;
@@ -38,6 +40,8 @@ public class PociupalaBehaviour : MonoBehaviour
         Invoke("SetNormalMoveSpeed", 3.0f);
 
         GetComponent<SpriteRenderer>().color = Color.white;
+
+        musicManager.SwitchToSecondaryTheme();
     }
 
     private void SetNormalMoveSpeed()
@@ -117,6 +121,8 @@ public class PociupalaBehaviour : MonoBehaviour
             GetComponentInChildren<EnemyHPController>().ResetHP();
             GetComponent<SpriteRenderer>().color = Color.white;      
             gameObject.SetActive(false);
+
+            musicManager.SwitchToPrimaryTheme();
         }
     }
 
@@ -150,7 +156,7 @@ public class PociupalaBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         saws[sawIndex].gameObject.transform.position = sawBasePosition;
-
         Instantiate(axeWeaponLoot, transform.position, transform.rotation);
+        //musicManager.SwitchToPrimaryTheme();
     }
 }

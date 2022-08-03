@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class StoneBossBehaviour : MonoBehaviour
 {
+    public GameObject activactionArea;
+
     public float shiftTime;
     public float enrageShiftTime;
     public float fallDelay;
@@ -10,8 +12,8 @@ public class StoneBossBehaviour : MonoBehaviour
     public Transform enablePoint;
     public GameObject collisionEffect;
 
-    public StoneBoss stoneForm1;
-    public StoneBoss bossForm1;
+    public StoneBoss bossForm1prefab;
+    private StoneBoss stoneForm1;
     public GameObject stoneForm1FixedBorder; //to avoid move player out of room on heavy hit collision
     private bool isStoneForm1 = false;
     public float stone1AttackDelay;
@@ -19,8 +21,8 @@ public class StoneBossBehaviour : MonoBehaviour
     private bool wasStone1Attacked;
     public float stone1MoveSpeed;
 
-    public StoneBoss stoneForm2;
-    public StoneBoss bossForm2;
+    public StoneBoss bossForm2prefab;
+    private StoneBoss stoneForm2;
     private bool isStoneForm2 = true;
     public FlyingAround form2SpikeBall;
     public float spikeBallEnragedMoveSpeed = 5.0f;
@@ -37,9 +39,30 @@ public class StoneBossBehaviour : MonoBehaviour
     public Transform item1Location;
     public Transform item2Location;
 
+    public MusicManager musicManager;
+
     private void OnEnable()
     {
         player.isBossEncounter = true;
+        musicManager.SwitchToSecondaryTheme();
+
+        if (stoneForm1 == null)
+        {
+            stoneForm1 = Instantiate(bossForm1prefab, enablePoint.transform.position, enablePoint.transform.rotation, transform);
+            stoneForm1.enablePoint = enablePoint;
+        }
+
+        if (stoneForm2 == null)
+        {
+            stoneForm2 = Instantiate(bossForm2prefab, enablePoint.transform.position, enablePoint.transform.rotation, transform);
+            stoneForm2.enablePoint = enablePoint;
+            form2SpikeBall = stoneForm2.GetComponentInChildren<FlyingAround>();
+            form2SpikeBall.moveSpeed = spikeBallNormalMoveSpeed;
+        }
+     
+        stoneForm1.gameObject.SetActive(true);
+        stoneForm2.gameObject.SetActive(false);
+        isStoneForm2 = true; //set form2 just before switch forms
         InvokeRepeating("SwitchForms", 0f, shiftTime);
     }
 
@@ -52,12 +75,13 @@ public class StoneBossBehaviour : MonoBehaviour
             if(isLootAppeared == false)
             {
                 isLootAppeared = true;
+                activactionArea.SetActive(false);
                 Instantiate(hpMaxPlus5, item1Location.position, item1Location.rotation);
                 Instantiate(stoneWeapon, item2Location.position, item2Location.rotation);
             }
         }
 
-        if (player.isBossEncounter == false)
+        if (player.isActive == false || player.isBossEncounter == false)
         {
             return;
         }
@@ -109,41 +133,44 @@ public class StoneBossBehaviour : MonoBehaviour
             isEnraged = true;
             CancelInvoke("SwitchForms");
             InvokeRepeating("SwitchForms", enrageShiftTime, enrageShiftTime);
-
+            
             if (stoneForm2)
             {
+                stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
                 form2SpikeBall.moveSpeed = spikeBallEnragedMoveSpeed;
             }
         }
     }
 
     private void CheckPlayer()
-    {
-        if (player.isActive == false)
+    {         
+        if (player.isBossEncounter == false)
         {
-            player.isBossEncounter = false;
+            CancelInvoke("SwitchForms");
 
-            if(stoneForm1 == null)
+            if (stoneForm1)
             {
-                stoneForm1 = Instantiate(bossForm1, enablePoint.transform.position, enablePoint.transform.rotation);
+                stoneForm1.GetComponentInChildren<EnemyHPController>().ResetHP();
+                stoneForm1.areRocksFallen = false;
+                stoneForm1.gameObject.SetActive(false);
             }
 
-            if (stoneForm2 == null)
+            if (stoneForm2)
             {
-                stoneForm2 = Instantiate(bossForm2, enablePoint.transform.position, enablePoint.transform.rotation);
+                stoneForm2.GetComponentInChildren<EnemyHPController>().ResetHP();
+                stoneForm2.gameObject.SetActive(false);
             }
-
-
-            stoneForm1.GetComponentInChildren<EnemyHPController>().ResetHP();
-            stoneForm2.GetComponentInChildren<EnemyHPController>().ResetHP();
 
             stoneForm1FixedBorder.gameObject.SetActive(false);
             stone1AttackTimer = stone1AttackDelay;
             wasStone1Attacked = false;
-            stoneForm1.areRocksFallen = false;
 
-            stoneForm1.gameObject.SetActive(false);
-            stoneForm2.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
+
+            if (musicManager.secondaryTheme.isPlaying)
+            {
+                musicManager.SwitchToPrimaryTheme();
+            }
         }
     }
 
@@ -187,8 +214,7 @@ public class StoneBossBehaviour : MonoBehaviour
             isStoneForm2 = false;
             stoneForm1.areRocksFallen = false;
 
-            isEnraged = false;
-            form2SpikeBall.moveSpeed = spikeBallNormalMoveSpeed;
+            isEnraged = false;         
         }
     }
 
@@ -202,6 +228,9 @@ public class StoneBossBehaviour : MonoBehaviour
         {
             if (stoneForm1)
             {
+                stoneForm1.gameObject.SetActive(false);
+                stoneForm1.gameObject.SetActive(true);
+
                 stoneForm1.transform.position = new Vector3(enablePoint.transform.position.x + 15, enablePoint.transform.position.y, transform.position.z);
                 stone1AttackTimer = stone1AttackDelay;
                 wasStone1Attacked = false;
