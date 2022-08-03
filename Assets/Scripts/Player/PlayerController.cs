@@ -18,10 +18,7 @@ public class PlayerController : MonoBehaviour
     public float waterMoveSpeed;
     private float velocity;
 
-    public bool isSliding;
-    private float slideVelocity;
-    public float slideTime;
-    private float currentSlideTime;
+
 
     public float jumpForce;
     public float jumpHangTime;
@@ -79,6 +76,11 @@ public class PlayerController : MonoBehaviour
     public CompleteLevelScreen completeLevelScreen;
     public Button buttonBackToMap;
 
+    //Specific levels
+    //2_3
+    public bool isHp5ItemCollected = false;
+    public bool isStoneItemCollected = false;
+
     #endregion
 
     void Start()
@@ -116,7 +118,6 @@ public class PlayerController : MonoBehaviour
             GameManager.LoadJsonData(GameManager.instance);
             equipmentManager.currentItem = PlayerPrefs.GetInt(Consts.PLAYER_CURRENT_ITEM);
             equipmentManager.UpdateEquipment();
-            isDataLoaded = true;
         }
     }
 
@@ -198,15 +199,6 @@ public class PlayerController : MonoBehaviour
         if (knockbackCounter <= 0)
         {
             playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
-
-            if(isSliding)
-            {
-                if (currentSlideTime > 0)
-                {
-                    playerRB.velocity = new Vector2(slideVelocity * moveSpeed * currentSlideTime, playerRB.velocity.y);
-                    currentSlideTime -= Time.deltaTime;
-                }
-            }
         }
         else
         {
@@ -520,18 +512,29 @@ public class PlayerController : MonoBehaviour
         keysCount++;
     }
 
-    public void CollectWeapon(string weapon)
+    public void CollectBossItem(string weapon)
     {
-        Debug.Log($"znalazles now¹ broñ {weapon}");
-
         var objectsAfterBoss = GameObject.Find(Consts.OBJECTS_AFTER_BOSS);
 
         if (objectsAfterBoss != null)
         {
-            if (weapon.Equals(Consts.AXE_WEAPON_COLLECTABLE))
+            switch(weapon)
             {
-                objectsAfterBoss.gameObject.transform.position = new Vector3(-6.85f, 25.0f, 0f);
-            }
+                case Consts.AXE_WEAPON_COLLECTABLE:
+                    objectsAfterBoss.gameObject.transform.position = new Vector3(-6.85f, 25.0f, 0f);
+                    break;
+                case Consts.HP_MAX_PLUS_5:
+                    isHp5ItemCollected = true;
+                    break;
+                default:
+                    Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");
+                    break;
+            }      
+        }
+
+        if(isHp5ItemCollected /* dodac na stone item */)
+        {
+            objectsAfterBoss.gameObject.transform.position = new Vector3(-27.53f, 3.65f, 0f);
         }
 
         GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
@@ -636,16 +639,6 @@ public class PlayerController : MonoBehaviour
         if (isActive && !isLevelCompleted)
         {
             velocity = context.ReadValue<Vector2>().x;
-
-            if (velocity != 0 )
-            {
-                slideVelocity = velocity;
-            }
-
-            if (context.canceled)
-            {
-                currentSlideTime = slideTime;
-            }
         }
     }
 

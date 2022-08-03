@@ -10,12 +10,35 @@ public class StoneBoss : MonoBehaviour
     private float rightRoom;
 
     public bool areRocksFallen = false;
+    public int fallenRocksCount;
+
+    public float fadeAnimationTime = 1.0f;
+    private float fadeAnimationCounter;
 
     private void Start()
     {
         //check room dimensions for falling rocks area
         leftRoom = -27f;
         rightRoom = 3f;
+    }
+
+    private void OnEnable()
+    {
+        fadeAnimationCounter = fadeAnimationTime;
+        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 0);
+    }
+
+    private void Update()
+    {
+        if(fadeAnimationCounter > 0)
+        {
+            fadeAnimationCounter -= Time.deltaTime;
+            GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1 - fadeAnimationCounter);
+        }
+        else
+        {
+            fadeAnimationCounter = 0;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -28,7 +51,7 @@ public class StoneBoss : MonoBehaviour
             {
                 areRocksFallen = true;
 
-                for (int i = 0; i < 8; i++)
+                for (int i = 0; i < fallenRocksCount; i++)
                 {
                     var rockPosition = new Vector3(Random.Range(leftRoom, rightRoom), enablePoint.transform.position.y + 0.8f, enablePoint.transform.position.z);
                     

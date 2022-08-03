@@ -28,6 +28,7 @@ public static class Consts
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
     public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
+    public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
 
     public const string BOSS1 = "Pociupala";
 

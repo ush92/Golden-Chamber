@@ -31,6 +31,8 @@ Transform:
   - {fileID: 3747837140823592195}
   - {fileID: 3747837141595213695}
   - {fileID: 6060236558558916149}
+  - {fileID: 809511743601824784}
+  - {fileID: 5623982501184696268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,7 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72deb57f9dcbf0f4394bec9c9824056a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shiftTime: 6
+  shiftTime: 7
+  enrageShiftTime: 3.5
   fallDelay: 1
   gravity: 3
   enablePoint: {fileID: 6060236558558916149}
@@ -58,7 +61,13 @@ MonoBehaviour:
   stone1MoveSpeed: 27
   stoneForm2: {fileID: 5147583491467211217}
   bossForm2: {fileID: 414323264, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
+  form2SpikeBall: {fileID: 8107427779255824669}
+  spikeBallEnragedMoveSpeed: 5
+  spikeBallNormalMoveSpeed: 3
   player: {fileID: 0}
+  hpMaxPlus5: {fileID: 874289665169651099, guid: c9181b830dac7f64998be04c7c07bf65, type: 3}
+  item1Location: {fileID: 809511743601824784}
+  item2Location: {fileID: 5623982501184696268}
 --- !u!1 &4835963700857730797
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +98,66 @@ Transform:
   m_Father: {fileID: 3747837140668439818}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6258071717866257777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5623982501184696268}
+  m_Layer: 0
+  m_Name: item2Loc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5623982501184696268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258071717866257777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.19, y: -6.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3747837140668439818}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8628319666222706543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809511743601824784}
+  m_Layer: 0
+  m_Name: item1Loc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809511743601824784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8628319666222706543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.81, y: -6.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3747837140668439818}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5147583491325780881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103,6 +172,10 @@ PrefabInstance:
     - target: {fileID: 8317336988167384288, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
       propertyPath: m_Name
       value: StoneBoss2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8317336988167384301, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
+      propertyPath: maxHP
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8317336988167384302, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
       propertyPath: m_RootOrder
@@ -166,6 +239,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8659a16a3410e6449af3d0ab43d90ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8107427779255824669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4029804079827784332, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
+  m_PrefabInstance: {fileID: 5147583491325780881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306c7f65d5e5d3b4a8564c0afc7e5e17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7302497299962436003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +261,10 @@ PrefabInstance:
       propertyPath: enablePoint
       value: 
       objectReference: {fileID: 6060236558558916149}
+    - target: {fileID: 2017278907, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}
+      propertyPath: fallenRocksCount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5860679135789896864, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -224,6 +312,10 @@ PrefabInstance:
     - target: {fileID: 5860679135789896870, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}
       propertyPath: m_Name
       value: StoneBoss1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5860679135789896876, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}
+      propertyPath: maxHP
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}

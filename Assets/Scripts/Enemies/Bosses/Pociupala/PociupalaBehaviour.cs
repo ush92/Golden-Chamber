@@ -24,11 +24,6 @@ public class PociupalaBehaviour : MonoBehaviour
 
     public Collectable axeWeaponLoot;
 
-    void Start()
-    {
-
-    }
-
     private void OnEnable()
     {
         player.isBossEncounter = true;

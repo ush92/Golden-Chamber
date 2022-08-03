@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System;
 using UnityEngine.UIElements;
+using static EquipmentManager;
 
 public class PlayerHPController : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class PlayerHPController : MonoBehaviour
     private float hpBarFlashCounter;
 
     private float diff; //to fix hp bar scaling
+    private bool isDataLoaded = false;
 
     void Start()
     {
@@ -37,7 +39,17 @@ public class PlayerHPController : MonoBehaviour
 
     void Update()
     {
-        if(invincibilityCounter > 0)
+        if (!isDataLoaded)
+        {
+            if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true)
+            {
+                maxHP = 10;
+                currentHP = maxHP;
+                isDataLoaded = true;
+            }
+        }
+
+        if (invincibilityCounter > 0)
         {
             invincibilityCounter -= Time.deltaTime;
             hpBarFlashCounter -= Time.deltaTime;

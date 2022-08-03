@@ -3,6 +3,7 @@ using UnityEngine;
 public class StoneBossBehaviour : MonoBehaviour
 {
     public float shiftTime;
+    public float enrageShiftTime;
     public float fallDelay;
     private float fallTimer;
     public float gravity = 3;
@@ -21,9 +22,19 @@ public class StoneBossBehaviour : MonoBehaviour
     public StoneBoss stoneForm2;
     public StoneBoss bossForm2;
     private bool isStoneForm2 = true;
-
+    public FlyingAround form2SpikeBall;
+    public float spikeBallEnragedMoveSpeed = 5.0f;
+    public float spikeBallNormalMoveSpeed = 3.0f;
+    
     public PlayerController player;
     private int playerSide;
+
+    private bool isEnraged = false;
+
+    private bool isLootAppeared = false;
+    public Collectable hpMaxPlus5;
+    public Transform item1Location;
+    public Transform item2Location;
 
     private void OnEnable()
     {
@@ -35,7 +46,17 @@ public class StoneBossBehaviour : MonoBehaviour
     {
         CheckPlayer();
 
-        if((!stoneForm1 && !stoneForm2) || player.isBossEncounter == false)
+        if ((!stoneForm1 && !stoneForm2))
+        {
+            if(isLootAppeared == false)
+            {
+                isLootAppeared = true;
+                Instantiate(hpMaxPlus5, item1Location.position, item1Location.rotation);
+                Instantiate(hpMaxPlus5, item2Location.position, item2Location.rotation);
+            }
+        }
+
+        if (player.isBossEncounter == false)
         {
             return;
         }
@@ -79,6 +100,18 @@ public class StoneBossBehaviour : MonoBehaviour
             {
                 stoneForm2.GetComponent<Rigidbody2D>().gravityScale = gravity;
                 fallTimer = 0;
+            }
+        }
+
+        if(!isEnraged && (!stoneForm1 || !stoneForm2))
+        {
+            isEnraged = true;
+            CancelInvoke("SwitchForms");
+            InvokeRepeating("SwitchForms", enrageShiftTime, enrageShiftTime);
+
+            if (stoneForm2)
+            {
+                form2SpikeBall.moveSpeed = spikeBallEnragedMoveSpeed;
             }
         }
     }
@@ -152,6 +185,9 @@ public class StoneBossBehaviour : MonoBehaviour
             isStoneForm1 = true;
             isStoneForm2 = false;
             stoneForm1.areRocksFallen = false;
+
+            isEnraged = false;
+            form2SpikeBall.moveSpeed = spikeBallNormalMoveSpeed;
         }
     }
 
@@ -173,7 +209,7 @@ public class StoneBossBehaviour : MonoBehaviour
 
             if (stoneForm2)
             {
-                stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
+                //
             }
         }
         else
