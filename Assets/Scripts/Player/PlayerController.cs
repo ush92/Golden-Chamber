@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
     public float waterMoveSpeed;
     private float velocity;
 
-
-
     public float jumpForce;
     public float jumpHangTime;
     private float currentJumpHangTime;
@@ -40,12 +38,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
-    public Transform attackPoint;
-    public GameObject axeProjectile;
     private bool attackPressed;
-    public float swooshAttackCooldown;
-    public float axeAttackCooldown;
+    public Transform attackPoint;
     private float attackCounter;
+    public float swooshAttackCooldown;
+    public GameObject axeProjectile;
+    public float axeAttackCooldown;
+    public GameObject stoneProjectile;
+    public float stoneAttackCooldown;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
 
     //Specific levels
     //2_3
-    public bool isHp5ItemCollected = false;
-    public bool isStoneItemCollected = false;
+    private bool isHp5ItemCollected = false;
+    private bool isStoneWeaponCollected = false;
 
     #endregion
 
@@ -115,6 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDataLoaded)
         {
+            isDataLoaded = true;
             GameManager.LoadJsonData(GameManager.instance);
             equipmentManager.currentItem = PlayerPrefs.GetInt(Consts.PLAYER_CURRENT_ITEM);
             equipmentManager.UpdateEquipment();
@@ -275,6 +276,11 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation);
                 attackCounter = axeAttackCooldown;
+                break;
+            case (int)EquipmentManager.Items.Stone:
+                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                Instantiate(stoneProjectile, attackPoint.position, attackPoint.rotation);
+                attackCounter = stoneAttackCooldown;
                 break;
             default:
                 break;
@@ -523,6 +529,9 @@ public class PlayerController : MonoBehaviour
                 case Consts.AXE_WEAPON_COLLECTABLE:
                     objectsAfterBoss.gameObject.transform.position = new Vector3(-6.85f, 25.0f, 0f);
                     break;
+                case Consts.STONE_WEAPON_COLLECTABLE:
+                    isStoneWeaponCollected = true;
+                    break;
                 case Consts.HP_MAX_PLUS_5:
                     isHp5ItemCollected = true;
                     break;
@@ -532,7 +541,7 @@ public class PlayerController : MonoBehaviour
             }      
         }
 
-        if(isHp5ItemCollected /* dodac na stone item */)
+        if(isHp5ItemCollected && isStoneWeaponCollected)
         {
             objectsAfterBoss.gameObject.transform.position = new Vector3(-27.53f, 3.65f, 0f);
         }

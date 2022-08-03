@@ -33,6 +33,7 @@ public class StoneBossBehaviour : MonoBehaviour
 
     private bool isLootAppeared = false;
     public Collectable hpMaxPlus5;
+    public Collectable stoneWeapon;
     public Transform item1Location;
     public Transform item2Location;
 
@@ -52,7 +53,7 @@ public class StoneBossBehaviour : MonoBehaviour
             {
                 isLootAppeared = true;
                 Instantiate(hpMaxPlus5, item1Location.position, item1Location.rotation);
-                Instantiate(hpMaxPlus5, item2Location.position, item2Location.rotation);
+                Instantiate(stoneWeapon, item2Location.position, item2Location.rotation);
             }
         }
 

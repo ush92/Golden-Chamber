@@ -41,11 +41,11 @@ public class PlayerHPController : MonoBehaviour
     {
         if (!isDataLoaded)
         {
+            isDataLoaded = true;
             if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true)
             {
                 maxHP = 10;
                 currentHP = maxHP;
-                isDataLoaded = true;
             }
         }
 

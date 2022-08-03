@@ -27,6 +27,10 @@ public class Collectable : MonoBehaviour
             {
                 playerController.CollectBossItem(Consts.AXE_WEAPON_COLLECTABLE);
             }
+            else if (gameObject.name.Contains(Consts.STONE_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.STONE_WEAPON_COLLECTABLE);
+            }
             else if (gameObject.name.Contains(Consts.HP_MAX_PLUS_5))
             {
                 playerHPController.maxHP = 10;

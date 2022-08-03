@@ -28,11 +28,12 @@ public static class Consts
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
     public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
+    public const string STONE_WEAPON_COLLECTABLE = "StoneWeaponCollectable";
     public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
 
     public const string BOSS1 = "Pociupala";
 
-    public const string MAIN_MENU = "MainMenu";
+    public const string MAIN_MENU = "MainMenu"; 
     public const string LEVEL_MAP = "LevelMap";
     public const string LEVEL = "Level";
     public const string COMPLETE_LEVEL = "CompleteLevel";
@@ -47,7 +48,6 @@ public static class Consts
     public const string STRAWBERRY = "Strawberry";
     public const string BANANA = "Banana";
     public const string COIN = "Coin";
-
     public const string HP_ITEM_SMALL = "HpItemSmall";
     public const string KEY = "Key";
 

@@ -14,7 +14,7 @@ public class PlayerAxeProjectile : MonoBehaviour
     public GameObject collisionEffect;
     private bool isCollided;
 
-    private float lifetime = 3.0f;
+    public float lifetime = 3.0f;
 
     void Start()
     {

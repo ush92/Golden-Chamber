@@ -66,6 +66,7 @@ MonoBehaviour:
   spikeBallNormalMoveSpeed: 3
   player: {fileID: 0}
   hpMaxPlus5: {fileID: 874289665169651099, guid: c9181b830dac7f64998be04c7c07bf65, type: 3}
+  stoneWeapon: {fileID: 4636879522400132064, guid: 15dfbfd6f6c54a64096b4968ce7e88fe, type: 3}
   item1Location: {fileID: 809511743601824784}
   item2Location: {fileID: 5623982501184696268}
 --- !u!1 &4835963700857730797
@@ -122,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6258071717866257777}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: -6.62, z: 0}
+  m_LocalPosition: {x: -1.65, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3747837140668439818}
@@ -152,7 +153,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8628319666222706543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.81, y: -6.62, z: 0}
+  m_LocalPosition: {x: -3.73, y: -6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3747837140668439818}
@@ -175,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8317336988167384301, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
       propertyPath: maxHP
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8317336988167384302, guid: 02cfdb3c67044da4088c45b99b0bed25, type: 3}
       propertyPath: m_RootOrder
@@ -315,7 +316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5860679135789896876, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}
       propertyPath: maxHP
-      value: 1
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a21f804c9cf474b8dc809c79d18173, type: 3}

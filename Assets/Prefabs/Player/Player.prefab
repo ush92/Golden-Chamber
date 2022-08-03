@@ -7372,8 +7372,6 @@ MonoBehaviour:
   playerRB: {fileID: 4912927042408680107}
   baseMoveSpeed: 8
   waterMoveSpeed: 5
-  isSliding: 0
-  slideTime: 0.75
   jumpForce: 21
   jumpHangTime: 0.15
   oneWayTileCounter: 0
@@ -7389,9 +7387,11 @@ MonoBehaviour:
   knockbackCooldownCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
   attackPoint: {fileID: 4221524390402923604}
-  axeProjectile: {fileID: 1641028499805509508, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
   swooshAttackCooldown: 0.65
+  axeProjectile: {fileID: 1641028499805509508, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
   axeAttackCooldown: 0.55
+  stoneProjectile: {fileID: 8694809672694420746, guid: 37e513b664fc92c4a99654a582d5dca6, type: 3}
+  stoneAttackCooldown: 0.4
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
@@ -7614,6 +7614,7 @@ MonoBehaviour:
   ItemIcons:
   - {fileID: 21300000, guid: c23281edc1a52494e8d903bf131b586b, type: 3}
   - {fileID: 21300000, guid: d66606b0bdcb6664280afbb74e1f5043, type: 3}
+  - {fileID: 21300000, guid: 3465a05fed9c3b143ba7f9044be77ee5, type: 3}
   currentItemIcon: {fileID: 2460840762037168887}
   currentItem: 0
 --- !u!1 &4912927044335522436
