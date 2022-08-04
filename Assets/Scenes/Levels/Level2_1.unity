@@ -3763,6 +3763,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 17.8
       objectReference: {fileID: 0}
+    - target: {fileID: 4396641334181320130, guid: 8409b48ec1c74a74181974637e452dfd, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: feb8aab9b0576e04b92123497946e62b, type: 3}
     - target: {fileID: 4563392534889526949, guid: 8409b48ec1c74a74181974637e452dfd, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -7348,11 +7352,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.19
+      value: -15.88
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.03
+      value: 42.3
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.z

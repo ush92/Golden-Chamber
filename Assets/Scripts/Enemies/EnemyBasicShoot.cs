@@ -10,6 +10,8 @@ public class EnemyBasicShoot : MonoBehaviour
     public bool onlyIfFacedToPlayer = false;
     public PlayerController player;
 
+    public Animator animator;
+
     private void Start()
     {
         InvokeRepeating("Shoot", firstShootTime, repeatingTime);
@@ -17,6 +19,11 @@ public class EnemyBasicShoot : MonoBehaviour
 
     private void Shoot()
     {
+        if(animator != null)
+        {
+            animator.SetTrigger("Shoot");
+        }
+        
         if(onlyIfFacedToPlayer)
         {
             if (transform.position.x > player.transform.position.x && !GetComponent<EnemyPatrol>().moveRight ||

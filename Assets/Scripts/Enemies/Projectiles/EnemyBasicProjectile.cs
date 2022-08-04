@@ -16,6 +16,8 @@ public class EnemyBasicProjectile : MonoBehaviour
     private PlayerController player;
     public bool aimPlayer = false;
 
+    public bool isCollidingWithEnv = true;
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -37,7 +39,6 @@ public class EnemyBasicProjectile : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         lifetime -= Time.deltaTime;
@@ -49,7 +50,7 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.tag.Equals(Consts.PLAYER))
+        if (!other.tag.Equals(Consts.PLAYER) && isCollidingWithEnv)
         {
             DestroyProjectile();
         }
@@ -75,7 +76,10 @@ public class EnemyBasicProjectile : MonoBehaviour
             }
         }
 
-        DestroyProjectile();
+        if (isCollidingWithEnv || (!isCollidingWithEnv && damageDone))
+        {
+            DestroyProjectile();
+        }
     }
 
     private void DestroyProjectile()

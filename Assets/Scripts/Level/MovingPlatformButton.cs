@@ -13,6 +13,12 @@ public class MovingPlatformButton : MonoBehaviour
             isPushed = true;
             platform.isTurnedOn = true;
             GetComponent<SpriteRenderer>().sprite = turnedOnImage;
+
+            if (GameManager.isSoundsOn)
+            {
+                AudioSource audio = GetComponent<AudioSource>();
+                audio.Play();
+            }
         }
     }
 }
