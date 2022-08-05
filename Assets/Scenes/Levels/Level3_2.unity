@@ -1334,6 +1334,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 150659104}
+    - target: {fileID: 1483889837, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 150659104}
+    - target: {fileID: 1483889837, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -99911,11 +99919,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810980, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.56
+      value: 0.313
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810980, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -0.399
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810980, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: m_LocalPosition.z
@@ -100015,7 +100023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810981, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
-      value: -1
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810981, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: InitialModule.startColor.minMaxState
