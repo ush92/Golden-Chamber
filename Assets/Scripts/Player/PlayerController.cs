@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public float knockbackCooldownLength;
     public float knockbackCooldownCounter;
 
+    public bool isSwimming = false;
+
     public Animator playerAnimator;
 
     private bool attackPressed;
@@ -126,13 +128,14 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive)
         {
+            if (isSwimming) Swimming();
             CheckGround();
             MoveAndKnockback();
             AttackCooldown();
             Animate();
             UpdateCompleteLevelScreenTimer();
 
-            if(isGrounded)
+            if (isGrounded)
             {
                 currentJumpHangTime = jumpHangTime;
             }
@@ -192,7 +195,10 @@ public class PlayerController : MonoBehaviour
 
     private void CheckGround()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+        if (!isSwimming)
+        {
+            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+        }
     }
 
     private void MoveAndKnockback()
@@ -293,6 +299,14 @@ public class PlayerController : MonoBehaviour
         {
             attackCounter -= Time.deltaTime;
         }
+    }
+
+    private void Swimming()
+    {
+        playerRB.gravityScale = 0.2f;
+        isGrounded = true;
+        jumpForce = 3;
+        moveSpeed = baseMoveSpeed / 2;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
