@@ -105,8 +105,28 @@ public class GameManager : MonoBehaviour, ISaveable
         activePlayer.soundOptionsWindow.gameObject.SetActive(!activePlayer.soundOptionsWindow.activeSelf);
     }
 
+    public void TogglePause()
+    {
+        activePlayer.pauseWindow.gameObject.SetActive(!activePlayer.pauseWindow.activeSelf);
+
+        if(activePlayer.pauseWindow.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+
     public IEnumerator LoadLevel(string levelName)
     {
+        if (activePlayer && activePlayer.pauseWindow.activeSelf)
+        {
+            activePlayer.pauseWindow.gameObject.SetActive(!activePlayer.pauseWindow.activeSelf);
+            Time.timeScale = 1;
+        }
+
         musicTransition.SetTrigger("FadeOut");
         levelTransition.SetTrigger("Start");
 

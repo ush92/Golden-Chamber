@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
     public GameObject soundOptionsWindow;
     public CompleteLevelScreen completeLevelScreen;
     public Button buttonBackToMap;
+    public GameObject pauseWindow;
 
     //Specific levels
     //2_3
@@ -237,7 +239,6 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
-        playerAnimator.SetBool(Consts.IS_GROUNDED, isGrounded);
         playerAnimator.SetFloat(Consts.SPEED, Mathf.Abs(playerRB.velocity.x));
         playerAnimator.SetFloat(Consts.YSPEED, playerRB.velocity.y);
 
@@ -250,24 +251,42 @@ public class PlayerController : MonoBehaviour
             playerRB.transform.localScale = new Vector3(1f, 1f, 1f);
         }
 
-        if(playerRB.velocity.x != 0f && isGrounded)
+        if (!isSwimming)
         {
-            footDustEmission.rateOverTime = 35f;
+            playerAnimator.SetBool(Consts.IS_GROUNDED, isGrounded);
+
+            if (playerRB.velocity.x != 0f && isGrounded)
+            {
+                footDustEmission.rateOverTime = 35f;
+            }
+            else
+            {
+                footDustEmission.rateOverTime = 0f;
+            }
+
+            if (!wasGrounded && isGrounded)
+            {
+                jumpDust.gameObject.SetActive(true);
+                jumpDust.Stop();
+                jumpDust.transform.position = footDust.transform.position;
+                jumpDust.Play();
+            }
+
+            wasGrounded = isGrounded;
         }
         else
         {
-            footDustEmission.rateOverTime = 0f;
-        }
+            playerAnimator.SetBool(Consts.IS_SWIMMING, true);
 
-        if (!wasGrounded && isGrounded)
-        {
-            jumpDust.gameObject.SetActive(true);
-            jumpDust.Stop();
-            jumpDust.transform.position = footDust.transform.position;
-            jumpDust.Play();
+            if (playerRB.velocity.y > 0)
+            {
+                playerAnimator.SetBool(Consts.IS_GROUNDED, false);
+            }
+            else
+            {
+                playerAnimator.SetBool(Consts.IS_GROUNDED, true);
+            }
         }
-
-        wasGrounded = isGrounded;
     }
 
     private void Attack()

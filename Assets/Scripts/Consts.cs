@@ -7,6 +7,7 @@ public static class Consts
     public const string ATTACK = "attack";
     public const string RANGED_ATTACK = "rangedAttack";
     public const string IS_GROUNDED = "isGrounded";
+    public const string IS_SWIMMING = "isSwimming";
     public const string SPEED = "speed";
     public const string YSPEED = "ySpeed";
     public const string GROUND = "Ground";
@@ -30,14 +31,7 @@ public static class Consts
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
     public const string STONE_WEAPON_COLLECTABLE = "StoneWeaponCollectable";
     public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
-
     public const string BOSS1 = "Pociupala";
-
-    public const string MAIN_MENU = "MainMenu"; 
-    public const string LEVEL_MAP = "LevelMap";
-    public const string LEVEL = "Level";
-    public const string COMPLETE_LEVEL = "CompleteLevel";
-    public const string FINISH = "Ukoñczono poziom: ";
 
     public const string CHERRY = "Cherry";
     public const string ANANAS = "Ananas";
@@ -58,6 +52,16 @@ public static class Consts
     public const string NEW_PROFILE_ERROR_ALREADY_USED = "Profil o podanej nazwie ju¿ istnieje";
     public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Nazwa profilu nie mo¿e byæ pusta";
 
+    public const string FINISH = "Ukoñczono poziom: ";
+    public const string CURRENT_TIME = "Obecny wynik: ";
+    public const string RECORD_TIME = "Najlepszy czas: ";
+
+    public const string COMPLETE_LEVEL = "CompleteLevel";
+    public const string MAIN_MENU = "MainMenu";
+
+    public const string LEVEL_MAP = "LevelMap";
+    public const string LEVEL_MAP_NAME = "Mapa wyboru poziomu";
+    public const string LEVEL = "Level";
     public const string LEVEL1_1 = "Level1_1";
     public const string LEVEL1_1_NAME = "Nadleœnictwo Zielony Dzik";
     public const string LEVEL1_2 = "Level1_2";
@@ -124,7 +128,7 @@ public static class Consts
             case LEVEL5_1:
                 return LEVEL5_1_NAME;
             case LEVEL_MAP:
-                return LEVEL_MAP;
+                return LEVEL_MAP_NAME;
             default:
                 Debug.Log($"Nieznana nazwa levelu w Consts.GetLevelIndex {levelName}");
                 return "{UNKNOWN NAME}";
