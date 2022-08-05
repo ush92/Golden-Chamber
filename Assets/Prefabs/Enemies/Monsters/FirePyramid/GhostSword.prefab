@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 250177487}
   - component: {fileID: 250177488}
+  - component: {fileID: 1819369498}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -106,13 +107,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250177486}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38912392, w: 0.92118543}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8288611469855307894}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.8}
 --- !u!212 &250177488
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -164,6 +165,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1819369498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250177486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32d9c7482bf22c74a98fc6fc1eed7b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fixAngle: -45
 --- !u!1 &330322840
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,9 +611,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 4
   currentHP: 0
-  enemyDeathEffect: {fileID: 4639924823971810983, guid: 3a6d711a744597746a6a73896fe663b6, type: 3}
+  enemyDeathEffect: {fileID: 4639924823971810983, guid: 7f7e88b4b671ebb44b581c50fa72a68d, type: 3}
   flashOnHit: {r: 1, g: 0.7122642, b: 0.7122642, a: 1}
   hitFlashTime: 0.2
   hpBar: {fileID: 855330461}

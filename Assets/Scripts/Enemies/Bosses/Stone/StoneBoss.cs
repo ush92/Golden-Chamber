@@ -48,7 +48,7 @@ public class StoneBoss : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.PLAYER) || other.gameObject.tag.Equals(Consts.GROUND))
         {
             Instantiate(collisionEffect, transform.position, transform.rotation);
-
+            
             if (name == "StoneBoss1" && other.gameObject.tag.Equals(Consts.GROUND) && !areRocksFallen)
             {
                 areRocksFallen = true;

@@ -116,9 +116,10 @@ public class StoneBossBehaviour : MonoBehaviour
 
         if (isStoneForm2 && stoneForm2)
         {
+            stoneForm1FixedBorder.gameObject.SetActive(false);
             if (fallTimer > 0)
             {
-                stoneForm2.GetComponent<Rigidbody2D>().gravityScale = 0;
+                stoneForm2.GetComponent<Rigidbody2D>().gravityScale = 0;        
                 fallTimer -= Time.deltaTime;
             }
             else
@@ -136,6 +137,7 @@ public class StoneBossBehaviour : MonoBehaviour
             
             if (stoneForm2)
             {
+                stoneForm1FixedBorder.gameObject.SetActive(false);
                 stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
                 form2SpikeBall.moveSpeed = spikeBallEnragedMoveSpeed;
             }
@@ -200,7 +202,7 @@ public class StoneBossBehaviour : MonoBehaviour
         {
             fallTimer = fallDelay;
             stoneForm2.gameObject.SetActive(true);
-
+            stoneForm1FixedBorder.gameObject.SetActive(false);
             isStoneForm1 = false;
             isStoneForm2 = true;
         }
@@ -231,6 +233,7 @@ public class StoneBossBehaviour : MonoBehaviour
                 stoneForm1.gameObject.SetActive(false);
                 stoneForm1.gameObject.SetActive(true);
 
+                stoneForm1FixedBorder.gameObject.SetActive(true);
                 stoneForm1.transform.position = new Vector3(enablePoint.transform.position.x + 15, enablePoint.transform.position.y, transform.position.z);
                 stone1AttackTimer = stone1AttackDelay;
                 wasStone1Attacked = false;
@@ -239,21 +242,20 @@ public class StoneBossBehaviour : MonoBehaviour
 
             if (stoneForm2)
             {
-                //
+                stoneForm1FixedBorder.gameObject.SetActive(false);
             }
         }
         else
         {
-            stoneForm1FixedBorder.gameObject.SetActive(false);
-
             if (isStoneForm1)
             {
                 if (stoneForm2)
                 {
                     stoneForm2.transform.position = new Vector3(player.transform.position.x, enablePoint.transform.position.y, transform.position.z);
-
+                    stoneForm1FixedBorder.gameObject.SetActive(false);
                     stoneForm1.gameObject.SetActive(false);
                     stoneForm2.gameObject.SetActive(true);
+
                 }
             }
             else
@@ -261,7 +263,7 @@ public class StoneBossBehaviour : MonoBehaviour
                 if (stoneForm1)
                 {
                     stoneForm1.transform.position = new Vector3(enablePoint.transform.position.x + 15, enablePoint.transform.position.y, transform.position.z);
-
+                    stoneForm1FixedBorder.gameObject.SetActive(true);
                     stoneForm1.gameObject.SetActive(true);
                     stoneForm2.gameObject.SetActive(false);
 
