@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
     public float axeAttackCooldown;
     public GameObject stoneProjectile;
     public float stoneAttackCooldown;
+    public GameObject fireSparkProjectile;
+    public float fireSparkAttackCooldown;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -306,6 +308,11 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 Instantiate(stoneProjectile, attackPoint.position, attackPoint.rotation);
                 attackCounter = stoneAttackCooldown;
+                break;
+            case (int)EquipmentManager.Items.FireSpark:
+                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation);
+                attackCounter = fireSparkAttackCooldown;
                 break;
             default:
                 break;
@@ -567,6 +574,9 @@ public class PlayerController : MonoBehaviour
                     break;
                 case Consts.HP_MAX_PLUS_5:
                     isHp5ItemCollected = true;
+                    break;
+                case Consts.FIRESPARK_WEAPON_COLLECTABLE:
+                    objectsAfterBoss.gameObject.transform.position = new Vector3(104.522f, 5.61f, 0f);
                     break;
                 default:
                     Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");

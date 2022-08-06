@@ -3,7 +3,7 @@ using UnityEngine;
 public class FireBossBehaviour : MonoBehaviour
 {
     public BossActivation activationArea;
-    public Vector3 basePosition;
+    private Vector3 basePosition;
 
     public EnemyHPController bossHP;
 
@@ -36,6 +36,8 @@ public class FireBossBehaviour : MonoBehaviour
     private float normalEvilSunDamping;
     public float bossEvilSunRepeatingTime;
     public float bossEvilSunDamping;
+
+    public Collectable fireSparkWeaponLoot;
 
     public MusicManager musicManager;
 
@@ -158,5 +160,7 @@ public class FireBossBehaviour : MonoBehaviour
         evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
         activationArea.gameObject.SetActive(false);
         player.isBossEncounter = false;
+
+        Instantiate(fireSparkWeaponLoot, transform.position, transform.rotation);
     }
 }

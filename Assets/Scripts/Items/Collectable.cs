@@ -37,6 +37,10 @@ public class Collectable : MonoBehaviour
                 playerHPController.HealPlayer(10);
                 playerController.CollectBossItem(Consts.HP_MAX_PLUS_5);
             }
+            else if (gameObject.name.Contains(Consts.FIRESPARK_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.FIRESPARK_WEAPON_COLLECTABLE);
+            }
             else
             {
                 FindObjectOfType<CollectablesController>().Collect(gameObject.name);

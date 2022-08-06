@@ -42,6 +42,14 @@ public class EquipmentManager : MonoBehaviour
                 items.Add(Items.Stone);
             }
         }
+
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_1)] == true)
+        {
+            if (!items.Contains(Items.FireSpark))
+            {
+                items.Add(Items.FireSpark);
+            }
+        }
     }
 
     public void ChangeItem()
@@ -58,5 +66,5 @@ public class EquipmentManager : MonoBehaviour
         currentItemIcon.sprite = ItemIcons[currentItem];
     }
 
-    public enum Items { Swoosh, Axe, Stone };
+    public enum Items { Swoosh, Axe, Stone, FireSpark };
 }

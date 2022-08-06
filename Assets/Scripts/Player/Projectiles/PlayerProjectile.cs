@@ -11,12 +11,15 @@ public class PlayerProjectile : MonoBehaviour
     public int damageToDeal;
     private bool isDamageDone = false;
 
+    public bool isCollidingWithEnv = true;
     public GameObject collisionEffect;
     private bool isCollided;
 
     public float lifetime = 3.0f;
 
     private bool isDestroyed = false;
+
+    public bool usePhysics = false;
 
     void Start()
     {
@@ -34,7 +37,7 @@ public class PlayerProjectile : MonoBehaviour
 
     void Update()
     {
-        if (!isCollided)
+        if (!isCollided && !usePhysics)
         {
             rb.velocity = new Vector2(speed + playerVelocityX / 2.0f, rb.velocity.y);
         }
@@ -57,7 +60,7 @@ public class PlayerProjectile : MonoBehaviour
 
             DestroyProjectile();
         }
-        else if(other.tag.Equals(Consts.GROUND))
+        else if(other.tag.Equals(Consts.GROUND) && isCollidingWithEnv)
         {       
             rb.velocity = new Vector2(0, 0);
             DestroyProjectile();

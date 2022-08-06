@@ -25,13 +25,16 @@ public static class Consts
     public const string SIGNPOST = "Signpost";
     public const string WATER_TOP = "waterTop";
     public const string WATER_BOT = "waterBottom";
-    public const string COLLECTABLE = "Collectable";
+
+    public const string BOSS1 = "Pociupala";
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
+
+    public const string COLLECTABLE = "Collectable";
+    public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
     public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
     public const string STONE_WEAPON_COLLECTABLE = "StoneWeaponCollectable";
-    public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
-    public const string BOSS1 = "Pociupala";
+    public const string FIRESPARK_WEAPON_COLLECTABLE = "FireSparkWeaponCollectable";
 
     public const string CHERRY = "Cherry";
     public const string ANANAS = "Ananas";

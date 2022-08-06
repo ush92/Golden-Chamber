@@ -159,6 +159,7 @@ MonoBehaviour:
   speed: 12
   heigthPower: 8
   damageToDeal: 1
+  isCollidingWithEnv: 1
   collisionEffect: {fileID: 4639924823971810983, guid: 9851a22d008bec245a8416aade17b88d, type: 3}
   lifetime: 3
 --- !u!82 &1363364799

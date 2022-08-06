@@ -7956,6 +7956,8 @@ MonoBehaviour:
   axeAttackCooldown: 0.55
   stoneProjectile: {fileID: 8694809672694420746, guid: 37e513b664fc92c4a99654a582d5dca6, type: 3}
   stoneAttackCooldown: 0.4
+  fireSparkProjectile: {fileID: 1641028499805509508, guid: 59f7b16d142ba4049b077af4c459be00, type: 3}
+  fireSparkAttackCooldown: 0.65
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
@@ -8180,6 +8182,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c23281edc1a52494e8d903bf131b586b, type: 3}
   - {fileID: 21300000, guid: d66606b0bdcb6664280afbb74e1f5043, type: 3}
   - {fileID: 21300000, guid: 3465a05fed9c3b143ba7f9044be77ee5, type: 3}
+  - {fileID: 21300000, guid: 619e5770530085c479d278fd555f42e8, type: 3}
   currentItemIcon: {fileID: 2460840762037168887}
   currentItem: 0
 --- !u!1 &4912927044335522436
