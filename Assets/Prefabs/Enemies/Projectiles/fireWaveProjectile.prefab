@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 8223330336530908222}
   - component: {fileID: 8223330336530908217}
   - component: {fileID: 8223330336530908216}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: fireWaveProjectile
-  m_TagString: Untagged
+  m_TagString: EnemyProjectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1734746266358924423, guid: d0eead2e78a3397438e322392ec2bd5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8223330336530908217}
-  speed: 8
+  speed: 4
   heigthPower: 0
   collisionEffect: {fileID: 4639924823971810983, guid: f51a55e649b59ff459c9b7af49d28367, type: 3}
-  lifetime: 3
+  lifetime: 10
   damageToDeal: 1
   aimPlayer: 0
   isCollidingWithEnv: 1

@@ -1073,10 +1073,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 150659104}
-    - target: {fileID: 1483889837, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePause
-      objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -99927,7 +99923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6547170478833148255, guid: e053b7204157bf940b27302671afd060, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.7021
+      value: -7.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e053b7204157bf940b27302671afd060, type: 3}

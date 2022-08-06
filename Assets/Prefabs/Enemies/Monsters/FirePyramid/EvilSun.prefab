@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1004033764}
   - component: {fileID: 1004033765}
   - component: {fileID: 1004033766}
+  - component: {fileID: 3151659366370568535}
   m_Layer: 0
   m_Name: EvilSun
   m_TagString: Untagged
@@ -171,3 +172,16 @@ MonoBehaviour:
   damping: 1
   isLookingUp: 0
   lookingUpOffset: 0
+--- !u!114 &3151659366370568535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2805649446655479210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c30cb419a2e01b049a83192e2c6f2eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destructEffect: {fileID: 4639924823971810983, guid: 2455eca9b357c9b44ae7c219d3e83904, type: 3}
