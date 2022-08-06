@@ -5,6 +5,8 @@ public class FireBossBehaviour : MonoBehaviour
     public BossActivation activationArea;
     public Vector3 basePosition;
 
+    public EnemyHPController bossHP;
+
     public Transform wallCheck;
     public float wallCheckRadius;
     public LayerMask whatIsWall;
@@ -42,6 +44,8 @@ public class FireBossBehaviour : MonoBehaviour
         player.isBossEncounter = true;
 
         basePosition = transform.position;
+        currentRunLength = 0;
+        moveRight = false;
 
         animationRunLength = animator.GetCurrentAnimatorStateInfo(0).length;
         currentCountOfRuns = Random.Range(minCountOfRuns, maxCountOfRuns);
@@ -130,8 +134,6 @@ public class FireBossBehaviour : MonoBehaviour
     {
         if (!player.isBossEncounter || !player.isActive)
         {
-            BossActivation.isActivated = false;
-
             CancelInvoke();
             transform.position = basePosition;
             GetComponentInChildren<EnemyHPController>().ResetHP();
@@ -152,10 +154,9 @@ public class FireBossBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        activationArea.gameObject.SetActive(false);
-
+        musicManager.SwitchToPrimaryTheme();
         evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
-        evilSun.gameObject.GetComponent<EnemyBasicShoot>().CancelInvoke();
-        evilSun.gameObject.SetActive(false);
+        activationArea.gameObject.SetActive(false);
+        player.isBossEncounter = false;
     }
 }

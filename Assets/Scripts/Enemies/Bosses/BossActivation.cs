@@ -4,15 +4,13 @@ public class BossActivation : MonoBehaviour
 {
     public GameObject boss;
     public float delay;
-    public static bool isActivated;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.Equals(Consts.PLAYER))
         {
-            if (!isActivated)
+            if (boss != null && !boss.gameObject.activeSelf)
             {
-                isActivated = true;
                 Invoke("ActivateBoss", delay);
             }
         }
@@ -20,9 +18,6 @@ public class BossActivation : MonoBehaviour
 
     private void ActivateBoss()
     {
-        if (boss != null)
-        {
-            boss.gameObject.SetActive(true);
-        }
+        boss.gameObject.SetActive(true);       
     }
 }

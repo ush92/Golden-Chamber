@@ -4688,7 +4688,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: eee4d4c104464aa46981a7e81a6ebfdb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cdb10dbb38e10934ebed5524c0227379, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -5268,6 +5268,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5289073154371223314, guid: 8a632efca6210024281324912aa1c307, type: 3}
   m_PrefabInstance: {fileID: 5289073154759463020}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1225364781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289073154371223534, guid: 8a632efca6210024281324912aa1c307, type: 3}
+  m_PrefabInstance: {fileID: 5289073154759463020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225364775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1238740290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -130204,6 +130215,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8531801580751497039, guid: 8a632efca6210024281324912aa1c307, type: 3}
+      propertyPath: bossHP
+      value: 
+      objectReference: {fileID: 1225364781}
+    - target: {fileID: 8531801580751497039, guid: 8a632efca6210024281324912aa1c307, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1839789405}
@@ -130218,7 +130233,7 @@ PrefabInstance:
     - target: {fileID: 8531801580751497039, guid: 8a632efca6210024281324912aa1c307, type: 3}
       propertyPath: activationArea
       value: 
-      objectReference: {fileID: 539250721}
+      objectReference: {fileID: 539250723}
     - target: {fileID: 8531801580751497039, guid: 8a632efca6210024281324912aa1c307, type: 3}
       propertyPath: bossEvilSunDamping
       value: 0.5
