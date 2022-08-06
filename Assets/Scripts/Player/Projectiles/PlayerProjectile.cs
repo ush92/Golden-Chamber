@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAxeProjectile : MonoBehaviour
+public class PlayerProjectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed;
@@ -15,6 +15,8 @@ public class PlayerAxeProjectile : MonoBehaviour
     private bool isCollided;
 
     public float lifetime = 3.0f;
+
+    private bool isDestroyed = false;
 
     void Start()
     {
@@ -40,7 +42,7 @@ public class PlayerAxeProjectile : MonoBehaviour
         lifetime -= Time.deltaTime;
         if (lifetime <= 0)
         {
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 
@@ -53,12 +55,12 @@ public class PlayerAxeProjectile : MonoBehaviour
             other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
             isDamageDone = true;
 
-            Destroy(gameObject);
+            DestroyProjectile();
         }
         else if(other.tag.Equals(Consts.GROUND))
         {       
             rb.velocity = new Vector2(0, 0);
-            Destroy(gameObject);
+            DestroyProjectile();
         }
     }
 
@@ -72,8 +74,21 @@ public class PlayerAxeProjectile : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
+    private void DestroyProjectile()
     {
-        Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+        if (isDestroyed == false)
+        {
+            isDestroyed = true;
+
+            //AudioSource audio = GetComponent<AudioSource>();
+            //audio.Play();
+
+            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+
+            Destroy(gameObject, 2.0f);
+        }
     }
 }

@@ -18,6 +18,8 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     public bool isCollidingWithEnv = true;
 
+    private bool isDestroyed = false;
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -84,14 +86,19 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     private void DestroyProjectile()
     {
-        //AudioSource audio = GetComponent<AudioSource>();
-        //audio.Play();
+        if (isDestroyed == false)
+        {
+            isDestroyed = true;
 
-        Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            //AudioSource audio = GetComponent<AudioSource>();
+            //audio.Play();
 
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
+            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
 
-        Destroy(gameObject, 2.0f);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+
+            Destroy(gameObject, 2.0f);
+        }
     }
 }
