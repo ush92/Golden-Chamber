@@ -7,10 +7,6 @@ public class GameManager : MonoBehaviour, ISaveable
 {
     public static GameManager instance;
 
-    public Animator levelTransition;
-    public Animator musicTransition;
-    public float transitionTime = 1.0f;
-
     public PlayerController activePlayer;
     public Camera playerCamera;
     public static Vector3 levelMapLastPosition;
@@ -27,6 +23,10 @@ public class GameManager : MonoBehaviour, ISaveable
     private MusicManager musicManager;
     public static bool isMusicOn;
     public static bool isSoundsOn;
+    public Animator musicTransition;
+
+    public Animator levelTransition;
+    public float transitionTime = 1.0f;
 
     private void Awake()
     {

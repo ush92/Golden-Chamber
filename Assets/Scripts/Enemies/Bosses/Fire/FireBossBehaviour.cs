@@ -39,8 +39,6 @@ public class FireBossBehaviour : MonoBehaviour
 
     public Collectable fireSparkWeaponLoot;
 
-    public MusicManager musicManager;
-
     private void OnEnable()
     {
         player.isBossEncounter = true;
@@ -57,8 +55,6 @@ public class FireBossBehaviour : MonoBehaviour
         normalEvilSunDamping = evilSun.GetComponent<SmoothFollow>().damping;
         evilSun.GetComponent<EnemyBasicShoot>().repeatingTime = bossEvilSunRepeatingTime;
         evilSun.GetComponent<SmoothFollow>().damping = bossEvilSunDamping;
-
-        musicManager.SwitchToSecondaryTheme();
     }
 
     void Update()
@@ -101,9 +97,9 @@ public class FireBossBehaviour : MonoBehaviour
             }
             else
             {
-                if (!IsInvoking("CastFireWave"))
+                if (!IsInvoking("CastFireWaves"))
                 {
-                    InvokeRepeating("CastFireWave", firstCastTime, repeatingTime);
+                    InvokeRepeating("CastFireWaves", firstCastTime, repeatingTime);
                 }
 
                 currentCastingTime += Time.deltaTime;
@@ -133,7 +129,7 @@ public class FireBossBehaviour : MonoBehaviour
     }
 
     private void CheckEncounterActivity()
-    {
+    {       
         if (!player.isBossEncounter || !player.isActive)
         {
             CancelInvoke();
@@ -143,24 +139,26 @@ public class FireBossBehaviour : MonoBehaviour
             evilSun.GetComponent<EnemyBasicShoot>().repeatingTime = normalEvilSunRepeatingTime;
             evilSun.GetComponent<SmoothFollow>().damping = normalEvilSunDamping;
 
-            musicManager.SwitchToPrimaryTheme();
-
             gameObject.SetActive(false);
         }
     }
 
-    private void CastFireWave()
+    private void CastFireWaves()
     {
         Instantiate(projectile, attackPoint.position, attackPoint.rotation);
     }
 
+
     private void OnDestroy()
     {
-        musicManager.SwitchToPrimaryTheme();
-        evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
-        activationArea.gameObject.SetActive(false);
-        player.isBossEncounter = false;
+        if (bossHP.currentHP <= 0)
+        {
+            evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
+         
+            Instantiate(fireSparkWeaponLoot, transform.position, transform.rotation);
 
-        Instantiate(fireSparkWeaponLoot, transform.position, transform.rotation);
+            player.isBossEncounter = false;
+            activationArea.gameObject.SetActive(false);
+        }
     }
 }

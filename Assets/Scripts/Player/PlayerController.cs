@@ -311,8 +311,11 @@ public class PlayerController : MonoBehaviour
                 break;
             case (int)EquipmentManager.Items.FireSpark:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation);
-                attackCounter = fireSparkAttackCooldown;
+                if (!isSwimming)
+                {
+                    Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation);
+                    attackCounter = fireSparkAttackCooldown;
+                }
                 break;
             default:
                 break;
@@ -560,6 +563,8 @@ public class PlayerController : MonoBehaviour
 
     public void CollectBossItem(string weapon)
     {
+        isBossEncounter = false;
+
         var objectsAfterBoss = GameObject.Find(Consts.OBJECTS_AFTER_BOSS);
 
         if (objectsAfterBoss != null)

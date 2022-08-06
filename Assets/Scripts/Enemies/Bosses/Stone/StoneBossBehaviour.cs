@@ -39,12 +39,9 @@ public class StoneBossBehaviour : MonoBehaviour
     public Transform item1Location;
     public Transform item2Location;
 
-    public MusicManager musicManager;
-
     private void OnEnable()
     {
         player.isBossEncounter = true;
-        musicManager.SwitchToSecondaryTheme();
 
         if (stoneForm1 == null)
         {
@@ -168,11 +165,6 @@ public class StoneBossBehaviour : MonoBehaviour
             wasStone1Attacked = false;
 
             this.gameObject.SetActive(false);
-
-            if (musicManager.secondaryTheme.isPlaying)
-            {
-                musicManager.SwitchToPrimaryTheme();
-            }
         }
     }
 

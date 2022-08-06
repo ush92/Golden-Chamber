@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationArea: {fileID: 0}
+  bossHP: {fileID: 5289073154371223534}
   wallCheck: {fileID: 5289073154404204198}
   wallCheckRadius: 0.5
   whatIsWall:
@@ -267,7 +268,9 @@ MonoBehaviour:
   repeatingTime: 1.1
   player: {fileID: 0}
   evilSun: {fileID: 0}
-  musicManager: {fileID: 0}
+  bossEvilSunRepeatingTime: 0.75
+  bossEvilSunDamping: 0.5
+  fireSparkWeaponLoot: {fileID: 4636879522400132064, guid: 6c4f27054a2c45648b634f04cccadb37, type: 3}
 --- !u!1 &5289073154404204197
 GameObject:
   m_ObjectHideFlags: 0

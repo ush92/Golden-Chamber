@@ -6763,11 +6763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 101.93
+      value: 9.9
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.77
+      value: 12.7
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7260,6 +7260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7984936086027495593, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1779139637}
     - target: {fileID: 7984936086027495593, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
       propertyPath: primaryTheme
       value: 

@@ -15,6 +15,7 @@ public class PociupalaBehaviour : MonoBehaviour
     public Animator animator;
 
     public PlayerController player;
+    public EnemyHPController bossHP;
 
     public GameObject[] saws;
     private int sawIndex = -1;
@@ -155,8 +156,10 @@ public class PociupalaBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        saws[sawIndex].gameObject.transform.position = sawBasePosition;
-        Instantiate(axeWeaponLoot, transform.position, transform.rotation);
-        //musicManager.SwitchToPrimaryTheme();
+        if (bossHP.currentHP <= 0)
+        {
+            saws[sawIndex].gameObject.transform.position = sawBasePosition;
+            Instantiate(axeWeaponLoot, transform.position, transform.rotation);
+        }
     }
 }
