@@ -19,6 +19,10 @@ public class Destructable : MonoBehaviour
                 Destroy(gameObject, 0.05f);
                 other.gameObject.SetActive(false);
             }
+            else if(other.name.Equals(Consts.PLAYER_ARCTIC_BREATHE))
+            {
+                return;
+            }
             else
             {
                 Destroy(other.gameObject);

@@ -9,6 +9,9 @@ public class ArcticBreathe : MonoBehaviour
     public PlayerController playerController;
     public ParticleSystem particles;
 
+    public Animator animator;
+
+
     void Start()
     {
         isDamageDone = false;
@@ -47,5 +50,15 @@ public class ArcticBreathe : MonoBehaviour
         {
             other.GetComponent<EnemyHPController>().takeDamage(damagePerTick);
         }
+
+        if (other.tag.Equals(Consts.GROUND))
+        {
+            animator.Play("arcticBreathe", -1, 0f);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        //
     }
 }

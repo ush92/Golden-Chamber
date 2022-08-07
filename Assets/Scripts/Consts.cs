@@ -14,6 +14,7 @@ public static class Consts
     public const string PLAYER = "Player";
     public const string PLAYER_PROJECTILE = "PlayerProjectile";
     public const string PLAYER_ATTACK_WAVE = "Attack Wave";
+    public const string PLAYER_ARCTIC_BREATHE = "ArcticBreathe";
     public const string ENEMY = "Enemy";
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string ENEMY_PROJECTILE = "EnemyProjectile";

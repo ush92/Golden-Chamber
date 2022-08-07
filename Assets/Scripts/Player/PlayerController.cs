@@ -158,6 +158,8 @@ public class PlayerController : MonoBehaviour
                     Attack();
                 }
             }
+            ArcticBreathe();
+
         }
         else
         {
@@ -171,6 +173,25 @@ public class PlayerController : MonoBehaviour
                 deathTimeCounter = deathTime;
             }
         }
+    }
+
+    private void ArcticBreathe()
+    {
+        if (!arcticBreathe.activeInHierarchy)
+        {
+            if (equipmentManager.currentItem == (int)EquipmentManager.Items.ArcticBreathe && attackPressed && velocity == 0 && isGrounded && isActive && !isLevelCompleted)
+            {
+                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                arcticBreathe.SetActive(true);
+            }
+        }
+        else
+        {
+            if (equipmentManager.currentItem != (int)EquipmentManager.Items.ArcticBreathe || !attackPressed || velocity != 0 || !isGrounded || !isActive || isLevelCompleted)
+            {
+                arcticBreathe.SetActive(false);
+            }
+        }     
     }
 
     private void UpdateCompleteLevelScreenTimer()
@@ -321,7 +342,7 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case (int)EquipmentManager.Items.ArcticBreathe:
-                //
+                //method ArcticBreathe() needs "attack not pressed" state
                 break;
             default:
                 break;
