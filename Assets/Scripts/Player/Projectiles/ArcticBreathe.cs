@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEngine.ParticleSystem;
 
 public class ArcticBreathe : MonoBehaviour
 {
@@ -18,15 +17,6 @@ public class ArcticBreathe : MonoBehaviour
 
     void Update()
     {
-        //if (playerController.transform.localScale.x == 0)
-        //{
-        //    particles.transform.rotation = Quaternion.Euler(0, 0, 0);
-        //}
-        //else
-        //{
-        //    particles.transform.rotation = Quaternion.Euler(0, -180, 0);
-        //}
-
         if (enabled)
         {
             if (isDamageDone)
@@ -38,11 +28,6 @@ public class ArcticBreathe : MonoBehaviour
             {
                 isDamageDone = false;
             }
-        }
-
-        if (playerController.velocity != 0 || !playerController.isGrounded)
-        {
-            gameObject.SetActive(false);
         }
     }
 

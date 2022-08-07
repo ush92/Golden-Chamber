@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
+        arcticBreathe.SetActive(false);
 
         DisablePlayerUI();
     }
@@ -148,6 +149,7 @@ public class PlayerController : MonoBehaviour
             {
                 currentJumpHangTime -= Time.deltaTime;
             }
+
 
             if (attackPressed && !isLevelCompleted)
             {
@@ -319,12 +321,7 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case (int)EquipmentManager.Items.ArcticBreathe:
-                if (velocity == 0 && isGrounded)
-                {
-                    playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                    arcticBreathe.SetActive(true);
-                    //attackCounter = fireSparkAttackCooldown;
-                }
+                //
                 break;
             default:
                 break;
