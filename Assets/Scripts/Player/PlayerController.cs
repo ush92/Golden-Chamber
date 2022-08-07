@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float baseMoveSpeed;
     private float moveSpeed;
     public float waterMoveSpeed;
-    private float velocity;
+    public float velocity;
 
     public float jumpForce;
     public float jumpHangTime;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
-    private bool isGrounded;
+    public bool isGrounded;
 
     public float knockback;
     public bool knockbackFromRight;
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public float stoneAttackCooldown;
     public GameObject fireSparkProjectile;
     public float fireSparkAttackCooldown;
+    public GameObject arcticBreathe;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -315,6 +316,14 @@ public class PlayerController : MonoBehaviour
                 {
                     Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation);
                     attackCounter = fireSparkAttackCooldown;
+                }
+                break;
+            case (int)EquipmentManager.Items.ArcticBreathe:
+                if (velocity == 0 && isGrounded)
+                {
+                    playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                    arcticBreathe.SetActive(true);
+                    //attackCounter = fireSparkAttackCooldown;
                 }
                 break;
             default:
