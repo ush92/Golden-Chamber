@@ -21,6 +21,7 @@ public static class Consts
     public const string SIGNPOST = "Signpost";
     public const string WATER_TOP = "waterTop";
     public const string WATER_BOT = "waterBottom";
+    public const string TARGET_DUMMY = "targetDummy";
 
     public const string BOSS1 = "Pociupala";
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";

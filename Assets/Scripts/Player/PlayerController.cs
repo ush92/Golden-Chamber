@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private bool attackPressed;
     public Transform attackPoint;
     private float attackCounter;
+    public GameObject swooshAttack;
     public float swooshAttackCooldown;
     public GameObject axeProjectile;
     public float axeAttackCooldown;
@@ -364,6 +365,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
+                    swooshAttack.GetComponent<DamageEnemy>().damageToDeal = 3;
                     playerAnimator.SetTrigger(Consts.DARK_ATTACK);
                     attackCounter = darkAttackCooldown;
                 }

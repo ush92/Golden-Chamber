@@ -99,14 +99,14 @@ public class PlayerProjectile : MonoBehaviour
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.Play();
 
-            if (!name.Contains(Consts.PLAYER_POISON))
-            {
-                Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
-            }
-
+            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.GetComponent<Collider2D>().enabled = false;
-
+            foreach(var collider in gameObject.GetComponents<Collider2D>())
+            {
+                collider.enabled = false;
+            }
+            
             Destroy(gameObject, 2.0f);
         }
     }

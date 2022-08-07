@@ -26,8 +26,15 @@ public class EnemyHPController : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            Instantiate(enemyDeathEffect, transform.position, transform.rotation);
-            Destroy(gameObject);
+            if (name.Equals(Consts.TARGET_DUMMY))
+            {
+                ResetHP();
+            }
+            else
+            {
+                Instantiate(enemyDeathEffect, transform.position, transform.rotation);
+                Destroy(gameObject);
+            }
         }
         else
         {

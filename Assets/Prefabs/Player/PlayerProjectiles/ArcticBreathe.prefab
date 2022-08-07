@@ -4878,4 +4878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePerTick: 1
-  damageCooldown: 0.05
+  damageCooldown: 1
+  playerController: {fileID: 0}
+  particles: {fileID: 0}
+  animator: {fileID: 0}

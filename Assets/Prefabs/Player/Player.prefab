@@ -7860,6 +7860,7 @@ MonoBehaviour:
   frozenLength: 5
   playerAnimator: {fileID: 4912927042408680110}
   attackPoint: {fileID: 4221524390402923604}
+  swooshAttack: {fileID: 2110339810}
   swooshAttackCooldown: 0.65
   axeProjectile: {fileID: 1641028499805509508, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
   axeAttackCooldown: 0.55
@@ -7870,7 +7871,7 @@ MonoBehaviour:
   arcticBreathe: {fileID: 588159793799586860}
   darkAttackCooldown: 0.4
   poisonProjectile: {fileID: 1315918575018129693, guid: 4b14b227d0c79204096be4b64d399145, type: 3}
-  poisonAttackCooldown: 2
+  poisonAttackCooldown: 1
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
@@ -8812,11 +8813,11 @@ PrefabInstance:
       objectReference: {fileID: 588159793569406602}
     - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: damagePerTick
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: damageCooldown
-      value: 0.1
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: playerController
