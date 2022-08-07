@@ -58,6 +58,14 @@ public class EquipmentManager : MonoBehaviour
                 items.Add(Items.ArcticBreathe);
             }
         }
+
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_4)] == true)
+        {
+            if (!items.Contains(Items.Poison))
+            {
+                items.Add(Items.Poison);
+            }
+        }
     }
 
     public void ChangeItem()
@@ -74,5 +82,5 @@ public class EquipmentManager : MonoBehaviour
         currentItemIcon.sprite = ItemIcons[currentItem];
     }
 
-    public enum Items { Swoosh, Axe, Stone, FireSpark, ArcticBreathe };
+    public enum Items { Swoosh, Axe, Stone, FireSpark, ArcticBreathe, Poison };
 }

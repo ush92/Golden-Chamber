@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Random = UnityEngine.Random;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D playerRB;
     public float baseMoveSpeed;
     private float moveSpeed;
-    public float waterMoveSpeed;
     public float velocity;
 
     public float jumpForce;
@@ -38,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public float knockbackCooldownCounter;
 
     public bool isSwimming = false;
+    public bool isFrozen;
+    public float frozenLength;
+    private float frozenCounter;
 
     public Animator playerAnimator;
 
@@ -52,6 +53,9 @@ public class PlayerController : MonoBehaviour
     public GameObject fireSparkProjectile;
     public float fireSparkAttackCooldown;
     public GameObject arcticBreathe;
+    public float darkAttackCooldown;
+    public GameObject poisonProjectile;
+    public float poisonAttackCooldown;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -134,7 +138,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive)
         {
-            if (isSwimming) Swimming();
+            CheckMoveSpeed();
             CheckGround();
             MoveAndKnockback();
             AttackCooldown();
@@ -173,6 +177,39 @@ public class PlayerController : MonoBehaviour
                 deathTimeCounter = deathTime;
             }
         }
+    }
+
+    private void CheckMoveSpeed()
+    {
+        if (isSwimming)
+        {
+            playerRB.gravityScale = 0.2f;
+            isGrounded = true;
+            jumpForce = 3.0f;
+            moveSpeed = baseMoveSpeed / 2.0f;
+        }
+        else
+        {
+            playerRB.gravityScale = 5.0f;
+            jumpForce = 21.0f;
+
+            if (isFrozen)
+            {
+                moveSpeed = baseMoveSpeed / 3.0f;
+                frozenCounter = frozenLength;
+                isFrozen = false;
+                GetComponent<SpriteRenderer>().color = new Color32(0, 160, 255, 255);
+            }
+
+            frozenCounter -= Time.deltaTime;
+
+            if (frozenCounter < 0)
+            {
+                frozenCounter = 0;
+                moveSpeed = baseMoveSpeed;
+                GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+            }
+        }       
     }
 
     private void ArcticBreathe()
@@ -320,8 +357,16 @@ public class PlayerController : MonoBehaviour
         switch (equipmentManager.currentItem)
         {
             case (int)EquipmentManager.Items.Swoosh:
-                playerAnimator.SetTrigger(Consts.ATTACK);
-                attackCounter = swooshAttackCooldown;
+                if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == false)
+                {
+                    playerAnimator.SetTrigger(Consts.ATTACK);
+                    attackCounter = swooshAttackCooldown;
+                }
+                else
+                {
+                    playerAnimator.SetTrigger(Consts.DARK_ATTACK);
+                    attackCounter = darkAttackCooldown;
+                }
                 break;
             case (int)EquipmentManager.Items.Axe:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
@@ -342,7 +387,12 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case (int)EquipmentManager.Items.ArcticBreathe:
-                //method ArcticBreathe() needs "attack not pressed" state
+                //method ArcticBreathe() in Update()
+                break;
+            case (int)EquipmentManager.Items.Poison:
+                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                Instantiate(poisonProjectile, attackPoint.position, attackPoint.rotation);
+                attackCounter = poisonAttackCooldown;
                 break;
             default:
                 break;
@@ -355,14 +405,6 @@ public class PlayerController : MonoBehaviour
         {
             attackCounter -= Time.deltaTime;
         }
-    }
-
-    private void Swimming()
-    {
-        playerRB.gravityScale = 0.2f;
-        isGrounded = true;
-        jumpForce = 3;
-        moveSpeed = baseMoveSpeed / 2;
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -424,7 +466,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
             other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
-            moveSpeed = waterMoveSpeed;
+            isSwimming = true;
         }
     }
 
@@ -433,7 +475,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
             other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
-            moveSpeed = waterMoveSpeed;
+            isSwimming = true;
         }
     }
 
@@ -442,7 +484,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.name.StartsWith(Consts.WATER_TOP) ||
             other.gameObject.name.StartsWith(Consts.WATER_BOT))
         {
-            moveSpeed = baseMoveSpeed;
+            isSwimming = false;
         }
     }
 

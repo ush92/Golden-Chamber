@@ -7840,7 +7840,6 @@ MonoBehaviour:
   isActive: 0
   playerRB: {fileID: 4912927042408680107}
   baseMoveSpeed: 7
-  waterMoveSpeed: 5
   velocity: 0
   jumpForce: 21
   jumpHangTime: 0.15
@@ -7857,6 +7856,8 @@ MonoBehaviour:
   knockbackCooldownLength: 1
   knockbackCooldownCounter: 0
   isSwimming: 0
+  isFrozen: 0
+  frozenLength: 5
   playerAnimator: {fileID: 4912927042408680110}
   attackPoint: {fileID: 4221524390402923604}
   swooshAttackCooldown: 0.65
@@ -7867,6 +7868,9 @@ MonoBehaviour:
   fireSparkProjectile: {fileID: 1641028499805509508, guid: 59f7b16d142ba4049b077af4c459be00, type: 3}
   fireSparkAttackCooldown: 0.65
   arcticBreathe: {fileID: 588159793799586860}
+  darkAttackCooldown: 0.4
+  poisonProjectile: {fileID: 1315918575018129693, guid: 4b14b227d0c79204096be4b64d399145, type: 3}
+  poisonAttackCooldown: 2
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
@@ -8093,6 +8097,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3465a05fed9c3b143ba7f9044be77ee5, type: 3}
   - {fileID: 21300000, guid: 619e5770530085c479d278fd555f42e8, type: 3}
   - {fileID: 21300000, guid: a342a83c8f305e645b45c594a9e45c2e, type: 3}
+  - {fileID: 21300000, guid: 2f5ed6c8bf86f1f4ba1614f4d667fbfe, type: 3}
   currentItemIcon: {fileID: 2460840762037168887}
   currentItem: 0
 --- !u!1 &4912927044335522436
@@ -8806,12 +8811,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 588159793569406602}
     - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
+      propertyPath: damagePerTick
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
+      propertyPath: damageCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105604556, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 4912927042408680108}
     - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: scalingMode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 52.6
       objectReference: {fileID: 0}
     - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: moveWithTransform
@@ -8832,6 +8849,10 @@ PrefabInstance:
     - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: CollisionModule.collisionMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 6136585920889867645, guid: 90591026dbfdbd34bbca4ed8c0c09c21, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits

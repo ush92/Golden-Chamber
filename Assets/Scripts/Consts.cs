@@ -4,17 +4,12 @@ public static class Consts
 {
     public const string HORIZONTAL = "horizontal";
     public const string VERTICAL = "vertical";
-    public const string ATTACK = "attack";
-    public const string RANGED_ATTACK = "rangedAttack";
     public const string IS_GROUNDED = "isGrounded";
     public const string IS_SWIMMING = "isSwimming";
     public const string SPEED = "speed";
     public const string YSPEED = "ySpeed";
     public const string GROUND = "Ground";
     public const string PLAYER = "Player";
-    public const string PLAYER_PROJECTILE = "PlayerProjectile";
-    public const string PLAYER_ATTACK_WAVE = "Attack Wave";
-    public const string PLAYER_ARCTIC_BREATHE = "ArcticBreathe";
     public const string ENEMY = "Enemy";
     public const string ENEMY_EFFECT_AREA = "EnemyEffectArea";
     public const string ENEMY_PROJECTILE = "EnemyProjectile";
@@ -30,12 +25,23 @@ public static class Consts
     public const string BOSS1 = "Pociupala";
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
 
+    public const string ATTACK = "attack";
+    public const string DARK_ATTACK = "darkAttack";
+    public const string RANGED_ATTACK = "rangedAttack";
+    public const string PLAYER_PROJECTILE = "PlayerProjectile";
+    public const string PLAYER_ATTACK_WAVE = "Attack Wave";
+    public const string PLAYER_ARCTIC_BREATHE = "ArcticBreathe";
+    public const string PLAYER_POISON = "poison(Player)";
+
     public const string COLLECTABLE = "Collectable";
     public const string HP_MAX_PLUS_5 = "HpMaxPlus5";
     public const string PLAYER_CURRENT_ITEM = "PlayerCurrentItem";
     public const string AXE_WEAPON_COLLECTABLE = "AxeWeaponCollectable";
     public const string STONE_WEAPON_COLLECTABLE = "StoneWeaponCollectable";
     public const string FIRESPARK_WEAPON_COLLECTABLE = "FireSparkWeaponCollectable";
+    public const string ARCTIC_BREATHE_WEAPON_COLLECTABLE = "ArcticBreatheWeaponCollectable";
+    public const string DARK_WEAPON_COLLECTABLE = "DarkWeaponCollectable";
+    public const string POISON_WEAPON_COLLECTABLE = "PoisonWeaponCollectable";    
 
     public const string CHERRY = "Cherry";
     public const string ANANAS = "Ananas";

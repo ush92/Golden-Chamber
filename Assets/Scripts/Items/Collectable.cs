@@ -41,6 +41,18 @@ public class Collectable : MonoBehaviour
             {
                 playerController.CollectBossItem(Consts.FIRESPARK_WEAPON_COLLECTABLE);
             }
+            else if (gameObject.name.Contains(Consts.ARCTIC_BREATHE_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.ARCTIC_BREATHE_WEAPON_COLLECTABLE);
+            }
+            else if (gameObject.name.Contains(Consts.DARK_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.DARK_WEAPON_COLLECTABLE);
+            }
+            else if (gameObject.name.Contains(Consts.POISON_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.POISON_WEAPON_COLLECTABLE);
+            }
             else
             {
                 FindObjectOfType<CollectablesController>().Collect(gameObject.name);

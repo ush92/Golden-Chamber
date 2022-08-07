@@ -29,7 +29,11 @@ public class PlayerProjectile : MonoBehaviour
         if (player.transform.localScale.x < 0)
         {
             speed = -speed;
-            transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * -1f);
+
+            if (!name.Contains(Consts.PLAYER_POISON)) //poison keeps own scale
+            {
+                transform.localScale = new Vector2(transform.localScale.x, transform.localScale.y * -1f);
+            }
         }
 
         rb.velocity = new Vector2(speed, heigthPower);
@@ -53,7 +57,16 @@ public class PlayerProjectile : MonoBehaviour
     {
         isCollided = true;
 
-        if (other.tag.Equals(Consts.ENEMY) && !isDamageDone)
+        if (name.Contains(Consts.PLAYER_POISON) && other.tag.Equals(Consts.ENEMY) && !isDamageDone)
+        {
+            GetComponent<CapsuleCollider2D>().enabled = true;
+
+            GetComponent<Animator>().SetTrigger("triggered");
+            other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
+            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            lifetime = 0.50f;
+        }
+        else if (other.tag.Equals(Consts.ENEMY) && !isDamageDone)
         {
             other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
             isDamageDone = true;
@@ -86,7 +99,10 @@ public class PlayerProjectile : MonoBehaviour
             //AudioSource audio = GetComponent<AudioSource>();
             //audio.Play();
 
-            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            if (!name.Contains(Consts.PLAYER_POISON))
+            {
+                Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
+            }
 
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;

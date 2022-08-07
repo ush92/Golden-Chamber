@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System;
 using UnityEngine.UIElements;
 using static EquipmentManager;
+using UnityEngine.SceneManagement;
 
 public class PlayerHPController : MonoBehaviour
 {
@@ -94,6 +95,8 @@ public class PlayerHPController : MonoBehaviour
     {
         if (invincibilityCounter <= 0)
         {
+            OnHitEffects();
+            
             currentHP -= damage;
             damagePopup.text = damage.ToString();
             damagePopup.gameObject.SetActive(true);
@@ -116,6 +119,14 @@ public class PlayerHPController : MonoBehaviour
                 hpBar.gameObject.SetActive(false);
                 invincibilityCounter = 0;
             }
+        }
+    }
+
+    private void OnHitEffects()
+    {
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
+        {
+            player.isFrozen = true;
         }
     }
 
