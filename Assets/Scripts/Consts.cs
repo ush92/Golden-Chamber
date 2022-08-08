@@ -17,6 +17,7 @@ public static class Consts
     public const string ONE_WAY_TILE = "OneWayTile";
     public const string SLIDER_LEFT = "SliderL";
     public const string SLIDER_RIGHT = "SliderR";
+    public const string ICEBLOCK = "IceBlock";
     public const string ROTATED_PLATFORM_SPIKE = "RotatedPlatformSpike";
     public const string SIGNPOST = "Signpost";
     public const string WATER_TOP = "waterTop";

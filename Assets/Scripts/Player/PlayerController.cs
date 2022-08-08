@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
     public bool isSwimming = false;
     public bool isFrozen;
     public float frozenLength;
-    private float frozenCounter;
+    public float frozenCounter;
+    private bool isSliding;
 
     public Animator playerAnimator;
 
@@ -118,6 +119,7 @@ public class PlayerController : MonoBehaviour
         }
 
         moveSpeed = baseMoveSpeed;
+        isSliding = false;
 
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
@@ -217,7 +219,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                jumpForce = basedJumpForce * 0.85f;
+                jumpForce = basedJumpForce * 0.875f;
                 moveSpeed = baseMoveSpeed / 3.0f;
                 GetComponent<SpriteRenderer>().color = new Color32(80, 135, 255, 255);
             }
@@ -459,6 +461,21 @@ public class PlayerController : MonoBehaviour
         {
             playerRB.AddForce(Vector2.left * 300, ForceMode2D.Force);
         }
+        else if (other.gameObject.name.Equals(Consts.ICEBLOCK)) 
+        {
+            if(transform.localScale.x == 1)
+            {
+                playerRB.AddForce(Vector2.right * 50, ForceMode2D.Force);
+            }
+            else
+            {
+                playerRB.AddForce(Vector2.left * 50, ForceMode2D.Force);
+            }
+
+            isGrounded = false;
+            isSliding = true;
+            velocity = Math.Sign(transform.localScale.x);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -471,6 +488,13 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))
         {
             triggerObject = "";
+        }
+
+        if (other.gameObject.name.Equals(Consts.ICEBLOCK))
+        {
+            velocity = 0;
+            isGrounded = true;
+            isSliding = false;
         }
     }
 
@@ -724,7 +748,7 @@ public class PlayerController : MonoBehaviour
 
     public void LeftOnTouch()
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !isSliding)
         {
             velocity -= 1f;
         }
@@ -732,7 +756,7 @@ public class PlayerController : MonoBehaviour
 
     public void RightOnTouch()
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !isSliding)
         {
             velocity += 1f;
         }
@@ -773,7 +797,7 @@ public class PlayerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !isSliding)
         {
             velocity = context.ReadValue<Vector2>().x;
         }
