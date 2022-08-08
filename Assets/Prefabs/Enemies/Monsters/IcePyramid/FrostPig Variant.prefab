@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1927399521659777988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 630046866, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 8196968470404775718}
+    - target: {fileID: 630046866, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: repeatingTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2245357661089458190, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: maxHP
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771050, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_Name
+      value: FrostPig
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8235295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5921569
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771051, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_Color.r
+      value: 0.47058827
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.339521
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.757163
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 456.74762
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745633648132771052, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+--- !u!95 &8196968470404775718 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7745633648132771042, guid: 282b77898da418046b5e5b5c77b27b12, type: 3}
+  m_PrefabInstance: {fileID: 1927399521659777988}
+  m_PrefabAsset: {fileID: 0}
