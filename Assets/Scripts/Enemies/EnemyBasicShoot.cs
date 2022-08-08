@@ -17,6 +17,12 @@ public class EnemyBasicShoot : MonoBehaviour
         InvokeRepeating("Shoot", firstShootTime, repeatingTime);
     }
 
+    public void ChangeRepeatingTime(float newTime)
+    {
+        CancelInvoke();
+        InvokeRepeating("Shoot", 0, newTime);
+    }
+
     private void Shoot()
     {
         if(animator != null)

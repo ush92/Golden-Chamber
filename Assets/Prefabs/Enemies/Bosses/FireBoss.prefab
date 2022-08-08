@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 50
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 2455eca9b357c9b44ae7c219d3e83904, type: 3}
   flashOnHit: {r: 0.9056604, g: 0.3972944, b: 0.4159501, a: 1}
@@ -268,8 +268,10 @@ MonoBehaviour:
   repeatingTime: 1.1
   player: {fileID: 0}
   evilSun: {fileID: 0}
-  bossEvilSunRepeatingTime: 0.75
+  bossEvilSunRepeatingTime: 2
   bossEvilSunDamping: 0.5
+  enragedEvilSunRepeatingTime: 1
+  enragedEvilSunDamping: 0.25
   fireSparkWeaponLoot: {fileID: 4636879522400132064, guid: 6c4f27054a2c45648b634f04cccadb37, type: 3}
 --- !u!1 &5289073154404204197
 GameObject:

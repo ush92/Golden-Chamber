@@ -62,11 +62,13 @@ public class FlyingAround : MonoBehaviour
              
         if(transform.position.x > player.transform.position.x)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+           // transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            //transform.rotation = Quaternion.Euler(0, 180, 0);
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }

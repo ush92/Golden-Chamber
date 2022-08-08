@@ -143,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6135292, y: 1.7141209}
+  m_Size: {x: 1.5559044, y: 1.7141209}
   m_EdgeRadius: 0
 --- !u!58 &2175623095143306391
 CircleCollider2D:
@@ -158,9 +158,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.018676758, y: 0.009338379}
+  m_Offset: {x: -0.0029315948, y: -0.012269974}
   serializedVersion: 2
-  m_Radius: 0.95978165
+  m_Radius: 1.046215
 --- !u!114 &2175623095143306388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +209,9 @@ MonoBehaviour:
   attackPoint: {fileID: 1925325399}
   firstShootTime: 3
   repeatingTime: 1.5
+  onlyIfFacedToPlayer: 0
+  player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1001 &2175623096754390369
 PrefabInstance:
   m_ObjectHideFlags: 0

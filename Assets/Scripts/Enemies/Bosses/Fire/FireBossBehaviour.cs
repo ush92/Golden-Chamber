@@ -6,6 +6,7 @@ public class FireBossBehaviour : MonoBehaviour
     private Vector3 basePosition;
 
     public EnemyHPController bossHP;
+    private bool enraged;
 
     public Transform wallCheck;
     public float wallCheckRadius;
@@ -36,6 +37,8 @@ public class FireBossBehaviour : MonoBehaviour
     private float normalEvilSunDamping;
     public float bossEvilSunRepeatingTime;
     public float bossEvilSunDamping;
+    public float enragedEvilSunRepeatingTime;
+    public float enragedEvilSunDamping;
 
     public Collectable fireSparkWeaponLoot;
 
@@ -46,6 +49,7 @@ public class FireBossBehaviour : MonoBehaviour
         basePosition = transform.position;
         currentRunLength = 0;
         moveRight = false;
+        enraged = false;
 
         animationRunLength = animator.GetCurrentAnimatorStateInfo(0).length;
         currentCountOfRuns = Random.Range(minCountOfRuns, maxCountOfRuns);
@@ -53,7 +57,7 @@ public class FireBossBehaviour : MonoBehaviour
 
         normalEvilSunRepeatingTime = evilSun.GetComponent<EnemyBasicShoot>().repeatingTime;
         normalEvilSunDamping = evilSun.GetComponent<SmoothFollow>().damping;
-        evilSun.GetComponent<EnemyBasicShoot>().repeatingTime = bossEvilSunRepeatingTime;
+        evilSun.GetComponent<EnemyBasicShoot>().ChangeRepeatingTime(bossEvilSunRepeatingTime);
         evilSun.GetComponent<SmoothFollow>().damping = bossEvilSunDamping;
     }
 
@@ -124,6 +128,13 @@ public class FireBossBehaviour : MonoBehaviour
                 }
             }
 
+            if (bossHP.currentHP <= bossHP.maxHP / 3 && !enraged)
+            {
+                enraged = true;
+                evilSun.GetComponent<EnemyBasicShoot>().ChangeRepeatingTime(enragedEvilSunRepeatingTime);
+                evilSun.GetComponent<SmoothFollow>().damping = enragedEvilSunDamping;
+            }
+
             CheckEncounterActivity();
         }
     }
@@ -135,10 +146,11 @@ public class FireBossBehaviour : MonoBehaviour
             CancelInvoke();
             transform.position = basePosition;
             GetComponentInChildren<EnemyHPController>().ResetHP();
-           
-            evilSun.GetComponent<EnemyBasicShoot>().repeatingTime = normalEvilSunRepeatingTime;
+
+            evilSun.GetComponent<EnemyBasicShoot>().ChangeRepeatingTime(normalEvilSunRepeatingTime);
             evilSun.GetComponent<SmoothFollow>().damping = normalEvilSunDamping;
 
+            enraged = false;
             gameObject.SetActive(false);
         }
     }

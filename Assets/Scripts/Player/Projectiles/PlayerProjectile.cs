@@ -74,9 +74,12 @@ public class PlayerProjectile : MonoBehaviour
             DestroyProjectile();
         }
         else if(other.tag.Equals(Consts.GROUND) && isCollidingWithEnv)
-        {       
-            rb.velocity = new Vector2(0, 0);
-            DestroyProjectile();
+        {
+            if (!name.Contains(Consts.PLAYER_FIRESPARK))
+            {
+                rb.velocity = new Vector2(0, 0);
+                DestroyProjectile();
+            }
         }
     }
 

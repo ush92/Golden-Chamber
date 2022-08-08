@@ -19,7 +19,13 @@ public class Destructable : MonoBehaviour
                 Destroy(gameObject, 0.05f);
                 other.gameObject.SetActive(false);
             }
-            else if(other.name.Equals(Consts.PLAYER_ARCTIC_BREATHE))
+            else if (other.name.Contains(Consts.PLAYER_STONE))
+            {
+                Instantiate(destructEffect, transform.position, transform.rotation);
+                Destroy(gameObject, 0.05f);
+                Destroy(other.gameObject);
+            }
+            else if (other.name.Equals(Consts.PLAYER_ARCTIC_BREATHE))
             {
                 return;
             }

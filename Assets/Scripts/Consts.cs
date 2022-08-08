@@ -31,6 +31,8 @@ public static class Consts
     public const string RANGED_ATTACK = "rangedAttack";
     public const string PLAYER_PROJECTILE = "PlayerProjectile";
     public const string PLAYER_ATTACK_WAVE = "Attack Wave";
+    public const string PLAYER_STONE = "Stone(Player)";
+    public const string PLAYER_FIRESPARK = "FireSpark(Player)";
     public const string PLAYER_ARCTIC_BREATHE = "ArcticBreathe";
     public const string PLAYER_POISON = "poison(Player)";
 
