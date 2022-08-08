@@ -29,7 +29,14 @@ public class EnemyPatrol : MonoBehaviour
     void Update()
     {
         isWallHit = Physics2D.OverlapCircle(wallCheck.position, wallCheckRadius, whatIsWall);
-        isOnGround = Physics2D.OverlapCircle(edgeCheck.position, wallCheckRadius, whatIsWall);
+        if (edgeCheck != null)
+        {
+            isOnGround = Physics2D.OverlapCircle(edgeCheck.position, wallCheckRadius, whatIsWall);
+        }
+        else
+        {
+            isOnGround = true;
+        }
 
         if (isWallHit || (!isOnGround && !isJumpMode))
         {

@@ -12,7 +12,7 @@ public class FireBossBehaviour : MonoBehaviour
     public float wallCheckRadius;
     public LayerMask whatIsWall;
     private bool isWallHit;
-    public bool moveRight;
+    private bool moveRight;
 
     public Animator animator;
     private float animationRunLength;
@@ -128,7 +128,7 @@ public class FireBossBehaviour : MonoBehaviour
                 }
             }
 
-            if (bossHP.currentHP <= bossHP.maxHP / 3 && !enraged)
+            if (bossHP.currentHP <= bossHP.maxHP / 4 && !enraged)
             {
                 enraged = true;
                 evilSun.GetComponent<EnemyBasicShoot>().ChangeRepeatingTime(enragedEvilSunRepeatingTime);

@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed;
     public float velocity;
 
-    public float jumpForce;
+    public float basedJumpForce;
+    private float jumpForce;
     public float jumpHangTime;
     private float currentJumpHangTime;
 
@@ -79,6 +80,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem footDust;
     private ParticleSystem.EmissionModule footDustEmission;
     public ParticleSystem jumpDust;
+    public ParticleSystem frostBreatheParticles;
     private bool wasGrounded;
 
     //UI
@@ -120,6 +122,11 @@ public class PlayerController : MonoBehaviour
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
         arcticBreathe.SetActive(false);
+
+        if (!SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
+        {
+            frostBreatheParticles.gameObject.SetActive(false);
+        }
 
         DisablePlayerUI();
     }
@@ -184,31 +191,35 @@ public class PlayerController : MonoBehaviour
     {
         if (isSwimming)
         {
-            playerRB.gravityScale = 0.2f;
             isGrounded = true;
+            playerRB.gravityScale = 0.2f;
             jumpForce = 3.0f;
             moveSpeed = baseMoveSpeed / 2.0f;
         }
         else
         {
             playerRB.gravityScale = 5.0f;
-            jumpForce = 21.0f;
 
             if (isFrozen)
             {
-                moveSpeed = baseMoveSpeed / 3.0f;
                 frozenCounter = frozenLength;
                 isFrozen = false;
-                GetComponent<SpriteRenderer>().color = new Color32(0, 160, 255, 255);
             }
 
             frozenCounter -= Time.deltaTime;
 
-            if (frozenCounter < 0)
+            if (frozenCounter <= 0)
             {
                 frozenCounter = 0;
+                jumpForce = basedJumpForce;
                 moveSpeed = baseMoveSpeed;
                 GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+            }
+            else
+            {
+                jumpForce = basedJumpForce * 0.85f;
+                moveSpeed = baseMoveSpeed / 3.0f;
+                GetComponent<SpriteRenderer>().color = new Color32(80, 135, 255, 255);
             }
         }       
     }
@@ -537,8 +548,6 @@ public class PlayerController : MonoBehaviour
     private void DisablePlayerUI()
     {
         soundOptionsWindow.gameObject.SetActive(false);
-
-        //disable summaryWindow as well
     }
 
     public void GotoLevel(string levelName)

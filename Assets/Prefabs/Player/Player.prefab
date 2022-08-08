@@ -7841,7 +7841,7 @@ MonoBehaviour:
   playerRB: {fileID: 4912927042408680107}
   baseMoveSpeed: 7
   velocity: 0
-  jumpForce: 21
+  basedJumpForce: 21
   jumpHangTime: 0.15
   oneWayTileCounter: 0
   groundCheckPoint: {fileID: 4912927044335522437}
@@ -7857,7 +7857,7 @@ MonoBehaviour:
   knockbackCooldownCounter: 0
   isSwimming: 0
   isFrozen: 0
-  frozenLength: 5
+  frozenLength: 2.5
   playerAnimator: {fileID: 4912927042408680110}
   attackPoint: {fileID: 4221524390402923604}
   swooshAttack: {fileID: 2110339810}
@@ -7881,6 +7881,7 @@ MonoBehaviour:
   isBossEncounter: 0
   footDust: {fileID: 4639924823326777854}
   jumpDust: {fileID: 340643261429485224}
+  frostBreatheParticles: {fileID: 2746645272585894435}
   equipmentManager: {fileID: 47972737985703606}
   soundOptionsWindow: {fileID: 1006409022}
   completeLevelScreen: {fileID: 1024904443}
@@ -9200,16 +9201,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810983, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: m_Name
-      value: Player winter breath
+      value: FrostBreatheParticles
       objectReference: {fileID: 0}
     - target: {fileID: 4639924823971810983, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
 --- !u!4 &2746645272585894434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4639924823971810980, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
+  m_PrefabInstance: {fileID: 7384311682348594310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2746645272585894435 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4639924823971810981, guid: 4322db6fa9d9f284cb5fa26d9453e848, type: 3}
   m_PrefabInstance: {fileID: 7384311682348594310}
   m_PrefabAsset: {fileID: 0}
