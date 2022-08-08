@@ -629,6 +629,8 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<CapsuleCollider2D>().enabled = false;
+        arcticBreathe.SetActive(false);
+
         footDustEmission.rateOverTime = 0f;
 
         deathTimeCounter = deathTime;
@@ -650,6 +652,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<CapsuleCollider2D>().enabled = true;
 
             playerRB.velocity = new Vector3(0, 0, 0);
+            frozenCounter = 0;
 
             transform.position = GameManager.instance.currentCheckPoint.transform.position;
 
@@ -708,7 +711,7 @@ public class PlayerController : MonoBehaviour
 
     public void JumpOnTouch()
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
             if (currentJumpHangTime > 0f)
             {
@@ -719,7 +722,7 @@ public class PlayerController : MonoBehaviour
 
     public void JumpStopOnTouch()
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
             if (!isGrounded && playerRB.velocity.y > 0f)
             {
@@ -805,7 +808,7 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (isActive && !isLevelCompleted)
+        if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
             if (context.started && currentJumpHangTime > 0f)
             {

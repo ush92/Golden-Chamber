@@ -52,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4260725730657190489
 Transform:
   m_ObjectHideFlags: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 65
+  maxHP: 4
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 87fdfeaa4a2e9b44f9b37d1edb157443, type: 3}
   flashOnHit: {r: 0.4828231, g: 0.59980005, b: 0.6603774, a: 1}
@@ -218,7 +218,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453c31fd1c5f11340a5d4804464759da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activationArea: {fileID: 0}
+  startDelay: 3
   animator: {fileID: 460254307}
+  basePosition: {fileID: 0}
   teleportPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -226,12 +229,16 @@ MonoBehaviour:
   - {fileID: 0}
   teleportRepeatingTime: 10
   teleportEffect: {fileID: 4639924823971810983, guid: 1989b75a300f9da48a8774d74af4342d, type: 3}
+  frozenArea: {fileID: 0}
   frozenGhost: {fileID: 1742262666780355779, guid: 13270bdd6527fd94681e93314df7058a, type: 3}
+  frozenGhostList: []
   spawnRepeatingTime: 2.5
+  bossHP: {fileID: 4260725730657190503}
   casting: {fileID: 7497059749664560783}
   slowCasting: 1.25
   fastCasting: 0.75
-  startDelay: 3
+  player: {fileID: 0}
+  arcticBreatheWeaponLoot: {fileID: 4636879522400132064, guid: b5e041c3f2cf9204782b497ee19da19d, type: 3}
 --- !u!1001 &4260725730352610071
 PrefabInstance:
   m_ObjectHideFlags: 0

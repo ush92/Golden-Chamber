@@ -1,33 +1,70 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class IceBossBehaviour : MonoBehaviour
 {
+    public BossActivation activationArea;
+    public float startDelay;
     public Animator animator;
+    public Transform basePosition;
 
     public List<Transform> teleportPoints;
     private Side currentPoint;
     public float teleportRepeatingTime;
     public GameObject teleportEffect;
 
+    public GameObject frozenArea;
+
     public GameObject frozenGhost;
     public List<GameObject> frozenGhostList;
     public float spawnRepeatingTime;
     private Side spawnCheck;
 
+    public EnemyHPController bossHP;
     public EnemyBasicShoot casting;
     public float slowCasting;
     public float fastCasting;
 
-    public float startDelay;
+    public PlayerController player;
+    public Collectable arcticBreatheWeaponLoot;
 
-    enum Side { Upper_Right, Bottom_Left, Upper_Left, Bottom_Right };
+    public enum Side { Upper_Right, Bottom_Left, Upper_Left, Bottom_Right };
 
     void OnEnable()
     {
+        player.isBossEncounter = true;
+
+        frozenArea.gameObject.SetActive(true);
+
+        GetComponent<SpriteRenderer>().color = new Color32(210, 232, 255, 255);
+        transform.position = basePosition.transform.position;
+        transform.localScale = new Vector3(1, 1, 1);
         currentPoint = Side.Upper_Right;
+
         InvokeRepeating("Teleport", startDelay, teleportRepeatingTime);
         InvokeRepeating("SpawnGhosts", startDelay, spawnRepeatingTime);
+    }
+
+    void Update()
+    {
+        if (!player.isBossEncounter || !player.isActive)
+        {
+            frozenArea.gameObject.SetActive(false);
+            player.frozenCounter = 0;
+
+            casting.CancelInvoke();
+            CancelInvoke();
+
+            foreach (var ghost in frozenGhostList)
+            {
+                Destroy(ghost);
+            }
+
+            GetComponentInChildren<EnemyHPController>().ResetHP();
+            
+            gameObject.SetActive(false);
+        }
     }
 
     void Teleport()
@@ -91,10 +128,21 @@ public class IceBossBehaviour : MonoBehaviour
     }
 
     void OnDestroy()
-    {
-        foreach(var ghost in frozenGhostList)
+    {      
+        if (bossHP.currentHP <= 0)
         {
-            Destroy(ghost);
+            Instantiate(arcticBreatheWeaponLoot, transform.position, transform.rotation);
+
+            foreach (var ghost in frozenGhostList)
+            {
+                Destroy(ghost);
+            }
+    
+            player.isBossEncounter = false;
+            activationArea.gameObject.SetActive(false);
+
+            frozenArea.gameObject.SetActive(false);
+            player.frozenCounter = 0;
         }
     }
 }
