@@ -139,11 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1641028499805509515}
   speed: 10
-  heigthPower: 10
-  damageToDeal: 1
+  heigthPower: 5.5
   isCollidingWithEnv: 1
   collisionEffect: {fileID: 4639924823971810983, guid: f51a55e649b59ff459c9b7af49d28367, type: 3}
-  lifetime: 3
   usePhysics: 1
 --- !u!82 &1363364799
 AudioSource:

@@ -72,9 +72,12 @@ public class PlayerProjectile : MonoBehaviour
         else if (other.tag.Equals(Consts.ENEMY) && !isDamageDone)
         {
             other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
-            isDamageDone = true;
 
-            DestroyProjectile();
+            if (!name.Contains(Consts.PLAYER_STONE))
+            {
+                isDamageDone = true;
+                DestroyProjectile();
+            }
         }
         else if(other.tag.Equals(Consts.GROUND) && isCollidingWithEnv)
         {

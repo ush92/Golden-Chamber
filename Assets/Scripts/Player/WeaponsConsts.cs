@@ -7,11 +7,11 @@ public static class WeaponsConsts
     public const int AXE_DMG = 1;
     public const float AXE_LIFETIME = 3.0f;
 
-    public const float STONE_CD = 0.45f;
+    public const float STONE_CD = 0.5f;
     public const int STONE_DMG = 1;
     public const float STONE_LIFETIME = 0.5f;
 
-    public const float FIRE_CD = 0.75f;
+    public const float FIRE_CD = 0.95f;
     public const int FIRE_DMG = 2;
     public const float FIRE_LIFETIME = 3.0f;
 

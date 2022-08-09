@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHPController : MonoBehaviour
 {
@@ -16,10 +17,21 @@ public class EnemyHPController : MonoBehaviour
     private float hpBarFlashCounter;
     private float diff; //to fix hp bar scaling
 
+    public Text damagePopup;
+    private float damagePopupBasePosition;
+    public float damagePopupTime;
+    public float damagePopupCounter;
+    private float randomOffset;
+
     void Start()
     {
         currentHP = maxHP;
         diff = transform.localScale.x / hpBar.localScale.x;
+
+        if (damagePopup != null)
+        {
+            damagePopupBasePosition = damagePopup.transform.localPosition.y;
+        }
     }
 
     void Update()
@@ -28,6 +40,7 @@ public class EnemyHPController : MonoBehaviour
         {
             if (name.Equals(Consts.TARGET_DUMMY))
             {
+                Instantiate(enemyDeathEffect, transform.position, transform.rotation);
                 ResetHP();
             }
             else
@@ -57,6 +70,28 @@ public class EnemyHPController : MonoBehaviour
             {
                 hpBar.gameObject.SetActive(false);
             }
+
+            if (damagePopup != null)
+            {
+                if (damagePopupCounter == damagePopupTime)
+                {
+                    damagePopup.transform.localPosition = new Vector3(damagePopup.transform.localPosition.x, damagePopupBasePosition);
+                    damagePopupCounter -= Time.deltaTime;
+                }
+                else if (damagePopupCounter > 0)
+                {
+                    damagePopupCounter -= Time.deltaTime;
+
+                    damagePopup.transform.localScale = new Vector3(transform.localScale.x, damagePopup.transform.localScale.y);
+                    damagePopup.transform.localPosition = new Vector3(damagePopup.transform.localPosition.x + randomOffset, damagePopup.transform.localPosition.y + 1.0f * Time.deltaTime);
+                }
+                else
+                {
+                    damagePopupCounter = 0;
+                    damagePopup.transform.localPosition = new Vector3(damagePopup.transform.localPosition.x, damagePopupBasePosition);
+                    damagePopup.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
@@ -82,6 +117,14 @@ public class EnemyHPController : MonoBehaviour
                 hpBarFlashCounter = hpBarFlashTime;
 
                 UpdateHPDisplay();
+            }
+
+            if (damagePopup != null)
+            {
+                damagePopup.text = damage.ToString();
+                randomOffset = Random.Range(-0.001f, 0.001f);
+                damagePopup.gameObject.SetActive(true);
+                damagePopupCounter = damagePopupTime;
             }
         }
     }
