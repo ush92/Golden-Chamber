@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7879384459682032309, guid: 7f44dd07fbf4b2c4bb071471f17668b5, type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7879384459682032309, guid: 7f44dd07fbf4b2c4bb071471f17668b5, type: 3}
       propertyPath: changeSideOnDamagePlayer
@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7879384459682032318, guid: 7f44dd07fbf4b2c4bb071471f17668b5, type: 3}
       propertyPath: m_Name
-      value: FrozenGhost
+      value: FrozenGhost Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7879384459682032319, guid: 7f44dd07fbf4b2c4bb071471f17668b5, type: 3}
       propertyPath: m_Sprite

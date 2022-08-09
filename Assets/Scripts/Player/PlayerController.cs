@@ -44,10 +44,11 @@ public class PlayerController : MonoBehaviour
 
     public Animator playerAnimator;
 
+    public Transform attackPoint;
     private bool attackPressed;
     private bool meleeAttackPressed;
-    public Transform attackPoint;
     private float attackCounter;
+    private float meleeAttackCounter;
     public GameObject swooshAttack;
     public PlayerProjectile axeProjectile;
     public PlayerProjectile stoneProjectile;
@@ -143,7 +144,7 @@ public class PlayerController : MonoBehaviour
             CheckMoveSpeed();
             CheckGround();
             MoveAndKnockback();
-            AttackCooldown();
+            AttackCooldowns();
             Animate();
             UpdateCompleteLevelScreenTimer();
 
@@ -167,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
             if (meleeAttackPressed && !isLevelCompleted)
             {
-                if (attackCounter <= 0)
+                if (meleeAttackCounter <= 0)
                 {
                     MeleeAttack();
                 }
@@ -422,21 +423,26 @@ public class PlayerController : MonoBehaviour
         {
             swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
             playerAnimator.SetTrigger(Consts.ATTACK);
-            attackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
+            meleeAttackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
         }
         else
         {
             swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
             playerAnimator.SetTrigger(Consts.DARK_ATTACK);
-            attackCounter = WeaponsConsts.SWOOSH_DARK_CD;
+            meleeAttackCounter = WeaponsConsts.SWOOSH_DARK_CD;
         }
     }
 
-    private void AttackCooldown()
+    private void AttackCooldowns()
     {
         if (attackCounter > 0)
         {
             attackCounter -= Time.deltaTime;
+        }
+
+        if (meleeAttackCounter > 0)
+        {
+            meleeAttackCounter -= Time.deltaTime;
         }
     }
 
