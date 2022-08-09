@@ -7858,20 +7858,15 @@ MonoBehaviour:
   isSwimming: 0
   isFrozen: 0
   frozenLength: 2.5
+  frozenCounter: 0
   playerAnimator: {fileID: 4912927042408680110}
   attackPoint: {fileID: 4221524390402923604}
   swooshAttack: {fileID: 2110339810}
-  swooshAttackCooldown: 0.65
-  axeProjectile: {fileID: 1641028499805509508, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
-  axeAttackCooldown: 0.55
-  stoneProjectile: {fileID: 8694809672694420746, guid: 37e513b664fc92c4a99654a582d5dca6, type: 3}
-  stoneAttackCooldown: 0.4
-  fireSparkProjectile: {fileID: 1641028499805509508, guid: 59f7b16d142ba4049b077af4c459be00, type: 3}
-  fireSparkAttackCooldown: 0.65
+  axeProjectile: {fileID: 7969986277567877523, guid: 07496610a19eb78498d51a4ae395b706, type: 3}
+  stoneProjectile: {fileID: 4697553191014711821, guid: 37e513b664fc92c4a99654a582d5dca6, type: 3}
+  fireSparkProjectile: {fileID: 7969986277567877523, guid: 59f7b16d142ba4049b077af4c459be00, type: 3}
   arcticBreathe: {fileID: 588159793799586860}
-  darkAttackCooldown: 0.4
-  poisonProjectile: {fileID: 1315918575018129693, guid: 4b14b227d0c79204096be4b64d399145, type: 3}
-  poisonAttackCooldown: 1
+  poisonProjectile: {fileID: 997565681, guid: 4b14b227d0c79204096be4b64d399145, type: 3}
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 

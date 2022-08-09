@@ -2,20 +2,24 @@ using UnityEngine;
 
 public class ArcticBreathe : MonoBehaviour
 {
-    public int damagePerTick;
+    private int damagePerTick;
     private bool isDamageDone;
-    public float damageCooldown;
+    private float damageCooldown;
     private float cooldownTimer;
     public PlayerController playerController;
     public ParticleSystem particles;
 
     public Animator animator;
 
-
     void Start()
     {
+        damagePerTick = WeaponsConsts.ICE_TICK_DMG;
+        cooldownTimer = WeaponsConsts.ICE_CD;
+    }
+
+    void OnEnable()
+    {
         isDamageDone = false;
-        cooldownTimer = damageCooldown;
     }
 
     void Update()

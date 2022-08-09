@@ -48,17 +48,11 @@ public class PlayerController : MonoBehaviour
     public Transform attackPoint;
     private float attackCounter;
     public GameObject swooshAttack;
-    public float swooshAttackCooldown;
-    public GameObject axeProjectile;
-    public float axeAttackCooldown;
-    public GameObject stoneProjectile;
-    public float stoneAttackCooldown;
-    public GameObject fireSparkProjectile;
-    public float fireSparkAttackCooldown;
+    public PlayerProjectile axeProjectile;
+    public PlayerProjectile stoneProjectile;
+    public PlayerProjectile fireSparkProjectile;
     public GameObject arcticBreathe;
-    public float darkAttackCooldown;
-    public GameObject poisonProjectile;
-    public float poisonAttackCooldown;
+    public PlayerProjectile poisonProjectile;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -123,12 +117,9 @@ public class PlayerController : MonoBehaviour
 
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
-        arcticBreathe.SetActive(false);
+        frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
 
-        if (!SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
-        {
-            frostBreatheParticles.gameObject.SetActive(false);
-        }
+        arcticBreathe.SetActive(false); //weapon
 
         DisablePlayerUI();
     }
@@ -373,32 +364,33 @@ public class PlayerController : MonoBehaviour
             case (int)EquipmentManager.Items.Swoosh:
                 if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == false)
                 {
+                    swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
                     playerAnimator.SetTrigger(Consts.ATTACK);
-                    attackCounter = swooshAttackCooldown;
+                    attackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
                 }
                 else
                 {
-                    swooshAttack.GetComponent<DamageEnemy>().damageToDeal = 3;
+                    swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
                     playerAnimator.SetTrigger(Consts.DARK_ATTACK);
-                    attackCounter = darkAttackCooldown;
+                    attackCounter = WeaponsConsts.SWOOSH_DARK_CD;
                 }
                 break;
             case (int)EquipmentManager.Items.Axe:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation);
-                attackCounter = axeAttackCooldown;
+                Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.AXE_DMG, WeaponsConsts.AXE_LIFETIME);
+                attackCounter = WeaponsConsts.AXE_CD;
                 break;
             case (int)EquipmentManager.Items.Stone:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                Instantiate(stoneProjectile, attackPoint.position, attackPoint.rotation);
-                attackCounter = stoneAttackCooldown;
+                Instantiate(stoneProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.STONE_DMG, WeaponsConsts.STONE_LIFETIME);
+                attackCounter = WeaponsConsts.STONE_CD;
                 break;
             case (int)EquipmentManager.Items.FireSpark:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 if (!isSwimming)
                 {
-                    Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation);
-                    attackCounter = fireSparkAttackCooldown;
+                    Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.FIRE_DMG, WeaponsConsts.FIRE_LIFETIME);
+                    attackCounter = WeaponsConsts.FIRE_CD;
                 }
                 break;
             case (int)EquipmentManager.Items.ArcticBreathe:
@@ -406,8 +398,8 @@ public class PlayerController : MonoBehaviour
                 break;
             case (int)EquipmentManager.Items.Poison:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                Instantiate(poisonProjectile, attackPoint.position, attackPoint.rotation);
-                attackCounter = poisonAttackCooldown;
+                Instantiate(poisonProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.POISON_DMG, WeaponsConsts.POISON_LIFETIME);
+                attackCounter = WeaponsConsts.POISON_CD;
                 break;
             default:
                 break;
@@ -631,6 +623,7 @@ public class PlayerController : MonoBehaviour
         GetComponent<CapsuleCollider2D>().enabled = false;
         arcticBreathe.SetActive(false);
 
+        frostBreatheParticles.gameObject.SetActive(false);
         footDustEmission.rateOverTime = 0f;
 
         deathTimeCounter = deathTime;
@@ -660,6 +653,8 @@ public class PlayerController : MonoBehaviour
             hpController.currentHP = hpController.maxHP;
 
             GameManager.instance.PlayerRespawnEffect();
+
+            frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
         }
     }
 
@@ -689,6 +684,9 @@ public class PlayerController : MonoBehaviour
                     break;
                 case Consts.FIRESPARK_WEAPON_COLLECTABLE:
                     objectsAfterBoss.gameObject.transform.position = new Vector3(104.522f, 5.61f, 0f);
+                    break;
+                case Consts.ARCTIC_BREATHE_WEAPON_COLLECTABLE:
+                    objectsAfterBoss.gameObject.transform.position = new Vector3(85.18f, 7.56f, 0f);
                     break;
                 default:
                     Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");

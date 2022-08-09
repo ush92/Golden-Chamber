@@ -35,7 +35,7 @@ public static class Consts
     public const string PLAYER_STONE = "Stone(Player)";
     public const string PLAYER_FIRESPARK = "FireSpark(Player)";
     public const string PLAYER_ARCTIC_BREATHE = "ArcticBreathe";
-    public const string PLAYER_POISON = "poison(Player)";
+    public const string PLAYER_POISON = "Poison(Player)";
 
     public const string COLLECTABLE = "Collectable";
     public const string HP_MAX_PLUS_5 = "HpMaxPlus5";

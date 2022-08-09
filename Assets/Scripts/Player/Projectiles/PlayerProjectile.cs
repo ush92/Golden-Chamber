@@ -8,14 +8,13 @@ public class PlayerProjectile : MonoBehaviour
     private PlayerController player;
     private float playerVelocityX;
 
-    public int damageToDeal;
+    private float lifetime;
+    private int damageToDeal;
     private bool isDamageDone = false;
 
     public bool isCollidingWithEnv = true;
     public GameObject collisionEffect;
     private bool isCollided;
-
-    public float lifetime = 3.0f;
 
     private bool isDestroyed = false;
 
@@ -51,6 +50,12 @@ public class PlayerProjectile : MonoBehaviour
         {
             DestroyProjectile();
         }
+    }
+
+    public void Set(int damage, float time)
+    {
+        damageToDeal = damage;
+        lifetime = time;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
