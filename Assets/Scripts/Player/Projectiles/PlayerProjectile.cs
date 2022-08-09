@@ -65,6 +65,8 @@ public class PlayerProjectile : MonoBehaviour
         if (name.Contains(Consts.PLAYER_POISON) && other.tag.Equals(Consts.ENEMY))
         {
             GetComponent<CapsuleCollider2D>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Animator>().SetTrigger("triggered");
             lifetime = WeaponsConsts.POISON_TRIGGERED_LIFETIME;
             //rest in trigger STAY

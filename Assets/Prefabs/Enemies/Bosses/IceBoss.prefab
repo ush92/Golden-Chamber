@@ -132,13 +132,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 70
+  maxHP: 60
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 87fdfeaa4a2e9b44f9b37d1edb157443, type: 3}
   flashOnHit: {r: 0.4828231, g: 0.59980005, b: 0.6603774, a: 1}
   hitFlashTime: 0.125
   hpBar: {fileID: 5868612364116787625}
   hpBarFlashTime: 1
+  damagePopup: {fileID: 0}
+  damagePopupTime: 0
+  damagePopupCounter: 0
 --- !u!70 &4260725730657190488
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
