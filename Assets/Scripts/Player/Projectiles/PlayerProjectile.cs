@@ -62,14 +62,12 @@ public class PlayerProjectile : MonoBehaviour
     {
         isCollided = true;
 
-        if (name.Contains(Consts.PLAYER_POISON) && other.tag.Equals(Consts.ENEMY) && !isDamageDone)
+        if (name.Contains(Consts.PLAYER_POISON) && other.tag.Equals(Consts.ENEMY))
         {
             GetComponent<CapsuleCollider2D>().enabled = true;
-
             GetComponent<Animator>().SetTrigger("triggered");
-            other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
-            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
-            lifetime = 0.50f;
+            lifetime = WeaponsConsts.POISON_TRIGGERED_LIFETIME;
+            //rest in trigger STAY
         }
         else if (other.tag.Equals(Consts.ENEMY) && !isDamageDone)
         {
@@ -85,6 +83,15 @@ public class PlayerProjectile : MonoBehaviour
                 rb.velocity = new Vector2(0, 0);
                 DestroyProjectile();
             }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (name.Contains(Consts.PLAYER_POISON) && other.tag.Equals(Consts.ENEMY))
+        {
+            other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
+            Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
         }
     }
 

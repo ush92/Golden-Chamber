@@ -2243,6 +2243,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1059998643, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2973142999836447288, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2287,6 +2291,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2973142999836447289, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 342b2c591e59c144187d9bd41986df6c, type: 3}
     - target: {fileID: 2973142999836447290, guid: 072a46def53c66743a91f128fcf17f59, type: 3}
       propertyPath: m_Name
       value: MusicManager

@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 4
+  maxHP: 70
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 87fdfeaa4a2e9b44f9b37d1edb157443, type: 3}
   flashOnHit: {r: 0.4828231, g: 0.59980005, b: 0.6603774, a: 1}
@@ -235,8 +235,8 @@ MonoBehaviour:
   spawnRepeatingTime: 2.5
   bossHP: {fileID: 4260725730657190503}
   casting: {fileID: 7497059749664560783}
-  slowCasting: 1.25
-  fastCasting: 0.75
+  slowCasting: 2
+  fastCasting: 1
   player: {fileID: 0}
   arcticBreatheWeaponLoot: {fileID: 4636879522400132064, guid: b5e041c3f2cf9204782b497ee19da19d, type: 3}
 --- !u!1001 &4260725730352610071

@@ -743,6 +743,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive)
         {
+            attackCounter = 0;
             equipmentManager.ChangeItem();
         }
     }
