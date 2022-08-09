@@ -3,7 +3,7 @@ public static class WeaponsConsts
     public const float SWOOSH_BASIC_CD = 0.65f;
     public const int SWOOSH_BASIC_DMG = 1;
 
-    public const float AXE_CD = 0.5f;
+    public const float AXE_CD = 0.65f;
     public const int AXE_DMG = 1;
     public const float AXE_LIFETIME = 1.7f;
 

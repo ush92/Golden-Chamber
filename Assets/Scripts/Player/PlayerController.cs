@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public Animator playerAnimator;
 
     private bool attackPressed;
+    private bool meleeAttackPressed;
     public Transform attackPoint;
     private float attackCounter;
     public GameObject swooshAttack;
@@ -163,6 +164,15 @@ public class PlayerController : MonoBehaviour
                     Attack();
                 }
             }
+
+            if (meleeAttackPressed && !isLevelCompleted)
+            {
+                if (attackCounter <= 0)
+                {
+                    MeleeAttack();
+                }
+            }
+
             ArcticBreathe();
 
         }
@@ -403,6 +413,22 @@ public class PlayerController : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private void MeleeAttack()
+    {
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == false)
+        {
+            swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
+            playerAnimator.SetTrigger(Consts.ATTACK);
+            attackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
+        }
+        else
+        {
+            swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
+            playerAnimator.SetTrigger(Consts.DARK_ATTACK);
+            attackCounter = WeaponsConsts.SWOOSH_DARK_CD;
         }
     }
 
@@ -737,6 +763,16 @@ public class PlayerController : MonoBehaviour
     public void AttackButtonUpOnTouch()
     {
         attackPressed = false;
+    }
+
+    public void MeleeAttackButtonDownOnTouch()
+    {
+        meleeAttackPressed = true;
+    }
+
+    public void MeleeAttackButtonUpOnTouch()
+    {
+        meleeAttackPressed = false;
     }
 
     public void ChangeItemOnTouch()
