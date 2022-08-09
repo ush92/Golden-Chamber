@@ -31,6 +31,8 @@ public class MainMenu : MonoBehaviour
             row.GetComponent<Button>().onClick.AddListener(() => { Continue_OpenProfile(profile); });
             row.GetComponentInChildren<Text>().text = profile;
         }
+
+        PlayerPrefs.SetInt(Consts.PLAYER_CURRENT_ITEM, 0);
     }
 
     public void Main_Continue()

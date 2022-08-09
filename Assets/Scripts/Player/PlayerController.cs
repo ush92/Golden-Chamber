@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
     private float timeInLevel;
     public Text currentTime;
 
-    private bool isDataLoaded = false;
     private bool isLevelLoaded = false;
     private bool isLevelCompleted = false;
 
@@ -126,17 +125,6 @@ public class PlayerController : MonoBehaviour
         DisablePlayerUI();
     }
 
-    private void LateUpdate() //Load
-    {
-        if (!isDataLoaded)
-        {
-            isDataLoaded = true;
-            GameManager.LoadJsonData(GameManager.instance);
-            equipmentManager.currentItem = PlayerPrefs.GetInt(Consts.PLAYER_CURRENT_ITEM);
-            equipmentManager.UpdateEquipment();
-        }
-    }
-
     void Update()
     {
         if (isActive)
@@ -156,7 +144,6 @@ public class PlayerController : MonoBehaviour
             {
                 currentJumpHangTime -= Time.deltaTime;
             }
-
 
             if (attackPressed && !isLevelCompleted)
             {

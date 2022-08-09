@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour, ISaveable
             {
                 transform.localPosition = newPlayer.transform.localPosition;
             }
+
+            LoadJsonData(instance);
+            activePlayer.equipmentManager.currentItem = PlayerPrefs.GetInt(Consts.PLAYER_CURRENT_ITEM);
+            activePlayer.equipmentManager.UpdateEquipment();        
         }
         else
         {
