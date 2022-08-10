@@ -158,7 +158,10 @@ public class PociupalaBehaviour : MonoBehaviour
     {
         if (bossHP.currentHP <= 0)
         {
-            saws[sawIndex].gameObject.transform.position = sawBasePosition;
+            if (sawIndex != -1)
+            {
+                saws[sawIndex].gameObject.transform.position = sawBasePosition;
+            }
             Instantiate(axeWeaponLoot, transform.position, transform.rotation);
         }
     }

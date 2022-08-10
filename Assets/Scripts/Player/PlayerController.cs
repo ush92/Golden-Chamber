@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
 
             if (attackPressed && !isLevelCompleted)
             {
-                if (attackCounter <= 0)
+                if (attackCounter <= 0 && meleeAttackCounter <= 0)
                 {
                     Attack();
                 }
@@ -364,13 +364,13 @@ public class PlayerController : MonoBehaviour
                 {
                     swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
                     playerAnimator.SetTrigger(Consts.ATTACK);
-                    attackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
+                    meleeAttackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
                 }
                 else
                 {
                     swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
                     playerAnimator.SetTrigger(Consts.DARK_ATTACK);
-                    attackCounter = WeaponsConsts.SWOOSH_DARK_CD;
+                    meleeAttackCounter = WeaponsConsts.SWOOSH_DARK_CD;
                 }
                 break;
             case (int)EquipmentManager.Items.Axe:
@@ -732,6 +732,7 @@ public class PlayerController : MonoBehaviour
         {
             if (currentJumpHangTime > 0f)
             {
+                isGrounded = false;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
             }
         }
@@ -840,6 +841,7 @@ public class PlayerController : MonoBehaviour
         {
             if (context.started && currentJumpHangTime > 0f)
             {
+                isGrounded = false;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
             }
 
