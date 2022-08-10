@@ -3,6 +3,8 @@ using UnityEngine;
 public class DamagePlayer : MonoBehaviour
 {
     public int damageToDeal = 1;
+    public bool isKnockingBack = true;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag.Equals(Consts.PLAYER) && damageToDeal > 0)
@@ -12,7 +14,7 @@ public class DamagePlayer : MonoBehaviour
 
             playerHPController.DamagePlayer(damageToDeal);
 
-            if (player.isActive && player.knockbackCooldownCounter <= 0)
+            if (player.isActive && player.knockbackCooldownCounter <= 0 && isKnockingBack)
             {
                 player.knockbackCounter = player.knockbackLength;
                 player.knockbackFromRight = other.transform.position.x < transform.position.x ? true : false;

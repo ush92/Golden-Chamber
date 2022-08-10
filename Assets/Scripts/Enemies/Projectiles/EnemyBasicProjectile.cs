@@ -84,6 +84,7 @@ public class EnemyBasicProjectile : MonoBehaviour
         }
     }
 
+
     private void DestroyProjectile()
     {
         if (isDestroyed == false)
