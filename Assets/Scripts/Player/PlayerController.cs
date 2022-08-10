@@ -136,15 +136,6 @@ public class PlayerController : MonoBehaviour
             Animate();
             UpdateCompleteLevelScreenTimer();
 
-            if (isGrounded)
-            {
-                currentJumpHangTime = jumpHangTime;
-            }
-            else
-            {
-                currentJumpHangTime -= Time.deltaTime;
-            }
-
             if (attackPressed && !isLevelCompleted)
             {
                 if (attackCounter <= 0 && meleeAttackCounter <= 0)
@@ -266,6 +257,15 @@ public class PlayerController : MonoBehaviour
         if (!isSwimming)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+        }
+
+        if (isGrounded)
+        {
+            currentJumpHangTime = jumpHangTime;
+        }
+        else
+        {
+            currentJumpHangTime -= Time.deltaTime;
         }
     }
 
@@ -730,9 +730,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
-            if (currentJumpHangTime > 0f)
+            if (currentJumpHangTime > 0f && playerRB.velocity.y <= 0f)
             {
-                isGrounded = false;
+                currentJumpHangTime = 0f;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
             }
         }
