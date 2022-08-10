@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2245357661089458190, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: maxHP
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2245357661089458190, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: flashOnHit.b
@@ -188,6 +188,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7745633648132771050, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
   m_PrefabInstance: {fileID: 7478746958765603715}
   m_PrefabAsset: {fileID: 0}
+--- !u!58 &2161592682363376015
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916443491222288233}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.019999996, y: -0.086007595}
+  serializedVersion: 2
+  m_Radius: 0.16168833
 --- !u!95 &916443491222288225
 Animator:
   serializedVersion: 3
@@ -207,19 +223,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &2161592682363376015
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916443491222288233}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.019999996, y: -0.086007595}
-  serializedVersion: 2
-  m_Radius: 0.16168833

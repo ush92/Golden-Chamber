@@ -111,7 +111,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: casting
+    m_ConditionEvent: Shoot
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 8891420475506968214}
@@ -164,7 +164,7 @@ AnimatorController:
   m_Name: DarkBoss 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: casting
+  - m_Name: Shoot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0

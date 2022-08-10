@@ -116,11 +116,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2352851906768775490}
-  speed: 10
+  speed: 12
   heigthPower: 0
   collisionEffect: {fileID: 4639924823971810983, guid: 6737c82c51c45aa4c90ebf02f6f38e2f, type: 3}
-  lifetime: 1
-  damageToDeal: 1
+  lifetime: 0.87
+  damageToDeal: 2
+  isKnockingBack: 0
   aimPlayer: 1
   isCollidingWithEnv: 0
 --- !u!50 &2352851906768775490

@@ -12,6 +12,7 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     public int damageToDeal = 1;
     private bool damageDone = false;
+    public bool isKnockingBack = true;
 
     private PlayerController player;
     public bool aimPlayer = false;
@@ -69,7 +70,7 @@ public class EnemyBasicProjectile : MonoBehaviour
 
             playerHPController.DamagePlayer(damageToDeal);
 
-            if (player.isActive && player.knockbackCooldownCounter <= 0)
+            if (player.isActive && player.knockbackCooldownCounter <= 0 && isKnockingBack)
             {
                 player.knockbackCounter = player.knockbackLength;
                 player.knockbackFromRight = other.transform.position.x < transform.position.x ? true : false;

@@ -1,8 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
-using static IceBossBehaviour;
 
 public class DarkBossBehaviour : MonoBehaviour
 {
@@ -18,16 +15,25 @@ public class DarkBossBehaviour : MonoBehaviour
 
     public Transform spiderSpawnPoint;
     public float spawnRepeatingTime;
-    public List<GameObject> spidersList;
-    public GameObject spider;
+    public List<EnemyPatrol> spidersList;
+    public EnemyPatrol spider;
+    public float spidersNormalMoveSpeed;
+    public float spidersEnragedMoveSpeed;
 
     public GameObject portals;
     public float portalRemoveTime;
     public GameObject portalsRemoveEffect;
 
+    private bool isEnraged;
+    public EnemyBasicShoot shooting;
+    public float enragedSpawnRepeatingTime;
+    public float enragedCastingCooldown;
+
     void Start()
     {
         isUpper = true;
+        isEnraged = false;
+        spider.moveSpeed = spidersNormalMoveSpeed;
         InvokeRepeating("Teleport", startDelay, teleportRepeatingTime);
         InvokeRepeating("SpawnSpiders", startDelay, spawnRepeatingTime);
         Invoke("RemovePortals", portalRemoveTime);
@@ -76,5 +82,24 @@ public class DarkBossBehaviour : MonoBehaviour
         Instantiate(portalsRemoveEffect, new Vector3(portals.transform.position.x, portals.transform.position.y - 0.5f),
             portals.transform.rotation);
         portals.SetActive(false);
+
+        isEnraged = true;
+        spider.moveSpeed = spidersEnragedMoveSpeed;
+        foreach(var spawnedSpider in spidersList)
+        {
+            spawnedSpider.moveSpeed = spidersEnragedMoveSpeed;
+        }
+
+        CancelInvoke();
+        InvokeRepeating("SpawnSpiders", 0, enragedSpawnRepeatingTime);
+        shooting.ChangeRepeatingTime(enragedCastingCooldown);
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var spawnedSpider in spidersList)
+        {
+            Destroy(spawnedSpider.gameObject);
+        }
     }
 }

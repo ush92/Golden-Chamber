@@ -123,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 2352851906768775500, guid: adad57ffaf549f947b79679c1521cf72, type: 3}
   attackPoint: {fileID: 2226451268833473065}
-  firstShootTime: 0
-  repeatingTime: 3
+  firstShootTime: 3
+  repeatingTime: 5
   onlyIfFacedToPlayer: 0
   player: {fileID: 0}
   animator: {fileID: 2226451268544711206}
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 75
+  maxHP: 1
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: eaef77f5536011b4a85ef6c71d2563ef, type: 3}
   flashOnHit: {r: 0.4518123, g: 0.4085084, b: 0.5660378, a: 1}
@@ -207,15 +207,20 @@ MonoBehaviour:
   animator: {fileID: 2226451268544711206}
   basePosition: {fileID: 0}
   bottomPosition: {fileID: 0}
-  teleportRepeatingTime: 3
+  teleportRepeatingTime: 5
   teleportEffect: {fileID: 4639924823971810983, guid: 084415efa014fc340b482a9e34d5a6bf, type: 3}
   spiderSpawnPoint: {fileID: 0}
-  spawnRepeatingTime: 5
+  spawnRepeatingTime: 0.5
   spidersList: []
-  spider: {fileID: 916443491222288233, guid: a0b1d820bc89de0489d47d7770422029, type: 3}
+  spider: {fileID: 916443491222288226, guid: a0b1d820bc89de0489d47d7770422029, type: 3}
+  spidersNormalMoveSpeed: 3
+  spidersEnragedMoveSpeed: 20
   portals: {fileID: 0}
-  portalRemoveTime: 6
+  portalRemoveTime: 90
   portalsRemoveEffect: {fileID: 4639924823971810983, guid: 10ff22525d59b4e409ebde85da367d66, type: 3}
+  shooting: {fileID: 2226451268544711201}
+  enragedSpawnRepeatingTime: 1
+  enragedCastingCooldown: 1
 --- !u!1 &2226451268833473070
 GameObject:
   m_ObjectHideFlags: 0

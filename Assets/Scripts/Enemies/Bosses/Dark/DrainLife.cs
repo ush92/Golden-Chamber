@@ -20,12 +20,16 @@ public class DrainLife : MonoBehaviour
         if (other.tag.Equals(Consts.PLAYER) && !isDrained)
         {
             isDrained = true;
-            Instantiate(drainLifeEffect, enemyHp.transform.position, Quaternion.Euler(0, 0, 0));
 
-            enemyHp.currentHP += drainAmount;
-            if (enemyHp.currentHP > enemyHp.maxHP)
+            if (enemyHp != null)
             {
-                enemyHp.currentHP = enemyHp.maxHP;
+                Instantiate(drainLifeEffect, enemyHp.transform.position, Quaternion.Euler(0, 0, 0));
+
+                enemyHp.currentHP += drainAmount;
+                if (enemyHp.currentHP > enemyHp.maxHP)
+                {
+                    enemyHp.currentHP = enemyHp.maxHP;
+                }
             }
         }
     }
