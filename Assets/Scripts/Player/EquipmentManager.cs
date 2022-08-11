@@ -70,13 +70,11 @@ public class EquipmentManager : MonoBehaviour
 
     public void ChangeItem()
     {
-        if(currentItem == items.Count - 1)
+        currentItem++;
+
+        if (currentItem == items.Count)
         {
             currentItem = 0;
-        }
-        else
-        {
-            currentItem++;
         }
 
         currentItemIcon.sprite = ItemIcons[currentItem];

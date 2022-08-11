@@ -25,6 +25,7 @@ public class DarkBossBehaviour : MonoBehaviour
     public GameObject portals;
     public GameObject portalsRemoveEffect;
 
+    public GameObject enrageTimer;
     public float enrageTime;
     public int spidersEnragedCount;
     private bool isEnraged;
@@ -36,6 +37,7 @@ public class DarkBossBehaviour : MonoBehaviour
     {
         isUpper = true;
         isEnraged = false;
+        enrageTimer.SetActive(true);
         spider.moveSpeed = spidersNormalMoveSpeed;
         InvokeRepeating("Teleport", startDelay, teleportRepeatingTime);
         InvokeRepeating("SpawnSpiders", startDelay, spawnRepeatingTime);
@@ -56,7 +58,7 @@ public class DarkBossBehaviour : MonoBehaviour
                 }
                 else
                 {
-                    spidersCounterIndicators[i].color = new Color32(0, 0, 0, 200);
+                    spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
                 }
             }
         }
@@ -139,6 +141,7 @@ public class DarkBossBehaviour : MonoBehaviour
     private void OnDestroy()
     {
         portals.SetActive(false);
+        enrageTimer.SetActive(false);
 
         foreach (var spawnedSpider in spidersList)
         {
@@ -150,7 +153,7 @@ public class DarkBossBehaviour : MonoBehaviour
 
         for (int i = 0; i < spidersCounterIndicators.Count; i++)
         {
-            spidersCounterIndicators[i].color = new Color32(0, 0, 0, 200);
+            spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
         }
     }
 }

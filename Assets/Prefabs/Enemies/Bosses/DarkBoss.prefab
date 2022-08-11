@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2226451268544711207
 Transform:
   m_ObjectHideFlags: 0
@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 0}
   portals: {fileID: 0}
   portalsRemoveEffect: {fileID: 4639924823971810983, guid: 10ff22525d59b4e409ebde85da367d66, type: 3}
+  enrageTimer: {fileID: 0}
   enrageTime: 300
   spidersEnragedCount: 5
   shooting: {fileID: 2226451268544711201}
