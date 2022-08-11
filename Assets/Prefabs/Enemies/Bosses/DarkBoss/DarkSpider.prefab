@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2245357661089458190, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: maxHP
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2245357661089458190, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: flashOnHit.b
@@ -97,11 +97,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.386416
+      value: -15.389658
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.132215
+      value: 16.238352
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771052, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -177,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648965046458, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.476
+      value: -0.62
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7745633648132771042, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
@@ -223,3 +223,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4449584192654701988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916443491222288233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e284f3ff638dd49841c39ce3d670c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drainLifeEffect: {fileID: 4639924823971810983, guid: f263de99db1d67c40adb2e1a3335808a, type: 3}
+  enemyName: DarkBoss
+  drainAmount: 1
