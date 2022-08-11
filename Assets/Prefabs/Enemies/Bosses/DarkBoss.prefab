@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2226451268544711207
 Transform:
   m_ObjectHideFlags: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 75
+  maxHP: 100
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: eaef77f5536011b4a85ef6c71d2563ef, type: 3}
   flashOnHit: {r: 0.4518123, g: 0.4085084, b: 0.5660378, a: 1}

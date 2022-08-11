@@ -19,7 +19,7 @@ public static class WeaponsConsts
     public const int ICE_TICK_DMG = 1;
 
     public const float SWOOSH_DARK_CD = 0.325f;
-    public const int SWOOSH_DARK_DMG = 3;
+    public const int SWOOSH_DARK_DMG = 2;
 
     public const float POISON_CD = 2.0f;
     public const int POISON_DMG = 2;
