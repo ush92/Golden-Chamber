@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 90
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: eaef77f5536011b4a85ef6c71d2563ef, type: 3}
   flashOnHit: {r: 0.4518123, g: 0.4085084, b: 0.5660378, a: 1}
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationArea: {fileID: 0}
+  bossHP: {fileID: 1958940745424945846}
   startDelay: 2
   animator: {fileID: 2226451268544711206}
   basePosition: {fileID: 0}
@@ -213,12 +214,16 @@ MonoBehaviour:
   - {fileID: 0}
   teleportRepeatingTime: 5
   teleportEffect: {fileID: 4639924823971810983, guid: 084415efa014fc340b482a9e34d5a6bf, type: 3}
+  shooting: {fileID: 2226451268544711201}
+  normalCastingCooldown: 5
+  enragedCastingCooldown: 2.5
   spiderSpawnPoint: {fileID: 0}
   spawnRepeatingTime: 3
+  enragedSpawnRepeatingTime: 1
   spidersList: []
   spider: {fileID: 916443491222288226, guid: a0b1d820bc89de0489d47d7770422029, type: 3}
   spidersNormalMoveSpeed: 3
-  spidersEnragedMoveSpeed: 20
+  spidersEnragedMoveSpeed: 19
   spidersCounterIndicators:
   - {fileID: 0}
   - {fileID: 0}
@@ -229,10 +234,9 @@ MonoBehaviour:
   portalsRemoveEffect: {fileID: 4639924823971810983, guid: 10ff22525d59b4e409ebde85da367d66, type: 3}
   enrageTimer: {fileID: 0}
   enrageTime: 300
-  spidersEnragedCount: 5
-  shooting: {fileID: 2226451268544711201}
-  enragedSpawnRepeatingTime: 1
-  enragedCastingCooldown: 2.5
+  spidersToEnrageCount: 6
+  player: {fileID: 0}
+  darkWeaponLoot: {fileID: -5394639879282674853, guid: 219d67679699cfe4490f63490a141f2e, type: 3}
 --- !u!1 &2226451268833473070
 GameObject:
   m_ObjectHideFlags: 0

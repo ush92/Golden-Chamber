@@ -724,6 +724,9 @@ public class PlayerController : MonoBehaviour
                 case Consts.ARCTIC_BREATHE_WEAPON_COLLECTABLE:
                     objectsAfterBoss.gameObject.transform.position = new Vector3(85.18f, 7.56f, 0f);
                     break;
+                case Consts.DARK_WEAPON_COLLECTABLE:
+                    objectsAfterBoss.gameObject.transform.position = new Vector3(13.135f, -9.606f, 0f);
+                    break;
                 default:
                     Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");
                     break;

@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements.Experimental;
 
 public class DarkBossBehaviour : MonoBehaviour
 {
     public BossActivation activationArea;
+    public EnemyHPController bossHP;
+
     public float startDelay;
     public Animator animator;
     public Transform basePosition;
@@ -14,8 +17,13 @@ public class DarkBossBehaviour : MonoBehaviour
     public float teleportRepeatingTime;
     public GameObject teleportEffect;
 
+    public EnemyBasicShoot shooting;
+    public float normalCastingCooldown;
+    public float enragedCastingCooldown;
+
     public Transform spiderSpawnPoint;
     public float spawnRepeatingTime;
+    public float enragedSpawnRepeatingTime;
     public List<EnemyPatrol> spidersList;
     public EnemyPatrol spider;
     public float spidersNormalMoveSpeed;
@@ -27,18 +35,26 @@ public class DarkBossBehaviour : MonoBehaviour
 
     public GameObject enrageTimer;
     public float enrageTime;
-    public int spidersEnragedCount;
+    public int spidersToEnrageCount;
     private bool isEnraged;
-    public EnemyBasicShoot shooting;
-    public float enragedSpawnRepeatingTime;
-    public float enragedCastingCooldown;
+
+
+    public PlayerController player;
+    public Collectable darkWeaponLoot;
 
     private void OnEnable()
     {
+        player.isBossEncounter = true;
+
+        transform.position = basePosition.transform.position;
         isUpper = true;
         isEnraged = false;
         enrageTimer.SetActive(true);
         spider.moveSpeed = spidersNormalMoveSpeed;
+        spidersList.RemoveAll(item => item == null);
+        animator.Play("idle", -1, 0f);
+
+        shooting.ChangeRepeatingTime(3.0f, normalCastingCooldown);
         InvokeRepeating("Teleport", startDelay, teleportRepeatingTime);
         InvokeRepeating("SpawnSpiders", startDelay, spawnRepeatingTime);
         Invoke("RemovePortals", enrageTime);
@@ -73,10 +89,35 @@ public class DarkBossBehaviour : MonoBehaviour
 
     void Update()
     {
-        if(spidersList.Count > spidersEnragedCount && !isEnraged)
+        if(spidersList.Count >= spidersToEnrageCount && !isEnraged)
         {
             isEnraged = true;
             Invoke("RemovePortals", 0);
+        }
+
+        if (!player.isBossEncounter || !player.isActive)
+        {
+            CancelInvoke();
+            shooting.CancelInvoke();
+
+            foreach (var spawnedSpider in spidersList)
+            {
+                if (spawnedSpider != null)
+                {
+                    Destroy(spawnedSpider.gameObject);
+                }
+            }
+
+            for (int i = 0; i < spidersCounterIndicators.Count; i++)
+            {
+                spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
+            }
+
+            isEnraged = false;
+            enrageTimer.SetActive(false);
+            portals.SetActive(true);
+            GetComponentInChildren<EnemyHPController>().ResetHP();
+            gameObject.SetActive(false);
         }
     }
 
@@ -128,6 +169,7 @@ public class DarkBossBehaviour : MonoBehaviour
         portals.SetActive(false);
 
         spider.moveSpeed = spidersEnragedMoveSpeed;
+        spider.GetComponent<Rigidbody2D>().mass = 0.001f;
         foreach(var spawnedSpider in spidersList)
         {
             spawnedSpider.moveSpeed = spidersEnragedMoveSpeed;
@@ -140,20 +182,27 @@ public class DarkBossBehaviour : MonoBehaviour
 
     private void OnDestroy()
     {
-        portals.SetActive(false);
-        enrageTimer.SetActive(false);
-
-        foreach (var spawnedSpider in spidersList)
+        if (bossHP.currentHP <= 0)
         {
-            if (spawnedSpider != null)
+            player.isBossEncounter = false;
+            Instantiate(darkWeaponLoot, transform.position, transform.rotation);
+
+            activationArea.gameObject.SetActive(false);
+            portals.SetActive(false);
+            enrageTimer.SetActive(false);
+
+            foreach (var spawnedSpider in spidersList)
             {
-                Destroy(spawnedSpider.gameObject);
+                if (spawnedSpider != null)
+                {
+                    Destroy(spawnedSpider.gameObject);
+                }
             }
-        }
-
-        for (int i = 0; i < spidersCounterIndicators.Count; i++)
-        {
-            spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
+            
+            for (int i = 0; i < spidersCounterIndicators.Count; i++)
+            {
+                spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
+            }
         }
     }
 }

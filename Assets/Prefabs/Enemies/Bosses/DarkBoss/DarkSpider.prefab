@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771041, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: moveSpeed
-      value: 2
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771041, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: changeSideOnDamagePlayer
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771053, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_Mass
-      value: 0.05
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771053, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: m_Constraints
@@ -201,9 +201,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019999996, y: -0.086007595}
+  m_Offset: {x: -0.019999996, y: -0.16}
   serializedVersion: 2
-  m_Radius: 0.16168833
+  m_Radius: 0.09794903
 --- !u!95 &916443491222288225
 Animator:
   serializedVersion: 3
