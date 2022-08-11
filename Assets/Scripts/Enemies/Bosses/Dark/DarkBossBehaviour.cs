@@ -32,7 +32,7 @@ public class DarkBossBehaviour : MonoBehaviour
     public float enragedSpawnRepeatingTime;
     public float enragedCastingCooldown;
 
-    void Start()
+    private void OnEnable()
     {
         isUpper = true;
         isEnraged = false;
@@ -40,11 +40,6 @@ public class DarkBossBehaviour : MonoBehaviour
         InvokeRepeating("Teleport", startDelay, teleportRepeatingTime);
         InvokeRepeating("SpawnSpiders", startDelay, spawnRepeatingTime);
         Invoke("RemovePortals", enrageTime);
-    }
-
-    private void OnEnable()
-    {
-        
     }
 
     private void FixedUpdate()

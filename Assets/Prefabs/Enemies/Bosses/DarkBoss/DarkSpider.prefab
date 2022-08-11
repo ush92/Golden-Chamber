@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771041, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: moveSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7745633648132771041, guid: 2d5a55122aae3fe4aa74fe269f7257ce, type: 3}
       propertyPath: changeSideOnDamagePlayer
@@ -237,4 +237,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drainLifeEffect: {fileID: 4639924823971810983, guid: f263de99db1d67c40adb2e1a3335808a, type: 3}
   enemyName: DarkBoss
-  drainAmount: 1
+  drainAmount: 5

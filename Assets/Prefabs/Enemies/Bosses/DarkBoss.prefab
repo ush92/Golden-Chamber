@@ -22,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2226451268544711207
 Transform:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ MonoBehaviour:
   spidersEnragedCount: 5
   shooting: {fileID: 2226451268544711201}
   enragedSpawnRepeatingTime: 1
-  enragedCastingCooldown: 1
+  enragedCastingCooldown: 2.5
 --- !u!1 &2226451268833473070
 GameObject:
   m_ObjectHideFlags: 0
