@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
     private bool isHp5ItemCollected = false;
     private bool isStoneWeaponCollected = false;
 
+    //debug
+    private float debug_velocity_y;
+    private int debug_fps;
+
     #endregion
 
     void Start()
@@ -127,6 +131,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        debug_velocity_y = playerRB.velocity.y;
+        debug_fps = (int)(1f / Time.unscaledDeltaTime);
+
         if (isActive)
         {
             CheckMoveSpeed();
@@ -166,6 +173,16 @@ public class PlayerController : MonoBehaviour
                 Respawn();
                 deathTimeCounter = deathTime;
             }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (isActive)
+        {
+            CheckMoveSpeed();
+            CheckGround();
+            MoveAndKnockback();
         }
     }
 
@@ -730,6 +747,11 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
+            if (playerRB.velocity.y > -0.00003f && playerRB.velocity.y < 0.00003) //fix velocity_Y
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, 0.0f);
+            }
+
             if (currentJumpHangTime > 0f && playerRB.velocity.y <= 0f)
             {
                 currentJumpHangTime = 0f;
