@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -60.597023
+      value: -42.89
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.y
@@ -231,6 +231,10 @@ PrefabInstance:
     - target: {fileID: 8119971176181138062, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Name
       value: PoisonBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138062, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Sprite
@@ -304,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 160
+  maxHP: 5
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 3c51f50e7e623a747ad3f5bdbc0e30fe, type: 3}
   flashOnHit: {r: 0.3339619, g: 0.4627451, b: 0.33333334, a: 1}
@@ -326,7 +330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa78f4bd38aedf2449f71bba6f9f9024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  activationArea: {fileID: 0}
+  animator: {fileID: 256575193}
+  basePosition: {fileID: 0}
+  bossHP: {fileID: 2546288638593312245}
   player: {fileID: 0}
   toxinDebuf: {fileID: 5246617499982757026, guid: 410135dd1ec37de41806a8327f6207ca, type: 3}
-  animator: {fileID: 256575193}
+  toxinClouds: []
   debuffParticles: {fileID: 4639924823971810983, guid: 7257eafc9501f654ca8cfa0f541be6b5, type: 3}
+  biteAnimationCooldown: 0.75
+  poisonWeaponLoot: {fileID: 3336579506069796050, guid: 9e126506905e73649ba7a015a011e62f, type: 3}

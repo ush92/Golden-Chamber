@@ -38,7 +38,6 @@ public class DarkBossBehaviour : MonoBehaviour
     public int spidersToEnrageCount;
     private bool isEnraged;
 
-
     public PlayerController player;
     public Collectable darkWeaponLoot;
 

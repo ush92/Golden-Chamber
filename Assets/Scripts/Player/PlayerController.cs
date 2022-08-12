@@ -727,6 +727,9 @@ public class PlayerController : MonoBehaviour
                 case Consts.DARK_WEAPON_COLLECTABLE:
                     objectsAfterBoss.gameObject.transform.position = new Vector3(13.135f, -9.606f, 0f);
                     break;
+                case Consts.POISON_WEAPON_COLLECTABLE:
+                    objectsAfterBoss.gameObject.transform.position = new Vector3(-17.498f, 2.623f, 0f);
+                    break;
                 default:
                     Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");
                     break;
