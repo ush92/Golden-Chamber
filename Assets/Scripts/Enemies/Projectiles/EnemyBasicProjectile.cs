@@ -21,7 +21,7 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     private bool isDestroyed = false;
 
-    void Start()
+    void Awake()
     {
         player = FindObjectOfType<PlayerController>();
 

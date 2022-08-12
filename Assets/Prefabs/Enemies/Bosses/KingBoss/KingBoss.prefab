@@ -198,5 +198,14 @@ MonoBehaviour:
   basePosition: {fileID: 0}
   bossHP: {fileID: 3785597383732825427}
   player: {fileID: 0}
-  polarityDebuf: {fileID: 4972525490490255785, guid: 054d7cc09d9b6ef488f2f669f3c967ef, type: 3}
+  polarityDebuf: {fileID: 5887522138598247137, guid: 054d7cc09d9b6ef488f2f669f3c967ef, type: 3}
   debuffParticles: {fileID: 4639924823971810983, guid: d55d17999cf5c92488d5f22032b3a046, type: 3}
+  firstPolarityTime: 5
+  polarityRepeatingTime: 10
+  evilClone: {fileID: 4374328035780749427, guid: 7712f9e1c77a0554a9b7351770fdd2ab, type: 3}
+  evilClonesList: []
+  leftSpawnPoint: {fileID: 0}
+  rightSpawnPoint: {fileID: 0}
+  spawnEffect: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
+  firstSpawnTime: 5
+  spawnRepeatingTime: 10

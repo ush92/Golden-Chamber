@@ -6,14 +6,15 @@ public class EnemyBasicShoot : MonoBehaviour
     public Transform attackPoint;
     public float firstShootTime;
     public float repeatingTime;
-
+    public float minDistanceFromPlayer = 2.0f;
     public bool onlyIfFacedToPlayer = false;
     public PlayerController player;
 
     public Animator animator;
 
-    private void Start()
+    private void Awake()
     {
+        player = FindObjectOfType<PlayerController>();
         InvokeRepeating("Shoot", firstShootTime, repeatingTime);
     }
 
@@ -30,23 +31,28 @@ public class EnemyBasicShoot : MonoBehaviour
     }
 
     private void Shoot()
-    {
-        if(animator != null)
+    {     
+        if(onlyIfFacedToPlayer) //+/- 2.0f to block shooting if player is too close
         {
-            animator.SetTrigger("Shoot");
-        }
-        
-        if(onlyIfFacedToPlayer)
-        {
-            if (transform.position.x > player.transform.position.x && !GetComponent<EnemyPatrol>().moveRight ||
-                transform.position.x < player.transform.position.x && GetComponent<EnemyPatrol>().moveRight)
+            if (transform.position.x - minDistanceFromPlayer > player.transform.position.x && !GetComponent<EnemyPatrol>().moveRight ||
+                transform.position.x + minDistanceFromPlayer < player.transform.position.x && GetComponent<EnemyPatrol>().moveRight)
             {
                 Instantiate(projectile, attackPoint.position, attackPoint.rotation);
+
+                if (animator != null)
+                {
+                    animator.SetTrigger("Shoot");
+                }
             }
         }
         else
         {
             Instantiate(projectile, attackPoint.position, attackPoint.rotation);
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Shoot");
+            }
         }     
     }
 }

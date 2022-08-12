@@ -233,5 +233,7 @@ MonoBehaviour:
   attackPoint: {fileID: 278251149}
   firstShootTime: 3
   repeatingTime: 2
+  minDistanceFromPlayer: 2
   onlyIfFacedToPlayer: 1
   player: {fileID: 0}
+  animator: {fileID: 0}

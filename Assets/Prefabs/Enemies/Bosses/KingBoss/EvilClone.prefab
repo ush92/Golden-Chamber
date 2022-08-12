@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784280361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.64, y: 0, z: 0}
+  m_LocalPosition: {x: -0.98, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4374328035780749438}
@@ -39,7 +39,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: maxHP
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: flashOnHit.b
@@ -61,29 +61,37 @@ PrefabInstance:
       propertyPath: enemyDeathEffect
       value: 
       objectReference: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
+    - target: {fileID: 8119971175144599565, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.594
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971175144599565, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.62
+      objectReference: {fileID: 0}
     - target: {fileID: 8119971175887249117, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8119971175887249118, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.561
+      value: -0.696
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.x
-      value: 0.243927
+      value: 0.63894653
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.y
-      value: 0.90614176
+      value: 0.976367
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Offset.x
-      value: -0.029205322
+      value: -0.02482605
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Offset.y
-      value: -0.15024924
+      value: -0.11513662
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138053, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: moveSpeed
@@ -95,11 +103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.472229
+      value: 129.19289
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.250532
+      value: 9.360782
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.z
@@ -212,7 +220,8 @@ MonoBehaviour:
   projectile: {fileID: 4673505487394746715, guid: d43fc12612db0904d8db57eee943bc42, type: 3}
   attackPoint: {fileID: 1784280362}
   firstShootTime: 3
-  repeatingTime: 1
+  repeatingTime: 2
+  minDistanceFromPlayer: 2
   onlyIfFacedToPlayer: 1
   player: {fileID: 0}
   animator: {fileID: 561304814}
