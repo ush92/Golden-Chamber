@@ -3,13 +3,13 @@ using UnityEngine;
 public class ToxinDebuff : MonoBehaviour
 {
     private GameObject player;
-    private GameObject boss;
+    public PoisonBehaviour boss;
     public GameObject toxinCloud;
 
     void Start()
     {
         player = GameObject.Find("Player");
-        boss = GameObject.Find("PoisonBoss");
+        boss = FindObjectOfType<PoisonBehaviour>();
         Invoke("Explode", 5);
     }
 
@@ -19,6 +19,7 @@ public class ToxinDebuff : MonoBehaviour
         {
             GameObject toxin = Instantiate(toxinCloud);
             toxin.transform.position = new Vector3(player.transform.position.x, boss.transform.position.y - 0.6f, player.transform.position.z);
+            boss.toxinClouds.Add(toxin);
             Destroy(gameObject);
         }
     }
