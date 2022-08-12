@@ -80,6 +80,10 @@ PrefabInstance:
       value: 0.8773585
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+      propertyPath: hitFlashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: enemyDeathEffect
       value: 
       objectReference: {fileID: 4639924823971810983, guid: 4acf0166c6e19c94cab015235e9bb70b, type: 3}

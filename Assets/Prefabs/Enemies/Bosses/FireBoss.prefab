@@ -157,9 +157,12 @@ MonoBehaviour:
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 2455eca9b357c9b44ae7c219d3e83904, type: 3}
   flashOnHit: {r: 0.9056604, g: 0.3972944, b: 0.4159501, a: 1}
-  hitFlashTime: 0.125
+  hitFlashTime: 0.2
   hpBar: {fileID: 2537440439650393679}
   hpBarFlashTime: 1
+  damagePopup: {fileID: 0}
+  damagePopupTime: 0
+  damagePopupCounter: 0
 --- !u!70 &5289073154371223528
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -236,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 1
+  isKnockingBack: 1
 --- !u!114 &8531801580751497039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +259,6 @@ MonoBehaviour:
   whatIsWall:
     serializedVersion: 2
     m_Bits: 256
-  moveRight: 0
   animator: {fileID: 5289073154371223533}
   moveSpeed: 5
   acceleration: 4

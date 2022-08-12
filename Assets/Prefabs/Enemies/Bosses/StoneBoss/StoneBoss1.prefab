@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 1
+  isKnockingBack: 1
 --- !u!114 &5860679135789896876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,9 +145,12 @@ MonoBehaviour:
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 94b3cf0969a82ac488a1a1ae28aaee77, type: 3}
   flashOnHit: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
-  hitFlashTime: 0.125
+  hitFlashTime: 0.2
   hpBar: {fileID: 4252818888136419082}
   hpBarFlashTime: 1
+  damagePopup: {fileID: 0}
+  damagePopupTime: 0
+  damagePopupCounter: 0
 --- !u!50 &2017278902
 Rigidbody2D:
   serializedVersion: 4
