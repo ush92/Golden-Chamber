@@ -292,25 +292,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &256575201
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6269331876624957713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740a651ce10f6684380b2e73272587c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 6150132688218617588, guid: d7438d33cc2981f4bb4280fd961c89c5, type: 3}
-  attackPoint: {fileID: 500230502}
-  firstShootTime: 0
-  repeatingTime: 3
-  onlyIfFacedToPlayer: 1
-  player: {fileID: 0}
-  animator: {fileID: 256575193}
 --- !u!114 &2546288638593312245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 50
+  maxHP: 165
   currentHP: 0
   enemyDeathEffect: {fileID: 4639924823971810983, guid: 3c51f50e7e623a747ad3f5bdbc0e30fe, type: 3}
   flashOnHit: {r: 0.3339619, g: 0.4627451, b: 0.33333334, a: 1}
@@ -347,3 +328,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   toxinDebuf: {fileID: 5246617499982757026, guid: 410135dd1ec37de41806a8327f6207ca, type: 3}
+  animator: {fileID: 256575193}
+  debuffParticles: {fileID: 4639924823971810983, guid: 7257eafc9501f654ca8cfa0f541be6b5, type: 3}
