@@ -104,7 +104,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +116,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -128,7 +128,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -140,7 +140,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -154,9 +154,9 @@ TextureImporter:
       name: Player_King BAD_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 8
         y: 32
-        width: 15
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Player_King BAD_1
       rect:
         serializedVersion: 2
-        x: 41
-        y: 32
-        width: 16
-        height: 21
+        x: 39
+        y: 33
+        width: 17
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,8 +196,8 @@ TextureImporter:
       name: Player_King BAD_2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 33
+        x: 72
+        y: 32
         width: 15
         height: 22
       alignment: 0
@@ -217,8 +217,8 @@ TextureImporter:
       name: Player_King BAD_3
       rect:
         serializedVersion: 2
-        x: 105
-        y: 32
+        x: 104
+        y: 33
         width: 15
         height: 22
       alignment: 0
@@ -238,10 +238,10 @@ TextureImporter:
       name: Player_King BAD_4
       rect:
         serializedVersion: 2
-        x: 136
-        y: 33
-        width: 17
-        height: 22
+        x: 135
+        y: 32
+        width: 16
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,7 +261,7 @@ TextureImporter:
         serializedVersion: 2
         x: 168
         y: 32
-        width: 16
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -281,8 +281,8 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 1
-        width: 16
+        y: 0
+        width: 15
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -301,8 +301,8 @@ TextureImporter:
       name: Player_King BAD_7
       rect:
         serializedVersion: 2
-        x: 41
-        y: 1
+        x: 40
+        y: 0
         width: 15
         height: 22
       alignment: 0
@@ -322,7 +322,7 @@ TextureImporter:
       name: Player_King BAD_8
       rect:
         serializedVersion: 2
-        x: 73
+        x: 72
         y: 0
         width: 15
         height: 22
@@ -343,7 +343,7 @@ TextureImporter:
       name: Player_King BAD_9
       rect:
         serializedVersion: 2
-        x: 105
+        x: 104
         y: 0
         width: 15
         height: 22
@@ -364,8 +364,8 @@ TextureImporter:
       name: Player_King BAD_10
       rect:
         serializedVersion: 2
-        x: 137
-        y: 0
+        x: 136
+        y: 1
         width: 15
         height: 22
       alignment: 0
@@ -385,9 +385,9 @@ TextureImporter:
       name: Player_King BAD_11
       rect:
         serializedVersion: 2
-        x: 169
-        y: 0
-        width: 15
+        x: 168
+        y: 1
+        width: 16
         height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
