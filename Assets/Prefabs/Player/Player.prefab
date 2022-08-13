@@ -1651,7 +1651,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 55.520813, y: 189.33795}
+  m_AnchoredPosition: {x: 55.520752, y: 189.33795}
   m_SizeDelta: {x: 111.0416, y: 309.3288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &500935651
@@ -7832,6 +7832,7 @@ MonoBehaviour:
   fireSparkProjectile: {fileID: 7969986277567877523, guid: 59f7b16d142ba4049b077af4c459be00, type: 3}
   arcticBreathe: {fileID: 588159793799586860}
   poisonProjectile: {fileID: 997565681, guid: 4b14b227d0c79204096be4b64d399145, type: 3}
+  goldenAxeProjectile: {fileID: 8250257165265156371, guid: 82d1f818206a093479388ad995bccd97, type: 3}
   deathTime: 3
   playerdeathEffect: {fileID: 4639924823971810983, guid: 482e91b53489d8e44870a657c4a24969, type: 3}
   triggerObject: 
@@ -8052,6 +8053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be753a4aeaad5674e88790a0126abd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentItem: 0
   items: 
   ItemIcons:
   - {fileID: 21300000, guid: c23281edc1a52494e8d903bf131b586b, type: 3}
@@ -8061,7 +8063,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a342a83c8f305e645b45c594a9e45c2e, type: 3}
   - {fileID: 21300000, guid: 2f5ed6c8bf86f1f4ba1614f4d667fbfe, type: 3}
   currentItemIcon: {fileID: 2460840762037168887}
-  currentItem: 0
+  darkBladeIcon: {fileID: 21300000, guid: d15095ecf66d5ff42afabba6bf296035, type: 3}
+  goldenAxeIcon: {fileID: 21300000, guid: 60203773532fb3b40b9c97833cc82534, type: 3}
 --- !u!1 &4912927044335522436
 GameObject:
   m_ObjectHideFlags: 0

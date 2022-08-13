@@ -32,6 +32,9 @@ public class KingBossBehaviour : MonoBehaviour
     public GameObject teleportEffect;
     private bool isUpper;
 
+    public GameObject goldenAxeWeaponLoot;
+    public GameObject epicTreasureLoot;
+
     private void OnEnable()
     {
         player.isBossEncounter = true;
@@ -150,8 +153,10 @@ public class KingBossBehaviour : MonoBehaviour
         if (bossHP.currentHP <= 0)
         {
             player.isBossEncounter = false;
-           // Instantiate(poisonWeaponLoot, transform.position, transform.rotation);
-
+            
+            Instantiate(goldenAxeWeaponLoot, new Vector2(transform.position.x + 1f, transform.position.y), transform.rotation);
+            Instantiate(epicTreasureLoot, new Vector2(transform.position.x - 1f, transform.position.y), transform.rotation);
+            
             activationArea.gameObject.SetActive(false);
 
             if (currentDebuff)

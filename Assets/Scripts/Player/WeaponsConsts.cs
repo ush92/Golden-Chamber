@@ -13,7 +13,7 @@ public static class WeaponsConsts
 
     public const float FIRE_CD = 0.95f;
     public const int FIRE_DMG = 2;
-    public const float FIRE_LIFETIME = 3.0f;
+    public const float FIRE_LIFETIME = 3.5f;
 
     public const float ICE_CD = 0.33f;
     public const int ICE_TICK_DMG = 1;
@@ -25,4 +25,8 @@ public static class WeaponsConsts
     public const int POISON_DMG = 2;
     public const float POISON_TRIGGERED_LIFETIME = 0.5f; //4 ticks
     public const float POISON_LIFETIME = 2.5f;
+
+    public const float GOLDEN_AXE_CD = 0.45f;
+    public const int GOLDEN_AXE_DMG = 2;
+    public const float GOLDEN_AXE_LIFETIME = 2f;
 }

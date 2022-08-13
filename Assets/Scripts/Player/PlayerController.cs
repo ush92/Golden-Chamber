@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     public PlayerProjectile fireSparkProjectile;
     public GameObject arcticBreathe;
     public PlayerProjectile poisonProjectile;
+    public PlayerProjectile goldenAxeProjectile;
 
     public float deathTime = 3f;
     private float deathTimeCounter;
@@ -90,6 +91,9 @@ public class PlayerController : MonoBehaviour
     //2_3
     private bool isHp5ItemCollected = false;
     private bool isStoneWeaponCollected = false;
+    //5_1
+    private bool isGoldenAxeCollected = false;
+    private bool isEpicTreasureCollected = false;
 
     //debug
     private float debug_velocity_y;
@@ -391,9 +395,18 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case (int)EquipmentManager.Items.Axe:
-                playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
-                Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.AXE_DMG, WeaponsConsts.AXE_LIFETIME);
-                attackCounter = WeaponsConsts.AXE_CD;
+                if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL5_1)] == false)
+                {
+                    playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                    Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.AXE_DMG, WeaponsConsts.AXE_LIFETIME);
+                    attackCounter = WeaponsConsts.AXE_CD;
+                }
+                else
+                {
+                    playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
+                    Instantiate(goldenAxeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.GOLDEN_AXE_DMG, WeaponsConsts.GOLDEN_AXE_LIFETIME);
+                    attackCounter = WeaponsConsts.GOLDEN_AXE_CD;
+                }
                 break;
             case (int)EquipmentManager.Items.Stone:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
@@ -730,6 +743,12 @@ public class PlayerController : MonoBehaviour
                 case Consts.POISON_WEAPON_COLLECTABLE:
                     objectsAfterBoss.gameObject.transform.position = new Vector3(-17.498f, 2.623f, 0f);
                     break;
+                case Consts.GOLDEN_AXE_WEAPON_COLLECTABLE:
+                    isGoldenAxeCollected = true;
+                    break;
+                case Consts.EPIC_TREASURE_COLLECTABLE:
+                    isEpicTreasureCollected = true;
+                    break;
                 default:
                     Debug.Log($"nieznana nazwa przedmiotu z bossa: {weapon}");
                     break;
@@ -739,6 +758,11 @@ public class PlayerController : MonoBehaviour
         if(isHp5ItemCollected && isStoneWeaponCollected)
         {
             objectsAfterBoss.gameObject.transform.position = new Vector3(-27.53f, 3.65f, 0f);
+        }
+
+        if (isGoldenAxeCollected && isEpicTreasureCollected)
+        {
+            objectsAfterBoss.gameObject.transform.position = new Vector3(126.06f, 5.84f, 0f);
         }
 
         GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;

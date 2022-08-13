@@ -53,6 +53,14 @@ public class Collectable : MonoBehaviour
             {
                 playerController.CollectBossItem(Consts.POISON_WEAPON_COLLECTABLE);
             }
+            else if (gameObject.name.Contains(Consts.GOLDEN_AXE_WEAPON_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.GOLDEN_AXE_WEAPON_COLLECTABLE);
+            }
+            else if (gameObject.name.Contains(Consts.EPIC_TREASURE_COLLECTABLE))
+            {
+                playerController.CollectBossItem(Consts.EPIC_TREASURE_COLLECTABLE);
+            }
             else
             {
                 FindObjectOfType<CollectablesController>().Collect(gameObject.name);

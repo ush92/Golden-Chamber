@@ -5,17 +5,19 @@ using UnityEngine.UI;
 
 public class EquipmentManager : MonoBehaviour
 {
+    public int currentItem;
     public List<Items> items;
-
     public List<Sprite> ItemIcons;
     public Image currentItemIcon;
 
-    public int currentItem;
+    public Sprite darkBladeIcon;
+    public Sprite goldenAxeIcon;
 
     void Start()
     {
         currentItem = 0;
         items = new List<Items>();
+        UpdateEquipment();
     }
 
     public void UpdateEquipment()
@@ -59,12 +61,22 @@ public class EquipmentManager : MonoBehaviour
             }
         }
 
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == true)
+        {
+            ItemIcons[0] = darkBladeIcon;          
+        }
+
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_4)] == true)
         {
             if (!items.Contains(Items.Poison))
             {
                 items.Add(Items.Poison);
             }
+        }
+
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL5_1)] == true)
+        {
+            ItemIcons[1] = goldenAxeIcon;
         }
     }
 
