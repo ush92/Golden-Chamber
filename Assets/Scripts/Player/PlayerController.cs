@@ -702,6 +702,7 @@ public class PlayerController : MonoBehaviour
             hpController.currentHP = hpController.maxHP;
 
             GameManager.instance.PlayerRespawnEffect();
+            SoundEffect("Respawn");
 
             frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
         }
@@ -769,6 +770,14 @@ public class PlayerController : MonoBehaviour
         GameManager.SaveJsonData(GameManager.instance);
 
         equipmentManager.UpdateEquipment();
+    }
+
+    void SoundEffect(string name)
+    {
+        if (GameManager.isSoundsOn)
+        {
+            //
+        }
     }
 
     #region Touch control
