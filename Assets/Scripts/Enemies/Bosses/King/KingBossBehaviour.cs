@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class KingBossBehaviour : MonoBehaviour
 {
@@ -11,11 +9,15 @@ public class KingBossBehaviour : MonoBehaviour
     public EnemyHPController bossHP;
     public PlayerController player;
 
-    public PolarityDebuf polarityDebuf;
-    private PolarityDebuf currentDebuf;
+    public PolarityDebuff polarityDebuf;
+    private PolarityDebuff currentDebuf;
     public GameObject debuffParticles;
     public float firstPolarityTime;
     public float polarityRepeatingTime;
+    public float polarityDamageDelay;
+
+    public ElectricShock plusElectrode;
+    public ElectricShock minusElectrode;
 
     public EnemyPatrol evilClone;
     public List<EnemyPatrol> evilClonesList;
@@ -44,6 +46,9 @@ public class KingBossBehaviour : MonoBehaviour
         {
             animator.SetTrigger("Shoot");
             Instantiate(debuffParticles, transform.position, transform.rotation);
+
+            plusElectrode.Activate(polarityDamageDelay);
+            minusElectrode.Activate(polarityDamageDelay);
 
             if (currentDebuf == null)
             {
