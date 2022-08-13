@@ -28,7 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4374328035780749438}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5484068159735360246
 PrefabInstance:
@@ -75,7 +75,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8119971175887249118, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.696
+      value: -0.909
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.x
@@ -97,17 +97,21 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138053, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: changeSideOnDamagePlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 129.19289
+      value: 142.34554
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.360782
+      value: 13.059208
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalPosition.z
@@ -140,6 +144,10 @@ PrefabInstance:
     - target: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138057, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Mass
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.x
@@ -175,6 +183,7 @@ PrefabInstance:
       objectReference: {fileID: -7545367738548550912, guid: b9edf9692648a624ab3dd3dcbdfc425e, type: 3}
     m_RemovedComponents:
     - {fileID: 8119971176181138054, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+    - {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
 --- !u!1 &4374328035780749432 stripped
 GameObject:
@@ -186,6 +195,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8119971176181138056, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
   m_PrefabInstance: {fileID: 5484068159735360246}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &7207828752630941935
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4374328035780749432}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.027168274, y: -0.12410259}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.25}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.40275574, y: 1.0328197}
+  m_EdgeRadius: 0
 --- !u!95 &561304814
 Animator:
   serializedVersion: 3
@@ -205,23 +240,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &561304822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4374328035780749432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740a651ce10f6684380b2e73272587c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 4673505487394746715, guid: d43fc12612db0904d8db57eee943bc42, type: 3}
-  attackPoint: {fileID: 1784280362}
-  firstShootTime: 3
-  repeatingTime: 2
-  minDistanceFromPlayer: 2
-  onlyIfFacedToPlayer: 1
-  player: {fileID: 0}
-  animator: {fileID: 561304814}

@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.8031522, b: 0, a: 1}
-      maxColor: {r: 0.764151, g: 0.17661981, b: 0.17661981, a: 1}
+      minColor: {r: 1, g: 0.96577877, b: 0.8254717, a: 1}
+      maxColor: {r: 0.7028302, g: 0.9382354, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.8113208, g: 0, b: 0.2068072, a: 1}
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.075
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1353,7 +1353,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 3
@@ -1361,7 +1361,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.7169812, g: 0.07778571, b: 0.07778571, a: 1}
+        key0: {r: 1, g: 0.9808885, b: 0.9009434, a: 1}
         key1: {r: 1, g: 0.8535939, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}

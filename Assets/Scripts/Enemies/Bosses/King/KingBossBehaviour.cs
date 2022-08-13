@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static IceBossBehaviour;
-using UnityEngine.UIElements.Experimental;
 
 public class KingBossBehaviour : MonoBehaviour
 {
@@ -12,7 +10,7 @@ public class KingBossBehaviour : MonoBehaviour
     public PlayerController player;
 
     public PolarityDebuff polarityDebuf;
-    private PolarityDebuff currentDebuf;
+    private PolarityDebuff currentDebuff;
     public GameObject debuffParticles;
     public float firstPolarityTime;
     public float polarityRepeatingTime;
@@ -37,15 +35,44 @@ public class KingBossBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
+
         isUpper = true;
+        transform.position = basePosition.transform.position;
+        GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
+        animator.Play("walk", -1, 0f);
+
         InvokeRepeating("PolarityShift", firstPolarityTime, polarityRepeatingTime);
         InvokeRepeating("SpawnEvilClones", firstSpawnTime, spawnRepeatingTime);
         InvokeRepeating("Teleport", firstTeleportTime, teleportRepeatingTime);
     }
 
-    void Update()
+    private void Update()
     {
-        
+        if (!player.isBossEncounter || !player.isActive)
+        {
+            CancelInvoke();
+
+            if(currentDebuff)
+            {
+                Destroy(currentDebuff.gameObject);
+            }
+
+            foreach (var evilClone in evilClonesList)
+            {
+                if (evilClone != null)
+                {
+                    Destroy(evilClone.gameObject);
+                }
+            }
+
+            GetComponentInChildren<EnemyHPController>().ResetHP();
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        evilClonesList.RemoveAll(item => item == null);
     }
 
     void PolarityShift()
@@ -58,20 +85,20 @@ public class KingBossBehaviour : MonoBehaviour
             plusElectrode.Activate(polarityDamageDelay);
             minusElectrode.Activate(polarityDamageDelay);
 
-            if (currentDebuf == null)
+            if (currentDebuff == null)
             {
                 Instantiate(debuffParticles, player.transform.position, player.transform.rotation);
-                currentDebuf = Instantiate(polarityDebuf);
-                currentDebuf.isPlus = Random.Range(0, 2) == 0;
-                currentDebuf.transform.parent = player.transform;
-                currentDebuf.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.5f, player.transform.position.z);
+                currentDebuff = Instantiate(polarityDebuf);
+                currentDebuff.isPlus = Random.Range(0, 2) == 0;
+                currentDebuff.transform.parent = player.transform;
+                currentDebuff.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.5f, player.transform.position.z);
             }
             else
             {
-                var tmp = currentDebuf.isPlus;
-                currentDebuf.isPlus = Random.Range(0, 2) == 0;
-                
-                if(tmp != currentDebuf.isPlus)
+                var tmp = currentDebuff.isPlus;
+                currentDebuff.isPlus = Random.Range(0, 2) == 0;
+
+                if (tmp != currentDebuff.isPlus)
                 {
                     Instantiate(debuffParticles, player.transform.position, player.transform.rotation);
                 }
@@ -93,26 +120,52 @@ public class KingBossBehaviour : MonoBehaviour
         Instantiate(teleportEffect, transform.position, transform.rotation);
         animator.SetTrigger("teleport");
 
-        if(isUpper)
+        if (isUpper)
         {
             isUpper = false;
-            if (currentDebuf.isPlus)
+
+            if (currentDebuff.isPlus)
             {
-                transform.position = plusElectrode.transform.position;           
+                transform.position = plusElectrode.transform.position;
             }
             else
             {
                 transform.position = minusElectrode.transform.position;
             }
 
-            GetComponent<EnemyPatrol>().moveRight = !currentDebuf.isPlus;
+            GetComponent<EnemyPatrol>().moveRight = !currentDebuff.isPlus;
         }
         else
         {
             isUpper = true;
+
             transform.position = basePosition.transform.position;
         }
 
         Instantiate(teleportEffect, transform.position, transform.rotation);
+    }
+
+    private void OnDestroy()
+    {
+        if (bossHP.currentHP <= 0)
+        {
+            player.isBossEncounter = false;
+           // Instantiate(poisonWeaponLoot, transform.position, transform.rotation);
+
+            activationArea.gameObject.SetActive(false);
+
+            if (currentDebuff)
+            {
+                Destroy(currentDebuff.gameObject);
+            }
+
+            foreach (var evilClone in evilClonesList)
+            {
+                if (evilClone != null)
+                {
+                    Destroy(evilClone.gameObject);
+                }
+            }
+        }
     }
 }

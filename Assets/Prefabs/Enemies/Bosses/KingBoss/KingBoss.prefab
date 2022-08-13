@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: maxHP
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: flashOnHit.b
@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138057, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138059, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Size.x
       value: 0.90169907
@@ -143,12 +147,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: KingBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 8119971176181138062, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -111482460367439567, guid: 2139fd76163e5614a80c038f2ee494b8, type: 3}
     m_RemovedComponents:
     - {fileID: 8119971176181138054, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+    - {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
 --- !u!1 &4674240420786416055 stripped
 GameObject:
@@ -166,6 +175,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &6571650383959362801
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674240420786416055}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.016441345, y: -0.13571835}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.45973206, y: 1.1014671}
+  m_EdgeRadius: 0
 --- !u!95 &1245580729
 Animator:
   serializedVersion: 3
@@ -177,7 +212,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 182cad28e924b3449928eeeec74d7968, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -205,7 +240,7 @@ MonoBehaviour:
   polarityDebuf: {fileID: 5887522138598247137, guid: 054d7cc09d9b6ef488f2f669f3c967ef, type: 3}
   debuffParticles: {fileID: 4639924823971810983, guid: d55d17999cf5c92488d5f22032b3a046, type: 3}
   firstPolarityTime: 5
-  polarityRepeatingTime: 10
+  polarityRepeatingTime: 5
   polarityDamageDelay: 2
   plusElectrode: {fileID: 0}
   minusElectrode: {fileID: 0}
@@ -215,7 +250,7 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 0}
   spawnEffect: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
   firstSpawnTime: 3
-  spawnRepeatingTime: 10
-  firstTeleportTime: 17
-  teleportRepeatingTime: 10
+  spawnRepeatingTime: 8
+  firstTeleportTime: 12
+  teleportRepeatingTime: 5
   teleportEffect: {fileID: 4639924823971810983, guid: eb20f24721529f641b2d2cd0fd1bb21d, type: 3}
