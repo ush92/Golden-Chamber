@@ -757,12 +757,12 @@ public class PlayerController : MonoBehaviour
 
         if(isHp5ItemCollected && isStoneWeaponCollected)
         {
-            objectsAfterBoss.gameObject.transform.position = new Vector3(-27.53f, 3.65f, 0f);
+            objectsAfterBoss.transform.position = new Vector3(-27.53f, 3.65f, 0f);
         }
 
         if (isGoldenAxeCollected && isEpicTreasureCollected)
         {
-            objectsAfterBoss.gameObject.transform.position = new Vector3(126.06f, 5.84f, 0f);
+            objectsAfterBoss.transform.position = new Vector3(126.06f, 5.6f, -256.17f);
         }
 
         GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;

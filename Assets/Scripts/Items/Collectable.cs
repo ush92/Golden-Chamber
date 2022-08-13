@@ -77,7 +77,7 @@ public class Collectable : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<Collider2D>().enabled = false;
 
-            Destroy(gameObject, 2.0f);
+            Destroy(gameObject, 5.0f);
         }
     }
 }

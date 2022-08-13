@@ -46,7 +46,7 @@ public static class Consts
     public const string ARCTIC_BREATHE_WEAPON_COLLECTABLE = "ArcticBreatheWeaponCollectable";
     public const string DARK_WEAPON_COLLECTABLE = "DarkWeaponCollectable";
     public const string POISON_WEAPON_COLLECTABLE = "PoisonWeaponCollectable";
-    public const string GOLDEN_AXE_WEAPON_COLLECTABLE = "GoldenAxeWeaponCollectable";
+    public const string GOLDEN_AXE_WEAPON_COLLECTABLE = "AxeGoldenWeaponCollectable";
     public const string EPIC_TREASURE_COLLECTABLE = "EpicTreasure";
 
     public const string CHERRY = "Cherry";
