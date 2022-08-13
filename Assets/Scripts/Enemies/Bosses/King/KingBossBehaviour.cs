@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static IceBossBehaviour;
+using UnityEngine.UIElements.Experimental;
 
 public class KingBossBehaviour : MonoBehaviour
 {
@@ -27,12 +29,18 @@ public class KingBossBehaviour : MonoBehaviour
     public float firstSpawnTime;
     public float spawnRepeatingTime;
 
+    public float firstTeleportTime;
+    public float teleportRepeatingTime;
+    public GameObject teleportEffect;
+    private bool isUpper;
+
     private void OnEnable()
     {
         player.isBossEncounter = true;
-
+        isUpper = true;
         InvokeRepeating("PolarityShift", firstPolarityTime, polarityRepeatingTime);
         InvokeRepeating("SpawnEvilClones", firstSpawnTime, spawnRepeatingTime);
+        InvokeRepeating("Teleport", firstTeleportTime, teleportRepeatingTime);
     }
 
     void Update()
@@ -78,5 +86,33 @@ public class KingBossBehaviour : MonoBehaviour
 
         evilClonesList.Add(Instantiate(evilClone, new Vector3(rightSpawnPoint.transform.position.x, rightSpawnPoint.transform.position.y), rightSpawnPoint.transform.rotation));
         Instantiate(spawnEffect, new Vector3(rightSpawnPoint.transform.position.x, rightSpawnPoint.transform.position.y), rightSpawnPoint.transform.rotation);
+    }
+
+    void Teleport()
+    {
+        Instantiate(teleportEffect, transform.position, transform.rotation);
+        animator.SetTrigger("teleport");
+
+        if(isUpper)
+        {
+            isUpper = false;
+            if (currentDebuf.isPlus)
+            {
+                transform.position = plusElectrode.transform.position;           
+            }
+            else
+            {
+                transform.position = minusElectrode.transform.position;
+            }
+
+            GetComponent<EnemyPatrol>().moveRight = !currentDebuf.isPlus;
+        }
+        else
+        {
+            isUpper = true;
+            transform.position = basePosition.transform.position;
+        }
+
+        Instantiate(teleportEffect, transform.position, transform.rotation);
     }
 }

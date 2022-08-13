@@ -10,7 +10,7 @@ public class PoisonBehaviour : MonoBehaviour
     public PlayerController player;
 
     public GameObject toxinDebuf;
-    private GameObject currentDebuf;
+    private GameObject currentDebuff;
     public List<GameObject> toxinClouds;
     public GameObject debuffParticles;
 
@@ -44,7 +44,7 @@ public class PoisonBehaviour : MonoBehaviour
         {
             CancelInvoke();
 
-            Destroy(currentDebuf);
+            Destroy(currentDebuff);
             foreach (var cloud in toxinClouds)
             {
                 Destroy(cloud);
@@ -61,9 +61,9 @@ public class PoisonBehaviour : MonoBehaviour
         {
             animator.SetTrigger("Shoot");
             Instantiate(debuffParticles, transform.position, transform.rotation);
-            currentDebuf = Instantiate(toxinDebuf);
-            currentDebuf.transform.parent = player.transform;
-            currentDebuf.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z);
+            currentDebuff = Instantiate(toxinDebuf);
+            currentDebuff.transform.parent = player.transform;
+            currentDebuff.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z);
         }
     }
 
@@ -85,7 +85,7 @@ public class PoisonBehaviour : MonoBehaviour
 
             activationArea.gameObject.SetActive(false);
 
-            Destroy(currentDebuf);
+            Destroy(currentDebuff);
             foreach (var cloud in toxinClouds)
             {
                 Destroy(cloud);
