@@ -92,6 +92,8 @@ public static class Consts
     public const string LEVEL2_2_NAME = "Ha³da Kolcozbyt";
     public const string LEVEL2_3 = "Level2_3";
     public const string LEVEL2_3_NAME = "Jaskinia Rozpaczy";
+    public const string LEVEL2_4 = "Level2_4";
+    public const string LEVEL2_4_NAME = "G³êbinotch³añ";
     public const string LEVEL3_1 = "Level3_1";
     public const string LEVEL3_1_NAME = "Piramida Solarnego Chaosu";
     public const string LEVEL3_2 = "Level3_2";
@@ -101,13 +103,7 @@ public static class Consts
     public const string LEVEL3_4 = "Level3_4";
     public const string LEVEL3_4_NAME = "Piramida Jadowitej Grozy";
     public const string LEVEL4_1 = "Level4_1";
-    public const string LEVEL4_1_NAME = "Grzybowa Pieczara";
-    public const string LEVEL4_2 = "Level4_2";
-    public const string LEVEL4_2_NAME = "G³êbinowy Bagnostaw";
-    public const string LEVEL4_3 = "Level4_3";
-    public const string LEVEL4_3_NAME = "Czaszkogrota";
-    public const string LEVEL5_1 = "Level5_1";
-    public const string LEVEL5_1_NAME = "Szczeroz³ota Komnata";
+    public const string LEVEL4_1_NAME = "Szczeroz³ota Komnata";
 
     public static string GetLevelName(string levelName)
     {
@@ -127,6 +123,8 @@ public static class Consts
                 return LEVEL2_2_NAME;
             case LEVEL2_3:
                 return LEVEL2_3_NAME;
+            case LEVEL2_4:
+                return LEVEL2_4_NAME;
             case LEVEL3_1:
                 return LEVEL3_1_NAME;
             case LEVEL3_2:
@@ -137,12 +135,6 @@ public static class Consts
                 return LEVEL3_4_NAME;
             case LEVEL4_1:
                 return LEVEL4_1_NAME;
-            case LEVEL4_2:
-                return LEVEL4_2_NAME;
-            case LEVEL4_3:
-                return LEVEL4_3_NAME;
-            case LEVEL5_1:
-                return LEVEL5_1_NAME;
             case LEVEL_MAP:
                 return LEVEL_MAP_NAME;
             default:
@@ -170,22 +162,18 @@ public static class Consts
                 return 5;
             case LEVEL2_3:
                 return 6;
-            case LEVEL3_1:
+            case LEVEL2_4:
                 return 7;
-            case LEVEL3_2:
+            case LEVEL3_1:
                 return 8;
-            case LEVEL3_3:
+            case LEVEL3_2:
                 return 9;
-            case LEVEL3_4:
+            case LEVEL3_3:
                 return 10;
-            case LEVEL4_1:
+            case LEVEL3_4:
                 return 11;
-            case LEVEL4_2:
+            case LEVEL4_1:
                 return 12;
-            case LEVEL4_3:
-                return 13;
-            case LEVEL5_1:
-                return 14;
             default:
                 Debug.Log($"Nieznana nazwa levelu w Consts.GetLevelIndex {levelName}");
                 return 0;

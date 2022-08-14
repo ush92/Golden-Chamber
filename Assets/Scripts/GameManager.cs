@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
         musicManager = FindObjectOfType<MusicManager>();
 
-        for (int i = 0; i <= 14; i++)
+        for (int i = 0; i <= 12; i++)
         {
             levelRecords.Add(new List<int>());
             for (int j = 0; j <= 9; j++) //0-8 - fruits, 9 - time
@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {     
-        for (int i = 0; i <= 14; i++)
+        for (int i = 0; i <= 12; i++)
         {
             saveData.playerData.levelList[i] = levelList[i];
         }
@@ -180,8 +180,6 @@ public class GameManager : MonoBehaviour, ISaveable
         saveData.playerData.level10Records = levelRecords[10];
         saveData.playerData.level11Records = levelRecords[11];
         saveData.playerData.level12Records = levelRecords[12];
-        saveData.playerData.level13Records = levelRecords[13];
-        saveData.playerData.level14Records = levelRecords[14];
 
         #endregion
     }
@@ -203,7 +201,7 @@ public class GameManager : MonoBehaviour, ISaveable
         {
             isNewGame = false;
 
-            for (int i = 0; i <= 14; i++)
+            for (int i = 0; i <= 12; i++)
             {
                 levelList[i] = false;
             }
@@ -211,7 +209,7 @@ public class GameManager : MonoBehaviour, ISaveable
             isMusicOn = true;
             isSoundsOn = true;
 
-            for (int i = 0; i <= 14; i++)
+            for (int i = 0; i <= 12; i++)
             {
                 for (int j = 0; j <= 8; j++)
                 {
@@ -221,7 +219,7 @@ public class GameManager : MonoBehaviour, ISaveable
         }
         else
         {
-            for (int i = 0; i <= 14; i++)
+            for (int i = 0; i <= 12; i++)
             {
                 levelList[i] = saveData.playerData.levelList[i];
             }
@@ -244,8 +242,6 @@ public class GameManager : MonoBehaviour, ISaveable
             levelRecords[10] =saveData.playerData.level10Records;
             levelRecords[11] =saveData.playerData.level11Records;
             levelRecords[12] =saveData.playerData.level12Records;
-            levelRecords[13] =saveData.playerData.level13Records;
-            levelRecords[14] = saveData.playerData.level14Records;
 
             #endregion
         }

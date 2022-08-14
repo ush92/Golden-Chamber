@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
     //2_3
     private bool isHp5ItemCollected = false;
     private bool isStoneWeaponCollected = false;
-    //5_1
+    //4_1
     private bool isGoldenAxeCollected = false;
     private bool isEpicTreasureCollected = false;
 
@@ -395,7 +395,7 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case (int)EquipmentManager.Items.Axe:
-                if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL5_1)] == false)
+                if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL4_1)] == false)
                 {
                     playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                     Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.AXE_DMG, WeaponsConsts.AXE_LIFETIME);

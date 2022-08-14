@@ -74,7 +74,7 @@ public class EquipmentManager : MonoBehaviour
             }
         }
 
-        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL5_1)] == true)
+        if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL4_1)] == true)
         {
             ItemIcons[1] = goldenAxeIcon;
         }

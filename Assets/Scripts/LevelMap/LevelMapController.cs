@@ -8,7 +8,6 @@ public class LevelMapController : MonoBehaviour
 
     public Transform levels3Block;
     public Transform levels4Block;
-    public Transform levels5Block;
 
     private bool isRefreshed = false;
 
@@ -23,7 +22,7 @@ public class LevelMapController : MonoBehaviour
         {
             int index = 0;
 
-            levels5Block.gameObject.SetActive(false);
+            levels4Block.gameObject.SetActive(false);
 
             foreach (Transform door in levelDoorsParent)
             {
@@ -35,9 +34,9 @@ public class LevelMapController : MonoBehaviour
                 {
                     door.gameObject.GetComponent<SpriteRenderer>().sprite = uncompletedLevelSprite;
 
-                    if (index != Consts.GetLevelIndex(Consts.LEVEL5_1))
+                    if (index != Consts.GetLevelIndex(Consts.LEVEL4_1))
                     {
-                        levels5Block.gameObject.SetActive(true);
+                        levels4Block.gameObject.SetActive(true);
                     }
                 }
                 index++;
@@ -48,17 +47,6 @@ public class LevelMapController : MonoBehaviour
                 GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true)
             {
                 levels3Block.gameObject.SetActive(false);
-            }
-
-            levels4Block.gameObject.SetActive(true);
-            if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_2)] == true &&
-                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_3)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_4)] == true &&
-                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_2)] == true &&
-                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true &&
-                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_2)] == true &&
-                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_4)] == true)
-            {
-                levels4Block.gameObject.SetActive(false);
             }
 
             isRefreshed = true;

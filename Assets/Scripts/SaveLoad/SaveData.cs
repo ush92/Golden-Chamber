@@ -26,8 +26,6 @@ public class SaveData
         public List<int> level10Records;
         public List<int> level11Records;
         public List<int> level12Records;
-        public List<int> level13Records;
-        public List<int> level14Records;
     }
 
     public PlayerData playerData;
@@ -37,7 +35,7 @@ public class SaveData
         playerData.isMusicOn = true;
         playerData.isSoundsOn = true;
 
-        playerData.levelList = new List<bool>(new bool[15]);
+        playerData.levelList = new List<bool>(new bool[13]);
 
         playerData.level0Records = new List<int>(new int[10]);
         playerData.level1Records = new List<int>(new int[10]);
@@ -52,8 +50,6 @@ public class SaveData
         playerData.level10Records = new List<int>(new int[10]);
         playerData.level11Records = new List<int>(new int[10]);
         playerData.level12Records = new List<int>(new int[10]);
-        playerData.level13Records = new List<int>(new int[10]);
-        playerData.level14Records = new List<int>(new int[10]);
     }
 
     public string SaveToJson()
