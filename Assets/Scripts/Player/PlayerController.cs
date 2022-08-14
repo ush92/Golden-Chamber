@@ -129,16 +129,19 @@ public class PlayerController : MonoBehaviour
 
         moveSpeed = baseMoveSpeed;
         isSliding = false;
+        isSwimming = false;
 
         arcticBreathe.SetActive(false); //weapon
-
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
         frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
-
         waterBubblesParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
         oxygenBorder.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
-        currentOxygen = maxOxygen;
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4))
+        {
+            isSwimming = true;
+            currentOxygen = maxOxygen;
+        }
 
         DisablePlayerUI();
     }
@@ -802,7 +805,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                oxygenBar.color = new Color32(34, 221, 198, 255);
+                oxygenBar.color = new Color(0f + ((maxOxygen - currentOxygen) / 760f), 1.0f - ((maxOxygen - currentOxygen) / 380f), 0.78f, 1f);
             }
 
             if (currentOxygen == 0)

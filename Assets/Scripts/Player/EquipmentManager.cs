@@ -22,8 +22,6 @@ public class EquipmentManager : MonoBehaviour
 
     public void UpdateEquipment()
     {
-        currentItemIcon.sprite = ItemIcons[currentItem];
-
         if (!items.Contains(Items.Swoosh))
         {
             items.Add(Items.Swoosh);
@@ -78,6 +76,8 @@ public class EquipmentManager : MonoBehaviour
         {
             ItemIcons[1] = goldenAxeIcon;
         }
+
+        currentItemIcon.sprite = ItemIcons[currentItem];
     }
 
     public void ChangeItem()

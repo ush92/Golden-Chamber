@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
         musicManager = FindObjectOfType<MusicManager>();
 
-        for (int i = 0; i <= 12; i++)
+        for (int i = 0; i < 13; i++)
         {
             levelRecords.Add(new List<int>());
             for (int j = 0; j <= 9; j++) //0-8 - fruits, 9 - time
@@ -95,11 +95,7 @@ public class GameManager : MonoBehaviour, ISaveable
     }
 
     public void BackToMainMenu()
-    {
-        if (activePlayer)
-        {
-            SaveJsonData(this);
-        }
+    {        
         levelMapLastPosition = Vector3.zero;
         StartCoroutine(LoadLevel(Consts.MAIN_MENU));
     }
@@ -125,6 +121,18 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public IEnumerator LoadLevel(string levelName)
     {
+        if (activePlayer)
+        {
+            SaveJsonData(this);
+        }
+
+        if (levelName.Equals(Consts.MAIN_MENU))
+        {
+            Destroy(activePlayer);
+            PlayerPrefs.SetInt(Consts.PLAYER_CURRENT_ITEM, 0);
+            ResetPlayerData();
+        }
+
         if (activePlayer && activePlayer.pauseWindow.activeSelf)
         {
             activePlayer.pauseWindow.gameObject.SetActive(!activePlayer.pauseWindow.activeSelf);
@@ -157,7 +165,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void PopulateSaveData(SaveData saveData)
     {     
-        for (int i = 0; i <= 12; i++)
+        for (int i = 0; i < 13; i++)
         {
             saveData.playerData.levelList[i] = levelList[i];
         }
@@ -200,26 +208,11 @@ public class GameManager : MonoBehaviour, ISaveable
         if (isNewGame)
         {
             isNewGame = false;
-
-            for (int i = 0; i <= 12; i++)
-            {
-                levelList[i] = false;
-            }
-
-            isMusicOn = true;
-            isSoundsOn = true;
-
-            for (int i = 0; i <= 12; i++)
-            {
-                for (int j = 0; j <= 8; j++)
-                {
-                    levelRecords[i][j] = 0;
-                }
-            }
+            ResetPlayerData();
         }
         else
         {
-            for (int i = 0; i <= 12; i++)
+            for (int i = 0; i < 13; i++)
             {
                 levelList[i] = saveData.playerData.levelList[i];
             }
@@ -244,6 +237,25 @@ public class GameManager : MonoBehaviour, ISaveable
             levelRecords[12] =saveData.playerData.level12Records;
 
             #endregion
+        }
+    }
+
+    private void ResetPlayerData()
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            levelList[i] = false;
+        }
+
+        isMusicOn = true;
+        isSoundsOn = true;
+
+        for (int i = 0; i < 13; i++)
+        {
+            for (int j = 0; j <= 9; j++)
+            {
+                levelRecords[i][j] = 0;
+            }
         }
     }
 

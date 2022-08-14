@@ -35,18 +35,6 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt(Consts.PLAYER_CURRENT_ITEM, 0);
     }
 
-    public void Main_Continue()
-    {
-        screens[2].gameObject.SetActive(true);
-        screens[0].gameObject.SetActive(false);
-    }
-
-    public void Main_NewGame()
-    {
-        screens[1].gameObject.SetActive(true);
-        screens[0].gameObject.SetActive(false);
-    }
-
     public void Main_Quit()
     {
         Application.Quit();
@@ -74,14 +62,6 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void NewGame_Back()
-    {
-        newProfileInput.text = "";
-
-        screens[1].gameObject.SetActive(false);
-        screens[0].gameObject.SetActive(true);
-    }
-
     public void Continue_OpenProfile(string profileName)
     {
         GameManager.CreateGame(_isNewGame: false, profileName);
@@ -89,9 +69,41 @@ public class MainMenu : MonoBehaviour
         Debug.Log($"Game {profileName} loaded");
     }
 
+    public void Main_Credits()
+    {
+        screens[3].gameObject.SetActive(true);
+        screens[0].gameObject.SetActive(false);
+    }
+
+    public void Credits_Back()
+    {
+        screens[3].gameObject.SetActive(false);
+        screens[0].gameObject.SetActive(true);
+    }
+
+    public void Main_Continue()
+    {
+        screens[2].gameObject.SetActive(true);
+        screens[0].gameObject.SetActive(false);
+    }
+
     public void Continue_Back()
     {
         screens[2].gameObject.SetActive(false);
+        screens[0].gameObject.SetActive(true);
+    }
+
+    public void Main_NewGame()
+    {
+        screens[1].gameObject.SetActive(true);
+        screens[0].gameObject.SetActive(false);
+    }
+
+    public void NewGame_Back()
+    {
+        newProfileInput.text = "";
+
+        screens[1].gameObject.SetActive(false);
         screens[0].gameObject.SetActive(true);
     }
 }
