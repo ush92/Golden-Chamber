@@ -51,7 +51,10 @@ public class LevelMapController : MonoBehaviour
             }
 
             levels4Block.gameObject.SetActive(true);
-            if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_3)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true &&
+            if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_2)] == true &&
+                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_3)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_4)] == true &&
+                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_2)] == true &&
+                GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true &&
                 GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_1)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_2)] == true &&
                 GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == true && GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_4)] == true)
             {
