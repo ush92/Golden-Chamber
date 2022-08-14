@@ -78,6 +78,7 @@ public class PlayerController : MonoBehaviour
     private ParticleSystem.EmissionModule footDustEmission;
     public ParticleSystem jumpDust;
     public ParticleSystem frostBreatheParticles;
+    public ParticleSystem waterBubblesParticles;
     private bool wasGrounded;
 
     //UI
@@ -91,6 +92,11 @@ public class PlayerController : MonoBehaviour
     //2_3
     private bool isHp5ItemCollected = false;
     private bool isStoneWeaponCollected = false;
+    //2_4
+    public Image oxygenBorder;
+    public Image oxygenBar;
+    public float maxOxygen;
+    private float currentOxygen;
     //4_1
     private bool isGoldenAxeCollected = false;
     private bool isEpicTreasureCollected = false;
@@ -124,11 +130,15 @@ public class PlayerController : MonoBehaviour
         moveSpeed = baseMoveSpeed;
         isSliding = false;
 
+        arcticBreathe.SetActive(false); //weapon
+
         footDustEmission = footDust.emission;
         jumpDust.gameObject.SetActive(false);
         frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
 
-        arcticBreathe.SetActive(false); //weapon
+        waterBubblesParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
+        oxygenBorder.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
+        currentOxygen = maxOxygen;
 
         DisablePlayerUI();
     }
@@ -163,7 +173,12 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            ArcticBreathe();
+            ArcticBreathe(); //weapon
+
+            if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4))
+            {
+                UnderwaterBreathe();
+            }
 
         }
         else
@@ -673,6 +688,7 @@ public class PlayerController : MonoBehaviour
         arcticBreathe.SetActive(false);
 
         frostBreatheParticles.gameObject.SetActive(false);
+        waterBubblesParticles.gameObject.SetActive(false);
         footDustEmission.rateOverTime = 0f;
 
         deathTimeCounter = deathTime;
@@ -770,6 +786,30 @@ public class PlayerController : MonoBehaviour
         GameManager.SaveJsonData(GameManager.instance);
 
         equipmentManager.UpdateEquipment();
+    }
+
+    private void UnderwaterBreathe()
+    {
+        if (isActive && !isLevelCompleted)
+        {
+            currentOxygen -= Time.deltaTime;
+            if (currentOxygen < 0) currentOxygen = 0;
+            oxygenBar.fillAmount = currentOxygen / maxOxygen;
+
+            if (currentOxygen < 60)
+            {
+                oxygenBar.color = new Color32(212, 43, 46, 255);
+            }
+            else
+            {
+                oxygenBar.color = new Color32(34, 221, 198, 255);
+            }
+
+            if (currentOxygen == 0)
+            {
+                Death();
+            }
+        }
     }
 
     void SoundEffect(string name)
