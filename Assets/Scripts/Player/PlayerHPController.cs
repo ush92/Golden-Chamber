@@ -1,10 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.InputSystem;
-using System;
-using UnityEngine.UIElements;
-using static EquipmentManager;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHPController : MonoBehaviour
 {
@@ -136,7 +132,7 @@ public class PlayerHPController : MonoBehaviour
         else
         {
             Instantiate(playerDamageEffect, player.transform.position, player.transform.rotation);
-            player.SoundEffect($"Hurt{UnityEngine.Random.Range(1, 3)}");
+            player.SoundEffect($"Hurt{Random.Range(1, 3)}");
         }
     }
 

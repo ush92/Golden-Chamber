@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     public float jumpHangTime;
     private float currentJumpHangTime;
 
-    private float oneWayTileCooldown = 0.2f;
+    private float oneWayTileCooldown = 0.5f;
     public float oneWayTileCounter;
 
     public Transform groundCheckPoint;
