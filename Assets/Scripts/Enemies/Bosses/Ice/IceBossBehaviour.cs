@@ -48,7 +48,25 @@ public class IceBossBehaviour : MonoBehaviour
 
     void Update()
     {
-        if (!player.isBossEncounter || !player.isActive)
+        if (bossHP.currentHP <= 0 && player.isBossEncounter)
+        {
+            casting.CancelInvoke();
+            CancelInvoke();
+
+            Instantiate(arcticBreatheWeaponLoot, transform.position, transform.rotation);
+
+            foreach (var ghost in frozenGhostList)
+            {
+                Destroy(ghost);
+            }
+
+            player.isBossEncounter = false;
+            activationArea.gameObject.SetActive(false);
+
+            frozenArea.gameObject.SetActive(false);
+            player.frozenCounter = 0;
+        }
+        else if (bossHP.currentHP > 0 && (!player.isBossEncounter || !player.isActive))
         {
             frozenArea.gameObject.SetActive(false);
             player.frozenCounter = 0;
@@ -125,24 +143,5 @@ public class IceBossBehaviour : MonoBehaviour
         Instantiate(teleportEffect, new Vector3(teleportPoints[(int)position].transform.position.x, teleportPoints[(int)position].transform.position.y - 0.5f),
             teleportPoints[(int)position].transform.rotation);
 
-    }
-
-    void OnDestroy()
-    {      
-        if (bossHP.currentHP <= 0)
-        {
-            Instantiate(arcticBreatheWeaponLoot, transform.position, transform.rotation);
-
-            foreach (var ghost in frozenGhostList)
-            {
-                Destroy(ghost);
-            }
-    
-            player.isBossEncounter = false;
-            activationArea.gameObject.SetActive(false);
-
-            frozenArea.gameObject.SetActive(false);
-            player.frozenCounter = 0;
-        }
     }
 }

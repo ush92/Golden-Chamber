@@ -135,6 +135,16 @@ public class FireBossBehaviour : MonoBehaviour
                 evilSun.GetComponent<SmoothFollow>().damping = enragedEvilSunDamping;
             }
 
+            if (bossHP.currentHP <= 0 && player.isBossEncounter)
+            {
+                evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
+
+                Instantiate(fireSparkWeaponLoot, transform.position, transform.rotation);
+
+                player.isBossEncounter = false;
+                activationArea.gameObject.SetActive(false);
+            }
+
             CheckEncounterActivity();
         }
     }
@@ -158,19 +168,5 @@ public class FireBossBehaviour : MonoBehaviour
     private void CastFireWaves()
     {
         Instantiate(projectile, attackPoint.position, attackPoint.rotation);
-    }
-
-
-    private void OnDestroy()
-    {
-        if (bossHP.currentHP <= 0)
-        {
-            evilSun.GetComponent<OnDestroyEffect>().FakeDestroy();
-         
-            Instantiate(fireSparkWeaponLoot, transform.position, transform.rotation);
-
-            player.isBossEncounter = false;
-            activationArea.gameObject.SetActive(false);
-        }
     }
 }

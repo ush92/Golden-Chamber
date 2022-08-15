@@ -38,6 +38,9 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource Fanfare2;
     public AudioSource Fanfare3;
 
+    public AudioSource Death;
+    public AudioSource Respawn;
+
     public AudioSource GetSound(string name)
     {
         switch (name)
@@ -104,6 +107,10 @@ public class PlayerSounds : MonoBehaviour
                 return Fanfare2;
             case "Fanfare3":
                 return Fanfare3;
+            case "Death":
+                return Death;
+            case "Respawn":
+                return Respawn;
 
             default:
                 Debug.Log("Wrong sound name in PlayerSounds.GetSound");

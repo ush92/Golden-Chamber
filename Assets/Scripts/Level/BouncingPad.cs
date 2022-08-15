@@ -36,6 +36,11 @@ public class BouncingPad : MonoBehaviour
 
             var playerRB = other.GetComponent<Rigidbody2D>();
             playerRB.velocity = new Vector2(playerRB.velocity.x, bouncePower);
+
+            if (GameManager.isSoundsOn)
+            {
+                gameObject.GetComponent<AudioSource>().Play();
+            }
         }
     }
 }

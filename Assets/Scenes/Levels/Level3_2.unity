@@ -3454,11 +3454,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.25
+      value: 82.8
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 42.11
+      value: 35.1
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -126270,6 +126270,10 @@ PrefabInstance:
     - target: {fileID: 4260725730657190491, guid: a594884ffc3a81047abe682e85249410, type: 3}
       propertyPath: m_Name
       value: IceBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260725730657190503, guid: a594884ffc3a81047abe682e85249410, type: 3}
+      propertyPath: maxHP
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 7497059749664560783, guid: a594884ffc3a81047abe682e85249410, type: 3}
       propertyPath: player

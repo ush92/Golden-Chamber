@@ -6763,11 +6763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 102.47
+      value: 9.55
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.61
+      value: 12.65
       objectReference: {fileID: 0}
     - target: {fileID: 4912927042408680105, guid: da2865ade61e28049882fbd3dda66b7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -113582,6 +113582,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6809310592655740999, guid: a9b514de02473ae4f9735dba40680894, type: 3}
   m_PrefabInstance: {fileID: 274143276}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1640004285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7745633648132771050, guid: 2c3663bd165742c4ab06354dea141374, type: 3}
+  m_PrefabInstance: {fileID: 1884856929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1640004286
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640004285}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1643198841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -115482,10 +115583,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pociupala
       objectReference: {fileID: 0}
-    - target: {fileID: 5256082238786697969, guid: ea706dd0fbda69a469e2f17ce069ae24, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5256082238786697971, guid: ea706dd0fbda69a469e2f17ce069ae24, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -115529,10 +115626,6 @@ PrefabInstance:
     - target: {fileID: 5256082238786697971, guid: ea706dd0fbda69a469e2f17ce069ae24, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5256082238786697974, guid: ea706dd0fbda69a469e2f17ce069ae24, type: 3}
-      propertyPath: damagePopupTime
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6458696345281527477, guid: ea706dd0fbda69a469e2f17ce069ae24, type: 3}
       propertyPath: player

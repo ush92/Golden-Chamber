@@ -95,9 +95,7 @@ public class PlayerHPController : MonoBehaviour
     public void DamagePlayer(int damage)
     {
         if (invincibilityCounter <= 0)
-        {
-            OnHitEffects();
-            
+        {            
             currentHP -= damage;
             damagePopup.text = damage.ToString();
             damagePopup.gameObject.SetActive(true);
@@ -117,6 +115,12 @@ public class PlayerHPController : MonoBehaviour
                 player.Death();
                 hpBar.gameObject.SetActive(false);
                 invincibilityCounter = 0;
+
+                player.SoundEffect("Death");
+            }
+            else
+            {
+                OnHitEffects();
             }
         }
     }

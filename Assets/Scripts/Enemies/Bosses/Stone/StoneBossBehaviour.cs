@@ -20,6 +20,7 @@ public class StoneBossBehaviour : MonoBehaviour
     private float stone1AttackTimer;
     private bool wasStone1Attacked;
     public float stone1MoveSpeed;
+    private bool isStone1Dead = false;
 
     public StoneBoss bossForm2prefab;
     private StoneBoss stoneForm2;
@@ -27,7 +28,8 @@ public class StoneBossBehaviour : MonoBehaviour
     public FlyingAround form2SpikeBall;
     public float spikeBallEnragedMoveSpeed = 5.0f;
     public float spikeBallNormalMoveSpeed = 3.0f;
-    
+    private bool isStone2Dead = false;
+
     public PlayerController player;
     private int playerSide;
 
@@ -61,21 +63,24 @@ public class StoneBossBehaviour : MonoBehaviour
         stoneForm2.gameObject.SetActive(false);
         isStoneForm2 = true; //set form2 just before switch forms
         InvokeRepeating("SwitchForms", 0f, shiftTime);
+
+        isStone1Dead = false;
+        isStone2Dead = false;
     }
 
     void Update()
     {
         CheckPlayer();
 
-        if ((!stoneForm1 && !stoneForm2))
+        if (isStone1Dead && isStone2Dead)
         {
-            if(isLootAppeared == false)
+            if (isLootAppeared == false)
             {
                 isLootAppeared = true;
                 activactionArea.SetActive(false);
                 Instantiate(hpMaxPlus5, item1Location.position, item1Location.rotation);
                 Instantiate(stoneWeapon, item2Location.position, item2Location.rotation);
-            }
+            }          
         }
 
         if (player.isActive == false || player.isBossEncounter == false)
@@ -109,6 +114,11 @@ public class StoneBossBehaviour : MonoBehaviour
                     wasStone1Attacked = true;
                 }
             }
+
+            if(stoneForm1.GetComponent<EnemyHPController>().currentHP <= 0)
+            {
+                isStone1Dead = true;
+            }
         }
 
         if (isStoneForm2 && stoneForm2)
@@ -123,6 +133,12 @@ public class StoneBossBehaviour : MonoBehaviour
             {
                 stoneForm2.GetComponent<Rigidbody2D>().gravityScale = gravity;
                 fallTimer = 0;
+            }
+
+            if (stoneForm2.GetComponent<EnemyHPController>().currentHP <=0)
+            {
+                isStone2Dead = true;
+                form2SpikeBall.gameObject.SetActive(false);
             }
         }
 

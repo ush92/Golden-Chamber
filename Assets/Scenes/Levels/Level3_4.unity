@@ -109959,6 +109959,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 547654520}
     m_Modifications:
+    - target: {fileID: 2546288638593312245, guid: e0dcb34e42eed9640a3e65fbe5abf6d4, type: 3}
+      propertyPath: maxHP
+      value: 160
+      objectReference: {fileID: 0}
     - target: {fileID: 3954485294768205009, guid: e0dcb34e42eed9640a3e65fbe5abf6d4, type: 3}
       propertyPath: player
       value: 

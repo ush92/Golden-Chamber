@@ -537,6 +537,11 @@ public class PlayerController : MonoBehaviour
 
                 other.transform.Find(Consts.LOCKED_DOOR).gameObject.SetActive(false);
                 other.transform.Find(Consts.OPENED_DOOR).gameObject.SetActive(true);
+
+                if (GameManager.isSoundsOn)
+                {
+                    other.gameObject.GetComponent<AudioSource>().Play();
+                }
             }
         }
 

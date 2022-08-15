@@ -3,6 +3,7 @@ using UnityEngine;
 public class PociupalaBehaviour : MonoBehaviour
 {
     private Vector3 basePosition;
+    private bool isDeath = false;
 
     private float moveSpeed = 0.5f;
     public float moveSpeedAcceleration;
@@ -125,6 +126,16 @@ public class PociupalaBehaviour : MonoBehaviour
 
             musicManager.SwitchToPrimaryTheme();
         }
+
+        if (bossHP.currentHP <= 0 && !isDeath)
+        {
+            isDeath = true;
+            if (sawIndex != -1)
+            {
+                saws[sawIndex].gameObject.transform.position = sawBasePosition;
+            }
+            Instantiate(axeWeaponLoot, transform.position, transform.rotation);
+        }
     }
 
     private void Animate()
@@ -152,17 +163,5 @@ public class PociupalaBehaviour : MonoBehaviour
     private void SawReturn()
     {
         isSawJump = false; 
-    }
-
-    private void OnDestroy()
-    {
-        if (bossHP.currentHP <= 0)
-        {
-            if (sawIndex != -1)
-            {
-                saws[sawIndex].gameObject.transform.position = sawBasePosition;
-            }
-            Instantiate(axeWeaponLoot, transform.position, transform.rotation);
-        }
     }
 }

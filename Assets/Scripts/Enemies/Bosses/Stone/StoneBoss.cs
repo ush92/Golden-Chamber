@@ -48,6 +48,7 @@ public class StoneBoss : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.PLAYER) || other.gameObject.tag.Equals(Consts.GROUND))
         {
             Instantiate(collisionEffect, transform.position, transform.rotation);
+            GetComponent<AudioSource>().Play();
             
             if (name == "StoneBoss1" && other.gameObject.tag.Equals(Consts.GROUND) && !areRocksFallen)
             {

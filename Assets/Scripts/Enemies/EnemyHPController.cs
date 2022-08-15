@@ -5,6 +5,7 @@ public class EnemyHPController : MonoBehaviour
 {
     public int maxHP;
     public int currentHP;
+    private bool isDeath = false;
 
     public GameObject enemyDeathEffect;
 
@@ -23,6 +24,8 @@ public class EnemyHPController : MonoBehaviour
     public float damagePopupCounter;
     private float randomOffset;
 
+    public AudioSource enemyDeathSound;
+
     void Start()
     {
         currentHP = maxHP;
@@ -38,15 +41,25 @@ public class EnemyHPController : MonoBehaviour
     {
         if (currentHP <= 0)
         {
-            if (name.Equals(Consts.TARGET_DUMMY))
+            if (!isDeath)
             {
-                Instantiate(enemyDeathEffect, transform.position, transform.rotation);
-                ResetHP();
-            }
-            else
-            {
-                Instantiate(enemyDeathEffect, transform.position, transform.rotation);
-                Destroy(gameObject);
+                if (name.Equals(Consts.TARGET_DUMMY))
+                {
+                    Instantiate(enemyDeathEffect, transform.position, transform.rotation);
+                    ResetHP();
+                }
+                else
+                {
+                    isDeath = true;
+
+                    if (GameManager.isSoundsOn)
+                    {
+                        enemyDeathSound.Play();
+                    }
+
+                    Instantiate(enemyDeathEffect, transform.position, transform.rotation);
+                    DeactivateAndDestroy();
+                }
             }
         }
         else
@@ -127,6 +140,26 @@ public class EnemyHPController : MonoBehaviour
                 damagePopupCounter = damagePopupTime;
             }
         }
+    }
+
+    private void DeactivateAndDestroy()
+    {
+        hpBar.gameObject.SetActive(false);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;     
+        foreach (var collider in gameObject.GetComponents<Collider2D>())
+        {
+            collider.enabled = false;
+        }
+        foreach (var sprites in gameObject.GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprites.enabled = false;
+        }
+        foreach (var collider in gameObject.GetComponentsInChildren<Collider2D>())
+        {
+            collider.enabled = false;
+        }
+        
+        Destroy(gameObject, 3.0f);
     }
 
     public void ResetHP()

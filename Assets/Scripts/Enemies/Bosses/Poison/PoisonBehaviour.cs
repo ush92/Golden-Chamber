@@ -40,7 +40,22 @@ public class PoisonBehaviour : MonoBehaviour
             biteAnimationTimer = 0;
         }
 
-        if (!player.isBossEncounter || !player.isActive)
+        if (bossHP.currentHP <= 0 && player.isBossEncounter)
+        {
+            CancelInvoke();
+
+            player.isBossEncounter = false;
+            Instantiate(poisonWeaponLoot, transform.position, transform.rotation);
+
+            activationArea.gameObject.SetActive(false);
+
+            Destroy(currentDebuff);
+            foreach (var cloud in toxinClouds)
+            {
+                Destroy(cloud);
+            }
+        }
+        else if (bossHP.currentHP > 0 && (!player.isBossEncounter || !player.isActive))
         {
             CancelInvoke();
 
@@ -73,23 +88,6 @@ public class PoisonBehaviour : MonoBehaviour
         {
             animator.SetTrigger("Bite");
             biteAnimationTimer = biteAnimationCooldown;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (bossHP.currentHP <= 0)
-        {
-            player.isBossEncounter = false;
-            Instantiate(poisonWeaponLoot, transform.position, transform.rotation);
-
-            activationArea.gameObject.SetActive(false);
-
-            Destroy(currentDebuff);
-            foreach (var cloud in toxinClouds)
-            {
-                Destroy(cloud);
-            }
         }
     }
 }

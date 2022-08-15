@@ -94,7 +94,28 @@ public class DarkBossBehaviour : MonoBehaviour
             Invoke("RemovePortals", 0);
         }
 
-        if (!player.isBossEncounter || !player.isActive)
+        if (bossHP.currentHP <= 0 && player.isBossEncounter)
+        {
+            CancelInvoke();
+            player.isBossEncounter = false;
+            Instantiate(darkWeaponLoot, transform.position, transform.rotation);
+            activationArea.gameObject.SetActive(false);
+            portals.SetActive(false);
+            enrageTimer.SetActive(false);
+
+            foreach (var spawnedSpider in spidersList)
+            {
+                if (spawnedSpider != null)
+                {
+                    Destroy(spawnedSpider.gameObject);
+                }
+            }
+            for (int i = 0; i < spidersCounterIndicators.Count; i++)
+            {
+                spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
+            }
+        }
+        else if (bossHP.currentHP > 0 && (!player.isBossEncounter || !player.isActive))
         {
             CancelInvoke();
             shooting.CancelInvoke();
@@ -177,31 +198,5 @@ public class DarkBossBehaviour : MonoBehaviour
         CancelInvoke();
         InvokeRepeating("SpawnSpiders", 0, enragedSpawnRepeatingTime);
         shooting.ChangeRepeatingTime(enragedCastingCooldown);
-    }
-
-    private void OnDestroy()
-    {
-        if (bossHP.currentHP <= 0)
-        {
-            player.isBossEncounter = false;
-            Instantiate(darkWeaponLoot, transform.position, transform.rotation);
-
-            activationArea.gameObject.SetActive(false);
-            portals.SetActive(false);
-            enrageTimer.SetActive(false);
-
-            foreach (var spawnedSpider in spidersList)
-            {
-                if (spawnedSpider != null)
-                {
-                    Destroy(spawnedSpider.gameObject);
-                }
-            }
-            
-            for (int i = 0; i < spidersCounterIndicators.Count; i++)
-            {
-                spidersCounterIndicators[i].color = new Color32(0, 0, 0, 155);
-            }
-        }
     }
 }

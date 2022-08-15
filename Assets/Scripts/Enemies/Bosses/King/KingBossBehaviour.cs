@@ -51,7 +51,31 @@ public class KingBossBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (!player.isBossEncounter || !player.isActive)
+        if (bossHP.currentHP <= 0 && player.isBossEncounter)
+        {
+            CancelInvoke();
+
+            player.isBossEncounter = false;
+
+            Instantiate(goldenAxeWeaponLoot, new Vector2(transform.position.x + 1f, transform.position.y), transform.rotation);
+            Instantiate(epicTreasureLoot, new Vector2(transform.position.x - 1f, transform.position.y), transform.rotation);
+
+            activationArea.gameObject.SetActive(false);
+
+            if (currentDebuff)
+            {
+                Destroy(currentDebuff.gameObject);
+            }
+
+            foreach (var evilClone in evilClonesList)
+            {
+                if (evilClone != null)
+                {
+                    Destroy(evilClone.gameObject);
+                }
+            }
+        }
+        else if (bossHP.currentHP > 0 && (!player.isBossEncounter || !player.isActive))
         {
             CancelInvoke();
 
@@ -146,31 +170,5 @@ public class KingBossBehaviour : MonoBehaviour
         }
 
         Instantiate(teleportEffect, transform.position, transform.rotation);
-    }
-
-    private void OnDestroy()
-    {
-        if (bossHP.currentHP <= 0)
-        {
-            player.isBossEncounter = false;
-            
-            Instantiate(goldenAxeWeaponLoot, new Vector2(transform.position.x + 1f, transform.position.y), transform.rotation);
-            Instantiate(epicTreasureLoot, new Vector2(transform.position.x - 1f, transform.position.y), transform.rotation);
-            
-            activationArea.gameObject.SetActive(false);
-
-            if (currentDebuff)
-            {
-                Destroy(currentDebuff.gameObject);
-            }
-
-            foreach (var evilClone in evilClonesList)
-            {
-                if (evilClone != null)
-                {
-                    Destroy(evilClone.gameObject);
-                }
-            }
-        }
     }
 }
