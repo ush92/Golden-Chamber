@@ -239,11 +239,11 @@ public class PlayerController : MonoBehaviour
             }
         }
         
-        if(isSliding)
+        if (isSliding)
         {
             slidingCounter -= Time.deltaTime;
         }
-        if(slidingCounter <= 0)
+        if (slidingCounter <= 0)
         {
             isSliding = false;
             slidingCounter = slidingLenght;

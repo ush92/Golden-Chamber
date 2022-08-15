@@ -88,6 +88,10 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: enemyDeathSound
+      value: 
+      objectReference: {fileID: 350401759333546671}
+    - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: enemyDeathEffect
       value: 
       objectReference: {fileID: 4639924823971810983, guid: e96b8fc5708a7154d965cd0459ed1823, type: 3}
