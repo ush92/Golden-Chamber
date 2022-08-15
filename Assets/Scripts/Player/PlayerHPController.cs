@@ -21,6 +21,7 @@ public class PlayerHPController : MonoBehaviour
 
     public PlayerController player;
     public GameObject playerDamageEffect;
+    public GameObject playerFreezeEffect;
 
     public float invincibilityTime;
     public float invincibilityCounter;
@@ -102,8 +103,6 @@ public class PlayerHPController : MonoBehaviour
             damagePopup.gameObject.SetActive(true);
             damagePopupCounter = damagePopupTime;
 
-            Instantiate(playerDamageEffect, player.transform.position, player.transform.rotation);
-
             if (currentHP < 0)
             {
                 currentHP = 0;
@@ -126,8 +125,14 @@ public class PlayerHPController : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
         {
+            Instantiate(playerFreezeEffect, player.transform.position, player.transform.rotation);
             player.isFrozen = true;
             player.SoundEffect("Frozen");
+        }
+        else
+        {
+            Instantiate(playerDamageEffect, player.transform.position, player.transform.rotation);
+            player.SoundEffect($"Hurt{UnityEngine.Random.Range(1, 3)}");
         }
     }
 

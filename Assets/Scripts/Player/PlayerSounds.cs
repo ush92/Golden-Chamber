@@ -6,6 +6,9 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource Jump2;
     public AudioSource Jump3;
 
+    public AudioSource Hurt1;
+    public AudioSource Hurt2;
+
     public AudioSource Frozen;
 
     public AudioSource Swoosh1;
@@ -31,6 +34,10 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource GoldenAxe2;
     public AudioSource GoldenAxe3;
 
+    public AudioSource Fanfare1;
+    public AudioSource Fanfare2;
+    public AudioSource Fanfare3;
+
     public AudioSource GetSound(string name)
     {
         switch (name)
@@ -41,6 +48,10 @@ public class PlayerSounds : MonoBehaviour
                 return Jump2;
             case "Jump3":
                 return Jump3;
+            case "Hurt1":
+                return Hurt1;
+            case "Hurt2":
+                return Hurt2;
             case "Frozen":
                 return Frozen;
             case "Swoosh1":
@@ -87,6 +98,12 @@ public class PlayerSounds : MonoBehaviour
                 return GoldenAxe2;
             case "GoldenAxe3":
                 return GoldenAxe3;
+            case "Fanfare1":
+                return Fanfare1;
+            case "Fanfare2":
+                return Fanfare2;
+            case "Fanfare3":
+                return Fanfare3;
 
             default:
                 Debug.Log("Wrong sound name in PlayerSounds.GetSound");

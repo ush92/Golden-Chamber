@@ -73,15 +73,14 @@ public class PlayerController : MonoBehaviour
     public Text currentTime;
 
     private bool isLevelLoaded = false;
-    private bool isLevelCompleted = false;
-
+    public bool isLevelCompleted = false;
     public bool isBossEncounter = false;
 
     public ParticleSystem footDust;
-    private ParticleSystem.EmissionModule footDustEmission;
     public ParticleSystem jumpDust;
     public ParticleSystem frostBreatheParticles;
     public ParticleSystem waterBubblesParticles;
+    private ParticleSystem.EmissionModule footDustEmission;
     private bool wasGrounded;
 
     //UI
@@ -690,6 +689,15 @@ public class PlayerController : MonoBehaviour
     {
         try
         {
+            if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL4_1)] == false)
+            {
+                SoundEffect($"Fanfare{UnityEngine.Random.Range(1, 3)}");
+            }
+            else
+            {
+                SoundEffect($"Fanfare3");
+            }
+
             GameManager.levelList[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)] = true;
 
             isLevelCompleted = true;

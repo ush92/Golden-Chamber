@@ -27,14 +27,36 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (player != null && !player.isBossEncounter && primaryTheme.isPlaying == false)
+        if (player)
         {
-            SwitchToPrimaryTheme();
+            if (!player.isBossEncounter && primaryTheme.isPlaying == false)
+            {
+                SwitchToPrimaryTheme();
+            }
+
+            if (player.isBossEncounter && secondaryTheme.isPlaying == false)
+            {
+                SwitchToSecondaryTheme();
+            }
+
+            if (player.isActive && player.isLevelCompleted)
+            {
+                StopAllMusic();
+            }
+        }
+    }
+
+    public void StopAllMusic()
+    {
+
+        if(primaryTheme != null && primaryTheme.isPlaying == true)
+        {
+            primaryTheme.Stop();
         }
 
-        if (player != null && player.isBossEncounter && secondaryTheme.isPlaying == false)
+        if (secondaryTheme != null && secondaryTheme.isPlaying == true)
         {
-            SwitchToSecondaryTheme();
+            secondaryTheme.Stop();
         }
     }
 
