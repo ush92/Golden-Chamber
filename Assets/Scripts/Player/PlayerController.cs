@@ -849,7 +849,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void SoundEffect(string name)
+    public void SoundEffect(string name)
     {
         if (GameManager.isSoundsOn)
         {

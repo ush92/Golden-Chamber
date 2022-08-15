@@ -127,6 +127,7 @@ public class PlayerHPController : MonoBehaviour
         if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
         {
             player.isFrozen = true;
+            player.SoundEffect("Frozen");
         }
     }
 

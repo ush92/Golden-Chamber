@@ -6,6 +6,8 @@ public class PlayerSounds : MonoBehaviour
     public AudioSource Jump2;
     public AudioSource Jump3;
 
+    public AudioSource Frozen;
+
     public AudioSource Swoosh1;
     public AudioSource Swoosh2;
     public AudioSource Swoosh3;
@@ -39,6 +41,8 @@ public class PlayerSounds : MonoBehaviour
                 return Jump2;
             case "Jump3":
                 return Jump3;
+            case "Frozen":
+                return Frozen;
             case "Swoosh1":
                 return Swoosh1;
             case "Swoosh2":
