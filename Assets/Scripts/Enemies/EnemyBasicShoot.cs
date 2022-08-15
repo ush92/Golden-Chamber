@@ -32,7 +32,7 @@ public class EnemyBasicShoot : MonoBehaviour
 
     private void Shoot()
     {     
-        if(onlyIfFacedToPlayer) //+/- 2.0f to block shooting if player is too close
+        if(onlyIfFacedToPlayer && player) //+/- 2.0f to block shooting if player is too close
         {
             if (transform.position.x - minDistanceFromPlayer > player.transform.position.x && !GetComponent<EnemyPatrol>().moveRight ||
                 transform.position.x + minDistanceFromPlayer < player.transform.position.x && GetComponent<EnemyPatrol>().moveRight)

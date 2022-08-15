@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueFish
       objectReference: {fileID: 0}
+    - target: {fileID: 6604957105971402686, guid: 382adc61772996b4ebb9b3c929b67dfd, type: 3}
+      propertyPath: isKnockingBack
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6604957105971402687, guid: 382adc61772996b4ebb9b3c929b67dfd, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
