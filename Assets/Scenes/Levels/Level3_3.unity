@@ -936,7 +936,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873843991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.38, y: -3.63, z: 816.4578}
+  m_LocalPosition: {x: 14.38, y: -3.18, z: 816.4578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 511143820}
@@ -110604,6 +110604,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1238740291}
+    - target: {fileID: 3541494558347698342, guid: 60a6b21c71f19f046add1979027aa2ba, type: 3}
+      propertyPath: spider
+      value: 
+      objectReference: {fileID: 2831631286392129670, guid: e1a8a8b23279e9143ad1eebe6c44caf7, type: 3}
     - target: {fileID: 3541494558347698342, guid: 60a6b21c71f19f046add1979027aa2ba, type: 3}
       propertyPath: portals
       value: 

@@ -154,11 +154,15 @@ public class EnemyHPController : MonoBehaviour
         {
             sprites.enabled = false;
         }
-        foreach (var collider in gameObject.GetComponentsInChildren<Collider2D>())
+        foreach (var otherCollider in gameObject.GetComponentsInChildren<Collider2D>())
         {
-            collider.enabled = false;
+            otherCollider.enabled = false;
         }
-        
+        foreach (var shooter in gameObject.GetComponents<EnemyBasicShoot>())
+        {
+            shooter.CancelInvoke();
+        }
+
         Destroy(gameObject, 3.0f);
     }
 
