@@ -311,6 +311,11 @@ public class PlayerController : MonoBehaviour
         if (!isSwimming)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+
+            if (isGrounded && playerRB.velocity.y < 0 && oneWayTileCounter <= 0) //fix velocity_Y
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, 0.0f);
+            }
         }
 
         if (isGrounded)
@@ -871,23 +876,18 @@ public class PlayerController : MonoBehaviour
         {
             if (!isSwimming)
             {
-                if (playerRB.velocity.y > -0.00003f && playerRB.velocity.y < 0.00003) //fix velocity_Y
+                if (currentJumpHangTime > 0f)
                 {
-                    playerRB.velocity = new Vector2(playerRB.velocity.x, 0.0f);
-                }
-
-                if (currentJumpHangTime > 0f && playerRB.velocity.y <= 0f)
-                {
-                    currentJumpHangTime = 0f;
+                    isGrounded = false;
                     playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                    SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
                 }
             }
             else
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
             }
-
-            SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
         }
     }
 
@@ -997,7 +997,7 @@ public class PlayerController : MonoBehaviour
                 isGrounded = false;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
 
-                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4).ToString()}");
+                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
             }
 
             if (!isGrounded && context.canceled && playerRB.velocity.y > 0)
