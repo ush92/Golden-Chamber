@@ -561,14 +561,17 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.gameObject.name.Equals(Consts.ICEBLOCK))
         {
-            velocity = Math.Sign(transform.localScale.x);
-            if (transform.localScale.x == 1)
+            if (isSliding)
             {
-                playerRB.AddForce(Vector2.right * 75, ForceMode2D.Force);
-            }
-            else
-            {
-                playerRB.AddForce(Vector2.left * 75, ForceMode2D.Force);
+                velocity = Math.Sign(transform.localScale.x);
+                if (transform.localScale.x == 1)
+                {
+                    playerRB.AddForce(Vector2.right * 75, ForceMode2D.Force);
+                }
+                else
+                {
+                    playerRB.AddForce(Vector2.left * 75, ForceMode2D.Force);
+                }
             }
         }
     }
@@ -949,7 +952,10 @@ public class PlayerController : MonoBehaviour
 
     public void MoveStopTouch()
     {
-        velocity = 0;
+        if (isActive && !isLevelCompleted && !isSliding)
+        {
+            velocity = 0;
+        }
     }
 
     public void UseOnTouch()

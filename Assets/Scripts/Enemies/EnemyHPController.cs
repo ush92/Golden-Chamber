@@ -7,8 +7,6 @@ public class EnemyHPController : MonoBehaviour
     public int currentHP;
     private bool isDeath = false;
 
-    public GameObject enemyDeathEffect;
-
     public Color flashOnHit;
     public float hitFlashTime;
     private float hitFlashCounter;
@@ -24,7 +22,11 @@ public class EnemyHPController : MonoBehaviour
     public float damagePopupCounter;
     private float randomOffset;
 
+    public GameObject enemyDeathEffect;
+    public GameObject drainLifeEffect;
+
     public AudioSource enemyDeathSound;
+    public AudioSource drainLifeSound;
 
     void Start()
     {
@@ -174,5 +176,21 @@ public class EnemyHPController : MonoBehaviour
     public void ResetHP()
     {
         currentHP = maxHP;
+    }
+
+    public void RegenHP(int drainAmount)
+    {
+        Instantiate(drainLifeEffect, transform.position, Quaternion.Euler(0, 0, 0));
+
+        if (GameManager.isSoundsOn)
+        {
+            drainLifeSound.Play();
+        }
+
+        currentHP += drainAmount;
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
+        }
     }
 }

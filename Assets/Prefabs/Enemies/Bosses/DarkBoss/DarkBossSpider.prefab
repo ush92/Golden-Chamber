@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d23b4261831259418e963df29ab860d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 19
+  moveSpeed: 3
   moveRight: 0
   changeSideOnDamagePlayer: 0
   wallCheck: {fileID: 7895025899158856936}
@@ -346,9 +346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e284f3ff638dd49841c39ce3d670c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drainLifeEffect: {fileID: 4639924823971810983, guid: f263de99db1d67c40adb2e1a3335808a, type: 3}
   enemyName: DarkBoss
   drainAmount: 5
+  drainLifeEffect: {fileID: 4639924823971810983, guid: f263de99db1d67c40adb2e1a3335808a, type: 3}
+  drainLifeSound: {fileID: 0}
 --- !u!95 &365244942525932735
 Animator:
   serializedVersion: 3

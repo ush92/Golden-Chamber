@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class DrainLife : MonoBehaviour
 {
-    public GameObject drainLifeEffect;
     public string enemyName;
     private EnemyHPController enemyHp;
     public int drainAmount;
@@ -21,13 +20,7 @@ public class DrainLife : MonoBehaviour
 
             if (enemyHp != null)
             {
-                Instantiate(drainLifeEffect, enemyHp.transform.position, Quaternion.Euler(0, 0, 0));
-
-                enemyHp.currentHP += drainAmount;
-                if (enemyHp.currentHP > enemyHp.maxHP)
-                {
-                    enemyHp.currentHP = enemyHp.maxHP;
-                }
+                enemyHp.RegenHP(drainAmount);
             }
         }
     }
