@@ -48,7 +48,7 @@ public class EnemyHPController : MonoBehaviour
                     Instantiate(enemyDeathEffect, transform.position, transform.rotation);
                     ResetHP();
                 }
-                else if (name.Contains("DarkBossSpider"))
+                else if (name.Contains(Consts.DARK_BOSS_SPIDER))
                 {
                     Instantiate(enemyDeathEffect, transform.position, transform.rotation);
                     Destroy(gameObject);
