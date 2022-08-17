@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d23b4261831259418e963df29ab860d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 19
   moveRight: 0
   changeSideOnDamagePlayer: 0
   wallCheck: {fileID: 7895025899158856936}
@@ -213,7 +213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2
   currentHP: 0
-  enemyDeathEffect: {fileID: 4639924823971810983, guid: 390694eb7c4950847b6935a9b6d0c5b6, type: 3}
   flashOnHit: {r: 0.4759256, g: 0.5553128, b: 0.6509434, a: 1}
   hitFlashTime: 0.2
   hpBar: {fileID: 9019468160184626297}
@@ -221,7 +220,10 @@ MonoBehaviour:
   damagePopup: {fileID: 0}
   damagePopupTime: 0
   damagePopupCounter: 0
+  enemyDeathEffect: {fileID: 4639924823971810983, guid: 390694eb7c4950847b6935a9b6d0c5b6, type: 3}
+  drainLifeEffect: {fileID: 0}
   enemyDeathSound: {fileID: 7652319701883136193}
+  drainLifeSound: {fileID: 0}
 --- !u!82 &7652319701883136193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -348,8 +350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: DarkBoss
   drainAmount: 5
-  drainLifeEffect: {fileID: 4639924823971810983, guid: f263de99db1d67c40adb2e1a3335808a, type: 3}
-  drainLifeSound: {fileID: 0}
 --- !u!95 &365244942525932735
 Animator:
   serializedVersion: 3
