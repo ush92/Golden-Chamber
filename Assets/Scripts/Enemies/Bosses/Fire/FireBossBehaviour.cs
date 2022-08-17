@@ -45,7 +45,7 @@ public class FireBossBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
-
+        bossHP.currentHP = bossHP.maxHP;
         basePosition = transform.position;
         currentRunLength = 0;
         moveRight = false;

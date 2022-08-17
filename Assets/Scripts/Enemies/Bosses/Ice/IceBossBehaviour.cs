@@ -34,7 +34,7 @@ public class IceBossBehaviour : MonoBehaviour
     void OnEnable()
     {
         player.isBossEncounter = true;
-
+        bossHP.currentHP = bossHP.maxHP;
         frozenArea.gameObject.SetActive(true);
 
         GetComponent<SpriteRenderer>().color = new Color32(210, 232, 255, 255);

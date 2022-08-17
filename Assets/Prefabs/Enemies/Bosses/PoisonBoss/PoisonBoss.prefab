@@ -40,9 +40,9 @@ GameObject:
   m_Component:
   - component: {fileID: 613363105}
   - component: {fileID: 613363106}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: legs
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,7 +406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 160
   currentHP: 0
-  enemyDeathEffect: {fileID: 4639924823971810983, guid: 3c51f50e7e623a747ad3f5bdbc0e30fe, type: 3}
   flashOnHit: {r: 0.3339619, g: 0.4627451, b: 0.33333334, a: 1}
   hitFlashTime: 0.2
   hpBar: {fileID: 7572826848699518507}
@@ -414,7 +413,10 @@ MonoBehaviour:
   damagePopup: {fileID: 0}
   damagePopupTime: 0
   damagePopupCounter: 0
+  enemyDeathEffect: {fileID: 4639924823971810983, guid: 3c51f50e7e623a747ad3f5bdbc0e30fe, type: 3}
+  drainLifeEffect: {fileID: 0}
   enemyDeathSound: {fileID: 7534072864208120202}
+  drainLifeSound: {fileID: 0}
 --- !u!114 &3954485294768205009
 MonoBehaviour:
   m_ObjectHideFlags: 0

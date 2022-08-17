@@ -42,6 +42,7 @@ public class DarkBossBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
+        bossHP.currentHP = bossHP.maxHP;
         player.isBossEncounter = true;
 
         transform.position = basePosition.transform.position;

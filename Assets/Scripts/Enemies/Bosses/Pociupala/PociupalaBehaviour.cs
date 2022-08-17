@@ -31,6 +31,7 @@ public class PociupalaBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
+        bossHP.currentHP = bossHP.maxHP;
         basePosition = transform.position;      
 
         animator.SetBool("isAttacking", false);

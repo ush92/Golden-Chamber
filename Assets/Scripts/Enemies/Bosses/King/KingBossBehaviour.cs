@@ -38,7 +38,7 @@ public class KingBossBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
-
+        bossHP.currentHP = bossHP.maxHP;
         isUpper = true;
         transform.position = basePosition.transform.position;
         GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);

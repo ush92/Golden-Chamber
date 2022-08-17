@@ -22,6 +22,7 @@ public class PoisonBehaviour : MonoBehaviour
     private void OnEnable()
     {
         player.isBossEncounter = true;
+        bossHP.currentHP = bossHP.maxHP;
 
         transform.position = basePosition.transform.position;
         InvokeRepeating("InfectPlayer", 5, 9.0f);

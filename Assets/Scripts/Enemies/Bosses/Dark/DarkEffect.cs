@@ -21,14 +21,14 @@ public class DarkEffect : MonoBehaviour
         {
             if(player.isBossEncounter)
             {
-                transform.position = new Vector3(50, -40, 0);
+                transform.position = new Vector3(50, -35, 0);
             }
             else
             {
                 if(isGoingUp)
                 {
                     offset += Time.deltaTime * 2.0f;
-                    if(offset >= 55f)
+                    if(offset >= 30f)
                     {
                         isGoingUp = false;
                     }
@@ -36,7 +36,7 @@ public class DarkEffect : MonoBehaviour
                 else
                 {
                     offset -= Time.deltaTime;
-                    if (offset <= 0f)
+                    if (offset <= -10f)
                     {
                         isGoingUp = true;
                     }
