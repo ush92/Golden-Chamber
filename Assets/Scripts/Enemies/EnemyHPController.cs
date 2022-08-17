@@ -152,7 +152,11 @@ public class EnemyHPController : MonoBehaviour
     private void DeactivateAndDestroy()
     {
         hpBar.gameObject.SetActive(false);
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;     
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        foreach (var shooter in gameObject.GetComponents<EnemyBasicShoot>())
+        {
+            shooter.CancelInvoke();
+        }
         foreach (var collider in gameObject.GetComponents<Collider2D>())
         {
             collider.enabled = false;
@@ -164,10 +168,6 @@ public class EnemyHPController : MonoBehaviour
         foreach (var otherCollider in gameObject.GetComponentsInChildren<Collider2D>())
         {
             otherCollider.enabled = false;
-        }
-        foreach (var shooter in gameObject.GetComponents<EnemyBasicShoot>())
-        {
-            shooter.CancelInvoke();
         }
 
         Destroy(gameObject, 3.0f);
