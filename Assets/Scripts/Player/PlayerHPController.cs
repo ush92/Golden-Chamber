@@ -127,12 +127,12 @@ public class PlayerHPController : MonoBehaviour
         {
             Instantiate(playerFreezeEffect, player.transform.position, player.transform.rotation);
             player.isFrozen = true;
-            player.SoundEffect("Frozen");
+            player.SoundEffect("Frozen", 1.0f, 1.5f);
         }
         else
         {
             Instantiate(playerDamageEffect, player.transform.position, player.transform.rotation);
-            player.SoundEffect($"Hurt{Random.Range(1, 3)}");
+            player.SoundEffect($"Hurt{Random.Range(1, 3)}", 1.0f, 1.5f);
         }
     }
 

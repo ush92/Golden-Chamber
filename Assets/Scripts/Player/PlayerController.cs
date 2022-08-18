@@ -261,7 +261,7 @@ public class PlayerController : MonoBehaviour
 
                 if (!playerSounds.Arctic1.isPlaying)
                 {
-                    SoundEffect($"Arctic1");
+                    SoundEffect($"Arctic1", 1f, 1.5f);
                 }
             }
         }
@@ -424,14 +424,14 @@ public class PlayerController : MonoBehaviour
                     swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
                     playerAnimator.SetTrigger(Consts.ATTACK);
                     meleeAttackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
-                    SoundEffect($"Swoosh{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"Swoosh{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
                 else
                 {
                     swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
                     playerAnimator.SetTrigger(Consts.DARK_ATTACK);
                     meleeAttackCounter = WeaponsConsts.SWOOSH_DARK_CD;
-                    SoundEffect($"DarkBlade{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"DarkBlade{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
                 break;
             case (int)EquipmentManager.Items.Axe:
@@ -440,21 +440,21 @@ public class PlayerController : MonoBehaviour
                     playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                     Instantiate(axeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.AXE_DMG, WeaponsConsts.AXE_LIFETIME);
                     attackCounter = WeaponsConsts.AXE_CD;
-                    SoundEffect($"Axe{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"Axe{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
                 else
                 {
                     playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                     Instantiate(goldenAxeProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.GOLDEN_AXE_DMG, WeaponsConsts.GOLDEN_AXE_LIFETIME);
                     attackCounter = WeaponsConsts.GOLDEN_AXE_CD;
-                    SoundEffect($"GoldenAxe{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"GoldenAxe{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
                 break;
             case (int)EquipmentManager.Items.Stone:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 Instantiate(stoneProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.STONE_DMG, WeaponsConsts.STONE_LIFETIME);
                 attackCounter = WeaponsConsts.STONE_CD;
-                SoundEffect($"Stone{UnityEngine.Random.Range(1, 4)}");
+                SoundEffect($"Stone{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 break;
             case (int)EquipmentManager.Items.FireSpark:
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
@@ -462,7 +462,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Instantiate(fireSparkProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.FIRE_DMG, WeaponsConsts.FIRE_LIFETIME);
                     attackCounter = WeaponsConsts.FIRE_CD;
-                    SoundEffect($"Fire{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"Fire{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
                 break;
             case (int)EquipmentManager.Items.ArcticBreathe:
@@ -472,7 +472,7 @@ public class PlayerController : MonoBehaviour
                 playerAnimator.SetTrigger(Consts.RANGED_ATTACK);
                 Instantiate(poisonProjectile, attackPoint.position, attackPoint.rotation).Set(WeaponsConsts.POISON_DMG, WeaponsConsts.POISON_LIFETIME);
                 attackCounter = WeaponsConsts.POISON_CD;
-                SoundEffect($"Poison{UnityEngine.Random.Range(1, 4)}");
+                SoundEffect($"Poison{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 break;
             default:
                 break;
@@ -486,14 +486,14 @@ public class PlayerController : MonoBehaviour
             swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_BASIC_DMG;
             playerAnimator.SetTrigger(Consts.ATTACK);
             meleeAttackCounter = WeaponsConsts.SWOOSH_BASIC_CD;
-            SoundEffect($"Swoosh{UnityEngine.Random.Range(1, 4)}");
+            SoundEffect($"Swoosh{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
         }
         else
         {
             swooshAttack.GetComponent<DamageEnemy>().damageToDeal = WeaponsConsts.SWOOSH_DARK_DMG;
             playerAnimator.SetTrigger(Consts.DARK_ATTACK);
             meleeAttackCounter = WeaponsConsts.SWOOSH_DARK_CD;
-            SoundEffect($"DarkBlade{UnityEngine.Random.Range(1, 4)}");
+            SoundEffect($"DarkBlade{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
         }
     }
 
@@ -769,7 +769,7 @@ public class PlayerController : MonoBehaviour
             hpController.currentHP = hpController.maxHP;
 
             GameManager.instance.PlayerRespawnEffect();
-            SoundEffect("Respawn");
+            SoundEffect("Respawn", 1.0f, 1.5f);
 
             frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
         }
@@ -871,6 +871,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SoundEffect(string name, float minPitch, float maxPitch)
+    {
+        if (GameManager.isSoundsOn)
+        {
+            var sound = playerSounds.GetSound(name);
+            sound.pitch = UnityEngine.Random.Range(minPitch, maxPitch);
+            sound.Play();
+        }
+    }
+
     #region Touch control
 
     public void JumpOnTouch()
@@ -883,13 +893,13 @@ public class PlayerController : MonoBehaviour
                 {
                     isGrounded = false;
                     playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-                    SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
+                    SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
             }
             else
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
+                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
             }
         }
     }
@@ -1003,7 +1013,7 @@ public class PlayerController : MonoBehaviour
                 isGrounded = false;
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
 
-                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}");
+                SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
             }
 
             if (!isGrounded && context.canceled && playerRB.velocity.y > 0)

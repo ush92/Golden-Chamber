@@ -71,10 +71,12 @@ public class Destructable : MonoBehaviour
             {
                 if (Random.Range(0, 2) == 0)
                 {
+                    Box1.pitch = Random.Range(1f, 1.5f);
                     Box1.Play();
                 }
                 else
                 {
+                    Box2.pitch = Random.Range(1f, 1.5f);
                     Box2.Play();
                 }
             }
@@ -82,10 +84,12 @@ public class Destructable : MonoBehaviour
             {
                 if (Random.Range(0, 2) == 0)
                 {
+                    Urn1.pitch = Random.Range(1f, 1.5f);
                     Urn1.Play();
                 }
                 else
                 {
+                    Urn2.pitch = Random.Range(1f, 1.5f);
                     Urn2.Play();
                 }
             }

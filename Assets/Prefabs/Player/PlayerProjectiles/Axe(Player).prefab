@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1641028499805509513}
   - component: {fileID: 1641028499805509515}
   - component: {fileID: 7969986277567877523}
-  - component: {fileID: 1363364799}
+  - component: {fileID: 8668774348304842863}
   m_Layer: 6
   m_Name: Axe(Player)
   m_TagString: PlayerProjectile
@@ -161,7 +161,7 @@ MonoBehaviour:
   isCollidingWithEnv: 1
   collisionEffect: {fileID: 4639924823971810983, guid: 9851a22d008bec245a8416aade17b88d, type: 3}
   usePhysics: 0
---- !u!82 &1363364799
+--- !u!82 &8668774348304842863
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,8 +171,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 7933b3f9783283b4192d107cb912c6f4, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

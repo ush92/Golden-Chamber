@@ -9,6 +9,8 @@ public class LevelMapController : MonoBehaviour
     public Transform levels3Block;
     public Transform levels4Block;
 
+    public Transform epicTreasure;
+
     private bool isRefreshed = false;
 
     void Start()
@@ -23,6 +25,7 @@ public class LevelMapController : MonoBehaviour
             int index = 0;
 
             levels4Block.gameObject.SetActive(false);
+            epicTreasure.gameObject.SetActive(true);
 
             foreach (Transform door in levelDoorsParent)
             {
@@ -33,7 +36,7 @@ public class LevelMapController : MonoBehaviour
                 else
                 {
                     door.gameObject.GetComponent<SpriteRenderer>().sprite = uncompletedLevelSprite;
-
+                    epicTreasure.gameObject.SetActive(false);
                     if (index != Consts.GetLevelIndex(Consts.LEVEL4_1))
                     {
                         levels4Block.gameObject.SetActive(true);

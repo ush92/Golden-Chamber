@@ -88,6 +88,16 @@ public class PlayerProjectile : MonoBehaviour
                 rb.velocity = new Vector2(0, 0);
                 DestroyProjectile();
             }
+
+            if (GameManager.isSoundsOn)
+            {
+                if (gameObject.name.Contains(Consts.PLAYER_AXE)) //GoldenAxe contains it as well
+                {
+                    AudioSource audio = GetComponent<AudioSource>();
+                    audio.pitch = Random.Range(1f, 1.5f);
+                    audio.Play();
+                }
+            }
         }
     }
 
@@ -115,9 +125,6 @@ public class PlayerProjectile : MonoBehaviour
         if (isDestroyed == false)
         {
             isDestroyed = true;
-
-            //AudioSource audio = GetComponent<AudioSource>();
-            //audio.Play();
 
             Instantiate(collisionEffect, transform.position, Quaternion.Euler(0, 0, 0));
             
