@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: maxHP
-      value: 2
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
       propertyPath: flashOnHit.b
@@ -159,6 +159,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -111482460367439567, guid: 2139fd76163e5614a80c038f2ee494b8, type: 3}
+    - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8119971176181138054, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
     - {fileID: 8119971176181138052, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
@@ -205,61 +209,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45973206, y: 1.1014671}
   m_EdgeRadius: 0
---- !u!95 &1245580729
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4674240420786416055}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 182cad28e924b3449928eeeec74d7968, type: 2}
-  m_CullingMode: 2
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1245580722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4674240420786416055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b79373fa543913498b681f844194305, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationArea: {fileID: 0}
-  animator: {fileID: 1245580729}
-  basePosition: {fileID: 0}
-  bossHP: {fileID: 3785597383732825427}
-  player: {fileID: 0}
-  polarityDebuf: {fileID: 5887522138598247137, guid: 054d7cc09d9b6ef488f2f669f3c967ef, type: 3}
-  debuffParticles: {fileID: 4639924823971810983, guid: d55d17999cf5c92488d5f22032b3a046, type: 3}
-  firstPolarityTime: 5
-  polarityRepeatingTime: 5
-  polarityDamageDelay: 2
-  plusElectrode: {fileID: 0}
-  minusElectrode: {fileID: 0}
-  evilClone: {fileID: 4374328035780749427, guid: 7712f9e1c77a0554a9b7351770fdd2ab, type: 3}
-  evilClonesList: []
-  leftSpawnPoint: {fileID: 0}
-  rightSpawnPoint: {fileID: 0}
-  spawnEffect: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
-  firstSpawnTime: 3
-  spawnRepeatingTime: 8
-  firstTeleportTime: 12
-  teleportRepeatingTime: 5
-  teleportEffect: {fileID: 4639924823971810983, guid: eb20f24721529f641b2d2cd0fd1bb21d, type: 3}
-  goldenAxeWeaponLoot: {fileID: 5730983414554495737, guid: 8de63df9cca597f4396bd50b791d30d2, type: 3}
-  epicTreasureLoot: {fileID: 3496869291923984426, guid: 6e3ec6bfc195ea044ac8522ef5546bf9, type: 3}
 --- !u!82 &4957723586843405273
 AudioSource:
   m_ObjectHideFlags: 0
@@ -356,3 +305,58 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1245580729
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674240420786416055}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 182cad28e924b3449928eeeec74d7968, type: 2}
+  m_CullingMode: 2
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1245580722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4674240420786416055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b79373fa543913498b681f844194305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationArea: {fileID: 0}
+  animator: {fileID: 1245580729}
+  basePosition: {fileID: 0}
+  bossHP: {fileID: 3785597383732825427}
+  player: {fileID: 0}
+  polarityDebuf: {fileID: 5887522138598247137, guid: 054d7cc09d9b6ef488f2f669f3c967ef, type: 3}
+  debuffParticles: {fileID: 4639924823971810983, guid: d55d17999cf5c92488d5f22032b3a046, type: 3}
+  firstPolarityTime: 5
+  polarityRepeatingTime: 3
+  polarityDamageDelay: 1.5
+  plusElectrode: {fileID: 0}
+  minusElectrode: {fileID: 0}
+  evilClone: {fileID: 4374328035780749427, guid: 7712f9e1c77a0554a9b7351770fdd2ab, type: 3}
+  evilClonesList: []
+  leftSpawnPoint: {fileID: 0}
+  rightSpawnPoint: {fileID: 0}
+  spawnEffect: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
+  firstSpawnTime: 3
+  spawnRepeatingTime: 3.5
+  firstTeleportTime: 9
+  teleportRepeatingTime: 6
+  teleportEffect: {fileID: 4639924823971810983, guid: eb20f24721529f641b2d2cd0fd1bb21d, type: 3}
+  goldenAxeWeaponLoot: {fileID: 5730983414554495737, guid: 8de63df9cca597f4396bd50b791d30d2, type: 3}
+  epicTreasureLoot: {fileID: 3496869291923984426, guid: 6e3ec6bfc195ea044ac8522ef5546bf9, type: 3}

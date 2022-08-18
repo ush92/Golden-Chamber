@@ -743,6 +743,11 @@ public class PlayerController : MonoBehaviour
         footDustEmission.rateOverTime = 0f;
 
         deathTimeCounter = deathTime;
+
+        if (playerSounds.Arctic1.isPlaying)
+        {
+            playerSounds.Arctic1.Stop();
+        }
     }
 
     public void Respawn()

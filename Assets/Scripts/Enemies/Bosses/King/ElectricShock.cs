@@ -8,6 +8,8 @@ public class ElectricShock : MonoBehaviour
 
     public GameObject sparksEffect;
 
+    public AudioSource electricSound;
+
     private void FixedUpdate()
     {
         if (damageDelayTimer >= 0)
@@ -28,6 +30,15 @@ public class ElectricShock : MonoBehaviour
             {
                 other.GetComponent<PlayerHPController>().DamagePlayer(damage);
                 Instantiate(sparksEffect, other.transform.position, other.transform.rotation);
+
+                if (GameManager.isSoundsOn)
+                {
+                    if (electricSound.isPlaying == false)
+                    {
+                        electricSound.pitch = Random.Range(1.0f, 1.5f);
+                        electricSound.Play();
+                    }
+                }
             }
         }
     }

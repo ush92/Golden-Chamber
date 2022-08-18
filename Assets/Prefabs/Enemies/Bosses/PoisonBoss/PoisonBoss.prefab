@@ -40,6 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 613363105}
   - component: {fileID: 613363106}
+  - component: {fileID: 5749351926499020063}
+  - component: {fileID: 5368755217891562398}
   m_Layer: 8
   m_Name: legs
   m_TagString: Ground
@@ -77,6 +79,46 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0047922977, y: -0.70416147}
   m_Size: {x: 2.86152, y: 1.4946033}
   m_Direction: 1
+--- !u!61 &5749351926499020063
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613363104}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6552696, y: 0.04227531}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.8596001, y: 0.43632722}
+  m_EdgeRadius: 0
+--- !u!114 &5368755217891562398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613363104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a765c288e001954fb87b1ca754af9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToDeal: 1
+  isKnockingBack: 1
 --- !u!1001 &2859445891812787103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -240,6 +282,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7202957477718049754, guid: c8a8b7db727b0504b8a8e37ade626a79, type: 3}
+    - target: {fileID: 8119971176181138063, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8119971176181138054, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
     - {fileID: 358307637491934826, guid: f9a312d6e8ee2be4eab5a9cf751b1751, type: 3}
@@ -404,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 160
+  maxHP: 180
   currentHP: 0
   flashOnHit: {r: 0.3339619, g: 0.4627451, b: 0.33333334, a: 1}
   hitFlashTime: 0.2

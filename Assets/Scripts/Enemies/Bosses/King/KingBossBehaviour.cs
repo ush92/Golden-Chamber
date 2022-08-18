@@ -93,6 +93,7 @@ public class KingBossBehaviour : MonoBehaviour
             }
 
             GetComponentInChildren<EnemyHPController>().ResetHP();
+            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             gameObject.SetActive(false);
         }
     }
@@ -107,10 +108,8 @@ public class KingBossBehaviour : MonoBehaviour
         if (player != null)
         {
             animator.SetTrigger("Shoot");
+            GetComponent<SpriteRenderer>().color = new Color32(255, 255, 255, 255);
             Instantiate(debuffParticles, transform.position, transform.rotation);
-
-            plusElectrode.Activate(polarityDamageDelay);
-            minusElectrode.Activate(polarityDamageDelay);
 
             if (currentDebuff == null)
             {
@@ -119,6 +118,9 @@ public class KingBossBehaviour : MonoBehaviour
                 currentDebuff.isPlus = Random.Range(0, 2) == 0;
                 currentDebuff.transform.parent = player.transform;
                 currentDebuff.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 1.5f, player.transform.position.z);
+
+                plusElectrode.Activate(polarityDamageDelay);
+                minusElectrode.Activate(polarityDamageDelay);
             }
             else
             {
@@ -128,6 +130,14 @@ public class KingBossBehaviour : MonoBehaviour
                 if (tmp != currentDebuff.isPlus)
                 {
                     Instantiate(debuffParticles, player.transform.position, player.transform.rotation);
+
+                    plusElectrode.Activate(polarityDamageDelay);
+                    minusElectrode.Activate(polarityDamageDelay);
+                }
+                else
+                {
+                    plusElectrode.Activate(0);
+                    minusElectrode.Activate(0);
                 }
             }
         }
