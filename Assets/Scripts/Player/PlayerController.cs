@@ -514,7 +514,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
         {
-            transform.parent = other.transform;
+            transform.parent = other.transform;          
         }
 
         if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))

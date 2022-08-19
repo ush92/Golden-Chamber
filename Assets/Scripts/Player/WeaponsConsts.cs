@@ -21,8 +21,8 @@ public static class WeaponsConsts
     public const float SWOOSH_DARK_CD = 0.325f;
     public const int SWOOSH_DARK_DMG = 2;
 
-    public const float POISON_CD = 2.0f;
-    public const int POISON_DMG = 2;
+    public const float POISON_CD = 1.0f;
+    public const int POISON_DMG = 1;
     public const float POISON_TRIGGERED_LIFETIME = 0.5f; //4 ticks
     public const float POISON_LIFETIME = 2.5f;
 
