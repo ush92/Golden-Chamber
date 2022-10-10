@@ -130,11 +130,15 @@ public class PlayerController : MonoBehaviour
         isSwimming = false;
 
         arcticBreathe.SetActive(false); //weapon
+
+        //particle effects
         footDustEmission = footDust.emission;
-        jumpDust.gameObject.SetActive(false);
+        jumpDust.gameObject.SetActive(false);      
         frostBreatheParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2));
         waterBubblesParticles.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
         oxygenBorder.gameObject.SetActive(SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
+        footDust.gameObject.SetActive(!SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4));
+
         if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL2_4))
         {
             isSwimming = true;
