@@ -24,6 +24,7 @@ public class EnemyHPController : MonoBehaviour
 
     public GameObject enemyDeathEffect;
     public GameObject drainLifeEffect;
+    public GameObject additionalEffect;
 
     public AudioSource enemyDeathSound;
     public AudioSource drainLifeSound;
@@ -49,6 +50,11 @@ public class EnemyHPController : MonoBehaviour
                 {
                     Instantiate(enemyDeathEffect, transform.position, transform.rotation);
                     ResetHP();
+                }
+                if (name.Contains(Consts.TOXIC_FROG))
+                {
+                    Instantiate(additionalEffect, transform.position, transform.rotation); //toxic cloud on monster death
+                    Destroy(gameObject);
                 }
                 else if (name.Contains(Consts.DARK_BOSS_SPIDER))
                 {

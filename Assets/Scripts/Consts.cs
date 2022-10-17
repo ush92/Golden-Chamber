@@ -24,10 +24,10 @@ public static class Consts
     public const string WATER_BOT = "waterBottom";
     public const string TARGET_DUMMY = "targetDummy";
 
-
     public const string BOSS1 = "Pociupala";
     public const string DARK_BOSS_SPIDER = "DarkBossSpider";
     public const string OBJECTS_AFTER_BOSS = "ObjectsAfterBoss";
+    public const string TOXIC_FROG = "ToxicFrog";
 
     public const string ATTACK = "attack";
     public const string DARK_ATTACK = "darkAttack";
