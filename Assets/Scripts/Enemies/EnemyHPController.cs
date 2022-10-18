@@ -51,7 +51,7 @@ public class EnemyHPController : MonoBehaviour
                     Instantiate(enemyDeathEffect, transform.position, transform.rotation);
                     ResetHP();
                 }
-                if (name.Contains(Consts.TOXIC_FROG))
+                else if (name.Contains(Consts.TOXIC_FROG))
                 {
                     Instantiate(additionalEffect, transform.position, transform.rotation); //toxic cloud on monster death
                     Destroy(gameObject);
