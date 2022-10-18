@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: maxHP
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067802, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: flashOnHit.b
@@ -114,6 +114,10 @@ PrefabInstance:
     - target: {fileID: 2188517101105067806, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2188517101105067806, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2188517101105067807, guid: ae681f5e9a3839744a811f4137bd8058, type: 3}
       propertyPath: m_RootOrder
@@ -191,40 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f012152f15c127f4cbf77d8ed035aa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6458696345281527477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5256082238786697969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42615d32b4de99b439de08fd063105ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeedAcceleration: 5
-  attackDistance: 1.8
-  attackingTimeLength: 0.6
-  animator: {fileID: 5256082238786697972}
-  player: {fileID: 0}
-  bossHP: {fileID: 5256082238786697974}
-  saws:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  sawMoveSpeed: 2
-  axeWeaponLoot: {fileID: 7161866308255433094, guid: e4d0f1ca364e15948bd6f35035ad7016, type: 3}
-  musicManager: {fileID: 0}
 --- !u!82 &3991781790021009854
 AudioSource:
   m_ObjectHideFlags: 0
@@ -321,3 +291,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6458696345281527477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5256082238786697969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42615d32b4de99b439de08fd063105ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeedAcceleration: 5
+  attackDistance: 1.8
+  attackingTimeLength: 0.6
+  animator: {fileID: 5256082238786697972}
+  player: {fileID: 0}
+  bossHP: {fileID: 5256082238786697974}
+  saws:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  sawMoveSpeed: 2
+  axeWeaponLoot: {fileID: 7161866308255433094, guid: e4d0f1ca364e15948bd6f35035ad7016, type: 3}
+  musicManager: {fileID: 0}
