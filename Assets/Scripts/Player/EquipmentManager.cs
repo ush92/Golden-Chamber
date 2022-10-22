@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Reflection;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,60 +16,47 @@ public class EquipmentManager : MonoBehaviour
     void Start()
     {
         currentItem = 0;
-        items = new List<Items>();
+        items = Enumerable.Repeat(Items.Empty, 6).ToList();
         UpdateEquipment();
     }
 
     public void UpdateEquipment()
     {
-        if (!items.Contains(Items.Swoosh))
+        for (int i = 0; i < items.Count; i++)
         {
-            items.Add(Items.Swoosh);
+            items[i] = Items.Empty;
         }
+
+        items[0] = Items.Swoosh;
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL1_3)] == true)
         {
-            if(!items.Contains(Items.Axe))
-            {
-                items.Add(Items.Axe);
-            }        
+            items[1] = Items.Axe;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL2_3)] == true)
         {
-            if (!items.Contains(Items.Stone))
-            {
-                items.Add(Items.Stone);
-            }
+            items[2] = Items.Stone;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_1)] == true)
         {
-            if (!items.Contains(Items.FireSpark))
-            {
-                items.Add(Items.FireSpark);
-            }
+            items[3] = Items.FireSpark;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_2)] == true)
         {
-            if (!items.Contains(Items.ArcticBreathe))
-            {
-                items.Add(Items.ArcticBreathe);
-            }
+            items[4] = Items.ArcticBreathe;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_3)] == true)
         {
-            ItemIcons[0] = darkBladeIcon;          
+            ItemIcons[0] = darkBladeIcon;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL3_4)] == true)
         {
-            if (!items.Contains(Items.Poison))
-            {
-                items.Add(Items.Poison);
-            }
+            items[5] = Items.Poison;
         }
 
         if (GameManager.levelList[Consts.GetLevelIndex(Consts.LEVEL4_1)] == true)
@@ -82,15 +69,17 @@ public class EquipmentManager : MonoBehaviour
 
     public void ChangeItem()
     {
-        currentItem++;
-
-        if (currentItem == items.Count)
+        do
         {
-            currentItem = 0;
-        }
+            currentItem++;
+            if (currentItem == items.Count)
+            {
+                currentItem = 0;
+            }
+        } while (items[currentItem] == Items.Empty);
 
         currentItemIcon.sprite = ItemIcons[currentItem];
     }
 
-    public enum Items { Swoosh, Axe, Stone, FireSpark, ArcticBreathe, Poison };
+    public enum Items { Empty = -1, Swoosh, Axe, Stone, FireSpark, ArcticBreathe, Poison };
 }
