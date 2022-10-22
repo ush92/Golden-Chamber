@@ -16,16 +16,12 @@ public class EquipmentManager : MonoBehaviour
     void Start()
     {
         currentItem = 0;
-        items = Enumerable.Repeat(Items.Empty, 6).ToList();
         UpdateEquipment();
     }
 
     public void UpdateEquipment()
     {
-        for (int i = 0; i < items.Count; i++)
-        {
-            items[i] = Items.Empty;
-        }
+        items = Enumerable.Repeat(Items.Empty, 6).ToList();
 
         items[0] = Items.Swoosh;
 

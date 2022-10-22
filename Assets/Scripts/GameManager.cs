@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour, ISaveable
 
     public void AddPlayer(PlayerController newPlayer)
     {
-        if(!activePlayer)
+        if (!activePlayer)
         {
             activePlayer = newPlayer;
             PlayerRespawnEffect();
