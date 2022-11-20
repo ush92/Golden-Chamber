@@ -12,7 +12,7 @@ public class DamagePlayer : MonoBehaviour
             var playerHPController = other.GetComponent<PlayerHPController>();
             var player = other.GetComponent<PlayerController>();
 
-            playerHPController.DamagePlayer(damageToDeal);
+            playerHPController.DamagePlayer(damageToDeal, gameObject.name);
 
             if (player.isActive && player.knockbackCooldownCounter <= 0 && isKnockingBack)
             {

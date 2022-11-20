@@ -88,7 +88,7 @@ public class PlayerHPController : MonoBehaviour
         hpBar.Find("Bar").localScale = new Vector3(((float)currentHP / (float)maxHP) * 5, 1f);
     }
 
-    public void DamagePlayer(int damage)
+    public void DamagePlayer(int damage, string damagerName = "")
     {
         if (invincibilityCounter <= 0)
         {            
@@ -116,14 +116,14 @@ public class PlayerHPController : MonoBehaviour
             }
             else
             {
-                OnHitEffects();
+                OnHitEffects(damagerName);
             }
         }
     }
 
-    private void OnHitEffects()
+    private void OnHitEffects(string damagerName = "")
     {
-        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2))
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2) || damagerName == "GoldenWraith")
         {
             Instantiate(playerFreezeEffect, player.transform.position, player.transform.rotation);
             player.isFrozen = true;

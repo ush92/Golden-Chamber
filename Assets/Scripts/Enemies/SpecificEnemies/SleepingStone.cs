@@ -35,7 +35,7 @@ public class SleepingStone : MonoBehaviour
         jumpCooldownCounter = jumpCooldownTime;
 
         wakeUpHP = enemyHPController.maxHP;
-        enemyHPController.maxHP = 100;
+        enemyHPController.maxHP = 900;
         enemyHPController.currentHP = enemyHPController.maxHP;
     }
 
