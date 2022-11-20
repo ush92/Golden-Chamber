@@ -15,6 +15,7 @@ public class KingBossBehaviour : MonoBehaviour
     public float firstPolarityTime;
     public float polarityRepeatingTime;
     public float polarityDamageDelay;
+    public AudioSource polarityChangeSound;
 
     public ElectricShock plusElectrode;
     public ElectricShock minusElectrode;
@@ -121,6 +122,8 @@ public class KingBossBehaviour : MonoBehaviour
 
                 plusElectrode.Activate(polarityDamageDelay);
                 minusElectrode.Activate(polarityDamageDelay);
+
+                polarityChangeSound.Play();
             }
             else
             {
@@ -130,6 +133,7 @@ public class KingBossBehaviour : MonoBehaviour
                 if (tmp != currentDebuff.isPlus)
                 {
                     Instantiate(debuffParticles, player.transform.position, player.transform.rotation);
+                    polarityChangeSound.Play();
 
                     plusElectrode.Activate(polarityDamageDelay);
                     minusElectrode.Activate(polarityDamageDelay);
