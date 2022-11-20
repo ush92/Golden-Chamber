@@ -441,7 +441,7 @@ MonoBehaviour:
   debuffParticles: {fileID: 4639924823971810983, guid: d55d17999cf5c92488d5f22032b3a046, type: 3}
   firstPolarityTime: 5
   polarityRepeatingTime: 3
-  polarityDamageDelay: 1.5
+  polarityDamageDelay: 2
   polarityChangeSound: {fileID: 1245580732}
   plusElectrode: {fileID: 0}
   minusElectrode: {fileID: 0}
@@ -451,7 +451,7 @@ MonoBehaviour:
   rightSpawnPoint: {fileID: 0}
   spawnEffect: {fileID: 4639924823971810983, guid: bf9a4647bb06a5f48b27102c3a45dd5b, type: 3}
   firstSpawnTime: 3
-  spawnRepeatingTime: 3.5
+  spawnRepeatingTime: 4.5
   firstTeleportTime: 9
   teleportRepeatingTime: 6
   teleportEffect: {fileID: 4639924823971810983, guid: eb20f24721529f641b2d2cd0fd1bb21d, type: 3}
