@@ -86,7 +86,7 @@ public static class Consts
     public const string LEVEL1_2 = "Level1_2";
     public const string LEVEL1_2_NAME = "Park Linowy Po³amaniec";
     public const string LEVEL1_3 = "Level1_3";
-    public const string LEVEL1_3_NAME = "Tartak Pociupa³a i Synowie";
+    public const string LEVEL1_3_NAME = "Tartak Pociupa³aœ i Synowie";
     public const string LEVEL1_4 = "Level1_4";
     public const string LEVEL1_4_NAME = "Generator Portali";
     public const string LEVEL2_1 = "Level2_1";
