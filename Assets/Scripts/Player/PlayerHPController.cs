@@ -123,7 +123,7 @@ public class PlayerHPController : MonoBehaviour
 
     private void OnHitEffects(string damagerName = "")
     {
-        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2) || damagerName == "GoldenWraith")
+        if (SceneManager.GetActiveScene().name.Equals(Consts.LEVEL3_2) || damagerName == "GoldenWraith" || damagerName.Contains("spikeIcicle"))
         {
             Instantiate(playerFreezeEffect, player.transform.position, player.transform.rotation);
             player.isFrozen = true;
