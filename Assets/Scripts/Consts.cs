@@ -94,7 +94,7 @@ public static class Consts
     public const string LEVEL2_2 = "Level2_2";
     public const string LEVEL2_2_NAME = "Ha³da Kolcozbyt";
     public const string LEVEL2_3 = "Level2_3";
-    public const string LEVEL2_3_NAME = "Jaskinia Rozpaczy";
+    public const string LEVEL2_3_NAME = "Jaskinia Czarna Rozpacz";
     public const string LEVEL2_4 = "Level2_4";
     public const string LEVEL2_4_NAME = "¯wirownia G³êbinopol";
     public const string LEVEL3_1 = "Level3_1";
