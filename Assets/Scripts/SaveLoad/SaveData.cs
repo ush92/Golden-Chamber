@@ -7,11 +7,12 @@ public class SaveData
     [System.Serializable]
     public struct PlayerData
     {
-        //config
         public bool isMusicOn;
         public bool isSoundsOn;
         
         public List<bool> levelList; //completed or not
+
+        #region levelRecords
 
         public List<int> level0Records; //fruits and time
         public List<int> level1Records;
@@ -26,6 +27,8 @@ public class SaveData
         public List<int> level10Records;
         public List<int> level11Records;
         public List<int> level12Records;
+
+        #endregion
     }
 
     public PlayerData playerData;
@@ -36,6 +39,8 @@ public class SaveData
         playerData.isSoundsOn = true;
 
         playerData.levelList = new List<bool>(new bool[13]);
+
+        #region levelRecords
 
         playerData.level0Records = new List<int>(new int[10]);
         playerData.level1Records = new List<int>(new int[10]);
@@ -50,6 +55,8 @@ public class SaveData
         playerData.level10Records = new List<int>(new int[10]);
         playerData.level11Records = new List<int>(new int[10]);
         playerData.level12Records = new List<int>(new int[10]);
+
+        #endregion
     }
 
     public string SaveToJson()

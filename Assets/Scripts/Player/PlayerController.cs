@@ -181,7 +181,6 @@ public class PlayerController : MonoBehaviour
             {
                 UnderwaterBreathe();
             }
-
         }
         else
         {
