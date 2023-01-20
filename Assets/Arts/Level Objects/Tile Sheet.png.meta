@@ -321,7 +321,7 @@ TextureImporter:
       213: -5453804919468199058
     second: sheet_Padded_105
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -342,6 +342,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -380,6 +381,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -419,6 +421,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2668,6 +2682,113 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      sheet_Padded_11: -2954159901573586511
+      sheet_Padded_84: -2945543721104379947
+      sheet_Padded_6: 3650218327985030342
+      sheet_Padded_50: 596276241605557718
+      sheet_Padded_86: 848434576260560306
+      sheet_Padded_87: 2499018335120247423
+      sheet_Padded_35: 2051260253096386422
+      sheet_Padded_58: -12359983898150636
+      sheet_Padded_43: -8987679702436872585
+      sheet_Padded_105: -5453804919468199058
+      sheet_Padded_47: -1606767052176517492
+      sheet_Padded_39: 1550671411092004233
+      sheet_Padded_28: 8536096767433919940
+      sheet_Padded_46: -825154015927519173
+      sheet_Padded_49: -8337851078341027121
+      sheet_Padded_31: 3636800580936612550
+      sheet_Padded_18: -2725411473722940288
+      sheet_Padded_12: 5743867251218534922
+      sheet_Padded_45: -6971344736963526144
+      sheet_Padded_38: -8835751205035174462
+      sheet_Padded_70: -6344469819487564216
+      sheet_Padded_51: -9204320290601445421
+      sheet_Padded_32: -6669423380274534200
+      sheet_Padded_7: -3027502319104121708
+      sheet_Padded_72: 6840002943971842167
+      sheet_Padded_97: 730191863734392264
+      sheet_Padded_13: -5271757794783056641
+      sheet_Padded_15: -8940041075093230915
+      sheet_Padded_44: 4595756102604577246
+      sheet_Padded_37: -793656813530880146
+      sheet_Padded_52: 1920130298798685792
+      sheet_Padded_48: 6228711960238993334
+      sheet_Padded_102: 6487908962790062384
+      sheet_Padded_17: -4722241580380779418
+      sheet_Padded_33: -8443343289435956689
+      sheet_Padded_42: 6238058815959983687
+      sheet_Padded_78: 7699064040492542270
+      sheet_Padded_74: -7347847368502332031
+      sheet_Padded_82: -450835528707970881
+      sheet_Padded_3: 3324466031691246918
+      sheet_Padded_85: 5647629957816581117
+      sheet_Padded_53: -7311927370962411057
+      sheet_Padded_25: -4609944710042210365
+      sheet_Padded_75: -5369013013382620051
+      sheet_Padded_61: -645593471797484970
+      sheet_Padded_89: 9168878474267775754
+      sheet_Padded_21: 5234669471383018853
+      sheet_Padded_94: -2424755990522758
+      sheet_Padded_2: 6898591362047689378
+      sheet_Padded_73: 2336127980807793653
+      sheet_Padded_59: 5501848641600300875
+      sheet_Padded_54: 3080691160198747134
+      sheet_Padded_24: 7764464972069859995
+      sheet_Padded_88: -153492695343688357
+      sheet_Padded_23: 5357261634538120597
+      sheet_Padded_100: 2975284688963652411
+      sheet_Padded_60: 1809518574213307511
+      sheet_Padded_34: 641705718547480022
+      sheet_Padded_62: 8711066251753751146
+      sheet_Padded_5: -6435348665922343550
+      sheet_Padded_63: -4523584183741451912
+      sheet_Padded_77: 343448068496661106
+      sheet_Padded_103: 1487310410698212027
+      sheet_Padded_0: 5381811094652357399
+      sheet_Padded_67: -8682470382487049309
+      sheet_Padded_65: 1487326411650808828
+      sheet_Padded_55: 9040332941569895893
+      sheet_Padded_56: 9176911130079811556
+      sheet_Padded_104: 8185826362228171690
+      sheet_Padded_20: -7029071914063194032
+      sheet_Padded_26: 587920981142376895
+      sheet_Padded_14: 1414692773925280096
+      sheet_Padded_99: -8742127783063310766
+      sheet_Padded_41: 1313665589379037258
+      sheet_Padded_30: -5903511723286546620
+      sheet_Padded_36: 6188581246811040847
+      sheet_Padded_95: -3115478144459533781
+      sheet_Padded_81: -2892403563929856637
+      sheet_Padded_29: -2461132753471702169
+      sheet_Padded_64: -8898738845036468892
+      sheet_Padded_79: -6110837899912810911
+      sheet_Padded_96: 7919017996138729759
+      sheet_Padded_1: -4323854950894910577
+      sheet_Padded_4: -7652935523657640533
+      sheet_Padded_98: -7810244472649880404
+      sheet_Padded_19: -2090097451586231323
+      sheet_Padded_68: -8181916593103571041
+      sheet_Padded_8: -3504385153725751855
+      sheet_Padded_9: -8660588517551010343
+      sheet_Padded_71: -3912335405836397722
+      sheet_Padded_80: -6338355523048960115
+      sheet_Padded_16: 8645821970705152632
+      sheet_Padded_83: -1698873483089187535
+      sheet_Padded_10: -2084729503932503652
+      sheet_Padded_101: -5036874698653513744
+      sheet_Padded_92: 8385722927157068896
+      sheet_Padded_40: -8287971189749782772
+      sheet_Padded_66: 8314688251764930612
+      sheet_Padded_22: -2998736265017534944
+      sheet_Padded_27: -3565062905980244891
+      sheet_Padded_57: 2954583159698087358
+      sheet_Padded_91: -8329479359616166057
+      sheet_Padded_90: -7032334982577808878
+      sheet_Padded_69: 7913364011036395070
+      sheet_Padded_76: 8661983731733375202
+      sheet_Padded_93: 8148164400497177593
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
