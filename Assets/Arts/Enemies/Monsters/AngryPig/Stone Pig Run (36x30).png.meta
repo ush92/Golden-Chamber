@@ -39,7 +39,7 @@ TextureImporter:
       213: 3833448121308980700
     second: Stone Pig Run (36x30)_11
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,7 +60,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -99,7 +98,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -139,18 +137,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -426,19 +412,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Stone Pig Run (36x30)_1: -879710030733274798
-      Stone Pig Run (36x30)_10: -7177059476977024948
-      Stone Pig Run (36x30)_0: 7091011191969730385
-      Stone Pig Run (36x30)_3: -7310913016143873849
-      Stone Pig Run (36x30)_7: 1875821107141541580
-      Stone Pig Run (36x30)_2: 5512014925107669420
-      Stone Pig Run (36x30)_6: -7672353485352893877
-      Stone Pig Run (36x30)_9: 244143112158068981
-      Stone Pig Run (36x30)_11: 3833448121308980700
-      Stone Pig Run (36x30)_4: 3543772862252692396
-      Stone Pig Run (36x30)_5: -6211639971402010353
-      Stone Pig Run (36x30)_8: 1210105901759716099
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

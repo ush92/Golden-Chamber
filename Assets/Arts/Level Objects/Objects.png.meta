@@ -51,7 +51,7 @@ TextureImporter:
       213: -4060402318970035109
     second: Pickup Invincible
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,7 +72,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -111,7 +110,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -139,30 +137,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 128
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
     maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
@@ -459,20 +433,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Spikes: -3001449038190906842
-      Pickup Speed: -1312994402987499043
-      Heart Full: 7642980859614939925
-      Heart Empty: -174804484191063705
-      Objects_5: 2058049638561703503
-      JumpPad Up: -4894898745955426128
-      Pickup Health: 2710443080846324409
-      Button Down: 734368628706365288
-      Pickup Gravity: 8575179032478902733
-      Pickup Invincible: -4060402318970035109
-      Portal: 3275407576765064038
-      Button Up: 8661651960862297898
-      JumpPad Down: -6895716492971166485
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -39,7 +39,7 @@ TextureImporter:
       213: 7447329837079295120
     second: EvilClone_11
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -60,7 +60,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -99,7 +98,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -139,18 +137,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -426,19 +412,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      EvilClone_9: -6615133480052954163
-      EvilClone_10: 6959502692737895379
-      EvilClone_11: 7447329837079295120
-      EvilClone_3: 4395352062402879157
-      EvilClone_7: -5839630405667540549
-      EvilClone_6: 4103247635344864780
-      EvilClone_1: 8398751611623360747
-      EvilClone_8: -1704882390083396787
-      EvilClone_2: -5904989361081783930
-      EvilClone_4: 2503788447788813194
-      EvilClone_5: 7668020470260810292
-      EvilClone_0: -7545367738548550912
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

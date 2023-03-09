@@ -255,7 +255,7 @@ TextureImporter:
       213: 3217480766886008227
     second: Spider Sprite Sheet_83
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -276,7 +276,6 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -315,7 +314,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -355,18 +353,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -2154,91 +2140,6 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Spider Sprite Sheet_78: 1649444896942765716
-      Spider Sprite Sheet_16: 8726390030551336460
-      Spider Sprite Sheet_82: 6913917774172318373
-      Spider Sprite Sheet_35: -2354434635231903503
-      Spider Sprite Sheet_63: 8696622018640434187
-      Spider Sprite Sheet_33: -7314074612266624555
-      Spider Sprite Sheet_79: 5530473920031086176
-      Spider Sprite Sheet_2: 4882973483413917039
-      Spider Sprite Sheet_8: -7304169487013995402
-      Spider Sprite Sheet_69: -2779697548978217362
-      Spider Sprite Sheet_18: 6980341137919297734
-      Spider Sprite Sheet_81: -3030447155952899730
-      Spider Sprite Sheet_24: -6999427918576371105
-      Spider Sprite Sheet_38: 1285460310592874497
-      Spider Sprite Sheet_20: 7741650120381652993
-      Spider Sprite Sheet_12: -3299875908335857560
-      Spider Sprite Sheet_30: 2665084449234005943
-      Spider Sprite Sheet_1: 8799387290523357316
-      Spider Sprite Sheet_80: 896954723968473092
-      Spider Sprite Sheet_49: 5554081666719322724
-      Spider Sprite Sheet_54: 5878106558097341830
-      Spider Sprite Sheet_68: 4432252766678195452
-      Spider Sprite Sheet_21: 7839770402346718890
-      Spider Sprite Sheet_47: 4778087942550190490
-      Spider Sprite Sheet_13: 5245860362173002691
-      Spider Sprite Sheet_6: -2247707590584965656
-      Spider Sprite Sheet_11: -8828840062860531687
-      Spider Sprite Sheet_19: -5490511743399634631
-      Spider Sprite Sheet_52: 4345314945852896704
-      Spider Sprite Sheet_0: 5376646307960564450
-      Spider Sprite Sheet_42: 1367446848224440529
-      Spider Sprite Sheet_15: -8550965301685185558
-      Spider Sprite Sheet_58: 1288355834653449678
-      Spider Sprite Sheet_29: -2065728279423616853
-      Spider Sprite Sheet_62: -8516253605594577174
-      Spider Sprite Sheet_27: 6431487042963237904
-      Spider Sprite Sheet_72: 547819865446499101
-      Spider Sprite Sheet_61: 2922221648282941300
-      Spider Sprite Sheet_10: -8696797380897376502
-      Spider Sprite Sheet_32: 2022185780414669391
-      Spider Sprite Sheet_9: -6686566261085329926
-      Spider Sprite Sheet_25: 6825854263859848041
-      Spider Sprite Sheet_50: -2167119967825127281
-      Spider Sprite Sheet_28: 5672358457124442761
-      Spider Sprite Sheet_60: -8620415890745755304
-      Spider Sprite Sheet_73: -8784100213947489079
-      Spider Sprite Sheet_70: 5555346225953597329
-      Spider Sprite Sheet_74: -2240813330154133506
-      Spider Sprite Sheet_34: 7850630247633548878
-      Spider Sprite Sheet_76: -2775726556097563504
-      Spider Sprite Sheet_71: -2906226714774302969
-      Spider Sprite Sheet_43: -1926399949302684383
-      Spider Sprite Sheet_4: -8460778050482520572
-      Spider Sprite Sheet_56: -5848081073214784603
-      Spider Sprite Sheet_7: -1199146358675990565
-      Spider Sprite Sheet_53: 3615595133716089838
-      Spider Sprite Sheet_39: 3635570566052518344
-      Spider Sprite Sheet_65: -8636807185724255482
-      Spider Sprite Sheet_66: -6348134553984744022
-      Spider Sprite Sheet_31: -8934459381086956879
-      Spider Sprite Sheet_36: 3618980661601712110
-      Spider Sprite Sheet_51: 7173398092741050121
-      Spider Sprite Sheet_59: -295550012303104842
-      Spider Sprite Sheet_57: -9213913488280785542
-      Spider Sprite Sheet_75: 8406503553491574368
-      Spider Sprite Sheet_17: 6715559686153415452
-      Spider Sprite Sheet_55: -3384489917342815363
-      Spider Sprite Sheet_67: 187863341219310466
-      Spider Sprite Sheet_23: -2277227646685509120
-      Spider Sprite Sheet_5: 8665388762448008161
-      Spider Sprite Sheet_37: -7724895554014241957
-      Spider Sprite Sheet_44: 3545761132151823601
-      Spider Sprite Sheet_45: 6202850935150887807
-      Spider Sprite Sheet_46: 789682084709725698
-      Spider Sprite Sheet_22: 4733898248320540444
-      Spider Sprite Sheet_77: -3625060675508037619
-      Spider Sprite Sheet_41: 5926413657296396272
-      Spider Sprite Sheet_48: 9095167113463150169
-      Spider Sprite Sheet_3: -1866159993313466629
-      Spider Sprite Sheet_40: -5089002765528827783
-      Spider Sprite Sheet_64: 5622723513065659828
-      Spider Sprite Sheet_26: -4375494714894218207
-      Spider Sprite Sheet_14: -2485853715077085817
-      Spider Sprite Sheet_83: 3217480766886008227
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
