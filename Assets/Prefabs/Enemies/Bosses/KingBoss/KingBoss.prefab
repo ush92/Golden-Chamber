@@ -445,6 +445,10 @@ MonoBehaviour:
   polarityChangeSound: {fileID: 1245580732}
   plusElectrode: {fileID: 0}
   minusElectrode: {fileID: 0}
+  machineRed: {fileID: 0}
+  machineBlue: {fileID: 0}
+  machineShootingDelay: 2
+  machineShootingRepeatingTime: 2
   evilClone: {fileID: 4374328035780749427, guid: 7712f9e1c77a0554a9b7351770fdd2ab, type: 3}
   evilClonesList: []
   leftSpawnPoint: {fileID: 0}

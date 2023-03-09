@@ -20,6 +20,11 @@ public class KingBossBehaviour : MonoBehaviour
     public ElectricShock plusElectrode;
     public ElectricShock minusElectrode;
 
+    public EnemyBasicShoot machineRed;
+    public EnemyBasicShoot machineBlue;
+    public float machineShootingDelay;
+    public float machineShootingRepeatingTime;
+
     public EnemyPatrol evilClone;
     public List<EnemyPatrol> evilClonesList;
     public Transform leftSpawnPoint;
@@ -55,6 +60,8 @@ public class KingBossBehaviour : MonoBehaviour
         if (bossHP.currentHP <= 0 && player.isBossEncounter)
         {
             CancelInvoke();
+            machineRed.CancelInvoke();
+            machineBlue.CancelInvoke();
 
             player.isBossEncounter = false;
 
@@ -79,8 +86,10 @@ public class KingBossBehaviour : MonoBehaviour
         else if (bossHP.currentHP > 0 && (!player.isBossEncounter || !player.isActive))
         {
             CancelInvoke();
+            machineRed.CancelInvoke();
+            machineBlue.CancelInvoke();
 
-            if(currentDebuff)
+            if (currentDebuff)
             {
                 Destroy(currentDebuff.gameObject);
             }
@@ -124,6 +133,17 @@ public class KingBossBehaviour : MonoBehaviour
                 minusElectrode.Activate(polarityDamageDelay);
 
                 polarityChangeSound.Play();
+
+                if(!currentDebuff.isPlus)
+                {
+                    machineRed.ChangeRepeatingTime(machineShootingDelay, machineShootingRepeatingTime);
+                    machineBlue.CancelInvoke();
+                }
+                else
+                {
+                    machineRed.CancelInvoke();
+                    machineBlue.ChangeRepeatingTime(machineShootingDelay, machineShootingRepeatingTime);
+                }
             }
             else
             {
@@ -142,6 +162,17 @@ public class KingBossBehaviour : MonoBehaviour
                 {
                     plusElectrode.Activate(0);
                     minusElectrode.Activate(0);
+                }
+
+                if (!currentDebuff.isPlus)
+                {
+                    machineRed.ChangeRepeatingTime(machineShootingDelay, machineShootingRepeatingTime);
+                    machineBlue.CancelInvoke();
+                }
+                else
+                {
+                    machineRed.CancelInvoke();
+                    machineBlue.ChangeRepeatingTime(machineShootingDelay, machineShootingRepeatingTime);
                 }
             }
         }
