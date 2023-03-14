@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
         if (isActive)
         {
             CheckMoveSpeed();
-            CheckGround();
+            CheckGroundFixed();
             MoveAndKnockback();
         }
     }
@@ -314,7 +314,22 @@ public class PlayerController : MonoBehaviour
         if (!isSwimming)
         {
             isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.2f, whatIsGround);
+        }
 
+        if (isGrounded)
+        {
+            currentJumpHangTime = jumpHangTime;
+        }
+        else
+        {
+            currentJumpHangTime -= Time.deltaTime;
+        }
+    }
+
+    private void CheckGroundFixed()
+    {
+        if (!isSwimming)
+        {
             if (isGrounded && playerRB.velocity.y < 0 && oneWayTileCounter <= 0) //fix velocity_Y
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, 0.0f);
@@ -517,7 +532,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
         {
-            transform.parent = other.transform;          
+            transform.parent = other.transform;
+            if (playerRB.velocity.y < 0)
+            {
+                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 10);
+            }
         }
 
         if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))
