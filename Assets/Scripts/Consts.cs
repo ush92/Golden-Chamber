@@ -68,45 +68,45 @@ public static class Consts
     public const string LOCKED_DOOR = "LockedDoor";
     public const string OPENED_DOOR = "OpenedDoor";
 
-    public const string NEW_PROFILE_ERROR_ALREADY_USED = "Profil o podanej nazwie ju¿ istnieje";
-    public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Nazwa profilu nie mo¿e byæ pusta";
+    public const string NEW_PROFILE_ERROR_ALREADY_USED = "A profile with this name already exists";
+    public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Please provide the profile name";
 
-    public const string FINISH = "Ukoñczono poziom: ";
-    public const string CURRENT_TIME = "Obecny wynik: ";
-    public const string RECORD_TIME = "Najlepszy czas: ";
+    public const string FINISH = "Completed level: ";
+    public const string CURRENT_TIME = "Current time: ";
+    public const string RECORD_TIME = "Record time: ";
 
     public const string COMPLETE_LEVEL = "CompleteLevel";
     public const string MAIN_MENU = "MainMenu";
 
     public const string LEVEL_MAP = "LevelMap";
-    public const string LEVEL_MAP_NAME = "Mapa wyboru poziomu";
+    public const string LEVEL_MAP_NAME = "Levels map";
     public const string LEVEL = "Level";
     public const string LEVEL1_1 = "Level1_1";
-    public const string LEVEL1_1_NAME = "Nadleœnictwo Zielony Dzik";
+    public const string LEVEL1_1_NAME = "Forestry Management Green Boar";
     public const string LEVEL1_2 = "Level1_2";
-    public const string LEVEL1_2_NAME = "Park Linowy Po³amaniec";
+    public const string LEVEL1_2_NAME = "Brokenbones Rope Park";
     public const string LEVEL1_3 = "Level1_3";
-    public const string LEVEL1_3_NAME = "Tartak Pociupa³aœ i Synowie";
+    public const string LEVEL1_3_NAME = "Sawmill McChop and Sons";
     public const string LEVEL1_4 = "Level1_4";
-    public const string LEVEL1_4_NAME = "Generator Portali";
+    public const string LEVEL1_4_NAME = "Portals Generator";
     public const string LEVEL2_1 = "Level2_1";
-    public const string LEVEL2_1_NAME = "Kopalnia Ostrog³az";
+    public const string LEVEL2_1_NAME = "Sharpstone Mine";
     public const string LEVEL2_2 = "Level2_2";
-    public const string LEVEL2_2_NAME = "Ha³da Kolcozbyt";
+    public const string LEVEL2_2_NAME = "The Spikeheap";
     public const string LEVEL2_3 = "Level2_3";
-    public const string LEVEL2_3_NAME = "Jaskinia Czarna Rozpacz";
+    public const string LEVEL2_3_NAME = "Cave of Gloomy Despair";
     public const string LEVEL2_4 = "Level2_4";
-    public const string LEVEL2_4_NAME = "¯wirownia G³êbinopol";
+    public const string LEVEL2_4_NAME = "Deepoland Gravel Pit";
     public const string LEVEL3_1 = "Level3_1";
-    public const string LEVEL3_1_NAME = "Piramida Solarnego Chaosu";
+    public const string LEVEL3_1_NAME = "Pyramid of Solar Chaos";
     public const string LEVEL3_2 = "Level3_2";
-    public const string LEVEL3_2_NAME = "Piramida Lodowatej Udrêki";
+    public const string LEVEL3_2_NAME = "Pyramid of Glacial Torment";
     public const string LEVEL3_3 = "Level3_3";
-    public const string LEVEL3_3_NAME = "Piramida Mrocznego Ob³êdu";
+    public const string LEVEL3_3_NAME = "Pyramid of Dark Insanity";
     public const string LEVEL3_4 = "Level3_4";
-    public const string LEVEL3_4_NAME = "Piramida Jadowitej Grozy";
+    public const string LEVEL3_4_NAME = "Pyramid of Venomous Horror";
     public const string LEVEL4_1 = "Level4_1";
-    public const string LEVEL4_1_NAME = "Szczeroz³ota Komnata";
+    public const string LEVEL4_1_NAME = "Golden Chamber";
 
     public static string GetLevelName(string levelName)
     {

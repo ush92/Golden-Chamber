@@ -79286,7 +79286,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Niekt\xF3re drzwi wymagaj\u0105 klucza."
+      value: Some doors require a key
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -82650,7 +82650,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "UWAGA! \u015Acinka drzew.\nWst\u0119p wzbroniony."
+      value: 'ATTENTION! Tree felling.
+
+        Entrance prohibited.'
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle

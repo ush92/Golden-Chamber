@@ -1537,7 +1537,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "KOPALNIA OSTROG\u0141AZ\nPRACE TYMCZASOWO WSTRZYMANE\nWST\u0118P WZBRONIONY"
+      value: 'WORK TEMPORARY STOPPED
+
+        ENTRANCE PROHIBITED'
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -135001,7 +135003,9 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_Text
-      value: "Wyj\u015Bcie ewakuacyjne\nWci\u015Bnij w d\xF3\u0142, aby powr\xF3ci\u0107"
+      value: 'Emergency exit
+
+        Press down to return'
       objectReference: {fileID: 0}
     - target: {fileID: 1555700314320200431, guid: 7ff8cfdccda2fee4da497dc213e52758, type: 3}
       propertyPath: m_FontData.m_FontStyle
