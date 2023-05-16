@@ -71,7 +71,7 @@ public static class Consts
     public const string NEW_PROFILE_ERROR_ALREADY_USED = "A profile with this name already exists";
     public const string NEW_PROFILE_ERROR_EMPTY_NAME = "Please provide the profile name";
 
-    public const string FINISH = "Completed level: ";
+    public const string FINISH = "completed!";
     public const string CURRENT_TIME = "Current time: ";
     public const string RECORD_TIME = "Record time: ";
 

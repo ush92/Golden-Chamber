@@ -11,7 +11,7 @@ public class CompleteLevelScreen : MonoBehaviour
     {
         if (!SceneManager.GetActiveScene().name.Equals(Consts.LEVEL_MAP))
         {
-            levelName.text = Consts.FINISH + Consts.GetLevelName(SceneManager.GetActiveScene().name);
+            levelName.text =  $"'{Consts.GetLevelName(SceneManager.GetActiveScene().name)}' {Consts.FINISH}";
 
             var timeInMinutes = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9] / 60;
             var timeRestInSeconds = GameManager.levelRecords[Consts.GetLevelIndex(SceneManager.GetActiveScene().name)][9] % 60;

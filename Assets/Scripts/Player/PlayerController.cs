@@ -533,10 +533,6 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
         {
             transform.parent = other.transform;
-            if (playerRB.velocity.y < 0)
-            {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 10);
-            }
         }
 
         if (other.gameObject.tag.Equals(Consts.ONE_WAY_TILE))
