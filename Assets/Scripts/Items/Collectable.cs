@@ -63,7 +63,7 @@ public class Collectable : MonoBehaviour
             }
             else
             {
-                FindObjectOfType<CollectablesController>().Collect(gameObject.name);
+                FindFirstObjectByType<CollectablesController>().Collect(gameObject.name);
             }
 
             if (GameManager.isSoundsOn)

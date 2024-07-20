@@ -14,7 +14,7 @@ public class EnemyBasicShoot : MonoBehaviour
 
     private void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindFirstObjectByType<PlayerController>();
         InvokeRepeating("Shoot", firstShootTime, repeatingTime);
     }
 

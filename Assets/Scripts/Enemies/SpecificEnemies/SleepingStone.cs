@@ -80,12 +80,12 @@ public class SleepingStone : MonoBehaviour
             if (moveRight)
             {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().linearVelocity.y);
             }
             else
             {
                 transform.localScale = new Vector3(1f, 1f, 1f);
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().linearVelocity.y);
             }
 
             if (jumpCooldownCounter > 0)
@@ -95,7 +95,7 @@ public class SleepingStone : MonoBehaviour
             if (isJumpMode && jumpCooldownCounter <= 0)
             {
                 jumpCooldownCounter = jumpCooldownTime;
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpForce);
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(GetComponent<Rigidbody2D>().linearVelocity.x, jumpForce);
             }
         }
     }

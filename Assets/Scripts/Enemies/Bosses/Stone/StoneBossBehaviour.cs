@@ -195,7 +195,7 @@ public class StoneBossBehaviour : MonoBehaviour
             playerSide = 1;
         }
 
-        stoneForm1.GetComponent<Rigidbody2D>().velocity = new Vector2(playerSide * stone1MoveSpeed, stoneForm1.GetComponent<Rigidbody2D>().velocity.y);
+        stoneForm1.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(playerSide * stone1MoveSpeed, stoneForm1.GetComponent<Rigidbody2D>().linearVelocity.y);
     }
 
     private void CheckBossActivity()

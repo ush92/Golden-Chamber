@@ -8,7 +8,7 @@ public class DarkEffect : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindFirstObjectByType<PlayerController>();
 
         offset = 0f;
         transform.position = new Vector3(50, offset, 0);

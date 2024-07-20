@@ -23,7 +23,7 @@ public class DamageEnemyOnContact : MonoBehaviour
         {
             other.GetComponent<EnemyHPController>().takeDamage(damageToDeal);
 
-            playerRB.velocity = new Vector2(playerRB.velocity.x, bounceOnEnemy);
+            playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, bounceOnEnemy);
         }
     }
 }

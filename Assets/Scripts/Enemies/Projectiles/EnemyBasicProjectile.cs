@@ -23,21 +23,21 @@ public class EnemyBasicProjectile : MonoBehaviour
 
     void Awake()
     {
-        player = FindObjectOfType<PlayerController>();
+        player = FindFirstObjectByType<PlayerController>();
 
         if (aimPlayer)
         {
-            rb.velocity = (player.transform.position - transform.position).normalized * speed;
+            rb.linearVelocity = (player.transform.position - transform.position).normalized * speed;
         }
         else
         {
             if (transform.position.x > player.transform.position.x)
             {
-                rb.velocity = new Vector2(-speed, heigthPower);
+                rb.linearVelocity = new Vector2(-speed, heigthPower);
             }
             else if (transform.position.x < player.transform.position.x)
             {
-                rb.velocity = new Vector2(speed, heigthPower);
+                rb.linearVelocity = new Vector2(speed, heigthPower);
             }          
         }
     }

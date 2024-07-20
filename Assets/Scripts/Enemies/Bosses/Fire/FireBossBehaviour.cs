@@ -91,12 +91,12 @@ public class FireBossBehaviour : MonoBehaviour
                 if (moveRight)
                 {
                     transform.localScale = new Vector3(-1f, 1f, 1f);
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed * currentRunLength * acceleration, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().linearVelocity = new Vector2(moveSpeed * currentRunLength * acceleration, GetComponent<Rigidbody2D>().linearVelocity.y);
                 }
                 else
                 {
                     transform.localScale = new Vector3(1f, 1f, 1f);
-                    GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed * currentRunLength * acceleration, GetComponent<Rigidbody2D>().velocity.y);
+                    GetComponent<Rigidbody2D>().linearVelocity = new Vector2(-moveSpeed * currentRunLength * acceleration, GetComponent<Rigidbody2D>().linearVelocity.y);
                 }
             }
             else

@@ -22,8 +22,8 @@ public class PlayerProjectile : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<PlayerController>();
-        playerVelocityX = player.playerRB.velocity.x;
+        player = FindFirstObjectByType<PlayerController>();
+        playerVelocityX = player.playerRB.linearVelocity.x;
 
         if (player.transform.localScale.x < 0)
         {
@@ -35,14 +35,14 @@ public class PlayerProjectile : MonoBehaviour
             }
         }
 
-        rb.velocity = new Vector2(speed, heigthPower);
+        rb.linearVelocity = new Vector2(speed, heigthPower);
     }
 
     void Update()
     {
         if (!isCollided && !usePhysics)
         {
-            rb.velocity = new Vector2(speed + playerVelocityX / 2.0f, rb.velocity.y);
+            rb.linearVelocity = new Vector2(speed + playerVelocityX / 2.0f, rb.linearVelocity.y);
         }
 
         lifetime -= Time.deltaTime;
@@ -85,7 +85,7 @@ public class PlayerProjectile : MonoBehaviour
         {
             if (!name.Contains(Consts.PLAYER_FIRESPARK))
             {
-                rb.velocity = new Vector2(0, 0);
+                rb.linearVelocity = new Vector2(0, 0);
                 DestroyProjectile();
             }
 

@@ -11,7 +11,7 @@ public class Destructable : MonoBehaviour
         if (other.tag.Equals(Consts.PLAYER))
         {
             var playerRB = other.GetComponent<Rigidbody2D>();
-            playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * -0.33f);
+            playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, playerRB.linearVelocity.y * -0.33f);
 
             Instantiate(destructEffect, transform.position, transform.rotation);
             PlaySound();

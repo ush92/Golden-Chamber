@@ -35,7 +35,7 @@ public class BouncingPad : MonoBehaviour
             padSR.sprite = upPad;
 
             var playerRB = other.GetComponent<Rigidbody2D>();
-            playerRB.velocity = new Vector2(playerRB.velocity.x, bouncePower);
+            playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, bouncePower);
 
             if (GameManager.isSoundsOn)
             {

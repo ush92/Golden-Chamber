@@ -8,7 +8,7 @@ public class OneWayTile : MonoBehaviour
     void Start()
     {
         pEffector = GetComponent<PlatformEffector2D>();
-        player = FindObjectOfType<PlayerController>();
+        player = FindFirstObjectByType<PlayerController>();
     }
 
     private void Update()

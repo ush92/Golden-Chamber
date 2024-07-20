@@ -330,9 +330,9 @@ public class PlayerController : MonoBehaviour
     {
         if (!isSwimming)
         {
-            if (isGrounded && playerRB.velocity.y < 0 && oneWayTileCounter <= 0) //fix velocity_Y
+            if (isGrounded && playerRB.linearVelocity.y < 0 && oneWayTileCounter <= 0) //fix velocity_Y
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, 0.0f);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, 0.0f);
             }
         }
 
@@ -350,17 +350,17 @@ public class PlayerController : MonoBehaviour
     {
         if (knockbackCounter <= 0)
         {
-            playerRB.velocity = new Vector2(velocity * moveSpeed, playerRB.velocity.y);
+            playerRB.linearVelocity = new Vector2(velocity * moveSpeed, playerRB.linearVelocity.y);
         }
         else
         {
             if (knockbackFromRight)
             {
-                playerRB.velocity = new Vector2(-knockback, knockback / 2);
+                playerRB.linearVelocity = new Vector2(-knockback, knockback / 2);
             }
             else
             {
-                playerRB.velocity = new Vector2(knockback, knockback / 2);
+                playerRB.linearVelocity = new Vector2(knockback, knockback / 2);
             }
 
             if (knockbackCounter > 0)
@@ -382,14 +382,14 @@ public class PlayerController : MonoBehaviour
 
     private void Animate()
     {
-        playerAnimator.SetFloat(Consts.SPEED, Mathf.Abs(playerRB.velocity.x));
-        playerAnimator.SetFloat(Consts.YSPEED, playerRB.velocity.y);
+        playerAnimator.SetFloat(Consts.SPEED, Mathf.Abs(playerRB.linearVelocity.x));
+        playerAnimator.SetFloat(Consts.YSPEED, playerRB.linearVelocity.y);
 
-        if (playerRB.velocity.x < 0f)
+        if (playerRB.linearVelocity.x < 0f)
         {
             playerRB.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
-        else if (playerRB.velocity.x > 0f)
+        else if (playerRB.linearVelocity.x > 0f)
         {
             playerRB.transform.localScale = new Vector3(1f, 1f, 1f);
         }
@@ -398,7 +398,7 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool(Consts.IS_GROUNDED, isGrounded);
 
-            if (playerRB.velocity.x != 0f && isGrounded)
+            if (playerRB.linearVelocity.x != 0f && isGrounded)
             {
                 footDustEmission.rateOverTime = 35f;
             }
@@ -421,7 +421,7 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool(Consts.IS_SWIMMING, true);
 
-            if (playerRB.velocity.y > 0)
+            if (playerRB.linearVelocity.y > 0)
             {
                 playerAnimator.SetBool(Consts.IS_GROUNDED, false);
             }
@@ -533,9 +533,9 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag.Equals(Consts.MOVING_PLATFORM))
         {
             transform.parent = other.transform;
-            if (playerRB.velocity.y < 0)
+            if (playerRB.linearVelocity.y < 0)
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 10);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, playerRB.linearVelocity.y * 10);
             }
         }
 
@@ -787,7 +787,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<CapsuleCollider2D>().enabled = true;
 
-            playerRB.velocity = new Vector3(0, 0, 0);
+            playerRB.linearVelocity = new Vector3(0, 0, 0);
             frozenCounter = 0;
 
             transform.position = GameManager.instance.currentCheckPoint.transform.position;
@@ -919,13 +919,13 @@ public class PlayerController : MonoBehaviour
                 if (currentJumpHangTime > 0f)
                 {
                     isGrounded = false;
-                    playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                    playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, jumpForce);
                     SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
                 }
             }
             else
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, jumpForce);
                 SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
             }
         }
@@ -935,9 +935,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isActive && !isLevelCompleted && !GameManager.instance.playerCamera.GetComponent<SmoothFollow>().isLookingUp)
         {
-            if (!isGrounded && playerRB.velocity.y > 0f)
+            if (!isGrounded && playerRB.linearVelocity.y > 0f)
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, playerRB.linearVelocity.y * 0.5f);
             }
         }
     }
@@ -1038,14 +1038,14 @@ public class PlayerController : MonoBehaviour
             if (context.started && currentJumpHangTime > 0f)
             {
                 isGrounded = false;
-                playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, jumpForce);
 
                 SoundEffect($"Jump{UnityEngine.Random.Range(1, 4)}", 1.0f, 1.5f);
             }
 
-            if (!isGrounded && context.canceled && playerRB.velocity.y > 0)
+            if (!isGrounded && context.canceled && playerRB.linearVelocity.y > 0)
             {
-                playerRB.velocity = new Vector2(playerRB.velocity.x, playerRB.velocity.y * 0.5f);
+                playerRB.linearVelocity = new Vector2(playerRB.linearVelocity.x, playerRB.linearVelocity.y * 0.5f);
             }
         }
     }

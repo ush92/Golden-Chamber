@@ -9,7 +9,7 @@ public class ToxinDebuff : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        boss = FindObjectOfType<PoisonBehaviour>();
+        boss = FindFirstObjectByType<PoisonBehaviour>();
         Invoke("Explode", 5);
     }
 

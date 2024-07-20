@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour, ISaveable
     {
         instance = this;
 
-        musicManager = FindObjectOfType<MusicManager>();
+        musicManager = FindFirstObjectByType<MusicManager>();
 
         for (int i = 0; i < 13; i++)
         {
