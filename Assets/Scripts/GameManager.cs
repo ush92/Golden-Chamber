@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour, ISaveable
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         instance = this;
 
         musicManager = FindFirstObjectByType<MusicManager>();
